@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#001947",
+              "on-background": "#e5e2e3",
+              "surface-tint": "#b1c5ff",
+              "primary-fixed-dim": "#b1c5ff",
+              "outline-variant": "#424654",
+              "secondary": "#b1c5ff",
+              "primary-fixed": "#dae2ff",
+              "on-primary-container": "#fffeff",
+              "on-secondary": "#162e61",
+              "outline": "#8c90a0",
+              "tertiary": "#ffb694",
+              "inverse-on-surface": "#303031",
+              "background": "#131314",
+              "on-secondary-container": "#a2b7f3",
+              "on-tertiary": "#561f00",
+              "on-secondary-fixed-variant": "#2f4579",
+              "inverse-surface": "#e5e2e3",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-primary": "#002c71",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "on-error": "#690005",
+              "tertiary-container": "#c65100",
+              "error": "#ffb4ab",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-variant": "#353436",
+              "primary-container": "#276ef1",
+              "tertiary-fixed-dim": "#ffb694",
+              "on-primary-fixed": "#001947",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-container": "#fffdff",
+              "surface": "#131314",
+              "surface-container-high": "#2a2a2b",
+              "inverse-primary": "#0056d0",
+              "secondary-fixed-dim": "#b1c5ff",
+              "secondary-fixed": "#dae2ff",
+              "on-surface-variant": "#c2c6d7",
+              "surface-bright": "#39393a",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-container-low": "#1b1b1c",
+              "surface-container-highest": "#353436",
+              "on-surface": "#e5e2e3",
+              "secondary-container": "#31477c",
+              "surface-dim": "#131314",
+              "surface-container": "#1f1f20",
+              "primary": "#b1c5ff",
+              "on-tertiary-fixed": "#351000"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased overflow-x-hidden">
+<!-- Top Navigation (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276EF1]/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-[#b1c5ff] text-lg">Teen Safety</h1>
+</div>
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276EF1]/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 flex flex-col min-h-screen">
+<!-- Hero Section: Editorial Layering -->
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-12 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Candid moment of a caring mother smiling warmly at her teenage daughter in a sun-drenched modern living room, soft cinematic lighting, premium atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSD1s8bO30aavOLjfgbjNiRzZ-ovxw88bcDZ8vUvG0ImSYOsj2Zd6I3_djq2fHSsHCNC9cWQvyFZz3Ic2G4BJ42gVkeq1n7Ek5SD4OMLruV8JoAoWJ00GWIgWrleAj5nGgBVsOwdl023EIG5V6GDGo2oBCmTgzUvZbVfAwnExZPu2zXEVWJy_JifVAO_-YBlPsvZTa4akThbQyRXgYYxYsriOdWnm9hGQu-gDiMXeR5V0t2j4NhdEpTE1LtMhpApjFmmfzOzvMBvs"/>
+<!-- Gradient Overlay for Text Legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
+<!-- Floating Trust Badge -->
+<div class="absolute top-4 right-4 bg-surface-variant/60 backdrop-blur-xl px-4 py-2 rounded-xl border border-outline-variant/15 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-tertiary">Verified Safe</span>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="flex-grow flex flex-col space-y-8">
+<div class="space-y-4">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight leading-[1.1] text-on-surface">
+                    Welcome to <br/>
+<span class="text-primary-container">Teen Safety</span>
+</h2>
+<p class="font-body text-on-surface-variant text-base leading-relaxed max-w-[90%]">
+                    Peace of mind for every journey. Discover how Rydinex keeps your family safe with real-time tracking and vetted professional drivers.
+                </p>
+</div>
+<!-- Feature Highlights (Bento-lite) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 space-y-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="location_searching">location_searching</span>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-bold text-on-surface">Live Tracking</p>
+<p class="text-[10px] text-on-surface-variant opacity-70">Follow the ride in real-time</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 space-y-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="shield">shield</span>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-bold text-on-surface">Vetted Drivers</p>
+<p class="text-[10px] text-on-surface-variant opacity-70">Strict background checks</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="mt-12 space-y-4">
+<button class="w-full bg-primary-container text-white font-headline font-bold py-5 rounded-xl shadow-[0_20px_40px_rgba(39,110,241,0.2)] active:scale-95 transition-transform duration-200">
+                Get Started
+            </button>
+<p class="text-center text-[11px] font-semibold tracking-widest uppercase text-on-surface-variant/40">
+                Step 1 of 4
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation (Shared Component - Inactive state for Tutorial) -->
+<!-- The BottomNavBar is suppressed here per the "Linear/Transactional" suppression rule, 
+         but the task mentions it is a high-fidelity mobile screen, so I will ensure the spacing allows for it if it were present. 
+         Following the 'Automatic Suppression' rule for Onboarding/Tutorial screens. -->
+<!-- Ambient Glow Background Decor -->
+<div class="fixed -bottom-48 -left-48 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed top-1/4 -right-24 w-64 h-64 bg-tertiary-container/5 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

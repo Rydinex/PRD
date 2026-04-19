@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RYDINEX Driver - Service Notification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "on-primary-container": "#fffeff",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-variant": "#353436",
+              "tertiary-container": "#c65100",
+              "primary": "#b1c5ff",
+              "on-surface-variant": "#c2c6d7",
+              "inverse-primary": "#0056d0",
+              "error": "#ffb4ab",
+              "surface-container-high": "#2a2a2b",
+              "on-secondary-container": "#a2b7f3",
+              "on-background": "#e5e2e3",
+              "surface": "#131314",
+              "on-tertiary": "#561f00",
+              "on-secondary": "#162e61",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-fixed": "#351000",
+              "inverse-surface": "#e5e2e3",
+              "inverse-on-surface": "#303031",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-tint": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "surface-container": "#1f1f20",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "secondary-container": "#31477c",
+              "background": "#131314",
+              "on-surface": "#e5e2e3",
+              "on-secondary-fixed": "#001947",
+              "secondary-fixed": "#dae2ff",
+              "outline": "#8c90a0",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-dim": "#131314",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary": "#ffb694",
+              "on-primary-fixed-variant": "#00419f",
+              "primary-container": "#276ef1",
+              "outline-variant": "#424654",
+              "surface-bright": "#39393a",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "surface-container-highest": "#353436",
+              "primary-fixed": "#dae2ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .route-pulse {
+        background: linear-gradient(90deg, #276ef1 0%, rgba(39, 110, 241, 0) 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] dark:bg-[#131314]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b1c5ff] dark:text-[#276ef1]">menu</span>
+</div>
+<h1 class="text-2xl font-extrabold tracking-tighter text-[#276ef1] dark:text-[#276ef1] font-headline uppercase">RYDINEX</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Driver Profile" class="w-full h-full object-cover" data-alt="professional male driver portrait with a warm smile, wearing a clean charcoal suit in a high-end vehicle interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV8EdWLA8OJ-_F4hTY2vEEntfR9JnHwhpYEtB4H7RvTNVFv8LHOcO8TqXI6ABoLkiTCRqceJrVqT21SPY_DG_XcTnypm9JDytmwOFK21kTyMb93sNWObUzZ3K1rPibDLzCuTp0vUdrWylT4e4I_hhAXJVEmRa04IxwUZXBtA0zhRCS2_WXLo4UA-s2tNMBm8kNR-OHUtTq7y51bftLQlTp0BiYq41eNE9553yqvcS1opeVpWlOAH2T3T3GayMwSxggp6yGG_T3Bik"/>
+</div>
+</div>
+</header>
+<main class="pt-20 px-4 max-w-lg mx-auto space-y-6">
+<!-- Service Type Indicator -->
+<div class="mt-4 flex items-center justify-between">
+<div class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">event_available</span>
+                Reserved Trip
+            </div>
+<div class="text-outline text-sm font-medium">ETA: 12 MIN</div>
+</div>
+<!-- Hero Section: Notification Card -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-low p-6 space-y-6">
+<div class="space-y-2">
+<p class="text-primary font-headline text-display-sm text-3xl font-extrabold tracking-tight">Marcus is relying on your assistance today</p>
+<p class="text-on-surface-variant text-sm opacity-80 leading-relaxed">Premium concierge service requested. Please prepare for specialized boarding procedures.</p>
+</div>
+<!-- Specialized Needs Badges -->
+<div class="flex flex-wrap gap-3">
+<div class="glass-card flex items-center gap-2 px-4 py-2.5 rounded-lg border border-outline-variant/15">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">elderly</span>
+<span class="text-tertiary-fixed-dim text-xs font-bold tracking-wider uppercase">SENIOR ASSISTANCE</span>
+</div>
+<div class="glass-card flex items-center gap-2 px-4 py-2.5 rounded-lg border border-outline-variant/15">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">luggage</span>
+<span class="text-secondary text-xs font-bold tracking-wider uppercase">EXTRA LUGGAGE</span>
+</div>
+</div>
+</section>
+<!-- Dynamic Bento Info Grid -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Map Preview (Asymmetric) -->
+<div class="col-span-2 relative h-48 rounded-xl overflow-hidden bg-surface-container-highest">
+<img alt="Map location" class="w-full h-full object-cover opacity-50" data-alt="abstract dark mode city map visualization with glowing electric blue routes and soft neon highlights" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqd1tjxBPUvvK9OR-YOzBdRsPVb89lks58ttYq0UwRW4nIjlx0a0XGFwXHa1tkVQ0uWrrun4DtI6xF7oV5x8xhP3ztwIGa6R9X8N-A62Nq8NS4sGu-ngHCxrDhRrK1c2gTSMtD14WAvki9VPpW_ToAY_e1eJl3ixGDom1t9zN-zfh8gEW0CY8aFULg_MMxmBNxY5cMD2g4APLijF0dHIGZ_oVhhF7RTheePzUbY0lBkOBPVj7_w-c4RMVXyTHU9xOUkhCgu8L2tk8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+<div>
+<p class="text-[10px] text-outline uppercase tracking-widest font-bold">Pickup</p>
+<p class="text-sm font-semibold">Pacific Heights Residence</p>
+</div>
+<div class="bg-surface/80 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">navigation</span>
+</div>
+</div>
+</div>
+<!-- Client Info -->
+<div class="bg-surface-container-high p-4 rounded-xl space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase font-bold">Client</p>
+<p class="text-sm font-semibold">Marcus V.</p>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/10 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface">5.0 Rating</span>
+</div>
+</div>
+<!-- Earnings Estimate -->
+<div class="bg-surface-container-high p-4 rounded-xl space-y-3">
+<div>
+<p class="text-[10px] text-outline uppercase font-bold">Estimated Payout</p>
+<p class="text-2xl font-extrabold text-primary font-headline">$42.50</p>
+</div>
+<div class="inline-block bg-tertiary/10 px-2 py-0.5 rounded text-[10px] font-bold text-tertiary-fixed-dim uppercase">
+                    + $15.00 Concierge Fee
+                </div>
+</div>
+</section>
+<!-- Action Area -->
+<section class="space-y-4 pt-4">
+<button class="w-full bg-primary-container hover:bg-primary-container/90 text-on-primary-container py-5 rounded-xl font-headline font-bold text-lg tracking-tight shadow-[0_20px_40px_rgba(39,110,241,0.2)] active:scale-95 transition-all duration-200">
+                ACCEPT RESERVATION
+            </button>
+<button class="w-full bg-surface-container-highest/50 hover:bg-surface-container-highest text-on-surface-variant py-4 rounded-xl font-bold text-sm tracking-widest uppercase transition-colors">
+                DECLINE REQUEST
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/90 backdrop-blur-xl dark:bg-[#131314]/90 shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<div class="flex flex-col items-center justify-center text-[#276ef1] dark:text-[#b1c5ff] bg-[#276ef1]/10 rounded-xl px-3 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="event_available" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Reserve</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="weekend">weekend</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Comfort</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="elderly">elderly</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Senior</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="luggage">luggage</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Luggage</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Account</span>
+</div>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

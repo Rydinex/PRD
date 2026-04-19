@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Admin - Security Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbcc",
+              "on-primary": "#002c71",
+              "on-background": "#e2e2e8",
+              "error": "#ffb4ab",
+              "surface-dim": "#111317",
+              "tertiary": "#ffb694",
+              "on-secondary-fixed-variant": "#2f4579",
+              "outline": "#8c90a0",
+              "on-primary-fixed-variant": "#00419f",
+              "on-surface-variant": "#c2c6d7",
+              "inverse-surface": "#e2e2e8",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-secondary-fixed": "#001947",
+              "on-tertiary": "#561f00",
+              "on-tertiary-container": "#fffdff",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#333539",
+              "secondary-fixed": "#dae2ff",
+              "primary": "#b1c5ff",
+              "inverse-on-surface": "#2f3035",
+              "surface-container-lowest": "#0c0e12",
+              "secondary-container": "#31477c",
+              "on-primary-fixed": "#001947",
+              "on-tertiary-fixed": "#351000",
+              "primary-container": "#276ef1",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-secondary": "#162e61",
+              "secondary": "#b1c5ff",
+              "primary-fixed": "#dae2ff",
+              "outline-variant": "#424654",
+              "on-secondary-container": "#a2b7f3",
+              "background": "#111317",
+              "on-primary-container": "#fffeff",
+              "on-surface": "#e2e2e8",
+              "surface-container-highest": "#333539",
+              "surface-container": "#1e2024",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-tint": "#b1c5ff",
+              "tertiary-container": "#c65100",
+              "inverse-primary": "#0056d0",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-container-low": "#1a1c20",
+              "surface-container-high": "#282a2e",
+              "surface": "#111317",
+              "surface-bright": "#37393e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #276ef1 0%, #b1c5ff 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- Top Navigation Anchor (Non-functional for focused task) -->
+<header class="bg-[#111317] fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4">
+<div class="text-xl font-black text-[#e2e2e8] tracking-[0.05em] uppercase font-headline">
+            Sovereign Admin
+        </div>
+<div class="text-[#e2e2e8]/60 text-xs font-label uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+            Encrypted Session
+        </div>
+</header>
+<main class="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
+<!-- Subtle Ambient Background Element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- 2FA Verification Card -->
+<div class="w-full max-w-md z-10">
+<div class="glass-panel border border-outline-variant/10 rounded-xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]">
+<!-- Security Header -->
+<div class="bg-surface-container-high px-8 py-10 text-center relative">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<h1 class="font-headline text-2xl font-bold tracking-tight text-on-surface mb-2">Security Verification</h1>
+<p class="text-on-surface-variant text-sm font-body">Enter the 6-digit code from your authenticator app to authorize access.</p>
+</div>
+<!-- Input Section -->
+<form class="px-8 py-10 space-y-8 bg-surface-container">
+<!-- 6-Digit Code Inputs -->
+<div class="flex justify-between gap-2 md:gap-3">
+<input autofocus="" class="w-12 h-16 text-center text-2xl font-headline font-bold bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 transition-all outline-none text-primary" maxlength="1" type="text"/>
+<input class="w-12 h-16 text-center text-2xl font-headline font-bold bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 transition-all outline-none text-primary" maxlength="1" type="text"/>
+<input class="w-12 h-16 text-center text-2xl font-headline font-bold bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 transition-all outline-none text-primary" maxlength="1" type="text"/>
+<input class="w-12 h-16 text-center text-2xl font-headline font-bold bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 transition-all outline-none text-primary" maxlength="1" type="text"/>
+<input class="w-12 h-16 text-center text-2xl font-headline font-bold bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 transition-all outline-none text-primary" maxlength="1" type="text"/>
+<input class="w-12 h-16 text-center text-2xl font-headline font-bold bg-surface-container-lowest border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 transition-all outline-none text-primary" maxlength="1" type="text"/>
+</div>
+<!-- Countdown & Resend -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant text-xs font-label tracking-wide uppercase">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Valid for 0:54
+                        </div>
+<button class="text-primary hover:text-on-surface transition-colors text-xs font-label uppercase tracking-widest font-semibold" type="button">
+                            Resend Code
+                        </button>
+</div>
+<!-- Primary Action -->
+<button class="editorial-gradient w-full py-4 rounded-lg font-headline font-bold text-on-primary-container uppercase tracking-widest shadow-lg hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                        Verify Identity
+                    </button>
+<!-- Secondary Action -->
+<div class="pt-2 text-center">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors text-xs font-label uppercase tracking-widest flex items-center justify-center gap-2 mx-auto" type="button">
+<span class="material-symbols-outlined text-sm">key</span>
+                            Use Recovery Code
+                        </button>
+</div>
+</form>
+</div>
+<!-- Contextual Security Info -->
+<div class="mt-8 flex items-center gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/5">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">info</span>
+</div>
+<div>
+<h4 class="text-on-surface text-xs font-bold uppercase tracking-wider mb-1">Identity Protocol</h4>
+<p class="text-on-surface-variant text-[11px] leading-relaxed">Verification is required for this administrative terminal. If you did not request this, please lock your account immediately.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="fixed bottom-0 w-full flex justify-between items-center px-8 py-6 text-[0.6875rem] font-label tracking-wider uppercase text-[#e2e2e8]/40">
+<div>آ© 2024 Sovereign Observer. High-Density Authority.</div>
+<div class="flex gap-6">
+<a class="hover:text-[#e2e2e8] transition-colors" href="#">Security Protocols</a>
+<a class="hover:text-[#e2e2e8] transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

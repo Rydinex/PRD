@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#001947",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "tertiary-container": "#c65100",
+              "tertiary": "#ffb694",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-fixed": "#351000",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "on-secondary-fixed-variant": "#2f4579",
+              "inverse-on-surface": "#303031",
+              "surface-variant": "#353436",
+              "surface-container": "#1f1f20",
+              "inverse-primary": "#0056d0",
+              "on-primary": "#002c71",
+              "secondary": "#b1c5ff",
+              "on-surface-variant": "#c2c6d7",
+              "on-background": "#e5e2e3",
+              "outline": "#8c90a0",
+              "surface-dim": "#131314",
+              "primary-fixed": "#dae2ff",
+              "background": "#131314",
+              "on-secondary": "#162e61",
+              "surface-container-high": "#2a2a2b",
+              "on-surface": "#e5e2e3",
+              "surface-tint": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#dae2ff",
+              "on-primary-container": "#fffeff",
+              "surface-container-highest": "#353436",
+              "on-tertiary-container": "#fffdff",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-bright": "#39393a",
+              "outline-variant": "#424654",
+              "secondary-container": "#31477c",
+              "primary-container": "#276ef1",
+              "on-secondary-container": "#a2b7f3",
+              "inverse-surface": "#e5e2e3",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcc",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary": "#b1c5ff",
+              "surface": "#131314",
+              "on-tertiary": "#561f00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 w-full no-border bg-gradient-to-b from-[#131314] to-transparent">
+<button class="p-2 hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined text-[#b1c5ff]">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] tracking-tighter font-bold uppercase text-2xl italic text-[#276ef1]">RYDINEX</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant hover:opacity-80 transition-opacity cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a high-end app user with a clean, professional aesthetic in low key studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn-K9u8gmwPcpTmEAuk6TluEgFPhllE5MLwUyQ5DsnKyZmjA8bThumQ1Gqj_JNW6SJixk441UuVzJzh76f43AY2kqfCED4PawPUb3FeivZZ5mkxFZFWjydk5_p-N4sYfabXvqa1-xBFOdmx-esg5uVO3ciNtr8ZZGntOZmi_LWzzvb7ySJoxPU7rWXVB-Dfkscqjq3UEdE5085mEOyn2-mKd6IMySFaqm0H-cgXyTi2vnta3mflxreU4jBWLUlRmNnZ8z4peaco1I"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto space-y-8">
+<!-- Hero Section: Driver Identity -->
+<section class="relative flex flex-col md:flex-row gap-8 items-start">
+<div class="relative group">
+<div class="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl shadow-black ring-1 ring-white/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional chauffeur Marcus Chen in a crisp dark suit, smiling warmly against a blurred urban sunset background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXObHSSecgd94RxqS1p8kbjM_sSHU8SoEtnUOxP4_C6hC59qwlAxEBbbdAYTesVfRC9EuhqjEcs3siRIv5QaSjAMmKzSz4t_T0vzKIa5T0Of-32V7RivibK7MK09CBIEx_5MxvAthLtF_dUfi27g-t2ZSMvAXaSk0q75p90hSnA60JMJfGHHTvs-ztyqrclFqA6NZzYYu8xDe6eDrV6RrMhhFrq-lcbdz1X03qsXHH6OGCUtNz3jrhZzECnCEIqDHUrHjmVWdQcJQ"/>
+</div>
+<div class="absolute -bottom-3 -right-3 bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-lg">
+                    Top Rated
+                </div>
+</div>
+<div class="flex-1 space-y-4">
+<div class="space-y-1">
+<p class="text-tertiary-fixed-dim text-xs font-semibold tracking-[0.2em] uppercase">Premier Chauffeur</p>
+<h2 class="text-5xl font-headline font-extrabold tracking-tighter text-on-surface">Marcus Chen</h2>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-2 bg-surface-container-highest/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline font-bold text-lg">4.98</span>
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider">(2,480 Trips)</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="font-headline font-bold text-xs uppercase tracking-widest">Identity Verified</span>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-lg text-sm">
+                    Specializing in executive transport and luxury hospitality for over 12 years. Dedicated to a seamless, quiet, and refined travel experience.
+                </p>
+</div>
+</section>
+<!-- Bento Grid: Stats & Details -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Vehicle Card -->
+<div class="md:col-span-2 bg-surface-container-low rounded-[2rem] p-8 flex flex-col justify-between group overflow-hidden relative border border-white/5">
+<div class="relative z-10">
+<p class="text-primary font-headline font-bold text-xs tracking-widest uppercase mb-2">Primary Vehicle</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">Mercedes-Benz S-Class</h3>
+<p class="text-on-surface-variant text-sm mt-1">Plate: RD-982-NX â€¢ Midnight Black</p>
+</div>
+<div class="mt-8 flex gap-6 z-10">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Capacity</span>
+<span class="font-headline font-bold">4 Passengers</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Amenities</span>
+<span class="font-headline font-bold">WiFi, Water, HVAC Control</span>
+</div>
+</div>
+<!-- Abstract vehicle shape/glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container/10 rounded-full blur-[100px] group-hover:bg-primary-container/20 transition-colors"></div>
+<img class="absolute right-0 top-0 h-full w-1/2 object-cover opacity-20 mask-linear-left pointer-events-none" data-alt="Sleek black Mercedes S-Class headlight and grill detail in dramatic low-key studio lighting with reflective surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7FOEFACKopGioGUUFgFXlpMCaMuyGqsUh97wxBWbQqLnYVBgsRUJ_SW_7LR3Ssnn6eRjKWr-ESINYFYp2CsJtyFctz-jl13ght90Bt47aKS4Wuv6K9wMEao-_uqSl430kl1QLKnIFeTKZAw-w4ATx4GnBM-LxOdanwVRxIpreNaP6edshm8VmrwStVuYwJIgNQUx6nORLiMefeIv-Xp3aHxPjcid6gRujIuMsWWOSMxHRymrkOzvwbsSN1MBhPBvOiU8ScNqG28"/>
+</div>
+<!-- Certification Card -->
+<div class="bg-tertiary-container/10 border border-tertiary/20 rounded-[2rem] p-8 flex flex-col items-center justify-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-tertiary tracking-tight text-xl leading-tight">Chauffeured Professional</h4>
+<p class="text-tertiary/70 text-xs mt-2 font-medium uppercase tracking-widest">Certified by International Transport Bureau</p>
+</div>
+</div>
+<!-- Languages Card -->
+<div class="bg-surface-container-low border border-white/5 rounded-[2rem] p-8 space-y-6">
+<h4 class="text-on-surface-variant text-[10px] font-bold uppercase tracking-[0.2em]">Languages Spoken</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-headline font-semibold">English</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase font-bold">Native</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline font-semibold">Mandarin</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase font-bold">Fluent</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline font-semibold">Cantonese</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase font-bold">Fluent</span>
+</div>
+</div>
+</div>
+<!-- Recognition Grid -->
+<div class="md:col-span-2 grid grid-cols-2 gap-4">
+<div class="bg-surface-container rounded-[2rem] p-6 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-default">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-on-surface font-headline font-bold">12 Years</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider">Experience</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-[2rem] p-6 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-default">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<p class="text-on-surface font-headline font-bold">Excellence</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider">Award Winner</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-2xl font-headline font-bold">Recent Feedback</h3>
+<button class="text-primary font-bold text-xs uppercase tracking-widest hover:underline">View All</button>
+</div>
+<div class="flex flex-nowrap gap-4 overflow-x-auto no-scrollbar pb-4">
+<!-- Review 1 -->
+<div class="min-w-[300px] bg-surface-container-low p-6 rounded-[1.5rem] border border-white/5 space-y-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-on-surface-variant text-[10px] uppercase">Yesterday</span>
+</div>
+<p class="text-on-surface-variant text-sm italic">"The most professional service I've ever had. Marcus was punctual and the car was immaculate."</p>
+<p class="text-xs font-bold uppercase tracking-widest">â€” Sarah J.</p>
+</div>
+<!-- Review 2 -->
+<div class="min-w-[300px] bg-surface-container-low p-6 rounded-[1.5rem] border border-white/5 space-y-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-on-surface-variant text-[10px] uppercase">3 days ago</span>
+</div>
+<p class="text-on-surface-variant text-sm italic">"Smooth ride to the airport. Quiet cabin, perfect for taking morning calls. Highly recommend."</p>
+<p class="text-xs font-bold uppercase tracking-widest">â€” James L.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar (Static for Profile View) -->
+<nav class="fixed bottom-0 w-full rounded-t-3xl z-50 flex justify-around items-center w-full px-4 pb-8 pt-4 bg-[#131314]/80 backdrop-blur-xl shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
+<div class="flex flex-col items-center justify-center text-[#b1c5ff]/40 px-6 py-2 hover:text-[#b1c5ff] transition-colors scale-90 active:transition-transform cursor-pointer">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b1c5ff]/40 px-6 py-2 hover:text-[#b1c5ff] transition-colors scale-90 active:transition-transform cursor-pointer">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#276ef1] bg-[#276ef1]/10 rounded-xl px-6 py-2 scale-90 active:transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+<!-- Floating Action Button: Fixed to Bottom Right for immediate booking or contact -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-primary-container text-white rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.5)] z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">message</span>
+</button>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

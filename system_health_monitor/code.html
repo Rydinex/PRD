@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RideCommand | System Health Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "background": "#111317",
+              "surface": "#111317",
+              "secondary-fixed-dim": "#b1c5ff",
+              "surface-variant": "#333539",
+              "surface-tint": "#b1c5ff",
+              "on-error": "#690005",
+              "outline": "#8c90a0",
+              "surface-container-lowest": "#0c0e12",
+              "outline-variant": "#424654",
+              "surface-container": "#1e2024",
+              "on-secondary": "#162e61",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary": "#b1c5ff",
+              "on-surface": "#e2e2e8",
+              "on-tertiary": "#561f00",
+              "primary-fixed-dim": "#b1c5ff",
+              "inverse-on-surface": "#2f3035",
+              "secondary-container": "#31477c",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container-high": "#282a2e",
+              "on-primary-fixed": "#001947",
+              "surface-bright": "#37393e",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "inverse-surface": "#e2e2e8",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e2e2e8",
+              "primary-container": "#276ef1",
+              "on-secondary-container": "#a2b7f3",
+              "surface-dim": "#111317",
+              "error-container": "#93000a",
+              "on-primary-container": "#fffeff",
+              "surface-container-highest": "#333539",
+              "on-primary": "#002c71",
+              "secondary-fixed": "#dae2ff",
+              "on-tertiary-fixed": "#351000",
+              "surface-container-low": "#1a1c20",
+              "on-primary-fixed-variant": "#00419f",
+              "tertiary-fixed": "#ffdbcc",
+              "tertiary": "#ffb694",
+              "primary-fixed": "#dae2ff",
+              "tertiary-container": "#c65100",
+              "inverse-primary": "#0056d0",
+              "on-tertiary-container": "#fffdff",
+              "on-secondary-fixed-variant": "#2f4579"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(30, 32, 36, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #424654; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- SideNavBar Shell -->
+<aside class="flex flex-col h-screen fixed left-0 top-0 z-40 bg-[#1a1c20] dark:bg-[#1a1c20] font-['Manrope'] text-sm tracking-tight docked left-0 h-full w-64 bg-[#111317] border-r border-[#e2e2e8]/15 shadow-none">
+<div class="p-6">
+<h1 class="text-xl font-bold tracking-tighter text-[#e2e2e8]">Sovereign</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-outline opacity-70">Command Center</p>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="local_taxi">local_taxi</span>
+<span>Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person_pin_circle">person_pin_circle</span>
+<span>Riders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Financials</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#b1c5ff] bg-[#1e2024] border-l-4 border-[#276ef1] scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings_heart">settings_heart</span>
+<span>System Health</span>
+</a>
+</nav>
+<div class="mt-auto px-3 pb-6 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+<div class="mt-4 px-4 pt-4 border-t border-outline-variant/20 flex items-center gap-3">
+<img alt="Admin Profile Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Close up portrait of a serious male professional in dark clothing, dramatic lighting, high contrast aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu-4jSIvD-7r1gKc5fLP_X6FGTnLFpZ4AeQGEJ8nYRO5mvVR0FXonq8t_-WVK0zmz8Ta0mGjkwRGWOQuwML30BoYo7E4ipqCe2QMr14xnWkxmRWVjnXaw5JpdFZEibaJAzUEzSNmKNjNgpjN6I-TI6tGiW-RRqEw71q0JCl2eoARPLnVN_bzHgScvSDYeOQfTBWLv7_ALp8OS6QfEgDlLpybuCQODmeWHjbSTXj-3Byxd22KRbB2erKBXn2soiNcecuyQ6_FnTehg"/>
+<div>
+<p class="text-xs font-bold text-on-surface">Chief Admin</p>
+<p class="text-[10px] text-outline">Tier 1 Access</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center h-16 px-8 ml-64 bg-[#111317]/60 backdrop-blur-xl font-['Manrope'] font-medium docked top-0 w-full border-b border-[#e2e2e8]/10 shadow-[0_24px_24px_-4px_rgba(226,226,232,0.04)] z-30">
+<div class="flex items-center gap-6">
+<span class="text-lg font-black text-[#e2e2e8] uppercase tracking-widest">RideCommand</span>
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-[#276ef1] transition-all placeholder:text-outline/50" placeholder="Global node search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<button class="text-[#e2e2e8]/70 hover:text-white transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-[#276ef1] rounded-full border-2 border-background"></span>
+</button>
+<button class="text-[#e2e2e8]/70 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="text-[#e2e2e8]/70 hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 p-8 min-h-screen">
+<div class="max-w-7xl mx-auto space-y-10">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">System Health Monitor</h2>
+<p class="text-outline mt-1 font-body">Real-time infrastructure oversight for the Rydinex ecosystem.</p>
+</div>
+<div class="flex items-center gap-3 bg-surface-container rounded-lg p-1.5 border border-outline-variant/10">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-container-high text-xs font-semibold text-secondary">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full status-pulse"></span>
+                        LIVE UPDATE
+                    </div>
+<span class="text-[10px] text-outline font-mono px-2">REFRESH IN 14s</span>
+</div>
+</div>
+<!-- Core Services Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- API Core -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-[#276ef1] relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="api">api</span>
+</div>
+<span class="text-[10px] font-bold text-[#b1c5ff] bg-[#276ef1]/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Operational</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1">API Services</h3>
+<p class="text-3xl font-headline font-extrabold tracking-tighter">99.98<span class="text-sm font-normal text-outline ml-1">%</span></p>
+<div class="mt-4 flex gap-0.5 h-1">
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+<!-- Maps Engine -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+</div>
+<span class="text-[10px] font-bold text-[#b1c5ff] bg-[#276ef1]/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Operational</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1">Maps Engine</h3>
+<p class="text-3xl font-headline font-extrabold tracking-tighter">12ms <span class="text-sm font-normal text-outline ml-1">avg</span></p>
+<div class="mt-4 flex gap-0.5 h-1">
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Payments -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-tertiary relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="text-[10px] font-bold text-tertiary bg-tertiary/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Delayed</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1">Payment Gateway</h3>
+<p class="text-3xl font-headline font-extrabold tracking-tighter">482ms<span class="text-sm font-normal text-error ml-1">!</span></p>
+<div class="mt-4 flex gap-0.5 h-1">
+<div class="flex-1 bg-tertiary rounded-full"></div>
+<div class="flex-1 bg-tertiary rounded-full"></div>
+<div class="flex-1 bg-tertiary/20 rounded-full"></div>
+<div class="flex-1 bg-tertiary/20 rounded-full"></div>
+<div class="flex-1 bg-tertiary/20 rounded-full"></div>
+</div>
+</div>
+<!-- Dispatch -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="route">route</span>
+</div>
+<span class="text-[10px] font-bold text-[#b1c5ff] bg-[#276ef1]/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Operational</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1">Dispatch Core</h3>
+<p class="text-3xl font-headline font-extrabold tracking-tighter">4.2k<span class="text-sm font-normal text-outline ml-1">req/s</span></p>
+<div class="mt-4 flex gap-0.5 h-1">
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Real-time Analytics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Latency Chart (Asymmetric Focal Point) -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container p-8 rounded-2xl relative">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="font-headline font-bold text-xl">API Latency Distribution</h4>
+<p class="text-xs text-outline">Cluster nodes: North America, EU-West, APAC</p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-[10px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">P99</span>
+<span class="flex items-center gap-1.5 text-[10px] font-bold text-outline bg-outline-variant/10 px-3 py-1 rounded-full">AVG</span>
+</div>
+</div>
+<!-- Visual Latency Chart Mock -->
+<div class="relative h-64 flex items-end gap-1 px-4">
+<!-- Background Grid -->
+<div class="absolute inset-0 flex flex-col justify-between px-4 py-2 border-l border-b border-outline-variant/20">
+<div class="w-full border-t border-outline-variant/5"></div>
+<div class="w-full border-t border-outline-variant/5"></div>
+<div class="w-full border-t border-outline-variant/5"></div>
+<div class="w-full border-t border-outline-variant/5"></div>
+</div>
+<!-- Dynamic Bars -->
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-24 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-32 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-40 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-36 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-28 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/60 h-48 rounded-t-sm relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-primary font-bold">142ms</div>
+</div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-32 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-24 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-42 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-56 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-tertiary/10 to-tertiary/60 h-60 rounded-t-sm relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-tertiary font-bold">SPIKE</div>
+</div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-44 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-38 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-28 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-32 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-40 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-44 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-36 rounded-t-sm"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/40 h-28 rounded-t-sm"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<span class="text-[10px] uppercase tracking-widest text-outline font-bold block mb-2">Memory Load</span>
+<div class="flex items-end gap-3">
+<span class="text-2xl font-headline font-bold">64.2GB</span>
+<span class="text-xs text-primary mb-1">/ 128GB</span>
+</div>
+<div class="mt-4 h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[50.1%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<span class="text-[10px] uppercase tracking-widest text-outline font-bold block mb-2">Network In/Out</span>
+<div class="flex items-end gap-3">
+<span class="text-2xl font-headline font-bold">1.2 Gbps</span>
+<span class="text-xs text-secondary mb-1">â†‘ Sustained</span>
+</div>
+<div class="mt-4 h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[72%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident Log (Vertical Authority) -->
+<div class="space-y-6">
+<div class="bg-surface-container h-full rounded-2xl flex flex-col border border-outline-variant/5 overflow-hidden">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<h4 class="font-headline font-bold text-lg">Active Incident Log</h4>
+<span class="text-[10px] font-mono bg-error/10 text-error px-2 py-0.5 rounded">2 ALERT</span>
+</div>
+<div class="flex-1 overflow-y-auto max-h-[600px] p-4 space-y-4">
+<!-- Incident Item -->
+<div class="p-4 rounded-xl bg-surface-container-high border-l-2 border-error">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-error uppercase tracking-tighter">Critical</span>
+<span class="text-[10px] text-outline font-mono">14:22:10</span>
+</div>
+<p class="text-sm font-bold mb-1">Payment Webhook Timeout</p>
+<p class="text-xs text-on-surface-variant mb-3">Primary gateway failing handshake in US-EAST-1 cluster.</p>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-high object-cover" data-alt="Close up of a technical support engineer avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvIwtjrQHgbSaMl5PFOHpUXLaGPN9sbYx3E6Ai_2pdotlauNWtlVdajA0js3tO2NmOnZEfLco84ZT_2qEpKjJtrm6bAxE5lN984guhTO__Eqan8yerBaWeexZ2RkZethiOqFIKwQ8PQlNLY5MSx4BPQHpt5zCnxndDYJc5XA1ijrL5XcRDdxwV3ma13JQ4Oj-WVW3Mm_dryTicKQs5zFbzLfu4s8vIYuRT2yNtqfROyvQk2pizfZiCF6jb7gskyZWYe5CBC5hNNUg"/>
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-high object-cover" data-alt="Technical lead profile picture, professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjk9QfOYq7xP5fVO8SIv_PN1gXMpvT2MHwbNBVgn4ygaCe3b_m25GtpXDWqQk69zXw3KovKd09kcQCXsertS6IdX6G-OGrdAD4aDjBO7axJYcCycF9lDEhl3un9MmJse12ReNEWKfe6wLAKhGX3Sl-XgfJiNE3MrQJcuO4ApMojCqrpqmF-0f0MTPwh1ai3Trm5aNFesM4qFCv4uvsXyAuB1DVTZJ4Go42mOhrXdSbRkuFM49ZMhWBQBszaA_WEcCq9bLjU6uFvgY"/>
+<span class="w-6 h-6 rounded-full bg-outline-variant text-[8px] flex items-center justify-center border-2 border-surface-container-high">+3</span>
+</div>
+</div>
+<!-- Incident Item -->
+<div class="p-4 rounded-xl bg-surface-container-low/50 hover:bg-surface-container-high transition-all border-l-2 border-tertiary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-tighter">Warning</span>
+<span class="text-[10px] text-outline font-mono">13:05:44</span>
+</div>
+<p class="text-sm font-bold mb-1">High Latency: Fleet Tracking</p>
+<p class="text-xs text-on-surface-variant mb-3">Increased response times for real-time location pings.</p>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-high object-cover" data-alt="Professional man avatar in dark gray shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMrSI-txICTadssOlHphBWvDyA6BVwES7EJeSpukyG6pJfO8gBrzRf8iXEsDiYdwiC2nOJOuSCvtIo00Rtl9ZKHXSmwR3cWIr1SX3F1hW6Tdb4e-Of8xoUj080rdNoetTonsANVm-6Jn-ezee0qqvRkq8RYAsRDqHj7rq-iItYL2QqO6KERPFDTanObFlcMHTLOlqzaxaJVgu9Ow_V16Vrk5YGW_lVYLwjaufJMgWJYPP5xpAJrWtiU4kA5WSyEbbGfVtPAYAXG0o"/>
+</div>
+</div>
+<!-- Incident Item (Resolved) -->
+<div class="p-4 rounded-xl bg-surface-container-low/30 grayscale opacity-60">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-outline uppercase tracking-tighter">Resolved</span>
+<span class="text-[10px] text-outline font-mono">11:50:12</span>
+</div>
+<p class="text-sm font-bold mb-1">Database Sharding Migration</p>
+<p class="text-xs text-on-surface-variant">Scheduled cluster split completed successfully.</p>
+</div>
+<!-- Incident Item (Resolved) -->
+<div class="p-4 rounded-xl bg-surface-container-low/30 grayscale opacity-60">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-outline uppercase tracking-tighter">Resolved</span>
+<span class="text-[10px] text-outline font-mono">09:12:30</span>
+</div>
+<p class="text-sm font-bold mb-1">Load Balancer Recycle</p>
+<p class="text-xs text-on-surface-variant">Minor memory leak patched in Proxy Node 4.</p>
+</div>
+</div>
+<button class="m-4 py-3 bg-surface-container-highest rounded-xl text-xs font-bold hover:bg-primary/20 hover:text-primary transition-all">VIEW ALL INCIDENT HISTORY</button>
+</div>
+</div>
+</div>
+<!-- Global Map Visibility -->
+<section class="bg-surface-container rounded-3xl overflow-hidden relative h-[400px]">
+<div class="absolute inset-0 z-0">
+<img alt="Global connectivity map" class="w-full h-full object-cover opacity-20" data-alt="Digital representation of the globe with glowing blue nodes and connections on a deep dark background, tech aesthetic" data-location="Global" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCep0XD8I2JTdqGfqp0haIWtq-2ZtwcXaNwHj_Y5XqMk1Jho46fbmb0gSqRRf5NGgJNEwMpEyTfJGh8ezThQkYSSEgN1ez-POI0WG15LEiHg33AoRnLyBLYrxYynMY8P-qcmD2HM-QVULhO54S4CPLOed-s7l5vhRU5EJVPKeN3xy-7dYf5DoksVmYDKobU__Jl9oBoL8xbXqXIr89EPWVEfKhQ1vmX8NC7YnapbZ_kRJEQf_hBPPKkzK5GdqBfu-ssw-RtA1xBRHc"/>
+</div>
+<div class="relative z-10 p-10 h-full flex flex-col justify-between pointer-events-none">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-extrabold text-2xl">Global Edge Performance</h3>
+<p class="text-sm text-outline">Network reach across 48 regional data centers.</p>
+</div>
+<div class="flex gap-4 pointer-events-auto">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-4 rounded-xl border border-outline-variant/10 text-center">
+<p class="text-[10px] font-bold text-outline uppercase">Active Nodes</p>
+<p class="text-2xl font-headline font-bold text-primary">482</p>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-4 rounded-xl border border-outline-variant/10 text-center">
+<p class="text-[10px] font-bold text-outline uppercase">Edge Requests</p>
+<p class="text-2xl font-headline font-bold text-secondary">2.8M<span class="text-xs">/min</span></p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end pointer-events-auto">
+<div class="flex gap-8">
+<div>
+<p class="text-[10px] font-bold text-outline uppercase mb-1">North America</p>
+<p class="text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 18ms
+                                </p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-outline uppercase mb-1">Europe Central</p>
+<p class="text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 24ms
+                                </p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-outline uppercase mb-1">Asia Pacific</p>
+<p class="text-sm font-bold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> 142ms
+                                </p>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="travel_explore">travel_explore</span>
+                            EXPAND GEOSPATIAL VIEW
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB Suppression: This page is task-focused on monitoring, no general FAB needed as per policy -->
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

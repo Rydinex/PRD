@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#001947",
+            "on-background": "#e5e2e3",
+            "surface-tint": "#b1c5ff",
+            "primary-fixed-dim": "#b1c5ff",
+            "outline-variant": "#424654",
+            "secondary": "#b1c5ff",
+            "primary-fixed": "#dae2ff",
+            "on-primary-container": "#fffeff",
+            "on-secondary": "#162e61",
+            "outline": "#8c90a0",
+            "tertiary": "#ffb694",
+            "inverse-on-surface": "#303031",
+            "background": "#131314",
+            "on-secondary-container": "#a2b7f3",
+            "on-tertiary": "#561f00",
+            "on-secondary-fixed-variant": "#2f4579",
+            "inverse-surface": "#e5e2e3",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-primary": "#002c71",
+            "on-error-container": "#ffdad6",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "tertiary-container": "#c65100",
+            "error": "#ffb4ab",
+            "on-primary-fixed-variant": "#00419f",
+            "surface-variant": "#353436",
+            "primary-container": "#276ef1",
+            "tertiary-fixed-dim": "#ffb694",
+            "on-primary-fixed": "#001947",
+            "surface-container-lowest": "#0e0e0f",
+            "on-tertiary-container": "#fffdff",
+            "surface": "#131314",
+            "surface-container-high": "#2a2a2b",
+            "inverse-primary": "#0056d0",
+            "secondary-fixed-dim": "#b1c5ff",
+            "secondary-fixed": "#dae2ff",
+            "on-surface-variant": "#c2c6d7",
+            "surface-bright": "#39393a",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-container-low": "#1b1b1c",
+            "surface-container-highest": "#353436",
+            "on-surface": "#e5e2e3",
+            "secondary-container": "#31477c",
+            "surface-dim": "#131314",
+            "surface-container": "#1f1f20",
+            "primary": "#b1c5ff",
+            "on-tertiary-fixed": "#351000"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(53, 52, 54, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .route-pulse {
+      background: linear-gradient(90deg, #276ef1 0%, rgba(39, 110, 241, 0) 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar Navigation Shell Suppressed for Tutorial Context as per Rule: suppress if task-focused/linear -->
+<nav class="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-xl flex items-center justify-between px-6 py-4 w-full shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#276EF1]/10 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]">arrow_back</span>
+</button>
+<h1 class="text-[#b1c5ff] font-['Manrope'] font-bold tracking-tight text-lg">Teen Safety</h1>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#276EF1]/10 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]">help_outline</span>
+</button>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto min-h-screen flex flex-col">
+<!-- Editorial Header Section -->
+<header class="mb-10">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-4">
+        Tutorial 03/04
+      </div>
+<h2 class="font-headline text-[2.25rem] font-extrabold leading-tight tracking-tight text-on-background mb-2">
+        Step 2: Stay Connected
+      </h2>
+<p class="text-on-surface-variant text-sm leading-relaxed opacity-80">
+        Watch their journey unfold in real-time. See driver details, car info, and precise location until they reach home safely.
+      </p>
+</header>
+<!-- Visual Preview: The Live Tracking Map -->
+<section class="relative flex-grow mb-12 rounded-3xl overflow-hidden shadow-2xl bg-surface-container-low aspect-[4/5] border border-outline-variant/10">
+<!-- Background Map Placeholder -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-auto opacity-40 grayscale contrast-125" data-alt="Dark themed stylized city map view with simplified street lines and glowing blue navigation routes in a modern minimal style" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-bCtEBi-8GMAzvQBFGAdU5Z01C00xQ5vH0rm0SK_3jAfJdmuTqguKpbFNEclyFBfN27a4A8naZyUFhc4Ozku2IS3gJ3R9YAlWQrqOnX9GDS1hU4vAHdRUIHUX7DTFFce3Z5VZr2ziKIk-__15tl5eCmmtsiu_1PotEdOWS-f1Q-yPUrhfn1q3CzWqhYW1EzI0uKjw66M_g_INdGy9J3PZ3Q4RLzsncBQCU3aYG8bWKxY4pvrlDTo6j9SLMXY1bnpD1wpL7_jpraM"/>
+</div>
+<!-- Route Pulse Effect -->
+<div class="absolute top-1/2 left-1/4 w-1/2 h-1 bg-primary/20 rounded-full -rotate-12 z-10 overflow-hidden">
+<div class="h-full w-24 route-pulse"></div>
+</div>
+<!-- Live Teen Rider Icon -->
+<div class="absolute top-[45%] left-1/4 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-primary/30 rounded-full animate-ping"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-surface p-0.5 overflow-hidden shadow-lg shadow-primary/40">
+<img class="w-full h-full object-cover rounded-full" data-alt="Portrait of a smiling teenage boy with short hair wearing a casual hoodie in soft warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8oC0Vdov84U-m8JYNgLwqKzCwo6sKa5gt0zU4TysnPPiykNI-nvSDeUwqqnVroYMSed5agqTyAx_s3eZhcFKARjvyo77c0WstEBYzMzTooSYttQeJELJi-HCWkbHfVJ4ynzFpa-J-9fhBnh2euZAVGuF8gCcJfm07VMZsIQQ4mzWZ89WBBB2SFWQuX2724TJdD7UQdfNL0OD4vBfemfyqpR1RuAmeSiCkEAGDxMI1bWGzFGhhRB0m1vImnEGj7lXXPXw2oWgAU7Y"/>
+</div>
+</div>
+</div>
+<!-- Map Destination Pin -->
+<div class="absolute top-[55%] left-3/4 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shadow-lg shadow-tertiary/20">
+<span class="material-symbols-outlined text-on-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div class="mt-2 glass-card px-3 py-1 rounded-lg">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-tighter">ETA 8 MIN</span>
+</div>
+</div>
+</div>
+<!-- Floating Interaction Overlay: Driver Details Card -->
+<div class="absolute bottom-6 left-6 right-6 z-30">
+<div class="glass-card p-5 rounded-2xl border border-outline-variant/15 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover" data-alt="Professional headshot of a mature friendly male driver with a neat beard against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy6N2EfJgHVACvLCp1PhSlxfhmbZ7HpBh9wftcI4aK5SJrQVGmF-UTn8QSWoKseG3En_znf8SiKoyQKan_EtoQg7Os84_WXVZDZO71AB0-zZ28gxl-FdJgdoI16hOucdLs4Tr0_vOdw-f3GvMy1_eJXmzhTeAR--zhOY5oYFRywdOejNfRL8yJBb7Ix4bWzLdPX7VC27OcXSsZlyuBxHQ7ooe_hb8Wbck3tuzLjoGMTfXs95fzSULsLwTheukFVHuDxNf99I2FC34"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full p-0.5 border-2 border-[#202021]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Marcus Chen</h4>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-headline font-semibold text-on-surface-variant">4.9 â€¢ Tesla Model 3</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/10 w-full"></div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-semibold">License Plate</span>
+<span class="font-headline font-extrabold text-on-surface tracking-wider">7XBY244</span>
+</div>
+<div class="px-4 py-1.5 rounded-lg bg-primary-container text-white text-xs font-bold shadow-lg shadow-primary-container/30">
+              LIVE TRACKING
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Action Button -->
+<div class="mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-headline font-bold py-5 rounded-xl flex items-center justify-center gap-3 shadow-[0_20px_40px_rgba(39,110,241,0.25)] active:scale-95 transition-all duration-200">
+        Continue
+        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Stepper Indicator -->
+<div class="flex justify-center gap-2 mt-8">
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+<div class="w-8 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Suppressed for Focused Tutorial Flow -->
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

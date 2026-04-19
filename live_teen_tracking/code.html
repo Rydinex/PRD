@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#b1c5ff",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-container": "#1f1f20",
+              "surface-dim": "#131314",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container-low": "#1b1b1c",
+              "primary-container": "#276ef1",
+              "secondary-fixed": "#dae2ff",
+              "outline": "#8c90a0",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#b1c5ff",
+              "primary": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "inverse-surface": "#e5e2e3",
+              "background": "#131314",
+              "error": "#ffb4ab",
+              "on-primary-container": "#fffeff",
+              "error-container": "#93000a",
+              "tertiary-container": "#c65100",
+              "on-secondary-container": "#a2b7f3",
+              "on-secondary": "#162e61",
+              "inverse-primary": "#0056d0",
+              "surface-container-highest": "#353436",
+              "surface-container-high": "#2a2a2b",
+              "outline-variant": "#424654",
+              "primary-fixed": "#dae2ff",
+              "inverse-on-surface": "#303031",
+              "secondary-container": "#31477c",
+              "on-tertiary-fixed": "#351000",
+              "on-tertiary": "#561f00",
+              "tertiary": "#ffb694",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-bright": "#39393a",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "surface": "#131314",
+              "secondary": "#b1c5ff",
+              "on-surface": "#e5e2e3",
+              "secondary-fixed-dim": "#b1c5ff",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-variant": "#353436",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e5e2e3",
+              "surface-container-lowest": "#0e0e0f",
+              "on-secondary-fixed": "#001947"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-panel {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .route-pulse {
+            stroke-dasharray: 10;
+            animation: dash 20s linear infinite;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#276ef1]/10 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]">arrow_back</span>
+</button>
+<h1 class="font-headline text-2xl tracking-tight font-bold text-[#b1c5ff]">Teen Safety</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b1c5ff]">verified_user</span>
+</div>
+</header>
+<main class="min-h-screen pt-16 pb-24">
+<!-- Map Canvas Section -->
+<section class="relative h-[486px] w-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]" data-alt="Dark stylized urban map showing street grid with glowing blue navigation routes and a moving vehicle icon in night mode" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDm-23bafhdfOchzgmw-V2FkqxyPAScx4PA665HQM8cebQRkVKasUNlSdnzDWDEJ8RPXcjLjI84zR0Z0VPmXC9ph5o3LJ_U325c7GgLiDu9-Z79ChAOxeiPd47KH-WyaYrawUGwkHRZjAamAT3fb8BEayrGPmxfrjzU7RlZhqKB_YFJHYOmtDMt6YZFxC0Kzlzzy-dtDBx-A8oyxJFvH5JX1zWvlJOaCIxaQqclqCr98p9VFsukeRiRa6Xm7i8cd4yxujb9YC3zd8"/>
+<!-- Map Overlays -->
+<div class="absolute top-6 left-6">
+<div class="glass-panel px-4 py-2 rounded-xl flex items-center gap-2 border border-white/5">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#276ef1]"></div>
+<span class="font-headline font-bold text-xs tracking-widest uppercase text-white">Live Tracking</span>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full animate-ping"></div>
+<div class="w-8 h-8 bg-primary-container rounded-full flex items-center justify-center border-4 border-surface shadow-2xl">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Kinetic Floating Panel -->
+<section class="relative -mt-12 px-4 z-10 max-w-2xl mx-auto">
+<div class="bg-surface-container-low rounded-[2rem] p-6 shadow-2xl border border-white/5 space-y-8">
+<!-- Trip Summary Header -->
+<div class="flex justify-between items-start">
+<div>
+<p class="text-primary font-headline font-bold text-sm tracking-wide uppercase mb-1">Current Trip</p>
+<h2 class="text-3xl font-headline font-extrabold tracking-tight">Maya's Ride Home</h2>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mb-1">ETA</p>
+<p class="text-2xl font-headline font-black text-primary">8:24 PM</p>
+</div>
+</div>
+<!-- Driver & Teen Quick Actions Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Driver Card -->
+<div class="bg-surface-container-high rounded-2xl p-4 flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of a professional male driver in a dark polo shirt, smiling confidently, studio lighting, clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb1tsSzyWCzLghcwRD1MdVfhDvfi8oPibIovtLwE2vb-j3UYnyrLCwW5UHn9d7FzB-ja_bulfwwmN-3lP20ZlvlNiNWsQQPi9iMP6FvBXWKICv8p5gh9lfaPf2ehu55HNFwEHiqky0oxLjVKSTjwh6t-ZmI0NJPBX1rPxRazXxpiY6nAi0Uok6ZX420wAzQphjkcyOEi5F_Ac2Ac4sxZeLireosFT3apevsMQcz-KGCnDpA_CQNbXY8jH_SCehRd9FDrHbZsl1vqs"/>
+<div class="absolute -bottom-1 -right-1 bg-primary p-1 rounded-full border-2 border-surface-container-high">
+<span class="material-symbols-outlined text-[10px] text-on-primary-fixed font-bold">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-xs text-on-surface-variant font-medium">Professional Driver</p>
+<h3 class="font-headline font-bold text-lg">Marcus Chen</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.98</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 bg-primary-container text-white rounded-2xl p-4 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">call</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Call Teen</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-surface-container-highest text-primary rounded-2xl p-4 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">message</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Text Driver</span>
+</button>
+</div>
+</div>
+<!-- Safety Timeline -->
+<div class="space-y-4">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant px-1">Safety Timeline</h4>
+<div class="relative space-y-6 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-highest">
+<!-- Timeline Item -->
+<div class="relative flex items-center gap-6 pl-2">
+<div class="w-[6px] h-[6px] rounded-full bg-outline-variant outline outline-[8px] outline-surface-container-low z-10"></div>
+<div class="flex-1 flex justify-between items-center opacity-40">
+<p class="text-sm font-medium">Trip Started</p>
+<span class="text-xs font-headline font-bold">8:05 PM</span>
+</div>
+</div>
+<!-- Timeline Item Active -->
+<div class="relative flex items-center gap-6 pl-2">
+<div class="w-[6px] h-[6px] rounded-full bg-primary outline outline-[8px] outline-surface-container-low z-10 shadow-[0_0_12px_#276ef1]"></div>
+<div class="flex-1 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold text-on-surface">On Route: Highway 101</p>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">CURRENT</span>
+</div>
+<span class="text-xs font-headline font-bold text-primary">8:14 PM</span>
+</div>
+</div>
+<!-- Upcoming -->
+<div class="relative flex items-center gap-6 pl-2 opacity-20">
+<div class="w-[6px] h-[6px] rounded-full bg-outline-variant outline outline-[8px] outline-surface-container-low z-10"></div>
+<div class="flex-1 flex justify-between items-center">
+<p class="text-sm font-medium">Arrival at Home</p>
+<span class="text-xs font-headline font-bold">EST 8:24 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Emergency Banner -->
+<button class="w-full bg-error-container/20 border border-error/20 rounded-2xl p-4 flex items-center justify-between group active:bg-error-container/30 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">shield_with_heart</span>
+</div>
+<div class="text-left">
+<p class="text-error font-bold text-sm">Emergency Assistance</p>
+<p class="text-on-surface-variant text-xs">Immediate help for Maya's trip</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Simulated side logic, but focus on the primary screen per instructions) -->
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-3xl pb-safe z-50 bg-[#131314]/80 backdrop-blur-xl shadow-[0_-20px_40px_0_rgba(0,0,0,0.3)] flex justify-around items-center w-full px-4 h-20">
+<a class="flex flex-col items-center justify-center text-[#8e9199] px-4 py-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-2 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">distance</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Tracking</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8e9199] px-4 py-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">group</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Teens</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8e9199] px-4 py-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">security</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Safety</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

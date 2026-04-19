@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#353436",
+            "on-error": "#690005",
+            "primary": "#b1c5ff",
+            "on-secondary-container": "#a2b7f3",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-dim": "#131314",
+            "on-surface": "#e5e2e3",
+            "tertiary-fixed-dim": "#ffb694",
+            "background": "#131314",
+            "surface-bright": "#39393a",
+            "on-secondary": "#162e61",
+            "on-primary-fixed-variant": "#00419f",
+            "on-primary-container": "#fffeff",
+            "on-background": "#e5e2e3",
+            "error-container": "#93000a",
+            "surface-variant": "#353436",
+            "surface-tint": "#b1c5ff",
+            "outline": "#8c90a0",
+            "on-primary-fixed": "#001947",
+            "secondary": "#b1c5ff",
+            "primary-fixed-dim": "#b1c5ff",
+            "on-secondary-fixed": "#001947",
+            "surface-container-low": "#1b1b1c",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "error": "#ffb4ab",
+            "on-error-container": "#ffdad6",
+            "on-tertiary": "#561f00",
+            "surface-container": "#1f1f20",
+            "on-secondary-fixed-variant": "#2f4579",
+            "on-tertiary-fixed": "#351000",
+            "tertiary": "#ffb694",
+            "on-tertiary-container": "#fffdff",
+            "surface-container-high": "#2a2a2b",
+            "outline-variant": "#424654",
+            "primary-fixed": "#dae2ff",
+            "inverse-surface": "#e5e2e3",
+            "on-primary": "#002c71",
+            "surface-container-lowest": "#0e0e0f",
+            "secondary-fixed": "#dae2ff",
+            "secondary-fixed-dim": "#b1c5ff",
+            "primary-container": "#276ef1",
+            "inverse-on-surface": "#303031",
+            "inverse-primary": "#0056d0",
+            "surface": "#131314",
+            "tertiary-container": "#c65100",
+            "secondary-container": "#31477c",
+            "on-surface-variant": "#c2c6d7"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(53, 52, 54, 0.4);
+      backdrop-filter: blur(20px);
+    }
+    .electric-gradient {
+      background: linear-gradient(135deg, #b1c5ff 0%, #276ef1 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen flex flex-col">
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#131314] no-border flat no shadows">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors text-[#b1c5ff] active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-manrope text-xl font-bold tracking-tight text-[#b1c5ff]">Report Incident</h1>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors text-[#b1c5ff] active:scale-95 duration-200">
+<span class="material-symbols-outlined">contact_support</span>
+</button>
+</nav>
+<main class="flex-grow pt-24 pb-32 px-6 max-w-2xl mx-auto w-full">
+<header class="mb-12">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-3 leading-tight">
+        How can we help you stay safe?
+      </h2>
+<p class="text-on-surface-variant text-base leading-relaxed max-w-md opacity-80">
+        Your safety is our priority. Please select the category that best describes the issue. We review all reports within 24 hours.
+      </p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl glass-card border border-white/5 p-6 hover:bg-surface-container-highest transition-all cursor-pointer active:scale-[0.98]">
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl flex items-center justify-center bg-tertiary-container text-on-tertiary-container shadow-[0_0_20px_rgba(198,81,0,0.3)]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface">Safety Incident</h3>
+<p class="text-sm text-on-surface-variant opacity-70">Accidents, physical harm, or emergencies</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<div class="group flex flex-col justify-between rounded-xl glass-card border border-white/5 p-6 hover:bg-surface-container-highest transition-all cursor-pointer active:scale-[0.98]">
+<div class="w-12 h-12 rounded-lg flex items-center justify-center bg-primary-container text-on-primary-container mb-6">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface">Vehicle Issue</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Cleanliness, mechanical problems, or incorrect vehicle</p>
+</div>
+</div>
+<div class="group flex flex-col justify-between rounded-xl glass-card border border-white/5 p-6 hover:bg-surface-container-highest transition-all cursor-pointer active:scale-[0.98]">
+<div class="w-12 h-12 rounded-lg flex items-center justify-center bg-surface-container-highest text-primary mb-6">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface">Behavior</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Professionalism, harassment, or verbal disputes</p>
+</div>
+</div>
+<div class="group flex flex-col justify-between rounded-xl glass-card border border-white/5 p-6 hover:bg-surface-container-highest transition-all cursor-pointer active:scale-[0.98]">
+<div class="w-12 h-12 rounded-lg flex items-center justify-center bg-surface-container-highest text-tertiary-fixed-dim mb-6">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface">Payment/Fare</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Incorrect charges, double payment, or promo issues</p>
+</div>
+</div>
+<div class="group flex flex-col justify-between rounded-xl glass-card border border-white/5 p-6 hover:bg-surface-container-highest transition-all cursor-pointer active:scale-[0.98]">
+<div class="w-12 h-12 rounded-lg flex items-center justify-center bg-surface-container-highest text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">more_horiz</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface">Other</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Anything else that doesn't fit the above categories</p>
+</div>
+</div>
+</div>
+<section class="mt-16 p-6 rounded-2xl bg-surface-container-low border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<h4 class="font-headline text-sm font-bold text-primary tracking-widest uppercase mb-4">The Reporting Process</h4>
+<div class="space-y-6 relative z-10">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-[10px] font-bold">1</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Submit your report with as much detail as possible, including photos if applicable.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-[10px] font-bold">2</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Our specialized safety team will review the incident within 24 hours of submission.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-[10px] font-bold">3</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">We will reach out via email or the in-app message center with updates or next steps.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#131314]/90 backdrop-blur-xl rounded-t-3xl border-t border-white/5 shadow-[0_-20px_40px_rgba(0,0,0,0.4)]">
+<button class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Activity</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 tap-highlight-none active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Safety</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</button>
+</footer>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#353436",
+              "on-error": "#690005",
+              "primary": "#b1c5ff",
+              "on-secondary-container": "#a2b7f3",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-dim": "#131314",
+              "on-surface": "#e5e2e3",
+              "tertiary-fixed-dim": "#ffb694",
+              "background": "#131314",
+              "surface-bright": "#39393a",
+              "on-secondary": "#162e61",
+              "on-primary-fixed-variant": "#00419f",
+              "on-primary-container": "#fffeff",
+              "on-background": "#e5e2e3",
+              "error-container": "#93000a",
+              "surface-variant": "#353436",
+              "surface-tint": "#b1c5ff",
+              "outline": "#8c90a0",
+              "on-primary-fixed": "#001947",
+              "secondary": "#b1c5ff",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "surface-container-low": "#1b1b1c",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "on-tertiary": "#561f00",
+              "surface-container": "#1f1f20",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-tertiary-fixed": "#351000",
+              "tertiary": "#ffb694",
+              "on-tertiary-container": "#fffdff",
+              "surface-container-high": "#2a2a2b",
+              "outline-variant": "#424654",
+              "primary-fixed": "#dae2ff",
+              "inverse-surface": "#e5e2e3",
+              "on-primary": "#002c71",
+              "surface-container-lowest": "#0e0e0f",
+              "secondary-fixed": "#dae2ff",
+              "secondary-fixed-dim": "#b1c5ff",
+              "primary-container": "#276ef1",
+              "inverse-on-surface": "#303031",
+              "inverse-primary": "#0056d0",
+              "surface": "#131314",
+              "tertiary-container": "#c65100",
+              "secondary-container": "#31477c",
+              "on-surface-variant": "#c2c6d7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #b1c5ff 0%, #276ef1 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#131314] no-border flat no shadows">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] hover:bg-white/5 transition-colors p-2 rounded-full Active: scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-manrope text-xl font-bold tracking-tight text-[#b1c5ff]">Report Incident</h1>
+</div>
+<button class="text-[#b1c5ff] hover:bg-white/5 transition-colors p-2 rounded-full Active: scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+</button>
+</header>
+<main class="min-h-screen pt-24 pb-32 px-6 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Background Ambient Light -->
+<div class="absolute top-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-tertiary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Success Animation Shell -->
+<div class="mb-12 relative">
+<div class="w-32 h-32 kinetic-gradient rounded-full flex items-center justify-center shadow-[0_20px_40px_rgba(39,110,241,0.3)]">
+<span class="material-symbols-outlined text-white text-6xl font-bold" style="font-variation-settings: 'FILL' 0, 'wght' 700;">check</span>
+</div>
+<!-- Pulse Effect -->
+<div class="absolute top-0 left-0 w-32 h-32 kinetic-gradient rounded-full opacity-20 animate-ping"></div>
+</div>
+<!-- Editorial Content -->
+<div class="text-center max-w-md w-full space-y-4">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface">Report Received</h2>
+<p class="text-on-surface-variant text-base font-medium leading-relaxed opacity-80">
+                Our safety specialist will review your case within 15 minutes. Check your inbox for updates.
+            </p>
+<div class="pt-6">
+<div class="inline-flex flex-col items-center bg-surface-container-low px-6 py-3 rounded-xl border border-outline-variant/15">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-on-surface-variant/60 mb-1">Incident Reference</span>
+<span class="font-headline text-xl font-bold tracking-wider text-primary">#RX-9921-XQ</span>
+</div>
+</div>
+</div>
+<!-- Kinetic Info Grid -->
+<div class="mt-16 w-full max-w-lg grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-5 rounded-xl flex items-start gap-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant/50 mb-1">Review Time</p>
+<p class="text-on-surface font-semibold">Under 15 Mins</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-5 rounded-xl flex items-start gap-4">
+<div class="p-2 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="security">security</span>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant/50 mb-1">Safety Status</p>
+<p class="text-on-surface font-semibold">Priority Escalated</p>
+</div>
+</div>
+</div>
+<!-- Action Shell -->
+<div class="mt-12 w-full max-w-md space-y-4">
+<button class="w-full kinetic-gradient text-on-primary-container h-14 rounded-xl font-bold text-lg shadow-[0_10px_30px_rgba(39,110,241,0.2)] active:scale-95 transition-transform">
+                Back to Home
+            </button>
+<button class="w-full bg-surface-container-highest/40 backdrop-blur-md text-on-surface h-14 rounded-xl font-bold text-lg border border-outline-variant/20 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="phone_in_talk">phone_in_talk</span>
+                Call Safety Team
+            </button>
+</div>
+<!-- Contextual Help Image -->
+<div class="mt-16 rounded-3xl overflow-hidden w-full max-w-lg h-48 relative">
+<img alt="Security Center" class="w-full h-full object-cover" data-alt="professional modern operations center with blue glowing monitors and clean minimalist tech aesthetic at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnca0JRTReZ80eiPTHwjlYxcdzJ8xE0MQ_KExRMKTD8XjenDsvijHhrw_PgSYTgk8eK1UVeLmsAXjzKCkAiq3WY9rl5pA6fDLEs0xkfA9TEK5ONOE4ekHwHcbyNE-veYd1d4f0AbE7cUSBG7Y8GsD3iLOL1esVbX2hrQ917h0hgG0R5gpxez22I0G60bgygcTdLScejX9syvsDWZppCK33foC1enTsG0b7ImN20CySBYw45L-gbcf7oTACHpOrdOWpUFzXsVn4i0w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-tertiary/20 text-tertiary-fixed-dim px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">Live Monitoring</span>
+<p class="text-white font-headline text-lg font-bold mt-2">Rydinex Safety HQ</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell (Safety Active) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#131314]/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-20px_40px_rgba(0,0,0,0.4)] rounded-t-3xl">
+<div class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 tap-highlight-none active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Safety</span>
+</div>
+<div class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

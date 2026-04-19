@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Admin | Secure Initialization</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbcc",
+              "on-primary": "#002c71",
+              "on-background": "#e2e2e8",
+              "error": "#ffb4ab",
+              "surface-dim": "#111317",
+              "tertiary": "#ffb694",
+              "on-secondary-fixed-variant": "#2f4579",
+              "outline": "#8c90a0",
+              "on-primary-fixed-variant": "#00419f",
+              "on-surface-variant": "#c2c6d7",
+              "inverse-surface": "#e2e2e8",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-secondary-fixed": "#001947",
+              "on-tertiary": "#561f00",
+              "on-tertiary-container": "#fffdff",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#333539",
+              "secondary-fixed": "#dae2ff",
+              "primary": "#b1c5ff",
+              "inverse-on-surface": "#2f3035",
+              "surface-container-lowest": "#0c0e12",
+              "secondary-container": "#31477c",
+              "on-primary-fixed": "#001947",
+              "on-tertiary-fixed": "#351000",
+              "primary-container": "#276ef1",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-secondary": "#162e61",
+              "secondary": "#b1c5ff",
+              "primary-fixed": "#dae2ff",
+              "outline-variant": "#424654",
+              "on-secondary-container": "#a2b7f3",
+              "background": "#111317",
+              "on-primary-container": "#fffeff",
+              "on-surface": "#e2e2e8",
+              "surface-container-highest": "#333539",
+              "surface-container": "#1e2024",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-tint": "#b1c5ff",
+              "tertiary-container": "#c65100",
+              "inverse-primary": "#0056d0",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-container-low": "#1a1c20",
+              "surface-container-high": "#282a2e",
+              "surface": "#111317",
+              "surface-bright": "#37393e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #276ef1 0%, #b1c5ff 100%);
+        }
+        .input-focus-line {
+            position: relative;
+        }
+        .input-focus-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #276ef1;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .input-focus-line:focus-within::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopAppBar (Suppressed navigation, brand only for transactional) -->
+<header class="bg-[#111317] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="text-xl font-black text-[#e2e2e8] tracking-[0.05em] uppercase font-headline">
+            Sovereign Admin
+        </div>
+<div class="flex items-center gap-4">
+<span class="text-[#e2e2e8]/60 font-['Inter'] text-[0.6875rem] tracking-wider uppercase">Node: 0x4F2...A1</span>
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center relative overflow-hidden pt-16 pb-20">
+<!-- Abstract Background Decorative Elements -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-tertiary-container/5 blur-[120px] rounded-full"></div>
+<!-- Login Card -->
+<div class="relative w-full max-w-[440px] px-6">
+<div class="glass-panel border border-outline-variant/15 p-10 rounded-xl shadow-2xl">
+<!-- Brand Header -->
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+<h1 class="font-headline text-2xl font-extrabold tracking-tight text-on-surface mb-2">Authority Initialization</h1>
+<p class="text-on-surface-variant text-sm font-light">Accessing Sovereign Observer Protocol</p>
+</div>
+<!-- Form -->
+<form class="space-y-8">
+<!-- System Identifier -->
+<div class="space-y-1.5 input-focus-line">
+<label class="text-[0.6875rem] font-semibold text-on-surface-variant tracking-wider uppercase pl-1" for="identifier">System Identifier</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-xl">alternate_email</span>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 pl-8 pb-3 text-on-surface placeholder:text-on-surface-variant/30 focus:ring-0 focus:border-outline-variant/50 transition-all font-body" id="identifier" name="identifier" placeholder="name@sovereign.node" type="email"/>
+</div>
+</div>
+<!-- Security Key -->
+<div class="space-y-1.5 input-focus-line">
+<div class="flex justify-between items-center">
+<label class="text-[0.6875rem] font-semibold text-on-surface-variant tracking-wider uppercase pl-1" for="security_key">Security Key</label>
+<a class="text-[0.625rem] text-primary-fixed-dim hover:text-primary transition-colors uppercase tracking-widest font-bold" href="#">Forgot Access Key?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-xl">key</span>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 pl-8 pb-3 text-on-surface placeholder:text-on-surface-variant/30 focus:ring-0 focus:border-outline-variant/50 transition-all font-body" id="security_key" name="security_key" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" type="password"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-on-surface-variant/50 hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="pt-4">
+<button class="gradient-button w-full py-4 px-6 rounded-lg text-on-primary font-headline font-bold text-sm tracking-widest uppercase shadow-lg shadow-primary-container/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" type="submit">
+<span>Initialize Access</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Secondary Metadata -->
+<div class="flex items-center justify-center gap-6 pt-2">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded-sm border-outline-variant bg-surface-container-high text-primary focus:ring-primary focus:ring-offset-background" id="persist" type="checkbox"/>
+<label class="text-[0.75rem] text-on-surface-variant font-medium cursor-pointer" for="persist">Persist Session</label>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant/50"></div>
+<div class="flex items-center gap-1.5 cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-lg">fingerprint</span>
+<span class="text-[0.75rem] text-on-surface-variant group-hover:text-on-surface transition-colors font-medium">Biometric</span>
+</div>
+</div>
+</form>
+</div>
+<!-- Context Image (Subtle Detail) -->
+<div class="mt-8 opacity-20 flex justify-center grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Encrypted data nodes" class="h-12 w-auto object-contain" data-alt="abstract close-up of high-tech digital circuit board with glowing blue binary data streams and metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2_gs7hz-_bhWfMpNtZyffJK0lYUbLR9fK8-4KX6v4O4OpsIKBqHWm5Net3YLJKzw0AnhSvy0FHLgxa9R1j58uOC-DbVT-gZlvvQa0sj-evG1EnI9ICwBKw0PyEevv_AIVCBI1Z9mC1d7i70oWqxIx55cg-tPrUsm3wke9-_zwZPE61seNGJ2h_uEmp6mF44KBgxv7CmVAZ4slIk5MFbpbyJZwMQMmh3CoEVIolH9G2YZb8rcZ_patUkuFEVCKeZ608zFfk-7XNJM"/>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-transparent flex justify-between items-center px-8 py-6 w-full fixed bottom-0 z-50">
+<div class="font-['Inter'] text-[0.6875rem] tracking-wider uppercase text-[#e2e2e8]/40">
+            آ© 2024 Sovereign Observer. High-Density Authority.
+        </div>
+<div class="flex gap-6">
+<a class="font-['Inter'] text-[0.6875rem] tracking-wider uppercase text-[#e2e2e8]/40 hover:text-[#e2e2e8] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-wider uppercase text-[#e2e2e8]/40 hover:text-[#e2e2e8] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-wider uppercase text-[#e2e2e8]/40 hover:text-[#e2e2e8] transition-colors" href="#">Security Protocols</a>
+</div>
+</footer>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

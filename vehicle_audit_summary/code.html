@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Driver - Audit Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#dae2ff",
+            "on-tertiary": "#561f00",
+            "on-surface-variant": "#c2c6d7",
+            "tertiary-fixed": "#ffdbcc",
+            "on-error": "#690005",
+            "secondary-fixed": "#dae2ff",
+            "primary": "#b1c5ff",
+            "surface": "#131314",
+            "primary-container": "#276ef1",
+            "on-surface": "#e5e2e3",
+            "inverse-surface": "#e5e2e3",
+            "on-tertiary-fixed": "#351000",
+            "surface-variant": "#353436",
+            "secondary": "#b1c5ff",
+            "inverse-primary": "#0056d0",
+            "primary-fixed-dim": "#b1c5ff",
+            "background": "#131314",
+            "tertiary": "#ffb694",
+            "on-primary": "#002c71",
+            "on-tertiary-container": "#fffdff",
+            "on-primary-container": "#fffeff",
+            "surface-container-lowest": "#0e0e0f",
+            "error": "#ffb4ab",
+            "on-background": "#e5e2e3",
+            "surface-container-high": "#2a2a2b",
+            "tertiary-fixed-dim": "#ffb694",
+            "error-container": "#93000a",
+            "surface-bright": "#39393a",
+            "surface-dim": "#131314",
+            "on-secondary-fixed-variant": "#2f4579",
+            "surface-tint": "#b1c5ff",
+            "on-secondary-container": "#a2b7f3",
+            "on-primary-fixed": "#001947",
+            "on-secondary": "#162e61",
+            "inverse-on-surface": "#303031",
+            "tertiary-container": "#c65100",
+            "outline": "#8c90a0",
+            "on-primary-fixed-variant": "#00419f",
+            "surface-container-low": "#1b1b1c",
+            "secondary-fixed-dim": "#b1c5ff",
+            "on-secondary-fixed": "#001947",
+            "outline-variant": "#424654",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "surface-container-highest": "#353436",
+            "on-error-container": "#ffdad6",
+            "surface-container": "#1f1f20",
+            "secondary-container": "#31477c"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(53, 52, 54, 0.4);
+      backdrop-filter: blur(20px);
+    }
+    .route-pulse {
+      background: linear-gradient(90deg, #276ef1 0%, transparent 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-[60] bg-[#1c1c1e] no-border flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b1c5ff] cursor-pointer active:scale-95 duration-200">menu</span>
+<h1 class="font-['Manrope'] tracking-tight font-bold text-2xl text-[#b1c5ff]">Rydinex Driver</h1>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Driver Profile Avatar" class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-primary-container p-0.5" data-alt="close up professional headshot of a smiling driver in a modern vehicle interior with soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVw0i5g4K6rUF0mFNF7RZvFcxB0TPdAzGlu3r3WPeXQHEE1lCNh6ymKneItMAEVBh9P12sny4Jr2-Owfp3YjLyXyTwJMKbLbcW3UkhccG045dcJgvoDnYZeUYM0NLFEqM2NRq9XUQ6oIiCqGxsHVDGRtvHa943SLHgJXdp9vSjrq3JWxXp96HF7BjmljQQF4Oqg-1ZqcOY5-aLVyoNRUNozbcpSlUpfbwKzkB_Rogqgj1uJijUwOG3HyRgB0RjjmiMPCGS6OU7yhk"/>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-6 pt-12 pb-32">
+<!-- Hero Section: Editorial Layout -->
+<div class="relative mb-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/10 border border-primary-container/20">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-primary font-label text-xs uppercase tracking-widest font-bold">Certified</span>
+</div>
+<div class="space-y-2">
+<p class="text-primary font-headline font-bold text-sm tracking-widest uppercase">Audit Summary</p>
+<h2 class="text-on-surface font-headline font-extrabold text-5xl md:text-7xl tracking-tighter leading-tight">
+            You're Good <br/>to Go
+          </h2>
+</div>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+          Vehicle RD-98221 is certified for the next 24 hours. All systems are operating within peak safety parameters.
+        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-[0_20px_40px_0_rgba(39,110,241,0.3)]">
+            Go Online
+            <span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="bg-surface-container-highest/40 border border-outline-variant/15 text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-all active:scale-95">
+            View Details
+          </button>
+</div>
+</div>
+<!-- Hero Visual: Asymmetric Map/Vehicle Stack -->
+<div class="relative">
+<div class="absolute -inset-4 bg-primary-container/5 blur-3xl rounded-full"></div>
+<div class="relative glass-card rounded-3xl p-2 overflow-hidden aspect-square flex items-center justify-center">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary-container overflow-hidden">
+<div class="route-pulse w-full h-full"></div>
+</div>
+<img alt="Certified Vehicle" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 opacity-80" data-alt="dynamic side profile of a sleek electric sedan in a dark studio setting with electric blue lighting accents on the curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW6nAgOT5Y9RlF-oyCqr73v6nFL6RSS7kWcPvt2OPZnGEZCezeNJbpQ4evOvbW3R74loOcY43fqHJac106hGEFrez8UapOPly3ICGvo0D2PxJJOtaUWiACzj1yQFUIEj8q5pe_P_DIIZegFyD-1C6qXMuMGbrQurfZDzlSOuYmiWZhs9uPEvrWUXNdl0lOU0b5S6GA5fkLjHWccS9zJDSjJFBK_kipRj_YtvDmFTqw_ln8Srcnbw0AGX-UEYghHzc03n5SX3tdinM"/>
+<!-- Floating Status Badge -->
+<div class="absolute bottom-8 right-8 glass-card border border-outline-variant/20 p-6 rounded-2xl shadow-2xl flex flex-col items-center">
+<span class="text-4xl font-headline font-black text-primary">5/5</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant font-bold">Steps Complete</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Exterior Card -->
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4 hover:bg-surface-container-high transition-colors group">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl">Exterior</h3>
+<p class="text-on-surface-variant text-sm mt-1">Lights, Tyres, Paint</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          PASS
+        </div>
+</div>
+<!-- Interior Card -->
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4 hover:bg-surface-container-high transition-colors group">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">event_seat</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl">Interior</h3>
+<p class="text-on-surface-variant text-sm mt-1">Belts, Cleanliness</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          PASS
+        </div>
+</div>
+<!-- Mechanical Card -->
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4 hover:bg-surface-container-high transition-colors group">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">settings_suggest</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl">Mechanical</h3>
+<p class="text-on-surface-variant text-sm mt-1">Brakes, Engine, Fluids</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          PASS
+        </div>
+</div>
+<!-- Documentation Card -->
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4 hover:bg-surface-container-high transition-colors group">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl">Documentation</h3>
+<p class="text-on-surface-variant text-sm mt-1">Insurance, Registration</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          PASS
+        </div>
+</div>
+</div>
+<!-- Secondary Context: Fail Preview (High Contrast Callout) -->
+<div class="mt-20">
+<div class="flex items-center justify-between mb-8">
+<h4 class="font-headline font-bold text-2xl">Safety Notifications</h4>
+<span class="text-on-surface-variant font-label text-sm uppercase tracking-widest">Archive</span>
+</div>
+<div class="bg-surface-container-highest/20 border-l-4 border-tertiary p-8 rounded-r-3xl flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex gap-6 items-start">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl">warning</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h5 class="font-headline font-bold text-xl">Previous Audit Issues</h5>
+<span class="bg-tertiary/10 text-tertiary text-[10px] px-2 py-0.5 rounded font-black uppercase">Resolved</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+              Issue identified on Oct 24: <span class="text-on-surface font-semibold">Headlights - Left Bulb Out</span>. 
+              Certified technician validated fix on Oct 25.
+            </p>
+</div>
+</div>
+<button class="shrink-0 border border-tertiary/30 text-tertiary px-6 py-3 rounded-xl font-bold hover:bg-tertiary/5 transition-all">
+          View History
+        </button>
+</div>
+</div>
+</main>
+<!-- Navigation Shell -->
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/80 backdrop-blur-xl no-border bg-[#1c1c1e] shadow-[0_-20px_40px_0_rgba(0,0,0,0.3)] flex justify-around items-center w-full px-4 pb-6 pt-2">
+<a class="flex flex-col items-center justify-center text-gray-500 px-4 py-2 hover:text-[#b1c5ff] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#276ef1] text-white rounded-xl px-4 py-2 mb-1 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Audit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 px-4 py-2 hover:text-[#b1c5ff] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 px-4 py-2 hover:text-[#b1c5ff] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

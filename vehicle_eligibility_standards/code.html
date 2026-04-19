@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Admin | Vehicle Eligibility &amp; Standards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#111317",
+                        "on-secondary-container": "#a2b7f3",
+                        "primary-container": "#276ef1",
+                        "on-primary": "#002c71",
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary-fixed": "#001947",
+                        "on-background": "#e2e2e8",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "on-tertiary": "#561f00",
+                        "on-secondary": "#162e61",
+                        "secondary-container": "#31477c",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-tertiary-container": "#fffdff",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container": "#1e2024",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "outline-variant": "#424654",
+                        "surface-container-highest": "#333539",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "surface-container-low": "#1a1c20",
+                        "surface-bright": "#37393e",
+                        "primary": "#b1c5ff",
+                        "on-primary-fixed-variant": "#00419f",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffb694",
+                        "surface-container-high": "#282a2e",
+                        "secondary": "#b1c5ff",
+                        "on-surface": "#e2e2e8",
+                        "inverse-surface": "#e2e2e8",
+                        "background": "#111317",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "on-surface-variant": "#c2c6d7",
+                        "on-primary-container": "#fffeff",
+                        "tertiary-container": "#c65100",
+                        "on-secondary-fixed": "#001947",
+                        "on-error": "#690005",
+                        "surface-variant": "#333539",
+                        "surface-tint": "#b1c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface": "#111317",
+                        "outline": "#8c90a0",
+                        "inverse-primary": "#0056d0"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111317; }
+        ::-webkit-scrollbar-thumb { background: #333539; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Integration -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-[#1a1c20] dark:bg-[#1a1c20] font-inter text-sm font-medium tracking-wide w-64 border-r border-[#e2e2e8]/15">
+<div class="px-8 py-10">
+<h1 class="text-[#e2e2e8] font-manrope font-extrabold text-2xl tracking-tight">Rydinex</h1>
+<p class="text-[#e2e2e8]/40 text-[10px] uppercase tracking-[0.2em] mt-1">Terminal v4.2</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="group flex items-center text-[#e2e2e8]/40 hover:text-[#e2e2e8] py-3 px-6 hover:bg-[#333539]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:translate-x-1 transition-transform">dashboard</span>
+                Command Center
+            </a>
+<a class="group flex items-center text-[#e2e2e8]/40 hover:text-[#e2e2e8] py-3 px-6 hover:bg-[#333539]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:translate-x-1 transition-transform">monitoring</span>
+                Market Analytics
+            </a>
+<a class="group flex items-center text-[#b1c5ff] bg-[#1e2024] rounded-r-full py-3 px-6 border-l-4 border-[#276ef1]" href="#">
+<span class="material-symbols-outlined mr-4">security</span>
+                Risk Shield
+            </a>
+<a class="group flex items-center text-[#e2e2e8]/40 hover:text-[#e2e2e8] py-3 px-6 hover:bg-[#333539]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:translate-x-1 transition-transform">account_balance_wallet</span>
+                Asset Ledger
+            </a>
+<a class="group flex items-center text-[#e2e2e8]/40 hover:text-[#e2e2e8] py-3 px-6 hover:bg-[#333539]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:translate-x-1 transition-transform">hub</span>
+                Node Status
+            </a>
+</nav>
+<div class="mt-auto mb-8 space-y-1">
+<div class="px-6 mb-6 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img alt="Rydinex Authority" data-alt="minimalist professional portrait of a senior system administrator with clean lines and high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaFftD81AYlxrQT_uCtbtYe4fNzSoocwhLo5mPOm1p5Xm2DFv22PkVAV2zqP--wQHhgxe9fuCDF2S0p-HNF-tuq8DjL8CVbodAy8DZSCJvh9tF8hG_ijZ5wfz8SpXiZWyNh8eo6uiWPbDyzA3AEYv5B7aitKs7MK3vBobNz1M2B_UiF_WxQtzfSgJWLxNvX7CS1riXtdRYZcj70CZolHwGnUaNXu21Ee0x7ixTP6_3ZnE4znx_bJi4uHFFIJhrJx4-2oyrmsVR9ig"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Sovereign Observer</p>
+<p class="text-[10px] text-on-surface-variant">Lvl 9 Clearance</p>
+</div>
+</div>
+<a class="group flex items-center text-[#e2e2e8]/40 hover:text-[#e2e2e8] py-3 px-6 hover:bg-[#333539]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:translate-x-1 transition-transform">contact_support</span>
+                Support
+            </a>
+<a class="group flex items-center text-[#e2e2e8]/40 hover:text-[#e2e2e8] py-3 px-6 hover:bg-[#333539]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:translate-x-1 transition-transform">logout</span>
+                Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar Integration -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50 bg-[#111317] dark:bg-[#111317] shadow-[0_24px_24px_-4px_rgba(226,222,232,0.04)]">
+<div class="flex items-center space-x-6">
+<div class="relative group">
+<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant/50">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Search parameters..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-on-surface-variant hover:bg-[#333539] transition-colors duration-200 active:scale-95 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-[#333539] transition-colors duration-200 active:scale-95 rounded-lg">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<div class="p-10">
+<!-- Hero Title Section -->
+<div class="mb-12">
+<h2 class="font-headline font-extrabold text-4xl text-on-surface tracking-tight mb-2">Vehicle Eligibility &amp; Standards</h2>
+<p class="text-on-surface-variant max-w-2xl font-body">Manage global fleet requirements, age thresholds, and tier-specific restrictions across the Rydinex ecosystem.</p>
+</div>
+<!-- Stats Grid (Bento Style) -->
+<div class="grid grid-cols-12 gap-6 mb-12">
+<div class="col-span-12 lg:col-span-8 bg-surface-container p-8 rounded-xl border border-outline-variant/10 relative overflow-hidden">
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Fleet Summary</span>
+<div class="grid grid-cols-3 gap-8">
+<div>
+<p class="text-on-surface-variant text-xs mb-1">Total Active Models</p>
+<p class="text-4xl font-headline font-bold">1,284</p>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs mb-1">Under Review</p>
+<p class="text-4xl font-headline font-bold text-tertiary">42</p>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs mb-1">Restricted Zones</p>
+<p class="text-4xl font-headline font-bold text-error">09</p>
+</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl"></div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-primary-container p-8 rounded-xl text-on-primary-container relative overflow-hidden">
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-primary/60 mb-4 block">Black SUV Tier</span>
+<p class="text-on-primary text-xs mb-1">Current Threshold</p>
+<p class="text-4xl font-headline font-extrabold mb-4">2021+</p>
+<button class="bg-on-primary text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-black transition-colors">Update Policy</button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10">directions_car</span>
+</div>
+</div>
+<!-- Threshold Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+<!-- Standard Tier -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-outline-variant/30">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline font-bold text-xl">Standard Fleet</h3>
+<p class="text-xs text-on-surface-variant italic">Economy &amp; Comfort classes</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] rounded font-bold uppercase tracking-wider">Active Policy</span>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Minimum Manufacture Year</span>
+<span class="font-mono font-bold">2012</span>
+</li>
+<li class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Max Mileage Threshold</span>
+<span class="font-mono font-bold">150,000 km</span>
+</li>
+<li class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Vehicle Color Restrictions</span>
+<span class="font-mono font-bold">None</span>
+</li>
+</ul>
+</div>
+<!-- Rydinex Black Tier -->
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary-container">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary">Rydinex Black</h3>
+<p class="text-xs text-on-surface-variant italic">Premium &amp; Executive SUV</p>
+</div>
+<span class="px-3 py-1 bg-primary-container text-white text-[10px] rounded font-bold uppercase tracking-wider">Elite Tier</span>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Minimum Manufacture Year</span>
+<span class="font-mono font-bold text-primary">2021</span>
+</li>
+<li class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Interior Material</span>
+<span class="font-mono font-bold">Leather Only</span>
+</li>
+<li class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Mandatory Color Code</span>
+<span class="font-mono font-bold">#000000 (Obsidian)</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Vehicle Listing Table Section -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-6 border-b border-outline-variant/15 flex justify-between items-center bg-surface-container-high/50">
+<h3 class="font-headline font-bold text-lg">Registry Matrix</h3>
+<div class="flex space-x-2">
+<button class="px-4 py-2 text-xs font-bold bg-surface-container-highest rounded-lg border border-outline-variant/20 hover:bg-surface-bright transition-colors">Export .CSV</button>
+<button class="px-4 py-2 text-xs font-bold bg-primary-container text-white rounded-lg hover:bg-primary transition-colors flex items-center">
+<span class="material-symbols-outlined text-sm mr-2">add</span> Add Manufacturer
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Make &amp; Model</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Tier Compatibility</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant text-center">Standard Yr</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant text-center">Black SUV Yr</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Status</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">directions_car</span>
+</div>
+<div>
+<p class="text-sm font-bold">Tesla Model Y</p>
+<p class="text-[10px] text-on-surface-variant">Electric SUV / Crossover</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex space-x-1">
+<span class="px-2 py-0.5 rounded-sm bg-surface-container-highest text-[9px] font-bold uppercase">Standard</span>
+<span class="px-2 py-0.5 rounded-sm bg-primary-container/20 text-primary text-[9px] font-bold uppercase">Black</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-mono">2012</td>
+<td class="px-6 py-4 text-center text-sm font-mono font-bold text-primary">2021</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-on-success-container/10 text-emerald-400 text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2"></span> Approved
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">directions_car</span>
+</div>
+<div>
+<p class="text-sm font-bold">Toyota Camry</p>
+<p class="text-[10px] text-on-surface-variant">Sedan / IC Engine</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex space-x-1">
+<span class="px-2 py-0.5 rounded-sm bg-surface-container-highest text-[9px] font-bold uppercase">Standard</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-mono">2012</td>
+<td class="px-6 py-4 text-center text-sm font-mono text-on-surface-variant/40">â€”</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-on-success-container/10 text-emerald-400 text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2"></span> Approved
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">directions_car</span>
+</div>
+<div>
+<p class="text-sm font-bold">Chevrolet Suburban</p>
+<p class="text-[10px] text-on-surface-variant">Full-size SUV</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex space-x-1">
+<span class="px-2 py-0.5 rounded-sm bg-surface-container-highest text-[9px] font-bold uppercase">Standard</span>
+<span class="px-2 py-0.5 rounded-sm bg-primary-container/20 text-primary text-[9px] font-bold uppercase">Black SUV</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-mono">2012</td>
+<td class="px-6 py-4 text-center text-sm font-mono font-bold text-primary">2021</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-tertiary-container/10 text-tertiary text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-2"></span> Pending Review
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-error">warning</span>
+</div>
+<div>
+<p class="text-sm font-bold">BMW 3 Series (Pre-2015)</p>
+<p class="text-[10px] text-on-surface-variant">Compact Executive</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex space-x-1">
+<span class="px-2 py-0.5 rounded-sm bg-surface-container-highest text-[9px] font-bold uppercase opacity-50">Standard</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-mono">2015</td>
+<td class="px-6 py-4 text-center text-sm font-mono text-on-surface-variant/40">â€”</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-error-container/10 text-error text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error mr-2"></span> Restricted
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-low/30 border-t border-outline-variant/10 flex items-center justify-between text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Showing 1-10 of 1,284 vehicles</span>
+<div class="flex space-x-2">
+<button class="px-3 py-1 bg-surface-container rounded hover:bg-surface-bright disabled:opacity-30">Previous</button>
+<button class="px-3 py-1 bg-surface-container rounded hover:bg-surface-bright">Next</button>
+</div>
+</div>
+</div>
+<!-- Focus Module: Regional Restriction Map -->
+<div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 h-96 relative">
+<img alt="Navigation Map" class="w-full h-full object-cover opacity-40 grayscale contrast-125" data-alt="a dark stylized digital map interface with glowing grid lines and blue data points across an urban city layout" data-location="Chicago" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8cKsHXjGvWG2aB7IZDyFQfV702PKYlNZD5SZnSVm9M6KzCoB5jZ6IsH3mK7zveoK9Rh_pNh2yyQ2rG7iGgsFpKifPqz3NgcFVdLMylUEyK1p8O5KLekPq5QsSmvzGnX1GM_d9KZY5z69DmUckmZgVQ8HpVHwbLi0wNUFUhIsiGNm90KRMiX53SKsp7epvHGJ8c9bN7UHmbV0J3w2mZs3YRyLssNLzzN4aaQXdYM-vSkZUP4HIUtAvoQ6nXS578T1fh77W_omvD9M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="font-headline font-bold text-xl">Metropolitan Restricted Zones</h4>
+<p class="text-xs text-on-surface-variant">Active monitoring of age compliance in high-density corridors.</p>
+</div>
+<div class="absolute top-6 right-6 flex flex-col space-y-2">
+<div class="glass-card px-4 py-2 rounded-lg border border-white/5">
+<p class="text-[9px] font-bold uppercase tracking-widest opacity-60">Avg Fleet Age</p>
+<p class="text-lg font-bold">4.2 Years</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<h4 class="font-headline font-bold text-lg mb-4">Quick Audit</h4>
+<div class="space-y-4">
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/5">
+<p class="text-xs font-bold mb-1">Safety Recalls</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-emerald-400 h-full w-[94%]"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2">94% Compliance across all tiers</p>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/5">
+<p class="text-xs font-bold mb-1">Emissions Standards</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2">82% Euro 6 or better</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-primary text-xs font-bold uppercase tracking-widest rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors">
+                        Run Deep Diagnostics
+                    </button>
+</div>
+</div>
+</div>
+<!-- Footer / Semantic Navigation Suppressed per Rule: focused journey -->
+</main>
+<!-- Contextual FAB (Suppressing on detail screen, only active on Dashboard context if needed, here we provide a specialized 'Standard' update) -->
+<button class="fixed bottom-10 right-10 w-14 h-14 bg-gradient-to-br from-primary-container to-primary text-on-primary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

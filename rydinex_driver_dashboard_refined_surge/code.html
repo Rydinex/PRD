@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velocity | Driver Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#ffb694",
+              "secondary": "#b1c5ff",
+              "surface-container-high": "#2a2a2b",
+              "on-surface": "#e5e2e3",
+              "background": "#131314",
+              "inverse-on-surface": "#303031",
+              "inverse-surface": "#e5e2e3",
+              "surface-variant": "#353436",
+              "on-primary-container": "#fffeff",
+              "on-surface-variant": "#c2c6d7",
+              "secondary-fixed-dim": "#b1c5ff",
+              "tertiary-container": "#c65100",
+              "on-secondary-fixed": "#001947",
+              "on-error": "#690005",
+              "outline": "#8c90a0",
+              "inverse-primary": "#0056d0",
+              "secondary-fixed": "#dae2ff",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "surface-tint": "#b1c5ff",
+              "surface": "#131314",
+              "on-tertiary-fixed": "#351000",
+              "on-primary-fixed": "#001947",
+              "on-background": "#e5e2e3",
+              "on-secondary-container": "#a2b7f3",
+              "surface-dim": "#131314",
+              "primary-container": "#276ef1",
+              "on-primary": "#002c71",
+              "on-tertiary": "#561f00",
+              "on-secondary": "#162e61",
+              "tertiary-fixed-dim": "#ffb694",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "surface-container": "#1f1f20",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed": "#ffdbcc",
+              "outline-variant": "#424654",
+              "surface-container-highest": "#353436",
+              "secondary-container": "#31477c",
+              "primary-fixed": "#dae2ff",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-container": "#fffdff",
+              "primary": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "surface-bright": "#39393a",
+              "on-primary-fixed-variant": "#00419f",
+              "error": "#ffb4ab",
+              "primary-fixed-dim": "#b1c5ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .map-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .surge-gradient {
+            background: radial-gradient(circle at 60% 40%, rgba(39, 110, 241, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(177, 197, 255, 0.2) 0%, transparent 40%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body select-none overflow-hidden">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface/60 backdrop-blur-xl fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 w-full shadow-none">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/15">
+<img alt="Driver Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional man in a clean polo shirt, soft studio lighting, blurred modern car interior background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSobxiSm1Noes1wUBKas0mscmOlg1q2jF9eTBZOk_R3cgrTgP1y6MHpOFbkS_ONA-xSrVRhhOJBWuNNZoLDeohXRVBGKci6eaXC6deNP50I5FfyJyqrbreHyoPQae-X1JoSad7KU4JZ8UcBHqelU-TINvvYThaAzhGnnySd4QVpiHBoPhpKbbNNXsJPcUg-MJd3BkaBUDTyoiOH-jig7Lq4PfUfC3BeJAbpnIr1LHGDVbI4UsyWVyidORyQ1RtwkEW9Rtw0ZLYUSA"/>
+</div>
+<h1 class="font-headline font-extrabold tracking-tighter text-[#b1c5ff] text-lg">Velocity</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container-highest/50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant/70">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Map Canvas -->
+<main class="relative w-full h-screen bg-surface-container-lowest">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 z-0 bg-[#0e0e0f]">
+<!-- Decorative Map Lines (Base Layer) -->
+<svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+<path d="M-100 200 L400 600 L1200 100" fill="none" stroke="#b1c5ff" stroke-width="2"></path>
+<path d="M-100 800 L800 400 L1500 900" fill="none" stroke="#b1c5ff" stroke-width="2"></path>
+<path d="M400 -100 L600 1200" fill="none" stroke="#b1c5ff" stroke-width="2"></path>
+</svg>
+<div class="absolute inset-0 map-mesh opacity-20"></div>
+<!-- Surge Heatmap Layer -->
+<div class="absolute inset-0 surge-gradient"></div>
+<img class="hidden" data-alt="highly detailed dark themed navigation map with neon blue streets and glowing traffic density indicators" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJKYzZpGoKKqe-43kImDm7E3Mew25znVp51V5AE6UQlWT0mFZE6uH1-aYagQ8Rfj1mJx6bOwzGsWJozYc4Pqx4L88AP5ny0Dct3OcwCfleyjRmrWbjqdIu5a3NrjU-RFT1aFqfxnPs1du9dGVgMoRMzH2k0ZLggTGp8-_G8MtiSDlekSIY8H7wkxeVgTgoeduTB-0mVEr81Txktlyf58yB-m_FJLikGX_Zyg-RkSG_J3Rtqy116stuSt1_AhVtRKbvLzoCZcVl1tE"/>
+</div>
+<!-- Floating UI Elements -->
+<div class="relative z-10 w-full h-full flex flex-col pointer-events-none">
+<!-- Top Status & Earnings Row -->
+<div class="mt-20 px-6 flex justify-between items-start pointer-events-auto">
+<!-- Status Bar -->
+<div class="bg-surface-container-high/90 backdrop-blur-md px-6 py-3 rounded-2xl flex items-center gap-3 border border-outline-variant/10 shadow-2xl">
+<div class="w-3 h-3 rounded-full bg-outline animate-pulse shadow-[0_0_12px_rgba(140,144,160,0.5)]"></div>
+<span class="font-headline font-bold text-sm tracking-tight text-on-surface uppercase">Offline</span>
+<div class="w-10 h-6 bg-surface-variant rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Earnings Card -->
+<div class="bg-surface-container-high/90 backdrop-blur-md p-4 rounded-2xl border border-outline-variant/10 shadow-2xl flex flex-col items-end min-w-[140px]">
+<span class="font-label text-[10px] font-medium uppercase tracking-widest text-on-surface-variant/60 mb-1">Daily Earnings</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-on-surface">$</span>
+<span class="font-headline font-extrabold text-2xl text-on-surface">142.50</span>
+</div>
+<div class="mt-2 flex items-center gap-1.5 px-2 py-0.5 bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-primary">trending_up</span>
+<span class="font-label text-[11px] font-bold text-primary">+12% vs yesterday</span>
+</div>
+</div>
+</div>
+<!-- Central Surge Indicator -->
+<div class="mt-8 px-6">
+<div class="inline-flex items-center gap-3 backdrop-blur-lg px-4 py-2.5 rounded-xl border bg-primary/20 border-primary/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-sm text-primary">High Demand Area</span>
+<span class="font-body text-xs text-on-surface-variant">1.8x Surge in Financial District</span>
+</div>
+</div>
+</div>
+<!-- Bottom Interaction Area -->
+<div class="mt-auto pb-28 flex flex-col items-center pointer-events-auto">
+<!-- Secondary Actions -->
+<div class="flex gap-4 mb-8">
+<button class="w-14 h-14 bg-surface-container-highest/90 backdrop-blur-md rounded-2xl flex items-center justify-center border border-outline-variant/10 shadow-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">shield</span>
+</button>
+<button class="w-14 h-14 bg-surface-container-highest/90 backdrop-blur-md rounded-2xl flex items-center justify-center border border-outline-variant/10 shadow-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">explore</span>
+</button>
+</div>
+<!-- Main GO Button -->
+<button class="relative group active:scale-95 duration-300">
+<!-- Glow Effect -->
+<div class="absolute inset-0 bg-primary-container blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<!-- Button Body -->
+<div class="relative w-32 h-32 rounded-full bg-primary-container p-1 flex items-center justify-center shadow-[0_20px_40px_0_rgba(39,110,241,0.3)] border-4 border-on-primary-container/10">
+<div class="flex flex-col items-center justify-center">
+<span class="font-headline font-extrabold text-3xl tracking-tighter text-on-primary-container">GO</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-on-primary-container/80 mt-1">Online</span>
+</div>
+</div>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#131314] rounded-t-2xl z-50 shadow-[0_-20px_40px_0_rgba(0,0,0,0.4)]">
+<!-- Home / Dashboard (Active) -->
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/10 rounded-xl px-4 py-1 active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-0.5">Home</span>
+</a>
+<!-- Activity -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/50 hover:text-[#b1c5ff] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">reorder</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-0.5">Activity</span>
+</a>
+<!-- Account -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/50 hover:text-[#b1c5ff] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-0.5">Account</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

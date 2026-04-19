@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#001947",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "tertiary-container": "#c65100",
+              "tertiary": "#ffb694",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-fixed": "#351000",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "on-secondary-fixed-variant": "#2f4579",
+              "inverse-on-surface": "#303031",
+              "surface-variant": "#353436",
+              "surface-container": "#1f1f20",
+              "inverse-primary": "#0056d0",
+              "on-primary": "#002c71",
+              "secondary": "#b1c5ff",
+              "on-surface-variant": "#c2c6d7",
+              "on-background": "#e5e2e3",
+              "outline": "#8c90a0",
+              "surface-dim": "#131314",
+              "primary-fixed": "#dae2ff",
+              "background": "#131314",
+              "on-secondary": "#162e61",
+              "surface-container-high": "#2a2a2b",
+              "on-surface": "#e5e2e3",
+              "surface-tint": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#dae2ff",
+              "on-primary-container": "#fffeff",
+              "surface-container-highest": "#353436",
+              "on-tertiary-container": "#fffdff",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-bright": "#39393a",
+              "outline-variant": "#424654",
+              "secondary-container": "#31477c",
+              "primary-container": "#276ef1",
+              "on-secondary-container": "#a2b7f3",
+              "inverse-surface": "#e5e2e3",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcc",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary": "#b1c5ff",
+              "surface": "#131314",
+              "on-tertiary": "#561f00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.bg-map {
+    background-image: linear-gradient(rgba(19, 19, 20, 0.4), rgba(19, 19, 20, 0.4)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuDHGRvniywcdPt8-nPF832YrIuzWL74OFDcDQfe3YCm1btWbVmdeyrvJZdt7Vf6kN4sfD8PJii31ei70VZfWBkDTrEXd7bhI_pUG716m0kNa6p_s8xwYCN0vDlcEkBRfMZVv8nX-zqG2lDdyAuvqBAEwZovqSVcpa1_voIR3J5eC2ArAfoQO2VuvcpDd9ahdoQ-VfPkE6CCYCi6xZn62F4_-W3bv_EFVWvQf8H-vjBj0HVFxtQT7MrG0faklbf7kQ5fzJfofJf4dS4);
+    background-size: cover;
+    background-position: center
+    }
+.rider-pulse {
+    box-shadow: 0 0 0 0 rgba(39, 110, 241, 0.7);
+    animation: pulse-blue 2s infinite
+    }
+@keyframes pulse-blue {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(39, 110, 241, 0.7);
+        } 70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(39, 110, 241, 0);
+        } 100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(39, 110, 241, 0);
+        }
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white overflow-hidden">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 w-full bg-[#131314] dark:bg-[#131314] no-border bg-gradient-to-b from-[#131314] to-transparent flat no shadows">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff]/50 hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Manrope'] tracking-tighter font-bold uppercase text-2xl font-black tracking-tighter text-[#276ef1] italic">RYDINEX</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-highest px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(177,197,255,0.8)]"></span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant">Online</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close-up portrait of a professional male driver with a friendly expression in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyi2K6CJTJ69-aih12lxU8rzKDPwwSTX7dqI2lMn9y0n2bz_UdHfWXpA-rlpdeaaaNOx0c3s-74jrf2jnaI6igB-roD7rULf51wwxrywPhAaPhtX6cOKZtdcX8RevIQcNzEgsxw55vPsUAnh8W8XEykshr7nduj2Oa2MrsCPVWOW1qCb-6x9zIzzXfcvxRY9BMLZ-riHuaSDOtv2gMFa9jW5Zs95UcYTaQJE0Zuvn43oR6aYRUpdSyegOnO7kBqzBUyp8UK7ONiU"/>
+</div>
+</div>
+</header>
+<!-- Map Canvas Area -->
+<main class="relative h-screen w-full bg-map" data-location="San Francisco">
+<!-- Visual Overlay Gradients for Depth -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80 pointer-events-none"></div>
+<!-- Rider Movement Visualization -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<!-- Car Icon (Arrival Point) -->
+<div class="relative mb-32">
+<div class="bg-primary-container text-white p-3 rounded-xl shadow-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary-container rotate-45 -z-10"></div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+<span class="font-headline font-bold text-xs uppercase tracking-widest bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/20">Pickup Point</span>
+</div>
+</div>
+<!-- Animated Route Line (Route Pulse) -->
+<div class="absolute top-12 left-1/2 -translate-x-1/2 h-32 w-1.5 bg-gradient-to-b from-primary-container via-primary/50 to-transparent rounded-full opacity-40"></div>
+<!-- Rider Dot (Real-time movement) -->
+<div class="absolute top-28 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+<div class="rider-pulse w-5 h-5 bg-primary rounded-full border-2 border-white shadow-lg relative">
+<div class="absolute inset-0 bg-primary animate-ping rounded-full opacity-20"></div>
+</div>
+<div class="bg-surface-container-highest/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">person_pin_circle</span>
+<span class="text-[10px] font-bold text-white uppercase tracking-tighter">Alex is 40m away</span>
+</div>
+</div>
+</div>
+<!-- Floating UI Elements -->
+<div class="absolute top-24 left-6 right-6">
+<div class="bg-surface-container-low/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_12px_rgba(39,110,241,0.6)]"></div>
+<h2 class="font-headline text-lg font-extrabold tracking-tight">Rider is approaching</h2>
+</div>
+<span class="text-xs font-bold font-headline text-primary-container bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest">Live</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-1 bg-surface-variant flex-1 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-3/4 rounded-full"></div>
+</div>
+<span class="font-headline text-sm font-bold text-on-surface">1 min</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Sheet (Persistent Interaction) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-[#131314]/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-20px_40px_rgba(0,0,0,0.3)] pb-10 pt-6 px-6">
+<div class="w-12 h-1 bg-surface-variant mx-auto rounded-full mb-8"></div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Rider profile" class="w-16 h-16 rounded-2xl object-cover border-2 border-surface-container-highest" data-alt="close-up studio portrait of a young woman with a friendly smile, clean lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBucCs4_vPRn__lduLzKEPofjnxdz4LgRFEHnAH0Yl0DujaUy_EDlcAeP_zoBrBWA4lEzgjfuDTUnXlF4latarACI4Qwgxs7YwNxM0sM9IfCGuIIszSzjXpWLWQ6rcjEDKOy6_vXazoo3AUDB7dndWwWBhhibw1WxGHuzjmOzhG417_X3wFbr5I82ceaneDh-8jhMeW-1JI6fYdwJdERxhCsnhyBRlNEEn-ONFwByNIZ52CLiOWoBG9lJaAuLv5BuvB-AiWD78j1Qo"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary-container text-white p-1 rounded-lg border-2 border-surface">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline text-xl font-extrabold tracking-tight">Alex Johnson</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            Premium Member â€¢ 4.95
+                        </p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+<!-- Bento Action Row -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 bg-surface-variant/40 hover:bg-surface-variant/60 py-4 px-6 rounded-xl transition-all border border-outline-variant/10 active:scale-95">
+<span class="material-symbols-outlined text-error">cancel</span>
+<span class="font-headline font-bold text-sm uppercase tracking-widest text-on-surface">Cancel</span>
+</button>
+<button class="flex items-center justify-center gap-3 bg-primary-container py-4 px-6 rounded-xl shadow-lg shadow-primary-container/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-white">check_circle</span>
+<span class="font-headline font-bold text-sm uppercase tracking-widest text-white">Arrived</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-[#131314]/80 backdrop-blur-xl dark:bg-[#131314]/80 flex justify-around items-center w-full px-4 pb-8 pt-4 no-line tonal-shift-surface-container-low shadow-[0_-20px_40px_rgba(0,0,0,0.3)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#276ef1] bg-[#276ef1]/10 rounded-xl px-6 py-2 scale-90 active:transition-transform transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff]/40 px-6 py-2 scale-90 active:transition-transform transition-colors hover:text-[#b1c5ff]" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff]/40 px-6 py-2 scale-90 active:transition-transform transition-colors hover:text-[#b1c5ff]" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

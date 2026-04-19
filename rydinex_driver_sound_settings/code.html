@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#31477c",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "outline-variant": "#424654",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "outline": "#8c90a0",
+              "surface-dim": "#131314",
+              "inverse-primary": "#0056d0",
+              "surface": "#131314",
+              "error": "#ffb4ab",
+              "background": "#131314",
+              "on-secondary-container": "#a2b7f3",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed": "#351000",
+              "tertiary": "#ffb694",
+              "on-surface": "#e5e2e3",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-primary": "#002c71",
+              "error-container": "#93000a",
+              "on-secondary": "#162e61",
+              "on-primary-container": "#fffeff",
+              "primary-fixed": "#dae2ff",
+              "secondary": "#b1c5ff",
+              "surface-variant": "#353436",
+              "tertiary-container": "#c65100",
+              "inverse-on-surface": "#303031",
+              "surface-tint": "#b1c5ff",
+              "surface-container": "#1f1f20",
+              "primary": "#b1c5ff",
+              "inverse-surface": "#e5e2e3",
+              "surface-container-high": "#2a2a2b",
+              "surface-container-lowest": "#0e0e0f",
+              "surface-container-low": "#1b1b1c",
+              "on-surface-variant": "#c2c6d7",
+              "on-primary-fixed-variant": "#00419f",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary-container": "#276ef1",
+              "on-background": "#e5e2e3",
+              "surface-bright": "#39393a",
+              "on-primary-fixed": "#001947",
+              "on-tertiary": "#561f00",
+              "on-secondary-fixed": "#001947",
+              "on-tertiary-container": "#fffdff",
+              "tertiary-fixed": "#ffdbcc",
+              "on-error": "#690005",
+              "surface-container-highest": "#353436",
+              "secondary-fixed": "#dae2ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131314;
+        color: #e5e2e3;
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.6);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="w-full top-0 sticky z-50 bg-[#131314] border-none">
+<div class="flex items-center justify-between px-6 h-20 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#131314]/10 dark:hover:bg-white/5 transition-colors p-2 rounded-full active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-[#b1c5ff]">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] tracking-tight font-bold text-2xl text-[#b1c5ff]">Preferences</h1>
+</div>
+<div class="text-[#276ef1] font-black tracking-tighter text-xl">RYDINEX</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-screen-xl mx-auto px-6 py-8 pb-32">
+<!-- Header Visual Accent -->
+<div class="mb-12">
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter mb-2">App Settings</h2>
+<p class="font-label text-sm text-on-surface-variant opacity-60 uppercase tracking-widest">Customize your driving environment</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Notifications Bento Section -->
+<section class="lg:col-span-7 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+<h3 class="font-headline text-xl font-bold">Notifications</h3>
+</div>
+<!-- Request Coming Sound (Primary focus) -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-headline font-semibold text-lg">Request Coming Sound</p>
+<p class="font-body text-sm text-on-surface-variant">Choose your preferred alert for new ride requests</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-7 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Sound Selection Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<button class="bg-primary-container text-on-primary-container p-4 rounded-xl flex flex-col items-start gap-2 border border-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-wider">Sonic Pulsar</span>
+</button>
+<button class="bg-surface-container-highest text-on-surface p-4 rounded-xl flex flex-col items-start gap-2 hover:bg-surface-bright transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm opacity-60">volume_up</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-wider opacity-60">Digital Ping</span>
+</button>
+<button class="bg-surface-container-highest text-on-surface p-4 rounded-xl flex flex-col items-start gap-2 hover:bg-surface-bright transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm opacity-60">music_note</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-wider opacity-60">Vibrant Chime</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Notifications -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-tertiary">vibration</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<p class="font-headline font-semibold">Vibration</p>
+<p class="font-body text-xs text-on-surface-variant opacity-60 mt-1">Haptic feedback for alerts</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary">record_voice_over</span>
+<span class="font-label text-[10px] font-bold bg-primary/10 text-primary px-2 py-1 rounded">ACTIVE</span>
+</div>
+<p class="font-headline font-semibold">Navigation Voice</p>
+<p class="font-body text-xs text-on-surface-variant opacity-60 mt-1">Real-time turn-by-turn audio</p>
+</div>
+</div>
+</section>
+<!-- Audio & Volume Sidebar -->
+<aside class="lg:col-span-5 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-xl h-full flex flex-col">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-primary">volume_up</span>
+<h3 class="font-headline text-xl font-bold">Audio Levels</h3>
+</div>
+<div class="flex-1 space-y-12">
+<!-- Volume Slider -->
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<label class="font-label text-xs font-bold uppercase tracking-widest opacity-60">Master Volume</label>
+<span class="font-headline font-bold text-3xl text-primary">85%</span>
+</div>
+<div class="relative w-full h-2 bg-surface-container-highest rounded-full">
+<div class="absolute top-0 left-0 h-full w-[85%] bg-gradient-to-r from-primary-container to-primary rounded-full"></div>
+<div class="absolute top-1/2 left-[85%] -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg border-4 border-primary-container cursor-pointer"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold opacity-40">
+<span>MIN</span>
+<span>MAX</span>
+</div>
+</div>
+<!-- Voice Options -->
+<div class="space-y-4">
+<p class="font-label text-xs font-bold uppercase tracking-widest opacity-60">Voice Profile</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-4 bg-surface-container-highest rounded-lg border-l-4 border-primary">
+<span class="font-body font-medium">Standard English (US)</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container-highest transition-colors rounded-lg">
+<span class="font-body font-medium opacity-60">Concise Assistant</span>
+<span class="material-symbols-outlined opacity-20">download</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Graphic -->
+<div class="mt-12 p-6 rounded-xl bg-gradient-to-br from-primary-container/20 to-transparent border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm">Smart Audio</p>
+<p class="font-body text-[11px] opacity-60">Auto-adjusts volume based on vehicle speed</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- System Status Accent -->
+<div class="mt-12 flex justify-center">
+<div class="glass-card px-6 py-3 rounded-full flex items-center gap-4 border border-white/5">
+<span class="flex h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_#b1c5ff]"></span>
+<span class="font-label text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">System Optimized for Driving</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-3xl bg-[#131314]/80 backdrop-blur-xl shadow-[0_-20px_40px_0_rgba(0,0,0,0.3)]">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-white/40 px-4 py-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Home</span>
+</a>
+<!-- Earnings (Active) -->
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-2 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Earnings</span>
+</a>
+<!-- Activity -->
+<a class="flex flex-col items-center justify-center text-white/40 px-4 py-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">history</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Activity</span>
+</a>
+<!-- Account -->
+<a class="flex flex-col items-center justify-center text-white/40 px-4 py-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">person_2</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Account</span>
+</a>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

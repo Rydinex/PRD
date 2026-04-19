@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rider Management | Rydinex Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1a1c20",
+                        "surface-bright": "#37393e",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-primary": "#002c71",
+                        "primary-fixed": "#dae2ff",
+                        "on-secondary-container": "#a2b7f3",
+                        "error-container": "#93000a",
+                        "secondary": "#b1c5ff",
+                        "on-surface-variant": "#c2c6d7",
+                        "on-tertiary-container": "#fffdff",
+                        "surface": "#111317",
+                        "primary": "#b1c5ff",
+                        "on-secondary-fixed": "#001947",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e2e2e8",
+                        "on-primary-container": "#fffeff",
+                        "primary-container": "#276ef1",
+                        "surface-container-high": "#282a2e",
+                        "inverse-surface": "#e2e2e8",
+                        "inverse-primary": "#0056d0",
+                        "tertiary": "#ffb694",
+                        "on-primary-fixed": "#001947",
+                        "on-secondary": "#162e61",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "on-error": "#690005",
+                        "surface-tint": "#b1c5ff",
+                        "surface-container-highest": "#333539",
+                        "background": "#111317",
+                        "tertiary-container": "#c65100",
+                        "outline": "#8c90a0",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-container": "#31477c",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-primary-fixed-variant": "#00419f",
+                        "on-tertiary-fixed": "#351000",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "surface-variant": "#333539",
+                        "surface-container": "#1e2024",
+                        "surface-dim": "#111317",
+                        "outline-variant": "#424654",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-tertiary": "#561f00",
+                        "on-background": "#e2e2e8"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #111317; color: #e2e2e8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(51, 53, 57, 0.6); backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 h-screen w-64 border-r border-[#333539]/15 bg-[#1a1c20]">
+<div class="p-6">
+<div class="text-xl font-bold tracking-tighter text-[#e2e2e8] font-headline">Rydinex</div>
+<div class="text-[10px] font-label text-[#9ba1a6] tracking-widest uppercase mt-1">Sovereign Observer</div>
+</div>
+<nav class="flex-1 flex flex-col mt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-[#9ba1a6] hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-headline font-semibold tracking-tight text-sm">Executive Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#9ba1a6] hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">local_taxi</span>
+<span class="font-headline font-semibold tracking-tight text-sm">Driver Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#b1c5ff] bg-[#1e2024] border-r-2 border-[#276ef1] opacity-90 scale-[0.99] transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-headline font-semibold tracking-tight text-sm">Rider Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#9ba1a6] hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-headline font-semibold tracking-tight text-sm">Financials</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#9ba1a6] hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-headline font-semibold tracking-tight text-sm">Safety &amp; Compliance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#9ba1a6] hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-headline font-semibold tracking-tight text-sm">System Settings</span>
+</a>
+</nav>
+<div class="p-4 bg-[#1e2024]/30 border-t border-[#333539]/10">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full border border-outline-variant/30" data-alt="close-up portrait of a professional male administrator in a modern office setting with neutral lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZts1CJVvVlRe0dCX70UgBCbSHkbuQll9YTlELxjTN2wmNuxNArxFe_KgfS58jPvbg3yc-lN7ovp8MmF_TKy7VZP80zI2bVKLGCKayrIXHDPsc9SRZ-VFNGEC7PtLSJ2cKqJB9aTw9aIkhSuCPgAaOxPbSJ0ePhHJ7k08JUvWg5l0liRgtFAtaXDcKvKqYDcG1I-Z_9SfB_YkzWmOvyqlHMoojGSfumBYzt2U7aBVlZ0p0_fIs7tVp4E5GJ0DeZVcXlZxukUjl8o4"/>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold text-on-surface truncate">Admin Workspace Logo</p>
+<p class="text-[10px] text-outline truncate">Root Authority</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<div class="ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-30 bg-[#111317]/80 backdrop-blur-xl shadow-[0_24px_24px_-4px_rgba(226,228,232,0.04)]">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search riders by name, ID, or phone..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Rydinex Admin</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Superuser</p>
+</div>
+<img class="w-10 h-10 rounded-lg object-cover grayscale brightness-110" data-alt="professional headshot of a senior executive with clean background and focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWXMN2I8G9bRGPgLCI0B3Xm3K5wQGeSb-DBl25Ble5Gd9vKU6ljc99OTh-zzS0yE8JTMduhbjs4wVOzUSFkMQhSV3AwpBwvB7-OPy0fe6SJDIvw6lX3CJb04wlKo1TrUlsUqlXnHSQ2-bZFAwsFVS5ywOxGxf_wozfMgkI7d_r_LODCmoSm9DIMgrgLCHS7HHOELFKeubcbV8JRzll3KMf56UChmqcjww2q6xIplLW79K0ajN4_juc3xPLbag3JUYhcOA5A0ZAnoU"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<main class="mt-16 p-8 space-y-8 overflow-y-auto">
+<!-- Page Header & Growth Chart Section (Asymmetric Bento) -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Main Header & Action Block -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Rider Management</h1>
+<p class="text-outline text-sm mt-1">Monitoring 2.4k active users across 12 zones.</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Total Signups</p>
+<p class="font-headline text-4xl font-bold mt-1">42,891</p>
+</div>
+<span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">+12.4%</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-xs">
+<span class="text-outline">Active this week</span>
+<span class="text-on-surface font-semibold">18,203</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary-container to-primary h-full w-[65%]"></div>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold py-3 rounded-lg text-sm transition-transform active:scale-95 shadow-lg shadow-primary-container/20">
+                            Generate Report
+                        </button>
+<button class="px-4 bg-surface-container-high text-on-surface border border-outline-variant/10 rounded-lg hover:bg-surface-bright transition-all">
+<span class="material-symbols-outlined align-middle">filter_alt</span>
+</button>
+</div>
+</div>
+<!-- Growth Chart (Editorial Style) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-8 border border-outline-variant/5">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="font-headline font-bold text-lg">Growth Dynamics</h3>
+<p class="text-xs text-outline">New Signups vs. Retention (Last 30 Days)</p>
+</div>
+<div class="flex gap-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-xs font-medium">New Riders</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-outline-variant/40"></span>
+<span class="text-xs font-medium">Active sessions</span>
+</div>
+</div>
+</div>
+<!-- Chart Placeholder with visual data points -->
+<div class="h-48 flex items-end justify-between gap-1 group">
+<div class="flex-1 bg-surface-container h-[20%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[35%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[25%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[55%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-primary/40 h-[70%] rounded-t-sm hover:bg-primary transition-all"></div>
+<div class="flex-1 bg-surface-container h-[60%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[45%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t-sm transition-all"></div>
+<div class="flex-1 bg-surface-container h-[40%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[30%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-primary/60 h-[95%] rounded-t-sm hover:bg-primary transition-all"></div>
+<div class="flex-1 bg-surface-container h-[50%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[65%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+<div class="flex-1 bg-surface-container h-[75%] rounded-t-sm hover:bg-primary/20 transition-all"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-outline font-medium tracking-tighter">
+<span>MAY 01</span>
+<span>MAY 08</span>
+<span>MAY 15</span>
+<span>MAY 22</span>
+<span>MAY 30</span>
+</div>
+</div>
+</div>
+<!-- Flagged Rider Queue & Filters -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Filters -->
+<div class="col-span-12 flex flex-wrap gap-4 items-center bg-surface-container p-4 rounded-xl border border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-widest mr-4">Quick Filters</span>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10 text-xs text-on-surface">
+<span class="text-outline">Status:</span>
+<select class="bg-transparent border-none p-0 focus:ring-0 font-bold">
+<option>All Statuses</option>
+<option>Active</option>
+<option>Suspended</option>
+<option>Flagged</option>
+</select>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10 text-xs text-on-surface">
+<span class="text-outline">Rating:</span>
+<select class="bg-transparent border-none p-0 focus:ring-0 font-bold">
+<option>All Ratings</option>
+<option>4.5 - 5.0 Stars</option>
+<option>3.5 - 4.5 Stars</option>
+<option>Below 3.5</option>
+</select>
+</div>
+<button class="ml-auto text-xs font-bold text-primary px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors">Clear All</button>
+</div>
+<!-- Flagged Queue (Focus Area) -->
+<div class="col-span-12 xl:col-span-4 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-xl">warning</span>
+                            Flagged Queue
+                        </h3>
+<span class="text-[10px] bg-error-container/20 text-error font-bold px-2 py-0.5 rounded-full">4 Urgent</span>
+</div>
+<div class="space-y-3">
+<!-- Flagged Card 1 -->
+<div class="bg-surface-container-high/50 p-4 rounded-xl border-l-4 border-error hover:bg-surface-container-high transition-colors group">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="close-up of a woman's face with neutral expression against a dark textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTFS8Z-aPKZM_536p6fE-czqkcLu1R_rkXfIkpq8Ozbjk5m2JBjV-gIJ6gdBnQH21YmXCfA_TRG_lLgV0wQBca_GiqX_MwKDGn5Yj76_1lK_zDj59coWiXMICusR7uIe7tiE3eDZBvd2T4u7CeDmb2uY5bMz3LC71X9oQqcwVC-5Rc3TBvJaBh-G9TsSFa3EbFE1wk-U-LWJZIRltcwhpaNfPRGNBXhOYhXK_csdLTUZrlVcQNLabjMaM-j2gJoQnVVlOO4HHMzt0"/>
+<div>
+<p class="text-sm font-bold">Elena Vance</p>
+<p class="text-[10px] text-error font-semibold mt-1">Solicitation Reports (3)</p>
+</div>
+</div>
+<span class="text-[10px] text-outline">14m ago</span>
+</div>
+<p class="text-[11px] text-on-surface/70 mt-3 italic leading-relaxed">"Multiple drivers reported rider asking for off-platform transactions during peak hours..."</p>
+<div class="mt-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="flex-1 py-1.5 text-[10px] bg-error text-on-error font-bold rounded">Suspend</button>
+<button class="flex-1 py-1.5 text-[10px] bg-surface-container-highest text-on-surface font-bold rounded border border-outline-variant/20">Investigate</button>
+</div>
+</div>
+<!-- Flagged Card 2 -->
+<div class="bg-surface-container-high/50 p-4 rounded-xl border-l-4 border-tertiary hover:bg-surface-container-high transition-colors group">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="profile portrait of a middle-aged man with short beard and sophisticated appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBYOJxJsoSZy7QrgKTAIuRMykVoluXrhYh6gzicYdHfqiX1hzZ3bKCLkR3WHj6l3O17YeNlmqLmtqY5C-pgh4r_vPvaeDfNvcQU5VNEcW42CrQRg-YUNhFGlP52BCAxIyYEW3plPmuBY7d-GV_CV2y96alr1xYiDyb9XEEt-xXiHSJK9mUXfHsHkPhYsGBJJbkVkB5hRu-SI3glj57HN0cOdcVfJf9DbWKXwCK7BT-A58Zs9T9pWeDAPb02CZsvUV-vfg74N8Yovo"/>
+<div>
+<p class="text-sm font-bold">Marcus Thorne</p>
+<p class="text-[10px] text-tertiary font-semibold mt-1">Identity Mismatch (1)</p>
+</div>
+</div>
+<span class="text-[10px] text-outline">1h ago</span>
+</div>
+<div class="mt-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="flex-1 py-1.5 text-[10px] bg-tertiary-container text-on-tertiary-container font-bold rounded">View Flag</button>
+<button class="flex-1 py-1.5 text-[10px] bg-surface-container-highest text-on-surface font-bold rounded border border-outline-variant/20">Dismiss</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Table Section -->
+<div class="col-span-12 xl:col-span-8 bg-surface-container rounded-xl border border-outline-variant/10 overflow-hidden">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-high/20">
+<h3 class="font-headline font-bold text-lg">Active Rider Registry</h3>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-xl">download</span>
+</button>
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto no-scrollbar">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] text-outline uppercase tracking-[0.2em] bg-surface-container-low/50">
+<th class="px-6 py-4 font-semibold">Rider</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold">Rating</th>
+<th class="px-6 py-4 font-semibold">Total Rides</th>
+<th class="px-6 py-4 font-semibold text-right">Last Trip</th>
+<th class="px-6 py-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="professional portrait of a young woman with elegant lighting and soft dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS9RF60hJlLB3nROTfOA4g1x5Ba66DvWzIpBGRjNIwZbTXAcu3Cg4dQ8zIgzTWzIElHVqN79TlaJ1heuqs-9T_0hHExN-u6-Ml3imBo5Sv9wbHtNHmObcxs0exwHWM8aQdwew9fPhHy9bZrSd_ljwErGFZ1n84x2a0qpwTHSQO0ktxx-LCnsZGnpnfaOIe_0k6S4fV0cPOyNjHq5nwGPeszcgQtiXo1DWqbdodbjRoRewoG7XLObKjurck-Pr0BFrhRvkB6hb3Ae8"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Sienna Miller</p>
+<p class="text-[10px] text-outline">ID: RX-9021</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-on-secondary-container/10 text-secondary text-[10px] font-bold">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.92</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface">1,204</td>
+<td class="px-6 py-4 text-right text-xs text-outline font-medium">Today, 14:22</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-outline hover:text-primary transition-colors" title="View Profile">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="text-outline hover:text-primary transition-colors" title="Contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</button>
+<button class="text-outline hover:text-error transition-colors" title="Suspend">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="modern headshot of a young professional male against a clean minimalist studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVsUPsELeHPdpjKnUA-79GnYUOgYbH9jQYWQoaOl4OzHZYguCamZ0qDhRIJyGqlJmKbVIDfdrrtDSH30wze7CezuYYBDYajJX5l6EpkbELUatznhhOBX5D_15uSYlWPmdCZ3V1zH5PM9X8X6ksSXolrcBB0fzsNREA4UtCqUQNNYwnchxFHmf8QFywTEeJMtlgU6rQUBKlVeV5jMHhU9hLdqluOfTM46PFNB1XdzAPWssugDGap0xNVO5yrPf-mBTv21X99HKdqjI"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Jordan Kent</p>
+<p class="text-[10px] text-outline">ID: RX-8832</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-error/10 text-error text-[10px] font-bold">
+<span class="w-1 h-1 rounded-full bg-error"></span>
+                                            Suspended
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">3.10</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface">12</td>
+<td class="px-6 py-4 text-right text-xs text-outline font-medium">May 12, 2024</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-outline hover:text-primary transition-colors" title="View Profile">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="text-outline hover:text-primary transition-colors" title="Contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</button>
+<button class="text-outline hover:text-secondary transition-colors" title="Reactivate">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="editorial style close-up of a woman with short hair and modern jewelry looking directly into the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDiyxWFxtnLrNUKNm9wo526mRc2mG-0meWJTLtBAn6_cyJ80Oru4Wsj6iSh8XEH6eqzCXoTt4kSzTxfnvDPQBMn4-stXLciZXXlG1HyvzrIcxVxW5j9ziKUuhEB2-QbKhyshLrq4FITlNGTHiOXJqFXXgb92AbrHwgtogKTll5RnkZ-sRUFTnxxVuAEVk9XBshjR5irzKuTQ3A088sZD8WPbe9siN-hDBX1W2oA16xUYc6nqvnjR4nWMqMHiesjGbcfTEsKjmRRco"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Lana Zhao</p>
+<p class="text-[10px] text-outline">ID: RX-1209</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-on-secondary-container/10 text-secondary text-[10px] font-bold">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.98</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface">582</td>
+<td class="px-6 py-4 text-right text-xs text-outline font-medium">Yesterday, 19:45</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-outline hover:text-primary transition-colors" title="View Profile">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="text-outline hover:text-primary transition-colors" title="Contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</button>
+<button class="text-outline hover:text-error transition-colors" title="Suspend">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-lg object-cover" data-alt="cinematic portrait of a man in dark clothing with dramatic lighting focusing on texture and depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSLUDWvqfqVRqzjTqKhVRxb2RtKz77LocF3hzKdRUUICZuF07EGD_qb933ZPSMl1vDBBXIaLk9rWxd1JsPU5ajAAz5u-a_oQaJjQsw0u59h7zcKCyLrE1cXnlI-xK6xsrZ15MX1_aDQFiFZL6FsS7Z08N89eGC4kvna_hNQMMqieS5jLJxl1k3SharaZRO3qL_YtXmZjFldb4ZL4cQ8beK4LD-UBkn-OSgkt9Kb_nSZiTgtKbDT9saEiP8dXZptRnllty-zlR2mB4"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Arthur Reed</p>
+<p class="text-[10px] text-outline">ID: RX-4421</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-container/10 text-tertiary text-[10px] font-bold">
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+                                            Flagged
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.12</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface">244</td>
+<td class="px-6 py-4 text-right text-xs text-outline font-medium">3 days ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-outline hover:text-primary transition-colors" title="View Profile">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="text-outline hover:text-primary transition-colors" title="Contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+</button>
+<button class="text-outline hover:text-secondary transition-colors" title="Resolve">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-surface-container-low/30 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] text-outline font-medium tracking-widest uppercase">Page 1 of 244</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-high text-xs font-bold rounded hover:bg-surface-bright transition-colors border border-outline-variant/10">Previous</button>
+<button class="px-3 py-1 bg-surface-container-high text-xs font-bold rounded hover:bg-surface-bright transition-colors border border-outline-variant/10">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

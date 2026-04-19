@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex - Family Profile Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#b1c5ff",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-container": "#1f1f20",
+              "surface-dim": "#131314",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container-low": "#1b1b1c",
+              "primary-container": "#276ef1",
+              "secondary-fixed": "#dae2ff",
+              "outline": "#8c90a0",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#b1c5ff",
+              "primary": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "inverse-surface": "#e5e2e3",
+              "background": "#131314",
+              "error": "#ffb4ab",
+              "on-primary-container": "#fffeff",
+              "error-container": "#93000a",
+              "tertiary-container": "#c65100",
+              "on-secondary-container": "#a2b7f3",
+              "on-secondary": "#162e61",
+              "inverse-primary": "#0056d0",
+              "surface-container-highest": "#353436",
+              "surface-container-high": "#2a2a2b",
+              "outline-variant": "#424654",
+              "primary-fixed": "#dae2ff",
+              "inverse-on-surface": "#303031",
+              "secondary-container": "#31477c",
+              "on-tertiary-fixed": "#351000",
+              "on-tertiary": "#561f00",
+              "tertiary": "#ffb694",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-bright": "#39393a",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "surface": "#131314",
+              "secondary": "#b1c5ff",
+              "on-surface": "#e5e2e3",
+              "secondary-fixed-dim": "#b1c5ff",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-variant": "#353436",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e5e2e3",
+              "surface-container-lowest": "#0e0e0f",
+              "on-secondary-fixed": "#001947"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131314;
+        color: #e5e2e3;
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.4);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] hover:bg-[#276ef1]/10 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-manrope text-2xl tracking-tight font-bold text-[#b1c5ff]">Teen Safety</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#276ef1]">verified_user</span>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-32 px-6 max-w-2xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-12">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-2 text-on-background">
+                Add Teen Profile
+            </h2>
+<p class="font-label text-on-surface-variant opacity-70">
+                Set up secure travel and real-time tracking for your family members.
+            </p>
+</section>
+<!-- Bento Layout Form -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Left Column: Form -->
+<div class="space-y-6 md:col-span-1">
+<div class="space-y-4">
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Teen's Full Name</span>
+<input class="w-full bg-surface-container-highest border-none rounded-t-none rounded-b-sm focus:ring-0 text-on-surface p-4 text-lg" placeholder="Sophie Vance" type="text"/>
+</label>
+<label class="block">
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Mobile Number</span>
+<div class="flex gap-2">
+<span class="bg-surface-container-highest flex items-center px-4 text-on-surface-variant rounded-sm">+1</span>
+<input class="w-full bg-surface-container-highest border-none rounded-t-none rounded-b-sm focus:ring-0 text-on-surface p-4 text-lg" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</label>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between group">
+<div>
+<h3 class="font-bold text-on-surface">Emergency Contact</h3>
+<p class="text-xs text-on-surface-variant">Notify me instantly on every ride start.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-xl shadow-[0_20px_40px_0_rgba(39,110,241,0.2)] hover:brightness-110 active:scale-[0.98] transition-all">
+                    Create Profile
+                </button>
+</div>
+<!-- Right Column: Visual & Existing Members -->
+<div class="space-y-6">
+<div class="relative h-48 rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Modern high-end residential street at twilight with soft streetlights and a sleek blue car moving in the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMFx7wKmeJ-U9IQBzPtnHrudZMQ2lIzsKrloNkxr0vdnI-yAu024WQiaefxdT4yMNaaNnKp3ddlvzwo2RLXA7C6zkZ7B4mgNqb2bOSsFqgh2jfBcQ2nm3ZMhH_bUl7SSusBnxiI7KvrQ1xcNfJyzBn4p55LdzNgEV087_DHpteZE2N9JHZMEM6uyFXVn7iW7-Xcu-xqdGEXBdyEyTaGkPY_PPK71pClN-WzEEsX3F4L2mhrMkfUSDMoyvNn-Bkjexs2HQtgBGEMp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 glass-card px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface">Live Tracking Active</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl">
+<h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-4">Existing Family</h3>
+<div class="flex items-center gap-4 p-3 bg-surface-container rounded-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a smiling teenage girl with brown hair in a urban outdoor setting with soft sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD65T0XmIQHSQYoLqsGdGJR4yMXWmz2bX1eTm5sN3dUeOTkhudRDuZNAMiH2GAJ42K8y1nPR8GqTCwkIziij2lNPDDnOLhP0hOZi4Ws_fl5SPNqDuoQsewVNbXLJBvBK3yNnTqSuu829PYZ-R-rEYJYr180Vw8ZBz13g7h4YiS2zAFItRz0kMzQrP0-VfXFXNjnL0oO5Zgs5v0GBLt5feiW7q2cLNzilxsJs8ISlXs1ZPFst1gV2VkqzmmstQ5ZG8DEWG-RMNEcYUQ"/>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-on-surface">Sophie Vance</p>
+<p class="text-xs text-on-surface-variant">Teen Account â€¢ Active</p>
+</div>
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Off-canvas logic simulated as hidden component or sidebar) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-80 bg-[#131314] flex-col p-6 shadow-2xl z-40">
+<div class="flex flex-col h-full">
+<div class="flex items-center gap-4 mb-10">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged man with a kind expression and sharp business casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFSFnfQWKPFMq8hEbPrykUZnbpdQuJ1-ThxwdQvCGeVd1PBGgGS4Az7aaKx5WJyIJM6QsJ9dXzTVVOkph3qik5Rg6oKa6hQUyfXisqCoGj3kYn5zaKZCdpyr4UryTB4MArxfkZSgxjgRjQddz-jkr1PKS1W5ugpQ4u7cDpg9hVafVmfB_ZJSpIk6d14Ig9ik3NbunVwFnGvo0yy_VCJlLmHpXv6MGq_P8p4T0r_6TyrL8LgUx_FHjuNS__R4y8NdKvzGgFLX3Q6mc"/>
+</div>
+<div>
+<h4 class="font-manrope text-lg font-bold text-on-surface">Alexander Vance</h4>
+<p class="text-xs text-primary tracking-widest uppercase">Family Admin</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-4 p-4 rounded-xl text-[#b1c5ff] bg-[#276ef1]/10 font-bold font-manrope transition-all" href="#">
+<span class="material-symbols-outlined">family_restroom</span>
+<span>Family Profile</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-[#8e9199] hover:bg-white/5 font-medium font-manrope transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Payment Methods</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-[#8e9199] hover:bg-white/5 font-medium font-manrope transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>Ride History</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-[#8e9199] hover:bg-white/5 font-medium font-manrope transition-all" href="#">
+<span class="material-symbols-outlined">shield_with_heart</span>
+<span>Safety Center</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-[#8e9199] hover:bg-white/5 font-medium font-manrope transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full bg-[#131314]/80 backdrop-blur-xl rounded-t-3xl pb-safe z-50 shadow-[0_-20px_40px_0_rgba(0,0,0,0.3)] md:hidden">
+<div class="flex justify-around items-center w-full px-4 h-20">
+<button class="flex flex-col items-center justify-center text-[#8e9199] px-4 py-2 hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#8e9199] px-4 py-2 hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">distance</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Tracking</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-2 active:scale-90 duration-150">
+<span class="material-symbols-outlined">group</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Teens</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#8e9199] px-4 py-2 hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">security</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Safety</span>
+</button>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

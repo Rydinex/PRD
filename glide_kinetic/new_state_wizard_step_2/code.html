@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Admin - New State Onboarding Wizard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "on-primary-fixed-variant": "#00419f",
+                        "inverse-surface": "#e2e2e8",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-tertiary-container": "#fffdff",
+                        "on-secondary": "#162e61",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "surface-dim": "#111317",
+                        "on-primary-container": "#fffeff",
+                        "secondary": "#b1c5ff",
+                        "error": "#ffb4ab",
+                        "on-background": "#e2e2e8",
+                        "surface-tint": "#b1c5ff",
+                        "on-tertiary-fixed": "#351000",
+                        "on-surface": "#e2e2e8",
+                        "primary-fixed": "#dae2ff",
+                        "background": "#111317",
+                        "surface-container": "#1e2024",
+                        "on-surface-variant": "#c2c6d7",
+                        "surface-container-highest": "#333539",
+                        "primary-container": "#276ef1",
+                        "outline-variant": "#424654",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "surface-container-low": "#1a1c20",
+                        "error-container": "#93000a",
+                        "outline": "#8c90a0",
+                        "secondary-fixed": "#dae2ff",
+                        "surface-variant": "#333539",
+                        "surface": "#111317",
+                        "on-tertiary": "#561f00",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001947",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c65100",
+                        "secondary-container": "#31477c",
+                        "on-secondary-fixed": "#001947",
+                        "tertiary": "#ffb694",
+                        "primary": "#b1c5ff",
+                        "surface-container-high": "#282a2e",
+                        "inverse-primary": "#0056d0",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-bright": "#37393e",
+                        "on-secondary-container": "#a2b7f3",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-primary": "#002c71"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #111317; color: #e2e2e8; }
+        .headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(51, 53, 57, 0.6); backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-[#111317]">
+<div class="flex items-center gap-12">
+<span class="text-xl font-bold tracking-tight text-[#e2e2e8] headline">Sovereign Admin</span>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors text-sm font-medium" href="#">Dashboard</a>
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors text-sm font-medium" href="#">Analytics</a>
+<a class="text-[#b1c5ff] border-b-2 border-[#276EF1] pb-1 text-sm font-bold" href="#">States</a>
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors text-sm font-medium" href="#">Compliance</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#e2e2e8]/60 hover:bg-[#333539]/50 p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-[#e2e2e8]/60 hover:bg-[#333539]/50 p-2 rounded-full transition-all">settings</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Administrator Profile" data-alt="professional portrait of a high-level male executive in a sharp suit with neutral studio lighting and a grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkj7larLIe4tvo85cz7uukzuGmrNmV8nqhDwIkIeZmSIP1WqgwDlx7wyFwPxJtp20GpR29Hurqj44Q2jbM1eyUvnEpO7kA8JcKU70DvFbpxORmIeC1jxnefmBMBYOWjFL1D5Us0nQla-6PjIn9tpkHpKgg5PIkYF_YCVQAasrYcxavFAUksfLVbyYl08QKtmn7CQl4FrIe-2yTQIIq_A7IkgaroOz_h9T7I8dGxP8D-DJidGA7GvMCuNtodsrgE1SRzeCPI_lpaAU"/>
+</div>
+</div>
+</header>
+<div class="flex pt-16 h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col p-4 border-r border-[#e2e2e8]/10 bg-[#1a1c20]">
+<div class="mb-8 px-2">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">map</span>
+</div>
+<div>
+<p class="text-on-surface font-bold text-sm headline">New State Wizard</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider font-semibold">Step 2: Geofencing</p>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-4">
+<div class="bg-primary w-2/5 h-1 rounded-full"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2 text-right">Onboarding Progress: 20%</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#e2e2e8]/50 hover:bg-[#333539]/30 rounded-md transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span> Overview
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#e2e2e8]/50 hover:bg-[#333539]/30 rounded-md transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg">gavel</span> State Rules
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#e2e2e8]/50 hover:bg-[#333539]/30 rounded-md transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg">payments</span> TNP Fees
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#b1c5ff] font-bold bg-[#1e2024] rounded-md transition-opacity" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">map</span> Geofencing
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#e2e2e8]/50 hover:bg-[#333539]/30 rounded-md transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg">fact_check</span> Review
+                </a>
+</nav>
+<div class="pt-4 mt-4 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#e2e2e8]/50 hover:bg-[#333539]/30 rounded-md text-xs" href="#">
+<span class="material-symbols-outlined text-base">help</span> Support
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#e2e2e8]/50 hover:bg-[#333539]/30 rounded-md text-xs" href="#">
+<span class="material-symbols-outlined text-base">description</span> Documentation
+                </a>
+</div>
+<button class="mt-6 w-full py-2.5 bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold rounded-md text-sm active:scale-95 transition-transform">
+                Save Draft
+            </button>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 overflow-y-auto bg-surface p-8 no-scrollbar">
+<!-- Header Section -->
+<div class="max-w-6xl mx-auto mb-10 flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-extrabold headline text-on-surface tracking-tight mb-2">Airport Hubs &amp; Geofencing</h1>
+<p class="text-on-surface-variant max-w-xl">Define spatial logic and specialized queuing rules for Class-A air traffic hubs. Current Context: Illinois (ORD, MDW).</p>
+</div>
+<div class="flex gap-4">
+<button class="px-5 py-2 border border-outline-variant text-on-surface font-semibold text-sm rounded hover:bg-surface-container-high transition-colors">Import Global Defaults</button>
+<button class="px-5 py-2 bg-secondary-container text-on-secondary-container font-semibold text-sm rounded hover:brightness-110 transition-all">Next Module</button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="max-w-6xl mx-auto grid grid-cols-12 gap-6">
+<!-- ORD Main Configuration -->
+<section class="col-span-12 lg:col-span-8 space-y-6">
+<div class="bg-surface-container p-6 rounded-xl border-l-4 border-primary">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+</div>
+<div>
+<h2 class="text-xl font-bold headline text-on-surface">O'Hare International (ORD)</h2>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-widest">Global Logistics Tier 1 Hub</p>
+</div>
+</div>
+<span class="bg-success-container/10 text-[#81c784] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Active Region</span>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-6">
+<div>
+<label class="block text-[11px] font-bold text-primary mb-2 uppercase tracking-tighter">Staging Lot Geofence</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary px-0 py-2 text-on-surface outline-none transition-all placeholder-on-surface-variant/30" type="text" value="20 min radius"/>
+<span class="absolute right-0 bottom-2 material-symbols-outlined text-on-surface-variant text-lg">schedule</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2 italic">Calculated by real-time transit telemetry from perimeter nodes.</p>
+</div>
+<div>
+<label class="block text-[11px] font-bold text-primary mb-2 uppercase tracking-tighter">Specialized Queue Rules</label>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-high rounded-lg group hover:bg-primary-container/10 transition-colors">
+<span class="text-sm font-medium">First-In, First-Out (FIFO)</span>
+<div class="w-10 h-5 bg-primary rounded-full flex items-center px-1">
+<div class="w-3 h-3 bg-white rounded-full ml-auto"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-high rounded-lg group hover:bg-primary-container/10 transition-colors">
+<span class="text-sm font-medium">Short Trip Protection (STP)</span>
+<div class="w-10 h-5 bg-surface-variant rounded-full flex items-center px-1">
+<div class="w-3 h-3 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-high rounded-lg group hover:bg-primary-container/10 transition-colors">
+<span class="text-sm font-medium">Flight Delay Buffer</span>
+<div class="w-10 h-5 bg-primary rounded-full flex items-center px-1">
+<div class="w-3 h-3 bg-white rounded-full ml-auto"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden border border-outline-variant/30 group">
+<img alt="Map Preview ORD" class="w-full h-full object-cover brightness-50 grayscale group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-500" data-alt="a dark futuristic digital map interface showing a circular neon blue geofence perimeter around a complex airport terminal layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtaHFaW-km-NIwOX9KxngVz_QEtN9KSmanmuLNeV_rCl40sV83qOMkjjnTlkJ21_Silha0uDwkB6pTxnXZAsywP5irBntUp1xZvGasAvDTKzJQ3y7eNuuAmxS2cQ-hS4h6QEmMikmM5uqZSlyCl4EwoGDP_2_Dnnw77N5RvgI5ciLJZ0SeczlkO_d_mGXrVBi6rZ0R2VV440VoSg4lVX-OgxQy26pR1JThR6Pr2EZkgfHUCnUoccdLlCcfAm1ZAyBgocknd94kERs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur px-2 py-1 rounded text-[10px] font-mono border border-outline-variant/30">LAT: 41.9742</span>
+<span class="bg-surface-container-highest/80 backdrop-blur px-2 py-1 rounded text-[10px] font-mono border border-outline-variant/30">LNG: -87.9073</span>
+</div>
+<div class="absolute top-4 right-4">
+<button class="w-8 h-8 rounded-full glass-panel flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-sm">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pickup Doors Configuration -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-sm font-bold uppercase tracking-widest headline text-on-surface-variant">Pickup Door Assignments</h3>
+<button class="text-primary text-xs font-bold hover:underline">+ Add Terminal Group</button>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="p-4 bg-surface-container rounded-lg border border-outline-variant/20">
+<p class="text-xs font-bold text-on-surface-variant mb-3">TERMINAL 1 (UNITED)</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 1A</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 1G</span>
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-[11px] border border-primary/30">Door 2D (VIP)</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded-lg border border-outline-variant/20">
+<p class="text-xs font-bold text-on-surface-variant mb-3">TERMINAL 3 (AA)</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 3B</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 3F</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 4A</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded-lg border border-outline-variant/20">
+<p class="text-xs font-bold text-on-surface-variant mb-3">TERMINAL 5 (INTL)</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 5A</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] border border-outline-variant/30">Door 5E</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar / MDW Configuration -->
+<aside class="col-span-12 lg:col-span-4 space-y-6">
+<!-- MDW Compact Card -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-on-surface-variant opacity-20 group-hover:opacity-100 transition-opacity">more_vert</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">flight</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface headline">Midway (MDW)</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Secondary Regional Hub</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 rounded bg-surface-container border-l-2 border-secondary">
+<label class="block text-[9px] font-bold text-secondary uppercase tracking-widest mb-1">Geofence Distance</label>
+<input class="w-full bg-transparent border-none p-0 text-sm font-semibold outline-none" type="text" value="15 min radius"/>
+</div>
+<div class="p-4 rounded bg-surface-container">
+<label class="block text-[9px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Queue Persistence</label>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-success_green"></span>
+<span class="text-xs font-medium">Standard Logic (60 min)</span>
+</div>
+</div>
+<div class="h-32 rounded bg-surface-container-highest border border-outline-variant/30 overflow-hidden relative">
+<img alt="Map Preview MDW" class="w-full h-full object-cover opacity-40" data-alt="high contrast satellite view of city blocks at night with sharp orange and blue lights forming a grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf2RZFDMj9uv8Dh5em9qFQJwdQidyawf8zOYPmSBvgItXldk0UQo1fJMOJ3FL9X_9UDKGQP3UbvBy_7KZC1297ZAts9cnUTIiJWTE45NURseWcrU6hq8QUCq1slwqppKGadXQBXrvC8qouaiCqiXNpxApMb-LrqR1NVeaKbcr6ADLGtfIC8-17ope-k0-5rF8WYgIom0H2LmjxfUceZtwezszNKt137gS41Orc6Zh-3mNcWJZHmQR8dUWcOmdTpmKPXMBjJOIj6lc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="bg-surface-container text-[10px] font-bold px-3 py-1.5 rounded-full border border-outline-variant/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">edit_location</span> Define Points
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Rule Insights / Stats -->
+<div class="bg-gradient-to-br from-primary-container/20 to-surface-container p-6 rounded-xl border border-primary/20">
+<h4 class="text-xs font-bold text-primary headline uppercase tracking-widest mb-4">Onboarding Insights</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface-variant">Estimated Driver Density</span>
+<span class="text-sm font-bold text-on-surface">1,400+ / Hr</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface-variant">Avg. Pickup Latency</span>
+<span class="text-sm font-bold text-on-surface">4.2 min</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<p class="text-[10px] text-on-surface-variant leading-relaxed">System recommendation: Enable <span class="text-primary font-bold">Dynamic Pricing Surges</span> for ORD Terminal 5 to offset peak international arrival windows.</p>
+</div>
+<button class="w-full py-2 bg-surface-container-highest text-on-surface text-[10px] font-bold uppercase tracking-widest rounded hover:bg-outline-variant transition-colors">Apply Auto-Optimizations</button>
+</div>
+</div>
+</aside></div>
+</main></div>
+<!-- Hidden BottomNav for Mobile Only -->
+<nav class="md:hidden fixed bottom-0 w-full h-16 bg-[#111317] flex justify-around items-center px-4 border-t border-outline-variant/10">
+<div class="flex flex-col items-center gap-1 text-[#e2e2e8]/60">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#b1c5ff]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="text-[10px]">Geofence</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#e2e2e8]/60">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px]">Fees</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#e2e2e8]/60">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px]">Profile</span>
+</div>
+</nav>
+<script src="../../apps/prd-manifest.js"></script>
+<script src="../../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

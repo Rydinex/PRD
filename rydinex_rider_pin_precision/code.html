@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex - Manual Pin Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#001947",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "tertiary-container": "#c65100",
+              "tertiary": "#ffb694",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-fixed": "#351000",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "on-secondary-fixed-variant": "#2f4579",
+              "inverse-on-surface": "#303031",
+              "surface-variant": "#353436",
+              "surface-container": "#1f1f20",
+              "inverse-primary": "#0056d0",
+              "on-primary": "#002c71",
+              "secondary": "#b1c5ff",
+              "on-surface-variant": "#c2c6d7",
+              "on-background": "#e5e2e3",
+              "outline": "#8c90a0",
+              "surface-dim": "#131314",
+              "primary-fixed": "#dae2ff",
+              "background": "#131314",
+              "on-secondary": "#162e61",
+              "surface-container-high": "#2a2a2b",
+              "on-surface": "#e5e2e3",
+              "surface-tint": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#dae2ff",
+              "on-primary-container": "#fffeff",
+              "surface-container-highest": "#353436",
+              "on-tertiary-container": "#fffdff",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-bright": "#39393a",
+              "outline-variant": "#424654",
+              "secondary-container": "#31477c",
+              "primary-container": "#276ef1",
+              "on-secondary-container": "#a2b7f3",
+              "inverse-surface": "#e5e2e3",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcc",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary": "#b1c5ff",
+              "surface": "#131314",
+              "on-tertiary": "#561f00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .map-gradient-overlay {
+            background: radial-gradient(circle at center, transparent 0%, #131314 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 no-border bg-gradient-to-b from-[#131314] to-transparent flex justify-between items-center px-6 h-20 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-black tracking-tighter text-[#276ef1] italic font-['Manrope'] uppercase">RYDINEX</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a stylish user with soft studio lighting and a neutral charcoal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQdopi3Pmk7BaIUNIe9_4xNZvZrlCpe_SU2ube5kOVjxKDtdrKicnBURm4AMH1BYl6vKGJG_QvK86aojC3nNJj4SO-TTf3JweqsZCz4CjuYSkmx2NPYSvSgIMzVrVhQZopMwzBWelCL6vRkl6L7fzUO0THozJOuGAi2sRD3idhLavFQbUnXbLYMW-MuXmAofC1utKfLPWG_J6TLHjG1v7CA1utUS1_zSXuQjhKS71RMJpjpuLG-DGgWwcbEWowuSBtlAD_V8Xua78"/>
+</div>
+</div>
+</header>
+<!-- Map Canvas (Full Screen) -->
+<main class="relative w-full h-screen">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Dark aesthetic stylized street map of a major city with glowing blue primary roads and deep charcoal building blocks" data-location="Manhattan, New York" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDKweoRkPT-l8uqYWdV0SG2d5Qc3tjnfZLnkok2beVN-aEln2olqpQ1RfQRSVFNUtpTaimN8GUeZ5L8pKbq5mFH860cy9tu_dTzpldO1slALZalAdq9Lwl6DD1vPHIn12rMpTEteBfRmwcQL8pgkB-squ1fcphtRPzFA-q44t2MvdC8v5gaLna9r4GnaI7WoRh_oxXUHmi_I-8s5t-JYBqpu0WFCoqolkrMUVnMnZXyJBhnFZTWZWqF63YoYEGgaAOUDpxbEz0SaI"/>
+<div class="absolute inset-0 map-gradient-overlay pointer-events-none"></div>
+</div>
+<!-- Central Pin Selector (Static Visual) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+<div class="relative flex flex-col items-center mb-12">
+<!-- Address Tooltip (Floating above pin) -->
+<div class="bg-surface-container-highest/90 backdrop-blur-xl px-4 py-2 rounded-xl border border-outline-variant/20 shadow-2xl mb-4">
+<p class="font-headline font-bold text-sm tracking-tight text-on-surface">5TH AVE &amp; W 57TH ST</p>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest text-center">Precise Location</p>
+</div>
+<!-- The Pin -->
+<div class="relative">
+<!-- Ripple Effect -->
+<div class="absolute top-full left-1/2 -translate-x-1/2 w-8 h-2 bg-primary-container/40 blur-md rounded-[100%]"></div>
+<span class="material-symbols-outlined text-5xl text-primary-container drop-shadow-[0_10px_10px_rgba(39,110,241,0.5)]" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Map Control Overlay Buttons -->
+<div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-30">
+<button class="w-12 h-12 rounded-xl bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-primary border border-outline-variant/10 shadow-xl hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+<button class="w-12 h-12 rounded-xl bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-on-surface border border-outline-variant/10 shadow-xl hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</button>
+</div>
+<!-- Action Drawer -->
+<div class="absolute bottom-0 left-0 w-full z-40 px-6 pb-12">
+<div class="max-w-2xl mx-auto space-y-4">
+<!-- Detail Card -->
+<div class="bg-surface-container-low/95 backdrop-blur-2xl p-6 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-outline-variant/10">
+<div class="flex items-start justify-between mb-6">
+<div class="space-y-1">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-[0.2em]">Pickup Point</span>
+<h2 class="font-headline text-2xl font-extrabold text-on-surface leading-tight">725 5th Avenue</h2>
+<p class="font-body text-sm text-on-surface-variant">Trump Tower, Midtown Manhattan</p>
+</div>
+<div class="bg-primary-container/10 px-3 py-1.5 rounded-lg border border-primary-container/20">
+<span class="font-headline font-bold text-primary-fixed-dim text-xs">2 MIN ETA</span>
+</div>
+</div>
+<!-- Pickup Precision Instruction -->
+<div class="flex items-center gap-3 p-4 bg-surface-container rounded-2xl mb-6">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="touch_app">touch_app</span>
+</div>
+<p class="font-body text-sm text-on-surface/80 leading-snug">Move the map to align the pin exactly where you'll be waiting.</p>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary-container text-white h-16 rounded-2xl font-headline font-bold text-lg flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(39,110,241,0.4)] active:scale-[0.98] transition-all">
+                        Confirm Pickup
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Secondary Quick Options (Asymmetric Bento Style) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low/90 backdrop-blur-xl p-4 rounded-2xl border border-outline-variant/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="home">home</span>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Home</p>
+<p class="text-xs font-semibold text-on-surface">124 Lex Ave</p>
+</div>
+</div>
+<div class="bg-surface-container-low/90 backdrop-blur-xl p-4 rounded-2xl border border-outline-variant/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="work">work</span>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Work</p>
+<p class="text-xs font-semibold text-on-surface">World Trade Ctr</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Suppressed for focused task per rule, but following shell mandate for top-level context) -->
+<!-- The user is in a "focused task" (Confirming pickup), so we suppress the main global nav to prioritize the Action Drawer and Map -->
+<!-- Navigation Drawer (Hidden by default, triggered by menu) -->
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm pointer-events-none opacity-0 transition-opacity" id="drawer">
+<aside class="h-full w-80 bg-[#131314] rounded-r-2xl shadow-2xl flex flex-col p-6 gap-4 -translate-x-full transition-transform">
+<div class="flex flex-col gap-1 mb-6">
+<div class="w-16 h-16 rounded-2xl overflow-hidden mb-4 border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up with premium dark lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADXnaSRCIjK2tX47_wD3paiRAtUt6hIg7VmM_EVMTaBnKA6Mmlm7oXC4FW789DDsXzeKbRp64n0zWfwef2maSq8WyNMPGLcvuxMadRCjvNCgZmwWz26s8-I1f7h6459CTiQ5BK442B5C8GcXBYQRizLuZfHduZp44j4LE0kbrg_oP5puTjyxGe2kfI0egqxz2UeiCiCTYBral9lafpi91AOldZX1_-o17JHbVFVfZ1lTm60wLgg45-VytVJStdKJSPq7dZJhQHfl8"/>
+</div>
+<h3 class="font-headline text-lg font-semibold text-[#276ef1]">Premium Member</h3>
+<p class="font-body text-sm text-[#b1c5ff]/70">Rydinex Black â€¢ 4.98 Rating</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-3 text-[#b1c5ff]/70 hover:bg-[#131314] hover:pl-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-headline font-semibold">Ride History</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-[#b1c5ff]/70 hover:bg-[#131314] hover:pl-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-headline font-semibold">Payment</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-[#b1c5ff]/70 hover:bg-[#131314] hover:pl-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-headline font-semibold">Documents</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-[#b1c5ff]/70 hover:bg-[#131314] hover:pl-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+<span class="font-headline font-semibold">Tax Settings</span>
+</a>
+<div class="h-px bg-outline-variant/20 my-2"></div>
+<a class="flex items-center gap-4 p-3 text-[#b1c5ff]/70 hover:bg-[#131314] hover:pl-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-headline font-semibold">Support</span>
+</a>
+</nav>
+</aside>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

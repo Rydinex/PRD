@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#b1c5ff",
+            "on-tertiary-container": "#fffdff",
+            "on-primary-container": "#fffeff",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-variant": "#353436",
+            "tertiary-container": "#c65100",
+            "primary": "#b1c5ff",
+            "on-surface-variant": "#c2c6d7",
+            "inverse-primary": "#0056d0",
+            "error": "#ffb4ab",
+            "surface-container-high": "#2a2a2b",
+            "on-secondary-container": "#a2b7f3",
+            "on-background": "#e5e2e3",
+            "surface": "#131314",
+            "on-tertiary": "#561f00",
+            "on-secondary": "#162e61",
+            "on-error-container": "#ffdad6",
+            "surface-container-lowest": "#0e0e0f",
+            "on-tertiary-fixed": "#351000",
+            "inverse-surface": "#e5e2e3",
+            "inverse-on-surface": "#303031",
+            "primary-fixed-dim": "#b1c5ff",
+            "surface-tint": "#b1c5ff",
+            "surface-container-low": "#1b1b1c",
+            "surface-container": "#1f1f20",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "secondary-container": "#31477c",
+            "background": "#131314",
+            "on-surface": "#e5e2e3",
+            "on-secondary-fixed": "#001947",
+            "secondary-fixed": "#dae2ff",
+            "outline": "#8c90a0",
+            "on-error": "#690005",
+            "tertiary-fixed-dim": "#ffb694",
+            "surface-dim": "#131314",
+            "on-secondary-fixed-variant": "#2f4579",
+            "tertiary": "#ffb694",
+            "on-primary-fixed-variant": "#00419f",
+            "primary-container": "#276ef1",
+            "outline-variant": "#424654",
+            "surface-bright": "#39393a",
+            "secondary-fixed-dim": "#b1c5ff",
+            "on-primary-fixed": "#001947",
+            "on-primary": "#002c71",
+            "surface-container-highest": "#353436",
+            "primary-fixed": "#dae2ff"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+      background: rgba(53, 52, 54, 0.6);
+      backdrop-filter: blur(20px);
+    }
+    .route-pulse {
+      background: linear-gradient(90deg, #276ef1 0%, transparent 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] dark:bg-[#131314]">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] hover:bg-[#276ef1]/10 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<h1 class="font-['Manrope'] tracking-tighter font-bold uppercase text-2xl text-[#276ef1]">RYDINEX</h1>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest ring-1 ring-outline-variant">
+<img alt="User Profile" data-alt="minimalist professional headshot of a young man with glasses and a friendly smile on a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7XqhhCGqG5vlnSzuTYDdXK8yqPNnG96wYSPhKHafgv6PhvkiES4GhP3_tdQbk9L5lpE6BaSvT_M_YlRLy2qiFnrXHXojADzhzyz6N_qSBmCk9u4L_CA0rCsHcnfmQimYDdint5_3OcolztxAKudjJ0u8jFBqtukRqGJNAa75Q_skqttrf9PX2sEbKHz6aOhTGA09Z4MacPZdtQp07Xq889pJ3fzOZmfzutUATWrjD4Yans_YT2EbJC9CsXxekEPqQlL2EyqQ6jMQ"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Map and Route -->
+<div class="lg:col-span-7 space-y-6">
+<section class="relative h-64 lg:h-[500px] rounded-xl overflow-hidden bg-surface-container-low group">
+<div class="absolute inset-0 opacity-80 transition-transform duration-700 group-hover:scale-105">
+<img alt="Map" class="w-full h-full object-cover grayscale brightness-50" data-alt="dark mode stylized city map showing glowing blue transit lines and minimalist street architecture in a premium aesthetic" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXGqxQeTtUGjnAR0L7tPtrQf98cWTnZZe3omfjW6DfveyNwEw5kknYa-juzGYxqOxRN-TRkpMhzE9UHRpCDAuzIjjLemWIwmd9n-n8bky77TGlvegqyBGQ0VIevb31TzGQcyt_o180YGiQi4J_OOthMwBIOWhV1RZq33-AQtNc8v3DTQ5wO0ErUg5ywETRRqBE7PxTdngBLEtyUXH_W0rty7HnQI2s9IYbponyd35VFxxt91wsJNnTsp9ufpUQn6Iqlxbs4t9EBng"/>
+</div>
+<!-- Map UI Elements -->
+<div class="absolute top-6 left-6 right-6 flex flex-col gap-3">
+<div class="glass-panel p-4 rounded-xl border-l-4 border-primary shadow-2xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">radio_button_checked</span>
+<p class="text-sm font-medium">101 Market Street, Financial District</p>
+</div>
+<div class="w-px h-4 bg-outline-variant ml-2 my-1"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm">location_on</span>
+<p class="text-sm font-medium">SFO International Airport, Terminal 2</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-6 left-6">
+<div class="bg-surface-container-highest/90 px-4 py-2 rounded-full flex items-center gap-2 border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-secondary">Route Active</span>
+</div>
+</div>
+</section>
+<!-- Reservation Details -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-6 bg-surface-container-low rounded-xl">
+<p class="text-label-md text-on-surface-variant opacity-60 uppercase tracking-widest mb-1">Date</p>
+<h3 class="font-headline text-2xl font-bold">Monday, Oct 24</h3>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<p class="text-label-md text-on-surface-variant opacity-60 uppercase tracking-widest mb-1">Pickup Time</p>
+<h3 class="font-headline text-2xl font-bold">08:30 AM</h3>
+</div>
+</section>
+</div>
+<!-- Right Column: Specialized Needs & Booking -->
+<div class="lg:col-span-5 space-y-6">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter leading-tight">Reserved <span class="text-primary">Elegance</span></h2>
+<p class="text-on-surface-variant text-sm">Tailor your premium ride with bespoke requirements for your journey to SFO.</p>
+</div>
+<div class="space-y-4">
+<label class="block text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant opacity-50 mb-4">Specialized Assistance
+<!-- Senior Assistance Toggle Card -->
+<div class="p-5 bg-surface-container-low rounded-xl hover:bg-surface-container transition-all group cursor-pointer border-l-4 border-transparent hover:border-tertiary">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl">elderly</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-0.5">Senior Assistance</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Driver will provide support to and from the door, including helping with light boarding.</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full p-1 transition-colors relative">
+<div class="w-4 h-4 bg-outline rounded-full transition-transform"></div>
+</div>
+</div>
+</div>
+<!-- Extra Luggage Toggle Card (Active State) -->
+<div class="p-5 bg-surface-container rounded-xl transition-all border-l-4 border-primary shadow-lg">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">luggage</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-0.5">Extra Luggage</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Driver notified to clear full trunk space. Ideal for 3+ large suitcases.</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full p-1 transition-colors relative flex justify-end">
+<div class="w-4 h-4 bg-on-primary-container rounded-full shadow-md"></div>
+</div>
+</div>
+</div>
+<!-- Quiet Ride Toggle Card -->
+<div class="p-5 bg-surface-container-low rounded-xl hover:bg-surface-container transition-all group cursor-pointer border-l-4 border-transparent hover:border-primary">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl">volume_off</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-0.5">Quiet Ride</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Minimal conversation and no music. Perfect for morning focus or rest.</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full p-1 transition-colors relative">
+<div class="w-4 h-4 bg-outline rounded-full"></div>
+</div>
+</div>
+</div>
+</label></div>
+<!-- Trust Notification -->
+<div class="flex items-center gap-3 p-4 bg-primary/5 rounded-lg border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<p class="text-xs font-medium text-secondary">A driver specialized in these requirements will be prioritized for your booking.</p>
+</div>
+<!-- Price & CTA -->
+<div class="pt-4 space-y-4">
+<div class="flex justify-between items-end px-2">
+<div>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant opacity-50 mb-1">Total Fare Estimate</p>
+<p class="text-3xl font-headline font-extrabold">$84.50</p>
+</div>
+<p class="text-xs text-on-surface-variant opacity-60 pb-1">Tax &amp; Fees Incl.</p>
+</div>
+<button class="w-full h-16 bg-primary-container text-on-primary-container font-headline font-bold text-lg rounded-xl active:scale-[0.98] transition-all hover:brightness-110 shadow-2xl">
+          Confirm Reservation
+        </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Shell Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/90 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-[#276ef1] dark:text-[#b1c5ff] bg-[#276ef1]/10 rounded-xl px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Reserve</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">weekend</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Comfort</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">elderly</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Senior</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">luggage</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Luggage</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Account</span>
+</a>
+</div>
+</nav>
+<!-- Desktop Navigation (Integrated in Top Bar) -->
+<div class="hidden md:flex fixed top-0 right-32 z-[60] h-16 items-center gap-8">
+<a class="text-[#276ef1] text-xs font-label uppercase tracking-widest font-bold" href="#">Reserve</a>
+<a class="text-gray-400 hover:text-on-surface text-xs font-label uppercase tracking-widest transition-colors" href="#">History</a>
+<a class="text-gray-400 hover:text-on-surface text-xs font-label uppercase tracking-widest transition-colors" href="#">Support</a>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

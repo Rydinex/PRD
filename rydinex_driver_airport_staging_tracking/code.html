@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Driver - Airport Reservation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#424654",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed": "#001947",
+                        "on-secondary-fixed": "#001947",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b1c5ff",
+                        "surface": "#131314",
+                        "outline": "#8c90a0",
+                        "on-tertiary-container": "#fffdff",
+                        "background": "#131314",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "on-tertiary": "#561f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "on-primary": "#002c71",
+                        "primary": "#b1c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "surface-bright": "#39393a",
+                        "secondary-container": "#31477c",
+                        "on-background": "#e5e2e3",
+                        "on-primary-container": "#fffeff",
+                        "inverse-primary": "#0056d0",
+                        "inverse-surface": "#e5e2e3",
+                        "primary-container": "#276ef1",
+                        "inverse-on-surface": "#303031",
+                        "on-secondary-container": "#a2b7f3",
+                        "secondary": "#b1c5ff",
+                        "on-surface-variant": "#c2c6d7",
+                        "on-primary-fixed-variant": "#00419f",
+                        "on-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#c65100",
+                        "primary-fixed": "#dae2ff",
+                        "on-secondary": "#162e61",
+                        "on-error": "#690005",
+                        "surface-container": "#1f1f20",
+                        "tertiary": "#ffb694",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container-low": "#1b1b1c",
+                        "surface-container-highest": "#353436"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .route-pulse {
+            position: relative;
+        }
+        .route-pulse::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #276ef1;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #276ef1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white antialiased">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] dark:bg-[#131314] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] hover:bg-white/10 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold tracking-tight text-[#b1c5ff] text-xl">Trip Status</h1>
+</div>
+<button class="text-[#b1c5ff] hover:bg-white/10 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</header>
+<main class="pt-20 pb-32 px-4 max-w-lg mx-auto space-y-6">
+<!-- Status Badge Section -->
+<section class="flex justify-between items-center mb-4">
+<div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#b1c5ff]"></span>
+<span class="font-headline font-extrabold text-sm tracking-widest uppercase">Staging Lot</span>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Queue Position</p>
+<p class="font-headline font-black text-primary text-xl">#4</p>
+</div>
+</section>
+<!-- Flight Tracking Card (The Digital Concierge) -->
+<section class="relative group">
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute -top-10 -right-10 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="flight_land">flight_land</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="font-headline font-bold text-2xl tracking-tight text-white mb-1">Flight UA123</h2>
+<span class="bg-tertiary-container/30 text-tertiary px-3 py-1 rounded-full text-xs font-bold border border-tertiary/20">Landed</span>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant text-xs">Terminal B</p>
+<p class="font-headline font-bold text-lg text-primary">Gate B12</p>
+</div>
+</div>
+<div class="flex items-center gap-4 py-4 border-t border-white/5">
+<div class="flex-1">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Scheduled</p>
+<p class="font-headline font-bold text-on-surface">14:45</p>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div class="flex-1">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Actual</p>
+<p class="font-headline font-bold text-primary">14:38</p>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div class="flex-1">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Status</p>
+<p class="font-headline font-bold text-on-surface italic">Early</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Map Section -->
+<section class="rounded-xl overflow-hidden aspect-[16/10] bg-surface-container relative shadow-2xl">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="aerial dark ui map of airport terminals and staging lots with electric blue accents minimalist night theme" data-location="Newark Liberty International Airport" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4dg3OgatBEYTX6Gja6X2sjDbn1zlCo6hVas0-8jU_pV3wKjGDP1FI_e-DTZvDxXHCSNfXFd36KBMORXX060a_GrJfzrznByv0bU7QEKGUOpi28EGCULqX3fyYlfC1yiKT9hLcuRhQJUfN5T9-zKl8g7p2xPF8PydPB_kJn0Yge2rMXrGgqDlqzfrnKZdxRBgxy3duDVgHVQiPDCKXQR_PMMAUL1d2c8yvyv3Nsk33ezXXYiuOi5m-vdB8zUCwvhzjj10-f-YrylQ"/>
+<!-- Map Overlay UI -->
+<div class="absolute inset-0 p-4 pointer-events-none">
+<!-- Driver Marker -->
+<div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center border-2 border-white/20 shadow-[0_0_20px_#276ef1]">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="local_taxi">local_taxi</span>
+</div>
+<div class="mt-1 px-2 py-0.5 glass-panel rounded-md text-[8px] font-bold tracking-widest uppercase">Me</div>
+</div>
+<!-- Destination Marker -->
+<div class="absolute bottom-1/4 right-1/4 flex flex-col items-center">
+<div class="w-4 h-4 bg-tertiary rounded-full border-2 border-white/40"></div>
+<div class="mt-1 px-2 py-0.5 glass-panel rounded-md text-[8px] font-bold tracking-widest uppercase text-tertiary">Pickup</div>
+</div>
+<!-- Connecting Line -->
+<svg class="absolute inset-0 w-full h-full opacity-30" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M33,50 Q45,55 75,75" fill="none" stroke="#276ef1" stroke-dasharray="2,2" stroke-width="0.5"></path>
+</svg>
+</div>
+</section>
+<!-- Automated Message Composer -->
+<section class="space-y-3">
+<div class="flex justify-between items-center px-1">
+<label class="font-headline font-bold text-sm tracking-tight text-on-surface-variant">Automated Comms</label>
+<span class="text-[10px] text-primary/60 font-medium uppercase tracking-widest">Pre-set Priority</span>
+</div>
+<div class="bg-surface-container-highest rounded-xl p-4 border-l-4 border-primary shadow-lg">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="bolt">bolt</span>
+<p class="text-sm font-body leading-relaxed text-on-background">
+                        I am in the staging waiting lot. Please text or call after picking up luggage at <span class="text-primary font-bold">Vestibule Door No. [X]</span>.
+                    </p>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="bg-primary-container text-white px-4 py-2 rounded-lg text-xs font-bold flex-1 flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                        Send Now
+                    </button>
+<button class="bg-surface-variant/40 text-on-surface px-4 py-2 rounded-lg text-xs font-bold hover:bg-surface-variant transition-colors border border-white/5">
+                        Edit
+                    </button>
+</div>
+</div>
+</section>
+<!-- Reservation Actions -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container rounded-xl p-4 border border-white/5 flex flex-col justify-between aspect-square group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="luggage">luggage</span>
+<div>
+<p class="font-headline font-bold text-white text-lg leading-tight">Baggage Tracker</p>
+<p class="text-on-surface-variant text-xs mt-1">Passenger hasn't updated</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-4 border border-white/5 flex flex-col justify-between aspect-square group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary transition-colors" data-icon="contact_phone">contact_phone</span>
+<div>
+<p class="font-headline font-bold text-white text-lg leading-tight">Call Rider</p>
+<p class="text-on-surface-variant text-xs mt-1">Available in 5 mins</p>
+</div>
+</div>
+</section>
+<section class="glass-panel p-5 rounded-2xl border border-primary/20" data-prd-role="ops-card">
+<h3 class="font-headline font-bold text-base mb-3">Driver Ops Control</h3>
+<div class="text-xs text-on-surface-variant space-y-1 mb-3">
+<p>Socket: <span class="text-error font-bold">Disconnected</span></p>
+<p>O'Hare (ORD): 41.9742, -87.9073</p>
+<p>Midway (MDW): 41.7868, -87.7522</p>
+</div>
+<div class="flex gap-2 mb-3">
+<label class="text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30"><input type="checkbox" checked/> Black</label>
+<label class="text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30"><input type="checkbox" checked/> Black SUV</label>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-xl mb-3" data-prd-role="queue-group">
+<span class="text-xs">Queue Group: Airport+Events</span>
+<button class="text-xs px-3 py-2 rounded-lg bg-error-container/30 border border-error/30" data-prd-action="remove-queue-group">Remove Queue Group</button>
+</div>
+<div class="grid grid-cols-2 gap-2" data-prd-role="state-rules">
+<button class="text-xs px-3 py-2 rounded-lg bg-surface-container-highest" data-prd-action="check-tracking">Check Tracking</button>
+<button class="text-xs px-3 py-2 rounded-lg bg-primary-container text-white" data-prd-action="save-state-rules">Save State Rules</button>
+</div>
+<div class="mt-2" data-prd-role="chauffeur">
+<button class="w-full text-xs px-3 py-2 rounded-lg bg-emerald-700/40 border border-emerald-400/40" data-prd-action="verify-chauffeur">Verify Chauffeur License</button>
+</div>
+</section>
+</main>
+<!-- Navigation Shell -->
+<nav class="fixed bottom-0 w-full rounded-t-3xl z-50 bg-[#131314]/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-20px_40px_0_rgba(0,0,0,0.4)]">
+<div class="flex justify-around items-center pt-3 pb-8 px-6 w-full">
+<div class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all scale-105">
+<span class="material-symbols-outlined mb-1" data-icon="directions_car">directions_car</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Ride</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 transition-transform duration-300">
+<span class="material-symbols-outlined mb-1" data-icon="history" data-weight="fill" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all scale-105">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Wallet</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all scale-105">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Profile</span>
+</div>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+
+

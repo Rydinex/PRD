@@ -1,0 +1,12 @@
+PRD Deploy Fingerprint
+Version: 2026-03-30.1
+
+Expected in this build:
+- Incoming request sections reordered in all 5 request screens.
+- Mock standard driver account in runtime:
+  email: standard@rydinex.com
+  password: password
+  role: driver-standard
+
+If this file is not visible at /DEPLOY_CHECK.txt on Railway,
+then Railway is deploying a different folder/project or older artifact.

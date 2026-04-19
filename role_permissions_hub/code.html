@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex | Role-Based Access Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#b1c5ff",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "outline": "#8c90a0",
+                        "surface-container-highest": "#333539",
+                        "on-tertiary": "#561f00",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "on-primary": "#002c71",
+                        "on-primary-container": "#fffeff",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "tertiary-container": "#c65100",
+                        "surface": "#111317",
+                        "tertiary": "#ffb694",
+                        "surface-container-low": "#1a1c20",
+                        "primary": "#b1c5ff",
+                        "on-tertiary-container": "#fffdff",
+                        "surface-tint": "#b1c5ff",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#001947",
+                        "secondary": "#b1c5ff",
+                        "on-tertiary-fixed": "#351000",
+                        "on-error": "#690005",
+                        "outline-variant": "#424654",
+                        "on-background": "#e2e2e8",
+                        "background": "#111317",
+                        "secondary-container": "#31477c",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "surface-container": "#1e2024",
+                        "inverse-primary": "#0056d0",
+                        "on-secondary": "#162e61",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "surface-bright": "#37393e",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-dim": "#111317",
+                        "on-secondary-container": "#a2b7f3",
+                        "on-primary-fixed-variant": "#00419f",
+                        "primary-fixed": "#dae2ff",
+                        "on-surface-variant": "#c2c6d7",
+                        "surface-variant": "#333539",
+                        "on-surface": "#e2e2e8",
+                        "surface-container-high": "#282a2e",
+                        "primary-container": "#276ef1",
+                        "tertiary-fixed": "#ffdbcc",
+                        "inverse-surface": "#e2e2e8",
+                        "on-primary-fixed": "#001947"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #111317;
+            color: #e2e2e8;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #424654;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col border-r border-white/5 bg-[#1a1c20] dark:bg-[#1a1c20] w-64 z-40">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="font-black text-[#276ef1] tracking-widest uppercase text-xs">Rydinex Authority</h1>
+<p class="text-[10px] text-on-surface-variant font-label uppercase tracking-tighter">Sovereign Observer</p>
+</div>
+</div>
+<nav class="space-y-1">
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">dashboard</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">Dashboard</span>
+</div>
+<div class="bg-gradient-to-r from-[#276ef1]/20 to-transparent border-l-4 border-[#276ef1] text-[#b1c5ff] font-semibold flex items-center gap-3 px-4 py-3 cursor-pointer">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">User Management</span>
+</div>
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">CEO Approvals</span>
+</div>
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">System Logs</span>
+</div>
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">Audit Trails</span>
+</div>
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">security</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">Security</span>
+</div>
+</nav>
+</div>
+<div class="mt-auto p-6 space-y-1">
+<button class="w-full bg-gradient-to-br from-primary-container to-primary text-on-primary-container py-3 px-4 rounded-lg text-xs font-bold flex items-center justify-center gap-2 mb-4 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                Generate Report
+            </button>
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">help_center</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">Support</span>
+</div>
+<div class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-300 hover:bg-[#1e2024]">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span class="text-[0.6875rem] font-medium uppercase tracking-wider">Logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-8 h-16 sticky top-0 z-50 bg-[#111317] dark:bg-[#111317] bg-[#1a1c20] shadow-[0_1px_0_0_rgba(255,255,255,0.05)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-[#e2e2e8] headline">Rydinex</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[13px] font-medium text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors" href="#">Dashboard</a>
+<a class="text-[13px] font-medium text-[#b1c5ff] border-b-2 border-[#276ef1] pb-1" href="#">User Management</a>
+<a class="text-[13px] font-medium text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors" href="#">CEO Approvals</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-[#333539] rounded-full transition-colors">search</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-[#333539] rounded-full transition-colors">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border border-[#111317]"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-[#333539] rounded-full transition-colors">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional administrator with glasses and a friendly expression, soft office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv7wdQ5xTLoHXfb4NEcrxdDPAiFNRgZUCF8wiJT8yHqFjPcDsqkag-Ok6pfWdGY27b06gskGMUfyl9j0zBEl9W-GGO3KKSD3cM4mX24oJ2gxcZB12Ofxi_o2YT0YJJgczK5V3KCWRCtIt7_wiTcPaoNCz7BhI39MVnop3ZPPnZ_N3zXU8lgmQscNKxJWrRx0ck1QQ_pjFUyRJEOyuUS2rw7kp62gZ4r0IDNby2yil1g3gU3mXxrOgmBuiOr0nR_rYN5oU6-ELCpTE"/>
+</div>
+</div>
+</header>
+<div class="p-8 space-y-8 flex-1 custom-scrollbar overflow-y-auto">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-bold font-headline tracking-tight text-on-surface">Authority Management</h2>
+<p class="text-on-surface-variant mt-1 font-body text-sm">Define sovereign permissions and oversee role hierarchies.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 bg-surface-container-high text-on-surface text-xs font-semibold rounded hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        Filter
+                    </button>
+<button class="px-5 py-2.5 bg-gradient-to-br from-primary-container to-primary text-on-primary-container text-xs font-bold rounded hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                        New Entity
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Main RBAC Table - 8 Columns -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl overflow-hidden border border-white/5">
+<div class="px-6 py-5 border-b border-white/5 flex justify-between items-center">
+<h3 class="text-sm font-bold font-headline uppercase tracking-widest text-primary-fixed-dim">Access Matrix</h3>
+<div class="flex items-center gap-4 text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active Sessions: 142</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Pending Sync: 3</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant">
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest">Sovereign / Identity</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest">Assigned Role</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest">Authority Level</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest">Status</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">JD</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Julian Draxler</p>
+<p class="text-[10px] text-on-surface-variant font-medium">julian.d@rydinex.gov</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-[#b1c5ff]/10 text-primary-fixed-dim border border-primary-fixed-dim/20 uppercase">CEO</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary uppercase">
+<span class="w-1 h-1 rounded-full bg-primary animate-pulse"></span> Authorized
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">MK</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Marcus Kray</p>
+<p class="text-[10px] text-on-surface-variant font-medium">m.kray@rydinex.gov</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-secondary-container/20 text-secondary-fixed uppercase">Admin</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-white/10"></span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary uppercase">
+<span class="w-1 h-1 rounded-full bg-primary"></span> Authorized
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">SA</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Sarah Al-Fayed</p>
+<p class="text-[10px] text-on-surface-variant font-medium">s.alfayed@rydinex.gov</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-tertiary-container/20 text-tertiary-fixed uppercase">Reg. Manager</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-white/10"></span>
+<span class="w-3 h-1 rounded-full bg-white/10"></span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-tertiary uppercase">
+<span class="w-1 h-1 rounded-full bg-tertiary"></span> Reviewing
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">HL</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Henry Low</p>
+<p class="text-[10px] text-on-surface-variant font-medium">h.low@rydinex.gov</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-surface-container-highest text-on-surface-variant uppercase">Support Lead</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-primary"></span>
+<span class="w-3 h-1 rounded-full bg-white/10"></span>
+<span class="w-3 h-1 rounded-full bg-white/10"></span>
+<span class="w-3 h-1 rounded-full bg-white/10"></span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary uppercase">
+<span class="w-1 h-1 rounded-full bg-primary"></span> Authorized
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-lowest/50 flex justify-between items-center">
+<span class="text-[11px] text-on-surface-variant font-medium">Displaying 24 of 892 Authorities</span>
+<div class="flex gap-1">
+<button class="p-2 bg-surface-container text-on-surface rounded hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-2 bg-surface-container text-on-surface rounded hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Create New Role Section - 4 Columns -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container rounded-xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
+<h3 class="text-sm font-bold font-headline uppercase tracking-widest text-primary mb-6">Forge New Role</h3>
+<div class="space-y-5">
+<div>
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Role Designation</label>
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-primary-container text-on-surface text-sm p-3 outline-none transition-all" placeholder="e.g. Audit Auditor" type="text"/>
+</div>
+<div>
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block mb-4">Granular Permissions</label>
+<div class="space-y-3">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-xs text-on-surface group-hover:text-primary transition-colors">Approve CEO Requests</span>
+<input class="w-4 h-4 rounded bg-surface-container-highest border-white/10 text-primary focus:ring-primary-container" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-xs text-on-surface group-hover:text-primary transition-colors">View Financials</span>
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest border-white/10 text-primary focus:ring-primary-container" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-xs text-on-surface group-hover:text-primary transition-colors">Refund Trips</span>
+<input class="w-4 h-4 rounded bg-surface-container-highest border-white/10 text-primary focus:ring-primary-container" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-xs text-on-surface group-hover:text-primary transition-colors">Modify Security Policy</span>
+<input class="w-4 h-4 rounded bg-surface-container-highest border-white/10 text-primary focus:ring-primary-container" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-xs text-on-surface group-hover:text-primary transition-colors">Export Sovereignty Logs</span>
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest border-white/10 text-primary focus:ring-primary-container" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full bg-gradient-to-r from-primary-container to-primary text-on-primary-container py-4 rounded font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all">
+                                    Deploy Role Identity
+                                </button>
+</div>
+</div>
+</div>
+<!-- Authority Quick Stats -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5 space-y-6">
+<h4 class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Hierarchy Overview</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded border border-white/5">
+<p class="text-[10px] font-medium text-on-surface-variant uppercase mb-1">Total Roles</p>
+<p class="text-2xl font-bold font-headline text-primary">12</p>
+</div>
+<div class="bg-surface-container p-4 rounded border border-white/5">
+<p class="text-[10px] font-medium text-on-surface-variant uppercase mb-1">Elevated</p>
+<p class="text-2xl font-bold font-headline text-tertiary">4</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-[11px] text-on-surface-variant">Policy Health</span>
+<span class="text-[11px] font-bold text-primary">98.4%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98.4%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Permission Audit Log -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 overflow-hidden">
+<div class="px-6 py-4 border-b border-white/5 flex justify-between items-center">
+<h3 class="text-sm font-bold font-headline uppercase tracking-widest text-on-surface">Recent Security Mutability</h3>
+<button class="text-xs text-primary font-bold hover:underline">View Full Audit Trail</button>
+</div>
+<div class="p-6 grid md:grid-cols-3 gap-6">
+<div class="flex gap-4 p-4 rounded bg-surface-container hover:bg-surface-container-high transition-all cursor-default group">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-lg">key</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Julian Draxler</p>
+<p class="text-[10px] text-on-surface-variant mb-2">Elevated permissions for Support Lead</p>
+<span class="text-[9px] font-medium px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded">2m ago</span>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded bg-surface-container hover:bg-surface-container-high transition-all cursor-default group">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-lg">lock</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">System Kernel</p>
+<p class="text-[10px] text-on-surface-variant mb-2">Automatic revocation of stale Regional tokens</p>
+<span class="text-[9px] font-medium px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded">15m ago</span>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded bg-surface-container hover:bg-surface-container-high transition-all cursor-default group">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-lg">admin_panel_settings</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Marcus Kray</p>
+<p class="text-[10px] text-on-surface-variant mb-2">Modified 'Approve CEO Requests' logic</p>
+<span class="text-[9px] font-medium px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded">1h ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Only on relevant pages) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-container to-primary text-on-primary-container rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

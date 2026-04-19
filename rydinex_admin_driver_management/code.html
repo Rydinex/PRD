@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Driver Management Hub | Rydinex Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#00419f",
+              "surface-container-highest": "#333539",
+              "surface-container-high": "#282a2e",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface": "#111317",
+              "primary-container": "#276ef1",
+              "outline-variant": "#424654",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "primary": "#b1c5ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed": "#ffdbcc",
+              "inverse-on-surface": "#2f3035",
+              "tertiary-container": "#c65100",
+              "surface-container-lowest": "#0c0e12",
+              "on-background": "#e2e2e8",
+              "secondary-container": "#31477c",
+              "surface-bright": "#37393e",
+              "on-secondary-fixed": "#001947",
+              "surface-dim": "#111317",
+              "surface-container": "#1e2024",
+              "on-tertiary-fixed": "#351000",
+              "inverse-primary": "#0056d0",
+              "outline": "#8c90a0",
+              "on-secondary-container": "#a2b7f3",
+              "on-error-container": "#ffdad6",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#b1c5ff",
+              "inverse-surface": "#e2e2e8",
+              "on-tertiary-container": "#fffdff",
+              "tertiary": "#ffb694",
+              "primary-fixed": "#dae2ff",
+              "surface-variant": "#333539",
+              "background": "#111317",
+              "secondary": "#b1c5ff",
+              "on-surface": "#e2e2e8",
+              "on-tertiary": "#561f00",
+              "surface-tint": "#b1c5ff",
+              "tertiary-fixed-dim": "#ffb694",
+              "on-primary-container": "#fffeff",
+              "surface-container-low": "#1a1c20",
+              "secondary-fixed": "#dae2ff",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-secondary": "#162e61",
+              "on-surface-variant": "#c2c6d7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111317; }
+        ::-webkit-scrollbar-thumb { background: #333539; border-radius: 10px; }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white antialiased">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-[#080a0d] h-full w-64 border-r-0 font-['Manrope'] antialiased tracking-tight z-50">
+<div class="px-6 mb-10">
+<span class="text-xl font-bold text-white tracking-tighter">Rydinex Admin</span>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Platform Controller</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-gray-500 hover:text-white transition-colors hover:bg-[#111317]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Executive Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-[#276ef1] bg-[#1a1c20] rounded-r-full font-semibold" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="local_taxi">local_taxi</span>
+<span class="text-sm">Driver Management</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-500 hover:text-white transition-colors hover:bg-[#111317]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="person">person</span>
+<span class="text-sm font-medium">Rider Management</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-500 hover:text-white transition-colors hover:bg-[#111317]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="payments">payments</span>
+<span class="text-sm font-medium">Financials (Stripe)</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-500 hover:text-white transition-colors hover:bg-[#111317]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="verified_user">verified_user</span>
+<span class="text-sm font-medium">Safety &amp; Compliance</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-500 hover:text-white transition-colors hover:bg-[#111317]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="text-sm font-medium">System Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-primary-container flex items-center justify-center text-[10px] font-bold">JD</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate text-white">Admin User Profile</p>
+<p class="text-[10px] text-gray-500 truncate">System Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen pb-20">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-[#0f1115]/80 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-8 font-['Manrope'] text-sm font-medium">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-xs w-full focus:ring-1 focus:ring-primary-container" placeholder="Global Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-white" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-white" data-icon="help">help</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-white" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<!-- Content Header -->
+<section class="px-8 pt-8 pb-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-3xl font-extrabold font-headline tracking-tight text-white mb-2">Driver Fleet Management</h1>
+<p class="text-on-surface-variant text-sm font-body max-w-lg">Central command for monitoring, verifying, and optimizing the Rydinex partner network across all tiers.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" data-icon="person_search">person_search</span>
+<input class="bg-surface-container border-none rounded-lg py-3 pl-10 pr-4 text-xs min-w-[300px] focus:ring-2 focus:ring-primary-container outline-none transition-all shadow-xl" placeholder="Driver Name or License ID" type="text"/>
+</div>
+<button class="bg-primary-container hover:bg-primary-container/90 text-white px-5 py-3 rounded-lg text-xs font-bold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+                        Add Driver
+                    </button>
+</div>
+</div>
+<!-- Segmented Control Filters -->
+<div class="mt-10 flex border-b border-white/5 gap-8">
+<button class="pb-4 text-sm font-bold border-b-2 border-primary-container text-white transition-all">All Drivers (1,402)</button>
+<button class="pb-4 text-sm font-medium text-gray-500 hover:text-white transition-all">Standard Drivers</button>
+<button class="pb-4 text-sm font-medium text-gray-500 hover:text-white transition-all">Professional / Chauffeured</button>
+<button class="pb-4 text-sm font-medium text-gray-500 hover:text-white transition-all">Pending Verification</button>
+</div>
+</section>
+<!-- Main Workspace Grid -->
+<div class="px-8 grid grid-cols-12 gap-8 mt-6">
+<!-- Sidebar Filter Panel -->
+<aside class="col-span-12 lg:col-span-3 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5">
+<h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 flex items-center justify-between">
+                        Advanced Filters
+                        <span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+</h3>
+<div class="space-y-6">
+<!-- Rating Filter -->
+<div>
+<label class="block text-xs font-semibold text-on-surface-variant mb-3">Minimum Rating</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="bg-primary-container text-white py-2 rounded-lg text-[10px] font-bold">4.5+ STARS</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant py-2 rounded-lg text-[10px] font-bold">ALL RATINGS</button>
+</div>
+</div>
+<!-- Vehicle Age Filter -->
+<div>
+<label class="block text-xs font-semibold text-on-surface-variant mb-3">Vehicle Age</label>
+<select class="w-full bg-surface-container border-none rounded-lg text-xs text-on-surface py-3 focus:ring-1 focus:ring-primary-container">
+<option>Any Age</option>
+<option>Under 3 Years</option>
+<option>Under 5 Years</option>
+<option>Under 8 Years</option>
+</select>
+</div>
+<!-- Completion Rate -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<label class="text-xs font-semibold text-on-surface-variant">Completion Rate</label>
+<span class="text-[10px] font-bold text-primary">85%+</span>
+</div>
+<input class="w-full h-1 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary-container" type="range"/>
+</div>
+<!-- Driver Status -->
+<div class="space-y-2 pt-2">
+<label class="flex items-center gap-3 p-3 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="rounded border-none text-primary-container focus:ring-0 bg-surface-container-highest" type="checkbox"/>
+<span class="text-xs font-medium">Active Online</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="rounded border-none text-primary-container focus:ring-0 bg-surface-container-highest" type="checkbox"/>
+<span class="text-xs font-medium">Currently On Trip</span>
+</label>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-container-highest hover:bg-surface-bright text-on-surface text-xs font-bold rounded-lg transition-all">
+                        Reset All Filters
+                    </button>
+</div>
+<!-- Snapshot Metric -->
+<div class="bg-gradient-to-br from-[#276ef1]/10 to-transparent p-6 rounded-xl border border-primary-container/10">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Fleet Health</p>
+<h4 class="text-2xl font-headline font-bold text-white">98.4%</h4>
+<p class="text-[10px] text-gray-500 mt-2 leading-relaxed">System performance is optimal. Driver availability in Sector-A is up 12%.</p>
+</div>
+</aside>
+<!-- Table Section -->
+<div class="col-span-12 lg:col-span-9">
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl border border-white/5">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/50 border-b border-white/5">
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">Driver Name</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">Status</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">License Tier</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">BG Check</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">Rating</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a middle-aged male driver with a friendly smile wearing a crisp navy uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK0q87jf-IPk45H-CtX_nXh4xmxIamPNur3-0geWZI5qJlx1Valp6tfasV-yu1URS7sanfiZoTzF9lbRTo0Suudsacaqys9XLsMOFk15rjuMqRsQX-efU9ycgpgI2TjGm233-1W20_oMUKmRR1ajXSyIefPQClWcoO1WThC3UDWj_wuNBh1bxNaD9J9kxM2JziM_gd0_U2_VR_o9w4-zZ7bHgt_yWZfoA5Ty9B68WX9ZhlbtE-3QuIqO-LCYkTH7meSn2sor7IR2E"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary transition-colors">Marcus Sterling</p>
+<p class="text-[10px] text-gray-500">ID: RD-8892-XT</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#34d399]"></span>
+<span class="text-xs font-medium text-on-surface">Online</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 rounded bg-[#276ef1]/10 text-primary border border-primary/20">Professional</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-[10px] font-black px-2 py-0.5 rounded bg-[#34d399]/10 text-[#34d399]">PASS</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#fbbf24]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-white">4.95</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="View Profile">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Verify Documents">
+<span class="material-symbols-outlined text-sm" data-icon="fact_check">fact_check</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Contact">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="portrait of a focused professional female driver with braided hair wearing a modern polo shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvtgHLBc9UgVO0kHJguS0zkK-Ec2NEsd3sT1SYpvf4N9eWLu-lr4uB5wSb1eXeRpp58eR6FGhIM0PN4SiJUjcphrFLso0v1Cq_3_rXuONlU-VxnBKE2RW16CdCPJnInaEh1--Ovo3dvLy2XSwW0TQXAhMf5S1jV1EfgYZymXLIgwx4gChReZ75GJlQTAOWwYtsAq3iZsnKAssA9MjAGFLa884LQeGn_BOF-9Uljm_ZrwL7ekkoEng1nklM37-6F0C_rpGssRXvI8c"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary transition-colors">Elena Rodriguez</p>
+<p class="text-[10px] text-gray-500">ID: RD-4412-PY</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#fbbf24]"></span>
+<span class="text-xs font-medium text-on-surface">On Break</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 rounded bg-surface-container-highest text-gray-400 border border-white/5">Standard</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-[10px] font-black px-2 py-0.5 rounded bg-[#34d399]/10 text-[#34d399]">PASS</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#fbbf24]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-white">4.82</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="View Profile">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Verify Documents">
+<span class="material-symbols-outlined text-sm" data-icon="fact_check">fact_check</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Contact">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="serious young man with glasses and stubble in a studio setting with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3_Q-_inqNV-bl2Ht1i15gu_faGil8Clxbero9f88gn6RCHq2DduRuoZ3CYzy8MxxpwVZtLLdxOpRfoqJHJcXkuZAmFf8WuTk_V4-gzyB_GklGqJAmjCmh9sVS4hFVJtAnz3JpkH7tBhmjw-GLg2TJr5nOcgU_76EypOkN3FCLCh9G-k3HwT__jD3OJj0rRDCYdkFMfwhXPdYcTph1MyfwK3z_XxNAZ9LwubuqvJDuOnIxhbVTnZ3xVtvyKThsbdE3PP419Dd9woQ"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary transition-colors">Chen Wei</p>
+<p class="text-[10px] text-gray-500">ID: RD-1109-LS</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gray-600"></span>
+<span class="text-xs font-medium text-gray-500">Offline</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 rounded bg-[#276ef1]/10 text-primary border border-primary/20">Professional</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-[10px] font-black px-2 py-0.5 rounded bg-error/10 text-error">FAIL</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#fbbf24]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="text-xs font-bold text-white">4.20</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="View Profile">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-error hover:text-error-container" title="Verify Documents">
+<span class="material-symbols-outlined text-sm" data-icon="report">report</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Contact">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="cheerful man with beard wearing casual streetwear in a modern urban environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQt6qkacPcNAhGo4qZ9v1fab2pkrd8j-JolYIjsFGCh_JcVmEH5aOcXVN9DNBR2iyCL8FE8kyhrIJla97qsCFhnJX5il6K0YL_fp8jQ3MLtfR8v-LdaF_uG8ZBCWKmwpSd0_TBail8byl6H7J6oIad4dzhT3KHnNCdbEeO_AbETsRInrdchtGALL4Iy5UcUmw8kVjpiBZ-aJPC2X0RkbDJVujkpl8OhrdARXmoPw0DSJd4kSa6mJXJQqr_lasbswFvxlTiDwTBGp0"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary transition-colors">Jordan Smith</p>
+<p class="text-[10px] text-gray-500">ID: RD-5521-ZZ</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#34d399]"></span>
+<span class="text-xs font-medium text-on-surface">Online</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="text-xs font-semibold px-2.5 py-1 rounded bg-surface-container-highest text-gray-400 border border-white/5">Standard</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-[10px] font-black px-2 py-0.5 rounded bg-[#34d399]/10 text-[#34d399]">PASS</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#fbbf24]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-white">4.91</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="View Profile">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Verify Documents">
+<span class="material-symbols-outlined text-sm" data-icon="fact_check">fact_check</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-all text-gray-400 hover:text-white" title="Contact">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination/Status -->
+<div class="px-6 py-4 bg-surface-container/30 flex items-center justify-between border-t border-white/5">
+<p class="text-[10px] font-medium text-gray-500">Showing 4 of 1,402 active drivers</p>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary-container text-white text-[10px] font-bold">1</button>
+<button class="w-8 h-8 rounded bg-surface-container text-gray-400 text-[10px] font-bold hover:bg-surface-container-high">2</button>
+<button class="w-8 h-8 rounded bg-surface-container text-gray-400 text-[10px] font-bold hover:bg-surface-container-high">3</button>
+<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Actionable Insight Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white mb-1">Compliance Alert</h4>
+<p class="text-xs text-gray-500">12 drivers have licenses expiring in the next 30 days. Action required for fleet continuity.</p>
+<button class="mt-4 text-[10px] font-bold text-primary flex items-center gap-1 hover:underline">
+                                REVIEW COMPLIANCE <span class="material-symbols-outlined text-[12px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#34d399]/10 flex items-center justify-center text-[#34d399]">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white mb-1">High Performance</h4>
+<p class="text-xs text-gray-500">Tier promotion eligible for 8 Standard drivers based on recent 5.0 star streak.</p>
+<button class="mt-4 text-[10px] font-bold text-[#34d399] flex items-center gap-1 hover:underline">
+                                VIEW ELIGIBLE <span class="material-symbols-outlined text-[12px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="fixed bottom-0 ml-64 w-[calc(100%-16rem)] h-8 z-50 bg-[#080a0d] border-t border-white/5 flex items-center justify-between px-6 font-['Inter'] text-[10px] uppercase tracking-widest">
+<div class="flex items-center gap-4">
+<span class="text-[#276ef1] font-bold">Rydinex Admin</span>
+<span class="text-gray-500">System Health: Operational</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-gray-500 hover:text-white cursor-default">API: Normal</span>
+<span class="text-gray-500 hover:text-white cursor-default">Active Drivers: 1,402</span>
+<span class="text-gray-500 hover:text-white cursor-default">Trips: 843</span>
+</div>
+</footer>
+</main>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

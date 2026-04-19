@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#a2b7f3",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-error": "#690005",
+              "inverse-surface": "#e5e2e3",
+              "on-tertiary-container": "#fffdff",
+              "tertiary": "#ffb694",
+              "primary-fixed": "#dae2ff",
+              "surface-variant": "#353436",
+              "background": "#131314",
+              "secondary": "#b1c5ff",
+              "on-surface": "#e5e2e3",
+              "on-tertiary": "#561f00",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-tint": "#b1c5ff",
+              "on-primary-container": "#fffeff",
+              "surface-container-low": "#1b1b1c",
+              "secondary-fixed-dim": "#b1c5ff",
+              "secondary-fixed": "#dae2ff",
+              "on-secondary": "#162e61",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container-highest": "#353436",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-container-high": "#2a2a2b",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface": "#131314",
+              "primary-container": "#276ef1",
+              "outline-variant": "#424654",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "primary": "#b1c5ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed": "#ffdbcc",
+              "inverse-on-surface": "#303031",
+              "tertiary-container": "#c65100",
+              "surface-container-lowest": "#0e0e0f",
+              "on-background": "#e5e2e3",
+              "secondary-container": "#31477c",
+              "surface-bright": "#39393a",
+              "on-secondary-fixed": "#001947",
+              "surface-dim": "#131314",
+              "surface-container": "#1f1f20",
+              "on-tertiary-fixed": "#351000",
+              "outline": "#8c90a0",
+              "inverse-primary": "#0056d0"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        background: rgba(53, 52, 54, 0.6);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-gradient-to-b from-[#1c1c1e] to-[#131314] transition-colors">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] hover:bg-[#2c2c2e] p-2 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-headline font-bold tracking-tight text-3xl text-[#b1c5ff]">Support Center</h1>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary-container overflow-hidden">
+<img alt="Driver Profile" class="w-full h-full object-cover" data-alt="Professional driver profile portrait with friendly expression and clean corporate background in soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD77O6zISZnGISNVX3ZdMZq96THE9rekktbZjashOzDE3styTHZggsQ-5Nv73expT8gK16PmbHMhvA7izMD1B0ZZEqVnRxNkuahdGk5kAB7WtRbdvV8LSs-ZHjuiq4Psmb9qU_EnEpJlEfuAbFnpSy8YUMcW8C61WPlz9u4ePESLU0wddbrJUlIOJuGEVxFx28ApaOur-frSMijp4Sj6TRwi6riWnA5MkkQqar8f2aFBGAM4siT9M1K_FU105JgejSOAYdQK8WjkmI"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-10">
+<!-- Confirmation Hero -->
+<section class="text-center pt-8">
+<div class="inline-flex items-center justify-center w-20 h-20 bg-primary-container rounded-full mb-6 shadow-[0_20px_40px_rgba(39,110,241,0.3)]">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline text-5xl font-extrabold tracking-tight mb-2">You're all set.</h2>
+<p class="text-on-surface-variant text-lg opacity-70">Your appointment at the Westside Hub is confirmed.</p>
+</section>
+<!-- QR Code Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- QR Card -->
+<div class="md:col-span-7 bg-surface-container-low rounded-xl p-8 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
+<div class="bg-white p-4 rounded-lg mb-6 shadow-2xl">
+<img alt="Check-in QR Code" class="w-40 h-40" data-alt="Monochrome QR code displayed on a clean white background with slight rounded corners for digital check-in" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyo27U6TBDVhsA4BneNgLE4Xuje8fVLi467bF7LfntziHsFKJeDYa1HloGEnuRS_KsiqcFnc2-HaBJnpUUzlQ41gnV6zlMfbnFyUat-YB0FusFd8dpju-PLAumaknEoeW3z20d7suejaxg7HDltJaIKhfn6Aijs2t0OP5WhUayWrY9S_BFh3A08LFRw4tqM4QERJSliQ6rkEbuHik2Jd7v_J1umnBr1aALrKdmz4Jwfh7ilrX9goJV00uTQ4f8nmH1zthgQsDetnM"/>
+</div>
+<div class="text-center">
+<p class="font-headline font-bold text-xl mb-1">Hub Check-in</p>
+<p class="text-label-md text-on-surface-variant uppercase tracking-widest text-[10px] font-medium">Scan upon arrival</p>
+</div>
+</div>
+<!-- Details Card -->
+<div class="md:col-span-5 space-y-4">
+<div class="bg-surface-container-high p-6 rounded-xl flex items-start gap-4">
+<div class="text-primary-container">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant text-[10px] uppercase tracking-widest font-medium mb-1">Date &amp; Time</p>
+<p class="font-headline font-bold text-lg">Oct 24, 2023</p>
+<p class="text-primary text-sm font-semibold">10:30 AM â€” 11:15 AM</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl flex items-start gap-4">
+<div class="text-primary-container">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant text-[10px] uppercase tracking-widest font-medium mb-1">Location</p>
+<p class="font-headline font-bold text-lg">Westside Hub</p>
+<p class="text-on-surface-variant text-sm">442 Industrial Way, Ste 10</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary-container text-white py-5 rounded-xl font-bold text-lg shadow-[0_20px_40px_rgba(39,110,241,0.2)] hover:scale-[1.02] transition-transform active:scale-95 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+                Add to Calendar
+            </button>
+<button class="w-full glass-effect border border-outline-variant/15 text-on-surface py-5 rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-colors active:scale-95">
+                Get Directions
+            </button>
+</div>
+<!-- Preparation Checklist -->
+<section class="space-y-6">
+<h3 class="font-headline text-2xl font-bold tracking-tight">Prepare for your visit</h3>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+</div>
+<div>
+<p class="font-semibold text-lg">Valid Government ID</p>
+<p class="text-on-surface-variant text-sm opacity-60">Driver's License or Passport</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div>
+<p class="font-semibold text-lg">Vehicle Documents</p>
+<p class="text-on-surface-variant text-sm opacity-60">Insurance and Registration</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<div>
+<p class="font-semibold text-lg">App Access</p>
+<p class="text-on-surface-variant text-sm opacity-60">Latest app version installed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Help Chip -->
+<div class="bg-tertiary/10 border border-tertiary/20 p-4 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-sm text-tertiary-fixed-dim">Need to reschedule? You can change your time up to 2 hours before the appointment.</p>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#1c1c1e]/80 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#276ef1] text-white rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_available" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

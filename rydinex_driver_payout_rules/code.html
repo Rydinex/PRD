@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout &amp; Compliance | Rydinex</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#e5e2e3",
+              "inverse-surface": "#e5e2e3",
+              "on-tertiary": "#561f00",
+              "on-surface-variant": "#c2c6d7",
+              "on-secondary-fixed-variant": "#2f4579",
+              "surface-variant": "#353436",
+              "primary": "#b1c5ff",
+              "on-tertiary-fixed": "#351000",
+              "error": "#ffb4ab",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-primary-fixed": "#001947",
+              "surface": "#131314",
+              "on-surface": "#e5e2e3",
+              "surface-bright": "#39393a",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#1b1b1c",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary": "#002c71",
+              "inverse-on-surface": "#303031",
+              "tertiary-fixed-dim": "#ffb694",
+              "tertiary": "#ffb694",
+              "tertiary-container": "#c65100",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-tint": "#b1c5ff",
+              "secondary-fixed": "#dae2ff",
+              "on-primary-fixed-variant": "#00419f",
+              "secondary-container": "#31477c",
+              "inverse-primary": "#0056d0",
+              "tertiary-fixed": "#ffdbcc",
+              "background": "#131314",
+              "surface-container": "#1f1f20",
+              "primary-container": "#276ef1",
+              "primary-fixed": "#dae2ff",
+              "on-tertiary-container": "#fffdff",
+              "surface-container-lowest": "#0e0e0f",
+              "outline": "#8c90a0",
+              "surface-dim": "#131314",
+              "surface-container-highest": "#353436",
+              "surface-container-high": "#2a2a2b",
+              "secondary-fixed-dim": "#b1c5ff",
+              "secondary": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "outline-variant": "#424654",
+              "on-primary-container": "#fffeff",
+              "on-secondary": "#162e61"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .active-nav-glow {
+        box-shadow: 0 0 20px rgba(39, 110, 241, 0.3);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#131314] text-[#b1c5ff] flex justify-between items-center px-6 h-16 max-w-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:bg-white/5 p-2 rounded-full transition-colors">menu</span>
+<h1 class="font-['Manrope'] tracking-tight font-bold text-2xl">Event Hub</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img alt="Driver Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a professional male driver with a friendly expression in a modern car interior setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDATX7VpvIpsvxdk4z-4sYnJreztuNykfDopiFlxFczsd0bjsse1UeNl-mlb2jZ7QtLvZ1lhuXBd1oE4kKgbwij_wAhNBxC0V2008OVkWsX6_C_2lhBaOFEU2X2hwU4A2wasZUR0vPXVD3t9AKi4JRtsrRsYqeARZpdCG3nMkMiUaWFFIp7tC3jsmaGUCfqgV3a7K0JI5TaTQGwn_zpu8hFGmcwQlga9ADEUxbVZmNDjC9uUFPhJsvU0dc4eDaG7xsaL5VeSeDq5XQ"/>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-12">
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter text-on-surface mb-2">Payout &amp; Compliance</h2>
+<p class="text-on-surface-variant font-medium text-lg opacity-70">Manage your earnings and stay up to date with local regulations.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Payout Methods Canvas (8 Cols) -->
+<section class="md:col-span-8 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="text-xs uppercase tracking-widest text-primary font-bold mb-2 block">Current Balance</span>
+<div class="font-headline text-4xl font-bold tracking-tight">$1,248.50</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-bold active:scale-95 transition-all shadow-lg shadow-primary-container/20">
+                            Instant Pay
+                        </button>
+</div>
+<h3 class="font-headline text-xl font-bold mb-6">Payout Methods</h3>
+<div class="space-y-4">
+<!-- Payout Card: Bank -->
+<div class="flex items-center justify-between p-5 bg-surface-container-highest rounded-xl group hover:bg-surface-bright transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Chase Bank â€¢â€¢â€¢â€¢ 8829</p>
+<p class="text-xs text-on-surface-variant">Default â€¢ Weekly Payout</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Payout Card: Debit -->
+<div class="flex items-center justify-between p-5 bg-surface-container-highest rounded-xl group hover:bg-surface-bright transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">credit_card</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Visa Debit â€¢â€¢â€¢â€¢ 4412</p>
+<p class="text-xs text-on-surface-variant">Instant Pay Enabled</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Add New -->
+<button class="w-full flex items-center justify-center gap-2 p-5 border-2 border-dashed border-outline-variant/30 rounded-xl text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-bold">Add Payout Method</span>
+</button>
+</div>
+</div>
+<!-- Payout History Teaser -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<h3 class="font-headline text-xl font-bold mb-6">Recent Payouts</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<div>
+<p class="font-bold text-sm">May 12, 2024</p>
+<p class="text-xs text-on-surface-variant">Weekly Earnings</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm text-primary">+$842.10</p>
+<p class="text-[10px] text-tertiary-fixed-dim uppercase tracking-tighter">Completed</p>
+</div>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<div>
+<p class="font-bold text-sm">May 09, 2024</p>
+<p class="text-xs text-on-surface-variant">Instant Payout</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm text-primary">+$120.00</p>
+<p class="text-[10px] text-tertiary-fixed-dim uppercase tracking-tighter">Completed</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regulatory & Compliance (4 Cols) -->
+<aside class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 h-full">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<h3 class="font-headline text-xl font-bold">Compliance</h3>
+</div>
+<!-- Compliance Cards -->
+<div class="space-y-4">
+<!-- City Rules -->
+<div class="relative overflow-hidden glass-card rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-4">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-widest">Active</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl">info</span>
+</div>
+<h4 class="font-bold text-lg mb-1">City Regulations</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Chicago TNP License is valid until Sept 2024.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl">location_city</span>
+</div>
+</div>
+<!-- Airport Rules -->
+<div class="relative overflow-hidden glass-card rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-4">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold rounded-full uppercase tracking-widest">Attention</span>
+<span class="material-symbols-outlined text-tertiary text-xl">warning</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Airport Placard</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Update your O'Hare (ORD) digital placard by Friday.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl">flight_land</span>
+</div>
+</div>
+<!-- Help Center Link -->
+<div class="p-5 bg-surface-container-highest rounded-xl flex items-center gap-4 hover:bg-surface-bright transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant">help_outline</span>
+<span class="font-bold text-sm">Regulatory Support</span>
+</div>
+</div>
+<!-- Visual Accent Card -->
+<div class="mt-12 rounded-xl overflow-hidden relative aspect-[4/3]">
+<img alt="Compliance Overview" class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="dramatic night time view of a modern airport terminal with sleek architecture and glowing blue lights reflecting on asphalt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB15TX0ZjQeYbyUtyBanrJ8h8f1G-qUbZCtUHrU5bpXD4EhT6OGA1zuEQI8arvwErG_KDNMAS0l-RL3cpuLkB9pTU24QMvwKvJhe2c6ANZbgQ7ZtSzpQK7jY46pN64P-XtcEIWPFHZwjrL3BwIB9vOa3zgmMMHypTafvStzyZPRozeokyPWx82a5U3bzgmlY4DyKqQLAyxd1Ch4AATVJQxu69ab44rHmFQ6eZsyfWG9-9920naVWGItWLyMpb4mkD8rLgjA4ulFQR8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-xs font-bold text-primary mb-1">PRO TIP</p>
+<p class="text-sm font-medium leading-tight text-on-surface">Keep your airport decals visible to avoid city fines during pickups.</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center pt-2 pb-6 px-4 bg-[#131314]/80 backdrop-blur-xl border-t border-white/10 shadow-[0_-20px_40px_rgba(0,0,0,0.3)] z-50 rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">event_seat</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Events</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">flight_land</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Airport</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 active-nav-glow cursor-pointer">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Earnings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1">account_circle</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold">Profile</span>
+</div>
+</footer>
+<!-- Desktop Sidebar Component (Mimicking NavigationDrawer) -->
+<div class="hidden lg:flex fixed left-0 top-0 h-full w-20 flex-col items-center py-8 gap-8 bg-surface-container-low border-r border-outline-variant/10 z-40">
+<div class="text-[#276EF1] font-bold text-xl mb-4">R</div>
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">directions_car</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">format_list_numbered</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">gavel</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">settings</span>
+</div>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

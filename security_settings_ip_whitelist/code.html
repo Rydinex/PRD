@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#561f00",
+              "surface-container": "#1e2024",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-tertiary-fixed": "#351000",
+              "tertiary": "#ffb694",
+              "on-tertiary-container": "#fffdff",
+              "surface-container-high": "#282a2e",
+              "outline-variant": "#424654",
+              "primary-fixed": "#dae2ff",
+              "inverse-surface": "#e2e2e8",
+              "on-primary": "#002c71",
+              "surface-container-lowest": "#0c0e12",
+              "secondary-fixed": "#dae2ff",
+              "secondary-fixed-dim": "#b1c5ff",
+              "primary-container": "#276ef1",
+              "inverse-on-surface": "#2f3035",
+              "inverse-primary": "#0056d0",
+              "surface": "#111317",
+              "tertiary-container": "#c65100",
+              "secondary-container": "#31477c",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container-highest": "#333539",
+              "on-error": "#690005",
+              "primary": "#b1c5ff",
+              "on-secondary-container": "#a2b7f3",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-dim": "#111317",
+              "on-surface": "#e2e2e8",
+              "tertiary-fixed-dim": "#ffb694",
+              "background": "#111317",
+              "surface-bright": "#37393e",
+              "on-secondary": "#162e61",
+              "on-primary-fixed-variant": "#00419f",
+              "on-primary-container": "#fffeff",
+              "on-background": "#e2e2e8",
+              "error-container": "#93000a",
+              "surface-variant": "#333539",
+              "surface-tint": "#b1c5ff",
+              "outline": "#8c90a0",
+              "on-primary-fixed": "#001947",
+              "secondary": "#b1c5ff",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "surface-container-low": "#1a1c20",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(51, 53, 57, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #276ef1 0%, #b1c5ff 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 z-40 bg-[#1a1c20] dark:bg-[#1a1c20] w-64 border-r border-outline-variant/15">
+<div class="px-6 mb-10">
+<div class="text-lg font-black text-[#276ef1] font-headline tracking-tighter uppercase">Rydinex</div>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<div>
+<div class="text-[13px] font-bold font-headline text-on-surface leading-tight">Command Center</div>
+<div class="text-[10px] text-on-surface-variant font-medium tracking-wide uppercase">High-Density Auth</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-on-surface-variant/40 hover:text-on-surface hover:bg-[#1e2024] transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl" data-icon="hub">hub</span>
+<span class="text-[11px] uppercase tracking-widest font-label">Network Overview</span>
+</a>
+<a class="flex items-center px-6 py-3 text-[#b1c5ff] font-bold border-r-2 border-[#276ef1] bg-surface-container/50 transition-all translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3 text-xl" data-icon="lan">lan</span>
+<span class="text-[11px] uppercase tracking-widest font-label">IP Whitelist</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant/40 hover:text-on-surface hover:bg-[#1e2024] transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="text-[11px] uppercase tracking-widest font-label">Access Rules</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant/40 hover:text-on-surface hover:bg-[#1e2024] transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl" data-icon="security">security</span>
+<span class="text-[11px] uppercase tracking-widest font-label">Threat Intel</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant/40 hover:text-on-surface hover:bg-[#1e2024] transition-all group" href="#">
+<span class="material-symbols-outlined mr-3 text-xl" data-icon="history">history</span>
+<span class="text-[11px] uppercase tracking-widest font-label">Audit Trail</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-6 border-t border-outline-variant/10">
+<button class="w-full py-3 rounded-lg gradient-primary text-on-primary-container text-[11px] font-bold uppercase tracking-widest mb-6 shadow-lg shadow-primary-container/20">
+                Deploy Policy
+            </button>
+<div class="space-y-4">
+<a class="flex items-center text-on-surface-variant/40 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="help_outline">help_outline</span>
+<span class="text-[10px] uppercase tracking-widest">Support</span>
+</a>
+<a class="flex items-center text-on-surface-variant/40 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="analytics">analytics</span>
+<span class="text-[10px] uppercase tracking-widest">System Status</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-8 h-16 bg-[#111317] dark:bg-[#111317] sticky top-0 z-30 shadow-[0_24px_24px_-4px_rgba(226,226,232,0.04)]">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tight text-[#e2e2e8] font-headline">IP Whitelisting</h1>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#e2e2e8]/60 hover:bg-[#333539] transition-colors duration-200 px-3 py-1 rounded" href="#">Dashboard</a>
+<a class="text-[#e2e2e8]/60 hover:bg-[#333539] transition-colors duration-200 px-3 py-1 rounded" href="#">Security</a>
+<a class="text-[#e2e2e8]/60 hover:bg-[#333539] transition-colors duration-200 px-3 py-1 rounded" href="#">Logs</a>
+<a class="text-[#b1c5ff] border-b-2 border-[#276ef1] pb-1 font-medium" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-[#e2e2e8]/60 hover:text-[#b1c5ff] cursor-pointer" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</div>
+<span class="material-symbols-outlined text-[#e2e2e8]/60 hover:text-[#b1c5ff] cursor-pointer" data-icon="shield">shield</span>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
+<div class="text-right hidden sm:block">
+<div class="text-xs font-bold text-on-surface">Admin_Root</div>
+<div class="text-[10px] text-on-surface-variant/60">System Security Tier 1</div>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<section class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Hero Stats / Global Toggle Bento Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Restrict All Toggle Card -->
+<div class="md:col-span-2 bg-surface-container rounded-xl p-8 relative overflow-hidden border border-outline-variant/5">
+<div class="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[160px]" data-icon="gpp_maybe">gpp_maybe</span>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="security_update_warning">security_update_warning</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-tertiary">Global Security Protocol</span>
+</div>
+<h2 class="text-3xl font-headline font-bold mb-2">Restrict All Other IPs</h2>
+<p class="text-on-surface-variant max-w-md text-sm leading-relaxed">
+                                When enabled, only traffic from the explicitly defined IP addresses in the whitelist will be permitted to access the admin gateway. All other connection requests will be silently dropped.
+                            </p>
+</div>
+<div class="mt-8 flex items-center gap-6">
+<button class="relative inline-flex h-7 w-14 items-center rounded-full bg-primary-container">
+<span class="inline-block h-5 w-5 translate-x-8 transform rounded-full bg-on-primary-container transition duration-200"></span>
+</button>
+<span class="text-sm font-bold text-on-surface">Protocol: STRICT ENFORCEMENT</span>
+</div>
+</div>
+</div>
+<!-- Active Whitelist Count Card -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-center items-center text-center border border-outline-variant/5">
+<div class="text-on-surface-variant/40 text-[10px] uppercase tracking-widest mb-2">Active Entities</div>
+<div class="text-6xl font-headline font-extrabold text-primary mb-2">14</div>
+<div class="text-sm text-on-surface font-medium">Validated Access Points</div>
+<div class="mt-6 flex gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-success_green animate-pulse" style="background-color: #4ade80;"></span>
+<span class="text-[10px] text-on-surface-variant">System Integrity: Nominal</span>
+</div>
+</div>
+</div>
+<!-- Main Management Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- IP Whitelist Table (The Core) -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex justify-between items-end px-2">
+<div>
+<h3 class="text-xl font-headline font-bold">Authorized Access Points</h3>
+<p class="text-xs text-on-surface-variant">Manage static and dynamic IP range definitions.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-lg text-xs font-bold border border-outline-variant/20 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Add New IP
+                        </button>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/5">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Reference Label</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">IP Address</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Status</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Last Activity</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-on-surface">HQ Office</div>
+<div class="text-[10px] text-on-surface-variant">Primary Site Backbone</div>
+</td>
+<td class="px-6 py-5">
+<code class="text-xs bg-surface-container-lowest px-2 py-1 rounded text-primary">192.168.1.104</code>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-400 uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-5 text-xs text-on-surface-variant">2 mins ago</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-on-surface">CEO Remote</div>
+<div class="text-[10px] text-on-surface-variant">Residential Static IP</div>
+</td>
+<td class="px-6 py-5">
+<code class="text-xs bg-surface-container-lowest px-2 py-1 rounded text-primary">45.78.12.201</code>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-yellow-500/10 text-yellow-400 uppercase tracking-tighter">Pending</span>
+</td>
+<td class="px-6 py-5 text-xs text-on-surface-variant">4 hours ago</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-on-surface">Cloud Flare Proxy</div>
+<div class="text-[10px] text-on-surface-variant">CDN Origin Whitelist</div>
+</td>
+<td class="px-6 py-5">
+<code class="text-xs bg-surface-container-lowest px-2 py-1 rounded text-primary">103.21.244.0/22</code>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-400 uppercase tracking-tighter">Flagged</span>
+</td>
+<td class="px-6 py-5 text-xs text-on-surface-variant">Never</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-on-surface">Dev Ops London</div>
+<div class="text-[10px] text-on-surface-variant">Temporary Maintenance Hub</div>
+</td>
+<td class="px-6 py-5">
+<code class="text-xs bg-surface-container-lowest px-2 py-1 rounded text-primary">82.10.45.19</code>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-400 uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-5 text-xs text-on-surface-variant">12 mins ago</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Unauthorized Sidebar -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-sm font-bold uppercase tracking-widest text-on-surface">Intercepted Attempts</h4>
+<span class="px-2 py-0.5 bg-error-container text-on-error-container text-[10px] font-black rounded-full">LIVE</span>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-lowest rounded-lg border-l-2 border-error/50">
+<div class="flex justify-between items-start mb-2">
+<code class="text-xs font-bold text-error">185.220.101.44</code>
+<span class="text-[9px] text-on-surface-variant">RU / Tor Exit</span>
+</div>
+<div class="text-[11px] text-on-surface/80">3 consecutive failed login attempts on root.</div>
+<div class="mt-3 flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant italic">14:02:45 GMT</span>
+<button class="text-[10px] font-bold text-primary hover:underline">INVESTIGATE</button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border-l-2 border-error/20">
+<div class="flex justify-between items-start mb-2">
+<code class="text-xs font-bold text-on-surface-variant">104.28.154.212</code>
+<span class="text-[9px] text-on-surface-variant">US / Cloudflare</span>
+</div>
+<div class="text-[11px] text-on-surface/80">API request to /admin/v1/config from unauthorized IP.</div>
+<div class="mt-3 flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant italic">13:58:12 GMT</span>
+<button class="text-[10px] font-bold text-primary hover:underline">BLACKBOARD</button>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border border-outline-variant/30 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface hover:border-outline transition-all">
+                            View Full Security Log
+                        </button>
+</div>
+<!-- Quick Add Mini-Form (The 'Add New' context) -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10">
+<h4 class="text-sm font-bold mb-4">Express Authorize</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">IP Address</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-sm py-2" placeholder="0.0.0.0" type="text"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Entity Label</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-sm py-2" placeholder="e.g. London Office" type="text"/>
+</div>
+<button class="w-full py-3 bg-primary-container text-on-primary-container text-xs font-bold rounded mt-2 hover:opacity-90 active:scale-[0.98] transition-all">
+                                Validate &amp; Add
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Audit Log Section -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/5">
+<div class="px-8 py-6 border-b border-outline-variant/10 flex items-center justify-between">
+<h3 class="text-base font-headline font-bold">Policy Audit Logs</h3>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface" data-icon="filter_list">filter_list</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface" data-icon="download">download</span>
+</div>
+</div>
+<div class="p-0 overflow-x-auto">
+<div class="min-w-full inline-block align-middle">
+<div class="divide-y divide-outline-variant/5">
+<div class="flex items-center px-8 py-4 gap-6 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="edit_square">edit_square</span>
+<div class="flex-1">
+<div class="text-[13px] text-on-surface font-medium">Policy Modified: <span class="font-bold">HQ Office</span> IP range updated.</div>
+<div class="text-[11px] text-on-surface-variant">By Admin_Root â€¢ System Context</div>
+</div>
+<div class="text-[11px] text-on-surface-variant font-mono">11.02.2024 09:14:22</div>
+</div>
+<div class="flex items-center px-8 py-4 gap-6 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-error" data-icon="delete_sweep">delete_sweep</span>
+<div class="flex-1">
+<div class="text-[13px] text-on-surface font-medium">Policy Removed: <span class="font-bold">Contractor_Zero</span> temporary access revoked.</div>
+<div class="text-[11px] text-on-surface-variant">Automatic â€¢ Expiry Trigger</div>
+</div>
+<div class="text-[11px] text-on-surface-variant font-mono">11.02.2024 00:00:01</div>
+</div>
+<div class="flex items-center px-8 py-4 gap-6 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-tertiary" data-icon="toggle_on">toggle_on</span>
+<div class="flex-1">
+<div class="text-[13px] text-on-surface font-medium">Global Toggle Change: <span class="font-bold text-tertiary">Restrict All Other IPs</span> set to TRUE.</div>
+<div class="text-[11px] text-on-surface-variant">By Security_Lead â€¢ Elevation Required</div>
+</div>
+<div class="text-[11px] text-on-surface-variant font-mono">10.02.2024 22:34:10</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / Technical Info -->
+<footer class="mt-auto p-8 border-t border-outline-variant/10 text-center">
+<div class="flex justify-center items-center gap-6 mb-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Firewall Engine v4.2.1-stable</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Last Sync: 12 seconds ago</div>
+</div>
+<p class="text-[10px] text-on-surface-variant/40 italic">Rydinex Command Center | Sovereign Intelligence Layer</p>
+</footer>
+</main>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

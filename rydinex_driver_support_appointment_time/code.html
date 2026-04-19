@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support Center - Select Time &amp; Reason</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#a2b7f3",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-container": "#fffdff",
+                        "tertiary": "#ffb694",
+                        "primary-fixed": "#dae2ff",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "secondary": "#b1c5ff",
+                        "on-surface": "#e5e2e3",
+                        "on-tertiary": "#561f00",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "surface-tint": "#b1c5ff",
+                        "on-primary-container": "#fffeff",
+                        "surface-container-low": "#1b1b1c",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "on-secondary": "#162e61",
+                        "on-surface-variant": "#c2c6d7",
+                        "surface-container-highest": "#353436",
+                        "on-primary-fixed-variant": "#00419f",
+                        "surface-container-high": "#2a2a2b",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "surface": "#131314",
+                        "primary-container": "#276ef1",
+                        "outline-variant": "#424654",
+                        "on-primary-fixed": "#001947",
+                        "on-primary": "#002c71",
+                        "primary": "#b1c5ff",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "tertiary-fixed": "#ffdbcc",
+                        "inverse-on-surface": "#303031",
+                        "tertiary-container": "#c65100",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#31477c",
+                        "surface-bright": "#39393a",
+                        "on-secondary-fixed": "#001947",
+                        "surface-dim": "#131314",
+                        "surface-container": "#1f1f20",
+                        "on-tertiary-fixed": "#351000",
+                        "outline": "#8c90a0",
+                        "inverse-primary": "#0056d0"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(53, 52, 54, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] flex items-center justify-between px-6 py-4 bg-gradient-to-b from-[#1c1c1e] to-[#131314]">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#2c2c2e] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#b1c5ff]">menu</span>
+</button>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-3xl text-[#b1c5ff]">Support Center</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Driver Profile" data-alt="Professional headshot of a smiling male driver wearing a dark uniform, clean background, high-end commercial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Z8a6J-hix1-DvWu2xVcrbpIKTj9ph0C5R48BuWs8cQDhnDAOZQPoAO1iw8qzBufymGRzxuyoBh_aOf75YdFLae-dwUXD2oU0giRHczvC610zvjxPOr_KScCXdOIw8UhfwN0WBjzFLWNmWL0js3sWlTw2BhR-6na9o9wneA05G-ygmKqIldKba2o0lAYtfD69vdMLP__IabepDLwGxups7BCEMKoFFV7-b3jBxq7er8QvR-eFFlAMdO482VGVYqnpR4nGKPnia-4"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto">
+<!-- Progress Indicator -->
+<div class="mb-12 flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-on-surface font-semibold text-sm">Location</span>
+</div>
+<div class="h-px w-12 bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">2</div>
+<span class="text-primary font-bold text-sm tracking-wide">Time &amp; Reason</span>
+</div>
+<div class="h-px w-12 bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 opacity-40">
+<div class="w-8 h-8 rounded-full border border-outline flex items-center justify-center font-bold">3</div>
+<span class="text-on-surface font-medium text-sm">Confirm</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- Left Column: Date & Details -->
+<div class="lg:col-span-7 space-y-10">
+<section>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-2 text-white">Select a Date</h2>
+<p class="text-on-surface-variant mb-6 font-medium">Choose your preferred day for the inspection.</p>
+<!-- Editorial Calendar Design -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-2xl">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline text-xl font-bold">September 2024</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-4 text-center mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Mo</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Tu</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">We</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Th</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Fr</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Sa</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Su</span>
+</div>
+<div class="grid grid-cols-7 gap-y-2 gap-x-1">
+<!-- Simplified Calendar Grid -->
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface-variant/30 text-sm">26</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface-variant/30 text-sm">27</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface-variant/30 text-sm">28</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface-variant/30 text-sm">29</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface-variant/30 text-sm">30</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface-variant/30 text-sm">31</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">1</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">2</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">3</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">4</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">5</button>
+<!-- Active Day -->
+<button class="aspect-square flex items-center justify-center rounded-lg bg-primary-container text-white font-bold text-sm shadow-[0_10px_20px_rgba(39,110,241,0.3)]">6</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">7</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">8</button>
+<!-- Continue grid filling... -->
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">9</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">10</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">11</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">12</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">13</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">14</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors">15</button>
+</div>
+</div>
+</section>
+<section>
+<h2 class="font-headline text-2xl font-bold tracking-tight mb-6">Reason for Visit</h2>
+<div class="relative group">
+<select class="w-full bg-surface-container-highest border-none rounded-xl py-5 px-6 appearance-none focus:ring-2 focus:ring-primary-container text-lg font-medium cursor-pointer transition-all">
+<option selected="">Vehicle Inspection</option>
+<option>Background Check Assistance</option>
+<option>Payout &amp; Earnings Issue</option>
+<option>Account Access Recovery</option>
+<option>Safety Incident Report</option>
+</select>
+<div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Time Slots (Asymmetric Layout) -->
+<div class="lg:col-span-5 pt-0 lg:pt-14">
+<div class="bg-surface-container-low rounded-3xl p-8 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-10">
+<div>
+<h3 class="font-headline text-2xl font-extrabold text-white">Available Slots</h3>
+<p class="text-xs text-primary font-bold uppercase tracking-widest mt-1">Friday, Sep 6</p>
+</div>
+<span class="material-symbols-outlined text-primary-container text-4xl">schedule</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Morning -->
+<div class="col-span-2 mb-2">
+<span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant opacity-60">Morning</span>
+</div>
+<button class="py-4 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container hover:text-white transition-all text-center font-bold text-sm active:scale-95">09:00 AM</button>
+<button class="py-4 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container hover:text-white transition-all text-center font-bold text-sm active:scale-95">09:30 AM</button>
+<button class="py-4 px-4 rounded-xl bg-primary-container text-white shadow-xl text-center font-bold text-sm scale-105 z-10">10:00 AM</button>
+<button class="py-4 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container hover:text-white transition-all text-center font-bold text-sm active:scale-95">11:00 AM</button>
+<!-- Afternoon -->
+<div class="col-span-2 mt-4 mb-2">
+<span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant opacity-60">Afternoon</span>
+</div>
+<button class="py-4 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container hover:text-white transition-all text-center font-bold text-sm active:scale-95">01:30 PM</button>
+<button class="py-4 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container hover:text-white transition-all text-center font-bold text-sm active:scale-95">02:00 PM</button>
+<button class="py-4 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container hover:text-white transition-all text-center font-bold text-sm active:scale-95">03:30 PM</button>
+<button class="py-4 px-4 rounded-xl opacity-30 cursor-not-allowed bg-surface-container-highest text-center font-bold text-sm line-through">04:00 PM</button>
+</div>
+<div class="mt-12 p-6 rounded-2xl bg-primary-container/10 border border-primary-container/20">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                Most inspections take <span class="text-primary font-bold">25-40 minutes</span>. Please arrive 5 minutes before your slot.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-0 w-full px-6 py-6 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between border-t border-outline-variant/10">
+<div class="hidden md:block">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Selected Slot</p>
+<p class="font-headline font-extrabold text-xl text-white">Sep 6, 10:00 AM</p>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-8 py-4 rounded-xl font-bold text-primary hover:bg-primary/10 transition-colors">Back</button>
+<button class="flex-[2] md:flex-none px-12 py-4 rounded-xl bg-primary-container text-white font-bold shadow-[0_10px_40px_rgba(39,110,241,0.4)] hover:scale-105 active:scale-95 transition-all">Next Step</button>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Simplified for Viewport) -->
+<nav class="hidden">
+<div class="label_texts">Account Access, Vehicle Support, Earnings &amp; Tax, Safety Center, App Feedback</div>
+<div class="icons">lock, directions_car, payments, shield, rate_review</div>
+</nav>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#1c1c1e]/80 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#276ef1] text-white rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Driver - Low Priority Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbcc",
+              "on-tertiary": "#561f00",
+              "surface-container-lowest": "#0e0e0f",
+              "on-background": "#e5e2e3",
+              "surface-variant": "#353436",
+              "tertiary-fixed-dim": "#ffb694",
+              "outline-variant": "#424654",
+              "surface-dim": "#131314",
+              "surface-container": "#1f1f20",
+              "secondary-container": "#31477c",
+              "inverse-on-surface": "#303031",
+              "tertiary-container": "#c65100",
+              "outline": "#8c90a0",
+              "on-tertiary-fixed": "#351000",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-primary-fixed-variant": "#00419f",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#2f4579",
+              "surface-tint": "#b1c5ff",
+              "background": "#131314",
+              "surface-container-highest": "#353436",
+              "tertiary": "#ffb694",
+              "on-primary-fixed": "#001947",
+              "inverse-primary": "#0056d0",
+              "surface-container-high": "#2a2a2b",
+              "inverse-surface": "#e5e2e3",
+              "secondary-fixed": "#dae2ff",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-secondary": "#162e61",
+              "on-surface": "#e5e2e3",
+              "on-primary-container": "#fffeff",
+              "primary": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "error": "#ffb4ab",
+              "surface": "#131314",
+              "primary-container": "#276ef1",
+              "on-secondary-container": "#a2b7f3",
+              "error-container": "#93000a",
+              "primary-fixed": "#dae2ff",
+              "on-tertiary-container": "#fffdff",
+              "secondary": "#b1c5ff",
+              "on-surface-variant": "#c2c6d7",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "surface-bright": "#39393a",
+              "on-primary": "#002c71"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#131314] flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276ef1]/10 p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] tracking-tight text-2xl font-bold text-[#b1c5ff]">Queue Status</h1>
+</div>
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276ef1]/10 p-2 rounded-full">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<main class="px-6 mt-6 space-y-6 max-w-2xl mx-auto">
+<!-- WARNING BANNER: Editorial Authority -->
+<div class="relative overflow-hidden rounded-xl bg-tertiary-container/20 p-6 flex flex-col gap-3">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/10 blur-3xl -mr-10 -mt-10"></div>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-widest">LOW PRIORITY</span>
+</div>
+<h2 class="font-headline text-2xl font-extrabold leading-tight">Delayed Dispatch Active</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-[90%]">
+                Your current vehicle class is experiencing extremely high wait times. Returning after a long period offline has temporarily adjusted your queue position.
+            </p>
+</div>
+<!-- QUEUE METRICS: Bento Grid Layout -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Position Card -->
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between h-40">
+<span class="font-label text-[10px] font-medium uppercase tracking-widest text-outline">Current Position</span>
+<div>
+<div class="font-headline text-4xl font-bold text-on-background tracking-tighter">142</div>
+<div class="font-label text-xs text-on-surface-variant mt-1">out of 150 drivers</div>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[94%]"></div>
+</div>
+</div>
+<!-- Wait Time Card -->
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between h-40">
+<span class="font-label text-[10px] font-medium uppercase tracking-widest text-outline">Est. Wait Time</span>
+<div>
+<div class="font-headline text-4xl font-bold text-tertiary tracking-tighter">60+<span class="text-lg ml-1">min</span></div>
+<div class="font-label text-xs text-on-surface-variant mt-1">High Vol. Warning</div>
+</div>
+<div class="flex items-center gap-1 text-tertiary text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">hourglass_empty</span>
+                    INCREASING
+                </div>
+</div>
+</div>
+<!-- MAP PREVIEW: The Digital Concierge -->
+<div class="relative rounded-xl overflow-hidden h-64 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="dark mode digital map with glowing electric blue streets and amber heat map zones showing traffic density premium ui aesthetic" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYsAStL0pGn7pk8Gf_iHh86AEdW4bCT2lh53CHoN6t-ThYzc-X8PAGfSbgX394IWb1Xzh5KldZ29cWAJBcZ0zHHzSQb1DR0CMcfFb_-c5lorZbQZgHea2X8_4sRP5oSnN4k1pJMdX5dUkTH4lqyVn1ugpCtcyZtwEzbfMfc3-GbtJ4Jc4KOWG-yHWqtoYTAjPjWAB9riApA6DRiCKAopnII31cBFSZwD7B05G1KvNHzpwyzoNlACqSqr4uxap0I3u7xFtVvK3r0Xw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 glass-card p-4 rounded-lg flex justify-between items-center">
+<div>
+<h3 class="font-headline text-sm font-bold">City Center Hub</h3>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">4.2 miles away â€¢ High Demand</p>
+</div>
+<div class="bg-primary-container px-3 py-1 rounded-full text-[10px] font-bold text-white shadow-lg">
+                    BEST OPTION
+                </div>
+</div>
+</div>
+<!-- ACTIONABLE OPTIONS -->
+<div class="space-y-3 pt-4">
+<button class="w-full bg-primary-container text-white font-headline font-bold py-4 rounded-xl active:scale-95 duration-200 flex items-center justify-center gap-2 shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+<span class="material-symbols-outlined">directions_car</span>
+                Switch to Standard Queue
+            </button>
+<button class="w-full bg-surface-container-highest/40 border border-outline-variant/15 text-on-background font-headline font-bold py-4 rounded-xl active:scale-95 duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">map</span>
+                Head to City Center
+            </button>
+<button class="w-full text-outline font-label text-xs font-medium py-2 active:opacity-50 transition-opacity">
+                Stay in Premium (Not Recommended)
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-[#131314]/90 backdrop-blur-xl z-50 rounded-t-2xl shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">hourglass_top</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Queue</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Account</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

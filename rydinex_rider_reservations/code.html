@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RYDINEX PRO - Reservations &amp; Hourly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#dae2ff",
+              "on-tertiary-fixed": "#351000",
+              "surface-container-highest": "#353436",
+              "on-primary": "#002c71",
+              "error-container": "#93000a",
+              "on-primary-container": "#fffeff",
+              "tertiary-container": "#c65100",
+              "inverse-primary": "#0056d0",
+              "on-tertiary-container": "#fffdff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-primary-fixed-variant": "#00419f",
+              "tertiary-fixed": "#ffdbcc",
+              "tertiary": "#ffb694",
+              "primary-fixed": "#dae2ff",
+              "surface-container-low": "#1b1b1c",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2b",
+              "on-primary-fixed": "#001947",
+              "surface-bright": "#39393a",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "inverse-surface": "#e5e2e3",
+              "secondary-container": "#31477c",
+              "on-surface-variant": "#c2c6d7",
+              "surface-dim": "#131314",
+              "primary-container": "#276ef1",
+              "on-secondary-container": "#a2b7f3",
+              "on-background": "#e5e2e3",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary": "#b1c5ff",
+              "on-secondary": "#162e61",
+              "surface-container": "#1f1f20",
+              "inverse-on-surface": "#303031",
+              "on-tertiary": "#561f00",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-surface": "#e5e2e3",
+              "on-secondary-fixed": "#001947",
+              "background": "#131314",
+              "surface": "#131314",
+              "secondary": "#b1c5ff",
+              "outline": "#8c90a0",
+              "surface-container-lowest": "#0e0e0f",
+              "outline-variant": "#424654",
+              "secondary-fixed-dim": "#b1c5ff",
+              "surface-variant": "#353436",
+              "surface-tint": "#b1c5ff",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(53, 52, 54, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 w-full no-border bg-[#1c1c1e] text-[#b1c5ff]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male driver in a dark suit with a warm, confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCItchOaQzcpqAt6Q9EguC9SjzsEjUxU_UTj9IzDQfqmvHwRfbS_PhsVspZzCm1mMdrZ6KLineSyW_19HOTH8NBrSuqvVG996kVZBokIL4ZD63LhzZzlq2saHkGsqvc5dNDGMgGzNY-js3T-IWAbu8vq8GAkHFTqrDIych6RqmyGPdYotvnZ8sizFtAwAik_ntM1aiYZMQRuEQJ8Ar-cThe_dXntjubaXraM6dFG9a3zjQGsA95743sN2iVbrSofkfWsac_aZwOMFI"/>
+</div>
+<span class="font-headline tracking-tight font-bold text-[#b1c5ff]">RYDINEX PRO</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-white/5 transition-colors p-2 rounded-full active:opacity-80 scale-95 duration-200">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<span class="text-xl font-black tracking-tighter text-[#276ef1] italic">RYDINEX</span>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto space-y-12">
+<!-- Hero Section: Header & Editorial Scale -->
+<section class="space-y-2">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-[0.9]">
+                RESERVE <br/>
+<span class="text-primary-container">THE MOMENT.</span>
+</h1>
+<p class="font-label text-sm uppercase tracking-[0.2em] text-on-surface-variant opacity-60">Curated Mobility &amp; Hourly Concierge</p>
+</section>
+<!-- Bento Grid: Main Functionality -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Calendar/Upcoming Trips: Large Bento -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 space-y-8 min-h-[400px]">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h2 class="text-2xl font-headline font-bold">Upcoming Trips</h2>
+<p class="text-on-surface-variant text-sm">Your scheduled itinerary for the week</p>
+</div>
+<div class="flex gap-2">
+<div class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider text-primary">OCT 2023</div>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Reservation Card 1 -->
+<div class="group relative bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start md:items-center">
+<div class="flex flex-col items-center justify-center bg-primary-container/10 text-primary-container p-4 rounded-xl min-w-[70px]">
+<span class="text-xs font-bold uppercase tracking-widest">Tue</span>
+<span class="text-2xl font-headline font-black">24</span>
+</div>
+<div class="flex-grow space-y-1">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary-container/20 text-tertiary px-2 py-0.5 rounded text-[10px] font-bold uppercase">Rydinex Black</span>
+<span class="text-on-surface-variant text-xs">â€¢ 09:45 AM</span>
+</div>
+<h3 class="text-lg font-bold font-headline">O'Hare Terminal 5 Pickup</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                10000 W O'Hare Ave, Chicago, IL
+                            </p>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto border-t md:border-t-0 border-outline-variant pt-4 md:pt-0">
+<div class="text-right flex-grow md:flex-grow-0">
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Est. Fare</p>
+<p class="text-xl font-headline font-extrabold text-primary-container">$114.50</p>
+</div>
+<button class="bg-surface-variant/20 p-2 rounded-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Reservation Card 2 -->
+<div class="group relative bg-surface-container-high/50 p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start md:items-center opacity-80">
+<div class="flex flex-col items-center justify-center bg-surface-variant text-on-surface-variant p-4 rounded-xl min-w-[70px]">
+<span class="text-xs font-bold uppercase tracking-widest">Fri</span>
+<span class="text-2xl font-headline font-black">27</span>
+</div>
+<div class="flex-grow space-y-1">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">SUV Hourly</span>
+<span class="text-on-surface-variant text-xs">â€¢ 07:00 PM</span>
+</div>
+<h3 class="text-lg font-bold font-headline">Private Gala Shuttle</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                                4 Hour Fixed Duration
+                            </p>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto border-t md:border-t-0 border-outline-variant pt-4 md:pt-0">
+<div class="text-right flex-grow md:flex-grow-0">
+<p class="text-xs text-on-surface-variant uppercase tracking-tighter">Est. Fare</p>
+<p class="text-xl font-headline font-extrabold">$480.00</p>
+</div>
+<button class="bg-surface-variant/20 p-2 rounded-lg">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Booking Column: Right Side -->
+<div class="md:col-span-4 space-y-6">
+<!-- Hourly Booking Quick Card -->
+<div class="relative overflow-hidden bg-primary-container rounded-xl p-6 text-on-primary-container h-fit shadow-2xl shadow-primary-container/20">
+<div class="relative z-10 space-y-4">
+<div class="bg-white/20 w-12 h-12 flex items-center justify-center rounded-xl backdrop-blur-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div>
+<h3 class="text-2xl font-headline font-extrabold tracking-tight">Hourly Booking</h3>
+<p class="text-sm opacity-80 leading-snug">Keep your driver for 2, 4, or 8 hour windows.</p>
+</div>
+<button class="w-full py-3 bg-white text-primary-container font-bold rounded-lg text-sm uppercase tracking-widest active:scale-95 transition-transform">
+                            Book Fixed Block
+                        </button>
+</div>
+<!-- Decorative Background Gradient Pulse -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 blur-3xl rounded-full"></div>
+</div>
+<!-- Black SUV Mini Promotion -->
+<div class="bg-surface-container-high rounded-xl p-6 border-l-4 border-tertiary">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-tertiary bg-tertiary/10 px-2 py-0.5 rounded">Premium Tier</span>
+<span class="material-symbols-outlined text-tertiary">workspace_premium</span>
+</div>
+<h4 class="font-headline font-bold text-lg">Black SUV Exclusive</h4>
+<p class="text-xs text-on-surface-variant mt-1 mb-4">Extended legroom, leather interiors, and professional concierge drivers.</p>
+<div class="flex -space-x-3 mb-4">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="Close-up profile of a smiling professional woman chauffeur wearing a neat cap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG4zpK9GHuf5Rcq0mbOrX40NQoqpsM6DQFmWXKJts4OPTJe_7Rn6v0Dn85pVX_PgJJRDSxVzRbKuxRlMwEuwQV5VsWc3wFH2YY_9MS4x0XzXOV_efQJ8sVPE4jBZcMsM5uWN9T6ZAnl3mW05WWSz2QCXChBH3L00lGr7zqVRH9WUMS7m4HjvGXRHpFlst41HFwIUfhg9bFBVUnLoPD3LWA2F8l0SI66-UJU4NyKM19WsJ3qYbYP7aC_iiZAoL_KzkHgbvPK5vX7g4"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="Portrait of a distinguished senior male chauffeur in formal attire with grey hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPjW5krwObWkVZy_j3o1xpywszrYUnWFnuoYoqIZrP0tASy8BM7KNvIIat8jyHnHvbTvYd4hGgXfOc1DuwTB1F_1PqypQatQekLGWtaKG-f2sameme_agwnB1Y8TjopOaKFRwn4o52T9GnakED86oMitVpXlmo6tS06ozxONAW2iPfuASgwyLMgXfhTcgoK1dPOL1xX42pKjRTU3pjvBNDEu0GUdYpf2qwxrq251ySnTMCSvaAxBRnoJdclKB2VMAmBhECQi86kQY"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Teen Pickup Special Section: Asymmetric Editorial Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-surface-container-low/40 rounded-3xl p-8 lg:p-12 overflow-hidden border border-outline-variant/10">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 bg-secondary-container/20 px-4 py-2 rounded-full border border-secondary-container/30">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">family_restroom</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Teen Pickup Service</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-headline font-black tracking-tighter leading-tight">
+                    PEACE OF MIND <br/>
+<span class="text-tertiary">FOR THE FAMILY.</span>
+</h2>
+<p class="text-on-surface-variant leading-relaxed max-w-md">
+                    Specially vetted 'Black Level' drivers with advanced background checks. Real-time audio monitoring and 100% route transparency for parents.
+                </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">verified_user</span>
+<div>
+<p class="font-bold text-sm">Top 1% Rated Drivers</p>
+<p class="text-xs text-on-surface-variant">Only drivers with 2,000+ completed rides and clean safety records.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">share_location</span>
+<div>
+<p class="font-bold text-sm">Active Monitoring</p>
+<p class="text-xs text-on-surface-variant">Live streaming location and encrypted cabin audio for guardian access.</p>
+</div>
+</div>
+</div>
+<button class="px-8 py-4 bg-surface-container-highest hover:bg-surface-bright transition-all rounded-xl font-bold uppercase tracking-widest text-xs">
+                    Configure Safety Profile
+                </button>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-black rotate-2 group hover:rotate-0 transition-transform duration-700">
+<img class="w-full h-full object-cover" data-alt="Interior of a luxury SUV at night, showing a comfortable leather seat with soft blue ambient lighting reflecting on the window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEx-fdgVK5jbeU2siejXX0XSYoy2bRTE3l9EcJpGItzYVbI-Nxf3ZK1qX7KM5JfvvbN8W9luOmYG3pLG1rfgnsCe854PL63hGzTd3XujjL_YdTEmsHJGTstrgXVlWAoM0ftNpzYmKWKfeRISiFSRbDHqWZt1qEUFFqGX4j4EsSyLuLyd2nCliQjp5HQED-y9aPcpevJW_eWexsh1PuF7wPgHUN8QlJ4Uu2pXuc1UqZI998ZiJnEYfWYGwB3Cb5ewJ_hu-VLpjfwxk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 flex items-center gap-3">
+<div class="bg-primary px-3 py-1 rounded text-[10px] font-black text-on-primary uppercase tracking-[0.2em]">Rydinex Safety+</div>
+</div>
+</div>
+<!-- Glassmorphic Overlay Chip -->
+<div class="absolute -left-10 top-1/2 glass-panel p-4 rounded-2xl border border-white/5 hidden md:block">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-white">shield</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white uppercase">Identity Verified</p>
+<p class="text-[10px] text-white/60 uppercase">Chauffeur: Anthony D.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Simulated as content container) -->
+<aside class="fixed left-0 top-16 h-full w-20 md:w-80 bg-[#131314] tonal-layering border-r border-outline-variant/10 hidden lg:flex flex-col py-8 z-40">
+<div class="px-6 mb-10 flex flex-col gap-1 items-start">
+<div class="w-12 h-12 rounded-full overflow-hidden mb-3 border-2 border-[#276ef1]">
+<img class="w-full h-full object-cover" data-alt="High-resolution professional headshot of a driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcq4ih8c9y72vcyHboF_UcowVMHBSGkR632TKcxGbldwAF5wtIAZQYSlp7peaK64h3kzdldcOlRlS5CmaWqzOwMMapyIh02g8TdIf2X53KS5ttO3Bo_mKM7CUIrOumDwk7J6BV9wqaLIG3gci1SzLMvm_cJ7DZnqhx9u6DbsGqYDb824j0s2Ebx4PL8n7hwuScOKcxOatVDfnUhUNUOtHKcaVFbwuM3VK3n4lYoYK6gu5VF3OVpGL0wSYPOVSjj5ixOd1bRW08UQ8"/>
+</div>
+<h4 class="font-headline text-lg font-bold text-[#b1c5ff]">Marcus V.</h4>
+<p class="text-xs text-gray-400 uppercase tracking-widest">Pro Driver â€¢ Black Level</p>
+<div class="mt-4 bg-[#276ef1]/10 px-3 py-1 rounded-full">
+<p class="text-[10px] font-bold text-[#276ef1] uppercase tracking-tighter">O'Hare Queue: 5-10 min</p>
+</div>
+</div>
+<nav class="flex-grow flex flex-col">
+<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span>Fleet Preferences</span>
+</a>
+<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
+<span class="material-symbols-outlined">family_restroom</span>
+<span>Teen Pickup</span>
+</a>
+<a class="text-[#b1c5ff] bg-[#276ef1]/10 font-bold border-l-4 border-[#276ef1] px-6 py-4 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">schedule</span>
+<span>Hourly Bookings</span>
+</a>
+<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Tax Center</span>
+</a>
+<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Documents</span>
+</a>
+<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span>Support</span>
+</a>
+</nav>
+</aside>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/80 backdrop-blur-xl flex justify-around items-center h-20 pb-safe px-4 shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
+<button class="flex flex-col items-center justify-center text-gray-500 opacity-60 active:scale-90 duration-300">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 active:scale-90 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Reservations</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 opacity-60 active:scale-90 duration-300">
+<span class="material-symbols-outlined">map</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Maps</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 opacity-60 active:scale-90 duration-300">
+<span class="material-symbols-outlined">shield_with_heart</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Safety</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 opacity-60 active:scale-90 duration-300">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Earnings</span>
+</button>
+</nav>
+<!-- FAB for New Reservation -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 w-16 h-16 rounded-2xl bg-primary-container text-white flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

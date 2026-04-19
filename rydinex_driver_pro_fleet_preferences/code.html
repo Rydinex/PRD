@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbcc",
+              "surface-bright": "#39393a",
+              "inverse-on-surface": "#303031",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary": "#002c71",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-primary-fixed": "#001947",
+              "surface": "#131314",
+              "on-tertiary": "#561f00",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "outline": "#8c90a0",
+              "surface-variant": "#353436",
+              "secondary-fixed": "#dae2ff",
+              "primary": "#b1c5ff",
+              "tertiary": "#ffb694",
+              "surface-container-high": "#2a2a2b",
+              "inverse-primary": "#0056d0",
+              "secondary-container": "#31477c",
+              "tertiary-container": "#c65100",
+              "on-secondary-fixed": "#001947",
+              "primary-fixed": "#dae2ff",
+              "surface-container": "#1f1f20",
+              "background": "#131314",
+              "on-tertiary-fixed": "#351000",
+              "on-surface": "#e5e2e3",
+              "surface-container-low": "#1b1b1c",
+              "error-container": "#93000a",
+              "surface-container-highest": "#353436",
+              "on-surface-variant": "#c2c6d7",
+              "primary-container": "#276ef1",
+              "outline-variant": "#424654",
+              "on-secondary-fixed-variant": "#2f4579",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "inverse-surface": "#e5e2e3",
+              "surface-container-lowest": "#0e0e0f",
+              "on-secondary": "#162e61",
+              "on-primary-fixed-variant": "#00419f",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-background": "#e5e2e3",
+              "secondary": "#b1c5ff",
+              "error": "#ffb4ab",
+              "surface-tint": "#b1c5ff",
+              "on-primary-container": "#fffeff",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-dim": "#131314"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .active-glow {
+            box-shadow: 0 0 20px rgba(39, 110, 241, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131314] flex justify-between items-center px-6 h-20 w-full">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#276ef1]/10 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold text-2xl tracking-tight text-[#b1c5ff]">Fleet Preferences (Pro Driver)</h1>
+</div>
+<button class="p-2 hover:bg-[#276ef1]/10 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]" data-icon="tune">tune</span>
+</button>
+</nav>
+<main class="pt-28 pb-32 px-6 max-w-5xl mx-auto">
+<!-- Status Banner: High-End Editorial Header -->
+<header class="mb-12">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/5 mb-6">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-tertiary font-bold">Chauffeured Status Active</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline font-extrabold text-5xl md:text-6xl tracking-tighter leading-none mb-4">
+                        Master <span class="text-primary-container italic">Fleet</span><br/>Selection
+                    </h2>
+<p class="text-on-surface-variant font-body text-lg max-w-md opacity-70">
+                        Toggle vehicle availability. Your Rydinex Black certification allows access to all premium dispatch tiers.
+                    </p>
+</div>
+<div class="hidden md:block">
+<div class="bg-surface-container-highest p-6 rounded-xl border-l-4 border-primary-container">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Weekly Potential</p>
+<p class="font-headline font-bold text-3xl text-primary">+$2,450.00</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Fleet Controls -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Rydinex Black (Hero Card) -->
+<div class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden bg-surface-container relative group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent z-10"></div>
+<img alt="Premium luxury black sedan parked in a minimalist modern city garage with moody cinematic lighting" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="Premium luxury black sedan parked in a minimalist modern city garage with moody cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAozPXY5yC2UKaE1aKtIf0U1GIK5nGeuVA5-grYSq-KNDIXbFsdKCyJSYoelfAdRT3D7T-QO5IUv_xSDQYvL2mi3If1XnFepsJ7B3v8of9-UxZh6669mB6zpec2obZYOphjO8u3h61VWNcpD3i3hmyGbQI1LkZoIagyKjp5UH-lbSbipT4Nyr3cAKNRtbMRnxwApUMKXIM0VP7gBaMsUrjYFlTeCIO4YEMNDfEeH1eUZHAfqj6PctvExs9ZnNWfW3ID5GXqwDrk9LI"/>
+<div class="relative z-20 p-8 h-full flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<span class="bg-primary-container text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Premium Tier</span>
+<div class="w-12 h-6 bg-primary-container rounded-full relative p-1 cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<h3 class="font-headline font-bold text-3xl mt-6">Rydinex Black</h3>
+<p class="text-on-surface-variant text-sm mt-2 font-medium">Top-tier professional luxury service.</p>
+</div>
+<div class="flex gap-4 items-center">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase opacity-50">Demand</span>
+<span class="text-tertiary font-bold">High</span>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase opacity-50">Base Fare</span>
+<span class="text-white font-bold">$18.50</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Black SUV -->
+<div class="md:col-span-2 rounded-3xl p-8 bg-surface-container-high relative overflow-hidden active-glow border border-primary-container/20">
+<div class="flex justify-between items-center relative z-10">
+<div>
+<h3 class="font-headline font-bold text-2xl">Black SUV</h3>
+<p class="text-on-surface-variant text-xs mt-1">Group travel &amp; high-capacity luxury</p>
+</div>
+<div class="w-14 h-7 bg-primary-container rounded-full relative p-1 cursor-pointer shadow-lg shadow-primary-container/40">
+<div class="absolute right-1 top-1 w-5 h-5 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="mt-6 flex gap-6 relative z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="groups">groups</span>
+<span class="text-sm font-bold">6 Seats</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="luggage">luggage</span>
+<span class="text-sm font-bold">5 Bags</span>
+</div>
+</div>
+</div>
+<!-- XL -->
+<div class="rounded-3xl p-6 bg-surface-container-low border border-white/5 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-surface-variant rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="airport_shuttle">airport_shuttle</span>
+</div>
+<div class="w-10 h-5 bg-primary-container/40 rounded-full relative p-0.5 cursor-pointer">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline font-bold text-xl leading-tight">XL</h3>
+<p class="text-on-surface-variant text-[11px] mt-1 font-medium">Standard Capacity +</p>
+</div>
+</div>
+<!-- Standard -->
+<div class="rounded-3xl p-6 bg-surface-container-low border border-white/5 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-surface-variant rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="directions_car">directions_car</span>
+</div>
+<div class="w-10 h-5 bg-primary-container/40 rounded-full relative p-0.5 cursor-pointer">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline font-bold text-xl leading-tight">Standard</h3>
+<p class="text-on-surface-variant text-[11px] mt-1 font-medium">Daily commuter requests</p>
+</div>
+</div>
+</div>
+<!-- Advanced Preferences Section -->
+<section class="mt-12">
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest text-on-surface-variant/60 mb-6">Service Preferences</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container-low group hover:bg-surface-container transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="font-bold">Instant Dispatch</p>
+<p class="text-xs text-on-surface-variant">Prioritize immediate high-value requests</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative p-1 cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container-low group hover:bg-surface-container transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="distance">distance</span>
+</div>
+<div>
+<p class="font-bold">Long-Distance Only</p>
+<p class="text-xs text-on-surface-variant">Filter for trips over 25 miles</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-surface-variant rounded-full relative p-1 cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Simulated side bar for desktop layout) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-80 bg-[#131314] flex-col py-8 z-[60] shadow-2xl shadow-black/50 border-r border-white/5">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-14 h-14 rounded-2xl overflow-hidden">
+<img alt="Professional chauffeur in a sharp black suit with a focused expression" class="w-full h-full object-cover" data-alt="Professional chauffeur in a sharp black suit with a focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJsrQM2Qvz2EHqKOcAEf284L5UtppMJDl-QeG-KKQrOUCL33VfXNpLAKy2rBFrTCi1uifCqq06MIh_8NB_ApGYibhb9tLmkMHGfzRHrwWZ-Td8dDHBwz-1i0GIQkSmNIOLyfNVyJpXR9WTaI4ya9wSO57Qto_TgXtibtxi9zAK-6S7jpLeoJLrFnpF_D3ppvIzgwDSS4mGIJyU0GvsnqFreIQCk7S4r4DTqu-_qkmFvUGoyY-P17-9ocnsfEBmx0T7PFBBBBiYj1o"/>
+</div>
+<div>
+<h3 class="font-['Manrope'] font-semibold text-lg leading-tight">Alexander Knight</h3>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">Elite Chauffeur Status</p>
+<p class="text-[10px] text-on-surface-variant opacity-60">Rydinex Black Certified</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2 px-2">
+<a class="flex items-center gap-4 text-[#909094] hover:text-white px-6 py-4 rounded-xl hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#909094] hover:text-white px-6 py-4 rounded-xl hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-['Manrope'] font-semibold">Vehicle Documents</span>
+</a>
+<a class="flex items-center gap-4 bg-[#276ef1] text-white rounded-xl px-6 py-4 mx-2 shadow-lg shadow-primary-container/20" href="#">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+<span class="font-['Manrope'] font-semibold">Fleet</span>
+</a>
+<a class="flex items-center gap-4 text-[#909094] hover:text-white px-6 py-4 rounded-xl hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-['Manrope'] font-semibold">Insurance</span>
+</a>
+<a class="flex items-center gap-4 text-[#909094] hover:text-white px-6 py-4 rounded-xl hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-['Manrope'] font-semibold">Support</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full flex items-center gap-4 text-error px-6 py-4 rounded-xl hover:bg-error/10 transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Manrope'] font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#131314]/80 backdrop-blur-xl shadow-[0_-20px_40px_rgba(0,0,0,0.4)] rounded-t-3xl border-t-[0.5px] border-white/5">
+<button class="flex flex-col items-center justify-center text-[#909094] opacity-60 hover:text-white transition-opacity">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#909094] opacity-60 hover:text-white transition-opacity">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest mt-1">Earnings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-2 transform scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest mt-1">Fleet</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#909094] opacity-60 hover:text-white transition-opacity">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest mt-1">Account</span>
+</button>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

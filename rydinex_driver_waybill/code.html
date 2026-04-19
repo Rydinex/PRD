@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Pro - Digital Waybill</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#351000",
+              "on-background": "#e5e2e3",
+              "tertiary-container": "#c65100",
+              "on-secondary-container": "#a2b7f3",
+              "surface-container-highest": "#353436",
+              "inverse-on-surface": "#303031",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-bright": "#39393a",
+              "on-primary-fixed": "#001947",
+              "surface-variant": "#353436",
+              "surface-container-low": "#1b1b1c",
+              "inverse-surface": "#e5e2e3",
+              "secondary": "#b1c5ff",
+              "tertiary": "#ffb694",
+              "surface-dim": "#131314",
+              "on-primary-container": "#fffeff",
+              "background": "#131314",
+              "on-primary-fixed-variant": "#00419f",
+              "inverse-primary": "#0056d0",
+              "surface-container": "#1f1f20",
+              "surface-tint": "#b1c5ff",
+              "surface": "#131314",
+              "error-container": "#93000a",
+              "surface-container-lowest": "#0e0e0f",
+              "on-surface": "#e5e2e3",
+              "on-tertiary": "#561f00",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed": "#001947",
+              "on-error": "#690005",
+              "error": "#ffb4ab",
+              "on-secondary": "#162e61",
+              "outline": "#8c90a0",
+              "on-surface-variant": "#c2c6d7",
+              "primary-fixed": "#dae2ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "secondary-fixed-dim": "#b1c5ff",
+              "primary-container": "#276ef1",
+              "secondary-container": "#31477c",
+              "tertiary-fixed": "#ffdbcc",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-high": "#2a2a2b",
+              "on-tertiary-container": "#fffdff",
+              "primary": "#b1c5ff",
+              "outline-variant": "#424654",
+              "on-primary": "#002c71",
+              "secondary-fixed": "#dae2ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .route-pulse {
+        background: linear-gradient(90deg, #276ef1 0%, rgba(39, 110, 241, 0) 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#1d1d20] no-border flex justify-between items-center px-6 h-16 w-full max-w-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b1c5ff] active:scale-95 duration-200 cursor-pointer">arrow_back</span>
+<h1 class="font-manrope font-bold tracking-tight text-xl text-[#b1c5ff]">Waybill</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b1c5ff] hover:bg-white/5 transition-colors p-2 rounded-full cursor-pointer" data-icon="share">share</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a male driver smiling confidently with warm studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATAz1phRf5FYkgnmCO0mSiEwkGqlkalRBrdLaAAmTpte302o-Z5BCDDtt4AIy9-oHMUj3KrpHG5-KPocIPc4AKXh6LqyBbnOPTCj_UlhVfSleHam5mQxTtfirYoEGye2X7sLMPLkRkUAcKV_Bl1AiPRaTJvoolblw8sk4gk02QgO3fOYJuq8gOgVMzgNsx74KGL5-oNRKNlXxkLmQWaYM84sHbm6iOSebhfYvYQoUh5VX0XWczi59vhu3qtxS4dbaecvvdYfE2pXU"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Official Header / Status -->
+<section class="space-y-2">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant opacity-70">Document ID</p>
+<h2 class="font-headline font-extrabold text-2xl tracking-tight text-primary">RDX-992-0421</h2>
+</div>
+<div class="bg-primary-container/20 px-3 py-1 rounded-full border border-primary/20">
+<span class="text-xs font-bold text-primary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        ACTIVE TRIP
+                    </span>
+</div>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Generated: Oct 24, 2024 â€¢ 14:42 PM</p>
+</section>
+<!-- Bento Grid Layout for Official Data -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Driver Identity Card -->
+<div class="glass-card p-6 rounded-xl border border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="badge">badge</span>
+<span class="text-[10px] font-bold tracking-widest uppercase opacity-40">Section 01</span>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Assigned Driver</label>
+<p class="font-headline font-bold text-xl">Alex Rodriguez</p>
+<p class="text-sm text-tertiary-fixed-dim">Gold Partner â€¢ 4.98âک…</p>
+</div>
+</div>
+<!-- Vehicle Details Card -->
+<div class="glass-card p-6 rounded-xl border border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="directions_car">directions_car</span>
+<span class="text-[10px] font-bold tracking-widest uppercase opacity-40">Section 02</span>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Vehicle Info</label>
+<p class="font-headline font-bold text-xl">Tesla Model 3</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs font-mono font-bold tracking-tighter text-on-surface">CAL-4492-X</span>
+<span class="text-xs text-on-surface-variant">â€¢ Midnight Silver</span>
+</div>
+</div>
+</div>
+<!-- Insurance Info (Wide) -->
+<div class="md:col-span-2 glass-card p-6 rounded-xl border border-white/5">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="gpp_good">gpp_good</span>
+</div>
+<div>
+<p class="font-headline font-bold">Insurance Compliance</p>
+<p class="text-xs text-on-surface-variant">Policy Active &amp; Verified</p>
+</div>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase opacity-40">Section 03</span>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Provider</label>
+<p class="font-medium text-sm">Progressive Commercial</p>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Policy Number</label>
+<p class="font-medium text-sm">#9920-X88-331</p>
+</div>
+</div>
+</div>
+<!-- Passenger Info -->
+<div class="md:col-span-2 glass-card p-6 rounded-xl border border-white/5 relative overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<p class="font-headline font-bold">Current Passenger</p>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase opacity-40">Section 04</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Passenger profile photo" class="w-full h-full object-cover" data-alt="Vibrant portrait of a professional woman with a friendly smile, outdoor lighting with soft city bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6hIK_dsT1jhhy2KA6nwc21M1c5MCwhwW3f3-Dr0fiE_yBlZ9WQwgjhZ6rEnqW8xbd6On9H4otLdN3i-xcryD0mGfdfZP3OIhRo4hYQA430JyI7louFVPEamu7Qq8PcG_Cig6fWEGc6KQU5PEsMHKij1VSVvS9HV6PKVIV11mtGVSHkNXxlLY68GZ4EIrK-mpm7IMqsBkkyuLqmURlnV1l-kHwyPSdOvZXy_8-JQ0OZxZV2_d-n3XTXCOOdsD16E0cMbdEH1FD7io"/>
+</div>
+<div>
+<p class="font-headline font-bold text-lg">Sarah Jenkins</p>
+<p class="text-sm text-on-surface-variant">Verified Rider since 2021</p>
+</div>
+</div>
+<div class="mt-8 relative">
+<div class="absolute left-4 top-0 bottom-0 w-0.5 route-pulse"></div>
+<div class="flex flex-col gap-6 pl-10">
+<div class="relative">
+<div class="absolute -left-7.5 top-1 w-3 h-3 rounded-full bg-primary ring-4 ring-primary/10"></div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Pickup</label>
+<p class="text-sm font-medium">882 Mission District, San Francisco</p>
+</div>
+<div class="relative">
+<div class="absolute -left-7.5 top-1 w-3 h-3 border-2 border-primary rounded-sm bg-surface"></div>
+<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Destination</label>
+<p class="text-sm font-medium">SFO International Airport, Terminal 2</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Disclaimer -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant opacity-40" data-icon="info">info</span>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">
+                    This digital waybill is a valid electronic document for regulatory compliance in the state of California. It provides proof of insurance and driver registration for the active trip duration. 
+                </p>
+</div>
+</div>
+</main>
+<!-- Navigation Shell (Using BottomNavBar logic for Mobile/Compact) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/90 backdrop-blur-xl shadow-[0_-20px_40px_rgba(0,0,0,0.3)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Ride</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 scale-110-on-click duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Account</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

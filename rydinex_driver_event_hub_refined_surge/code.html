@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#e5e2e3",
+              "on-error": "#690005",
+              "tertiary-container": "#c65100",
+              "on-background": "#e5e2e3",
+              "primary-container": "#276ef1",
+              "tertiary": "#ffb694",
+              "surface-container-high": "#2a2a2b",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "primary": "#b1c5ff",
+              "inverse-on-surface": "#303031",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-primary-container": "#fffeff",
+              "secondary-fixed": "#dae2ff",
+              "outline-variant": "#424654",
+              "on-primary-fixed": "#001947",
+              "surface-container-highest": "#353436",
+              "primary-fixed": "#dae2ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-tint": "#b1c5ff",
+              "background": "#131314",
+              "inverse-primary": "#0056d0",
+              "surface-container-low": "#1b1b1c",
+              "surface": "#131314",
+              "on-secondary": "#162e61",
+              "surface-container-lowest": "#0e0e0f",
+              "surface-container": "#1f1f20",
+              "on-tertiary-fixed": "#351000",
+              "secondary-container": "#31477c",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#c2c6d7",
+              "on-secondary-fixed": "#001947",
+              "tertiary-fixed": "#ffdbcc",
+              "outline": "#8c90a0",
+              "surface-dim": "#131314",
+              "inverse-surface": "#e5e2e3",
+              "on-tertiary": "#561f00",
+              "surface-variant": "#353436",
+              "secondary": "#b1c5ff",
+              "surface-bright": "#39393a",
+              "on-primary-fixed-variant": "#00419f",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary": "#002c71"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .map-gradient-overlay {
+            background: linear-gradient(to bottom, rgba(19, 19, 20, 0.8) 0%, rgba(19, 19, 20, 0) 20%, rgba(19, 19, 20, 0) 70%, rgba(19, 19, 20, 0.9) 100%);
+        }
+        .pulse-ring {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.1); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276ef1]/10 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-manrope text-2xl font-bold tracking-tight text-[#b1c5ff]">Event Hub</h1>
+</div>
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276ef1]/10 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Map Canvas -->
+<main class="relative h-screen w-full pt-16 pb-20 overflow-hidden">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 z-0 bg-[#0e0e0f]">
+<img class="w-full h-full object-cover opacity-60 grayscale brightness-50" data-alt="Dark themed stylized night map of Chicago downtown and McCormick place area with glowing blue transit lines and neon highlights" data-location="Chicago, IL" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDNpTlJyp8obMnl9EMEdH3jQyuHRHaImvRTwAynV5Thq9qs3aBKM-Xuu00_cF1Eglqsa74cUrfuMp_mQJwT2UaQihnTm53yPCN_DbcDe8y1SpC6p-zPOI6_W6RvnxMkuAlQTDEZ1l1thvzADqwJZa-NII0N_DZV728ReKU3TcnkQA86fjkEgxpHe13uCvWN2EJfWGtfRTqy72_7GST3Wa9VcwAoQvXWIaJD8CuUAwj8h8zvhuuZrgROtS18AMS5DVvkJq2QRThcg"/>
+<div class="absolute inset-0 map-gradient-overlay"></div>
+<!-- McCormick Place Highlight (Geofence) -->
+<!-- Low Surge Zone (Light Blue): 20% translucency -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border-4 border-sky-400/30 bg-sky-400/20 rounded-full"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] border-2 border-sky-400/40 rounded-full flex items-center justify-center">
+<div class="text-center">
+<span class="material-symbols-outlined text-sky-300 text-4xl" data-icon="pentagon" style="font-variation-settings: 'FILL' 1;">pentagon</span>
+<p class="font-headline font-bold text-sky-400 tracking-widest text-xs uppercase mt-1">Premium Zone</p>
+</div>
+</div>
+<!-- High Surge Zone (Dark Blue): 40% translucency -->
+<div class="absolute top-[48%] left-[45%] w-[120px] h-[120px] bg-blue-700/40 border border-blue-400/40 rounded-full blur-sm"></div>
+<!-- Active Event Markers -->
+<!-- Marker 1: Auto Show -->
+<div class="absolute top-[45%] left-[48%] group cursor-pointer">
+<div class="relative">
+<div class="absolute inset-0 bg-sky-500 rounded-full blur-md pulse-ring opacity-70"></div>
+<div class="relative bg-sky-600 text-white p-2 rounded-xl flex items-center gap-2 shadow-2xl scale-110">
+<span class="material-symbols-outlined text-sm" data-icon="directions_car" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold leading-none uppercase tracking-tighter">Auto Show</span>
+<span class="text-[8px] opacity-80 leading-none">High Demand</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Marker 2: Medical Convention -->
+<div class="absolute top-[55%] left-[52%] group cursor-pointer">
+<div class="relative">
+<div class="absolute inset-0 bg-tertiary-container rounded-full blur-md pulse-ring opacity-50"></div>
+<div class="relative bg-surface-container-highest border border-tertiary/30 text-on-surface p-2 rounded-xl flex items-center gap-2 shadow-2xl">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="medical_services" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold leading-none uppercase tracking-tighter">Medical Convention</span>
+<span class="text-[8px] text-tertiary leading-none">Surge 2.2x</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating UI Overlays -->
+<div class="absolute top-4 left-6 z-10">
+<div class="bg-surface-container-low/80 backdrop-blur-md px-4 py-3 rounded-xl shadow-xl border border-outline-variant/20">
+<p class="text-[10px] font-headline font-bold text-primary tracking-widest uppercase mb-1">Active Now</p>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-primary-container/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="hub">hub</span>
+</div>
+<div>
+<p class="font-headline font-extrabold text-lg leading-tight">McCormick Place</p>
+<p class="text-xs text-on-surface-variant">2 Major Events â€¢ 15.4k Guests</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Buttons -->
+<div class="absolute right-6 top-4 flex flex-col gap-3 z-10">
+<button class="w-12 h-12 bg-surface-container-highest rounded-xl flex items-center justify-center text-on-surface shadow-lg hover:bg-surface-bright transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</button>
+<button class="w-12 h-12 bg-surface-container-highest rounded-xl flex items-center justify-center text-on-surface shadow-lg hover:bg-surface-bright transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+<!-- Bottom Sheet Event Card -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-md z-20">
+<div class="bg-surface-container-high/90 backdrop-blur-2xl rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-outline-variant/10">
+<div class="w-12 h-1 bg-outline-variant/30 rounded-full mx-auto mb-4"></div>
+<div class="flex items-start justify-between mb-4">
+<div>
+<h2 class="font-headline font-bold text-xl text-on-surface">Upcoming Peak Hours</h2>
+<p class="text-sm text-on-surface-variant">McCormick Place District</p>
+</div>
+<div class="bg-primary-container/20 px-3 py-1 rounded-full">
+<span class="text-xs font-bold text-primary">Live Surge</span>
+</div>
+</div>
+<!-- Event Horizontal Scroll / Bento List -->
+<div class="grid grid-cols-2 gap-3 mb-6">
+<div class="bg-surface-container-highest p-4 rounded-xl flex flex-col justify-between h-32 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<p class="text-xs font-bold font-headline">Chicago Auto Show</p>
+<p class="text-[10px] text-on-surface-variant">Ends at 10:00 PM</p>
+</div>
+<div class="mt-2 h-1 bg-primary-container/20 rounded-full overflow-hidden">
+<div class="w-4/5 h-full bg-primary-container"></div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-xl flex flex-col justify-between h-32 border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="stethoscope">stethoscope</span>
+<div>
+<p class="text-xs font-bold font-headline">Radiology Summit</p>
+<p class="text-[10px] text-on-surface-variant">Expected Peak 5:00 PM</p>
+</div>
+<div class="mt-2 h-1 bg-tertiary-container/20 rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-tertiary"></div>
+</div>
+</div>
+</div>
+<!-- Primary Action Cluster -->
+<div class="flex gap-3">
+<button class="flex-1 bg-primary-container text-white py-4 rounded-xl font-headline font-extrabold flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="navigation" style="font-variation-settings: 'FILL' 1;">navigation</span>
+                    Navi to Venue
+                </button>
+<button class="w-14 bg-surface-container-highest text-primary-container py-4 rounded-xl flex items-center justify-center hover:bg-surface-bright active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="near_me">near_me</span>
+</button>
+</div>
+</div>
+</div>
+<section class="glass-panel p-5 rounded-2xl border border-primary/20" data-prd-role="ops-card">
+<h3 class="font-headline font-bold text-base mb-3">Driver Ops Control</h3>
+<div class="text-xs text-on-surface-variant space-y-1 mb-3">
+<p>Socket: <span class="text-error font-bold">Disconnected</span></p>
+<p>O'Hare (ORD): 41.9742, -87.9073</p>
+<p>Midway (MDW): 41.7868, -87.7522</p>
+</div>
+<div class="flex gap-2 mb-3">
+<label class="text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30"><input type="checkbox" checked/> Black</label>
+<label class="text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30"><input type="checkbox" checked/> Black SUV</label>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-xl mb-3" data-prd-role="queue-group">
+<span class="text-xs">Queue Group: Airport+Events</span>
+<button class="text-xs px-3 py-2 rounded-lg bg-error-container/30 border border-error/30" data-prd-action="remove-queue-group">Remove Queue Group</button>
+</div>
+<div class="grid grid-cols-2 gap-2" data-prd-role="state-rules">
+<button class="text-xs px-3 py-2 rounded-lg bg-surface-container-highest" data-prd-action="check-tracking">Check Tracking</button>
+<button class="text-xs px-3 py-2 rounded-lg bg-primary-container text-white" data-prd-action="save-state-rules">Save State Rules</button>
+</div>
+<div class="mt-2" data-prd-role="chauffeur">
+<button class="w-full text-xs px-3 py-2 rounded-lg bg-emerald-700/40 border border-emerald-400/40" data-prd-action="verify-chauffeur">Verify Chauffeur License</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-2xl z-50 bg-[#131314]/90 backdrop-blur-xl shadow-[0_-20px_40px_0_rgba(0,0,0,0.4)] flex justify-around items-center h-20 w-full px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="event_seat" style="font-variation-settings: 'FILL' 1;">event_seat</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] uppercase tracking-widest font-bold">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+
+

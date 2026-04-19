@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RideCommand | Onboarding &amp; Interviews</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#b1c5ff",
+                        "on-secondary-fixed": "#001947",
+                        "background": "#111317",
+                        "surface": "#111317",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "surface-variant": "#333539",
+                        "surface-tint": "#b1c5ff",
+                        "on-error": "#690005",
+                        "outline": "#8c90a0",
+                        "surface-container-lowest": "#0c0e12",
+                        "outline-variant": "#424654",
+                        "surface-container": "#1e2024",
+                        "on-secondary": "#162e61",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "primary": "#b1c5ff",
+                        "on-surface": "#e2e2e8",
+                        "on-tertiary": "#561f00",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "inverse-on-surface": "#2f3035",
+                        "secondary-container": "#31477c",
+                        "on-surface-variant": "#c2c6d7",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-fixed": "#001947",
+                        "surface-bright": "#37393e",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "inverse-surface": "#e2e2e8",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e2e2e8",
+                        "primary-container": "#276ef1",
+                        "on-secondary-container": "#a2b7f3",
+                        "surface-dim": "#111317",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#fffeff",
+                        "surface-container-highest": "#333539",
+                        "on-primary": "#002c71",
+                        "secondary-fixed": "#dae2ff",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-container-low": "#1a1c20",
+                        "on-primary-fixed-variant": "#00419f",
+                        "tertiary-fixed": "#ffdbcc",
+                        "tertiary": "#ffb694",
+                        "primary-fixed": "#dae2ff",
+                        "tertiary-container": "#c65100",
+                        "inverse-primary": "#0056d0",
+                        "on-tertiary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#2f4579"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111317;
+            color: #e2e2e8;
+        }
+        .editorial-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .editorial-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .editorial-scroll::-webkit-scrollbar-thumb {
+            background: rgba(226, 226, 232, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Shell -->
+<aside class="flex flex-col h-screen fixed left-0 top-0 z-40 bg-[#1a1c20] dark:bg-[#1a1c20] font-['Manrope'] text-sm tracking-tight docked left-0 h-full w-64 bg-[#111317] border-r border-[#e2e2e8]/15 shadow-none">
+<div class="p-8">
+<h1 class="text-xl font-bold tracking-tighter text-[#e2e2e8]">Sovereign</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/50 mt-1">Command Center</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#b1c5ff] bg-[#1e2024] border-l-4 border-[#276ef1] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">local_taxi</span>
+<span>Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">person_pin_circle</span>
+<span>Riders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">payments</span>
+<span>Financials</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">settings_heart</span>
+<span>System Health</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-outline-variant/10">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#e2e2e8]/60 hover:text-[#e2e2e8] hover:bg-[#1e2024] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">contact_support</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center h-16 px-8 ml-64 bg-[#111317]/60 backdrop-blur-xl docked top-0 w-full border-b border-[#e2e2e8]/10 shadow-[0_24px_24px_-4px_rgba(226,226,232,0.04)] fixed z-30 font-['Manrope'] font-medium">
+<div class="flex items-center gap-8">
+<span class="text-lg font-black text-[#e2e2e8] uppercase tracking-widest">RideCommand</span>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50">search</span>
+<input class="bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-1.5 text-sm w-80 focus:ring-1 focus:ring-[#276ef1] transition-all" placeholder="Search drivers or appointments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 border-r border-outline-variant/20 pr-6">
+<button class="text-[#e2e2e8]/70 hover:text-white transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background"></span>
+</button>
+<button class="text-[#e2e2e8]/70 hover:text-white transition-all">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="text-[#e2e2e8]/70 hover:text-white transition-all">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Chen</p>
+<p class="text-[10px] text-on-surface-variant">Chief Administrator</p>
+</div>
+<img alt="Chief Administrator" class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="professional headshot of a young male executive in a dark suit with a clean office background and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAcvAXSGxMM4eXBLBiuYT2QTzlsCDCO53oMqeEkxth2SnUfJ3kveiX12KggSw8kc2H-lKuzuPotxOSw0OF2oowoHLsNCiK1_B3keEThXp9zwr_uzqffdxgZ8c-AbZGmdF70kLVDiUv3_3ZlBKXoQVrfwPlt2BGAlRVH-sgWMwkxGfiFcLXINGRfY0yrzBYrChXo3Xyq1h5ECYRz7DVYYYTmUP7QnYlou9PTfyX15ZzLCSMGPs_FXa0Uy9jzzw4pW6Pg3Tj_2RMvmU"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 p-10 min-h-screen">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-2">Driver Onboarding</h2>
+<p class="text-on-surface-variant font-body">Manage interviews, vehicle inspections, and recruiter assignments.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-high px-5 py-2.5 rounded-lg text-sm font-semibold border border-outline-variant/15 hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span> Export Report
+                </button>
+<button class="bg-gradient-to-br from-[#276ef1] to-[#b1c5ff] text-on-primary-container px-5 py-2.5 rounded-lg text-sm font-bold shadow-xl shadow-primary/10 hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span> New Interview
+                </button>
+</div>
+</div>
+<!-- Dashboard Grid Layout (Bento Style) -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Calendar/Timeline Section (Large Content Area) -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Section Header -->
+<div class="flex items-center justify-between bg-surface-container-low p-4 rounded-xl">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<h3 class="font-headline text-lg font-bold">September 24 - 30, 2023</h3>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="flex bg-surface-container-lowest p-1 rounded-lg">
+<button class="px-4 py-1.5 text-xs font-bold rounded-md bg-surface-container-highest shadow-sm">Calendar</button>
+<button class="px-4 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">Timeline</button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Professional Class Inspections -->
+<div class="bg-surface-container p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Professional Class</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Inspection Queue</p>
+</div>
+</div>
+<span class="bg-primary-container/10 text-primary text-[10px] font-black px-2 py-1 rounded">5 PENDING</span>
+</div>
+<div class="space-y-4">
+<!-- Inspection Item -->
+<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-outline-variant/20 transition-all cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-on-surface-variant">TODAY آ· 14:30</span>
+<span class="text-[10px] px-2 py-0.5 rounded bg-success-container/10 text-emerald-400 font-bold uppercase">Pass Verified</span>
+</div>
+<h5 class="font-bold text-sm mb-1">Marcus Thorne</h5>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">directions_car</span> Mercedes-Benz S-Class (2023)
+                                </p>
+</div>
+<!-- Inspection Item -->
+<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-outline-variant/20 transition-all cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-on-surface-variant">TOMORROW آ· 09:15</span>
+<span class="text-[10px] px-2 py-0.5 rounded bg-error-container/10 text-error font-bold uppercase">Fail - Retest</span>
+</div>
+<h5 class="font-bold text-sm mb-1">Sarah Jenkins</h5>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">directions_car</span> BMW i7 M70 (2024)
+                                </p>
+</div>
+</div>
+</div>
+<!-- Standard Class Interviews -->
+<div class="bg-surface-container p-6 rounded-2xl relative overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">commute</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Standard Class</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Interview Schedule</p>
+</div>
+</div>
+<span class="bg-on-surface-variant/10 text-on-surface-variant text-[10px] font-black px-2 py-1 rounded">12 SCHEDULED</span>
+</div>
+<div class="space-y-4">
+<!-- Interview Item -->
+<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-outline-variant/20 transition-all cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-on-surface-variant">SEP 26 آ· 11:00</span>
+<button class="text-[10px] text-primary hover:underline font-bold uppercase">Assign Recruiter</button>
+</div>
+<h5 class="font-bold text-sm mb-1">Elena Rodriguez</h5>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span> BG Check: Pending
+                                </p>
+</div>
+<!-- Interview Item -->
+<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/5 hover:border-outline-variant/20 transition-all cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-on-surface-variant">SEP 26 آ· 12:30</span>
+<span class="flex items-center gap-1 text-[10px] text-on-surface font-bold uppercase">
+<img alt="Recruiter" class="w-4 h-4 rounded-full" data-alt="portrait of a focused professional recruiter with neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnE4f_HIMjUVldJF9nmVWVmmS-Tlp1nU_h6ZFj3Zwkw8ertnbbsB5AUl0SgxGECJTBkQinOlY9-ogo_Hz8__c9xuJTNp0ShDolQaSmdCqcYK9Cks2RE8rYyPmnafvK3QinYg6h-A-0c3N2n8kAbnP5OnEQtYj1KKgAEIZmUrvJu3sQB7AYrf9BCiwozSZimpIwFEuRj_3tlYTRYaKMb3VXBdbTBwhIxJcyXLfQJagmWGFjTziePbStNIqVX601rH2pKt3afrW30xw"/> J. Sterling
+                                    </span>
+</div>
+<h5 class="font-bold text-sm mb-1">David Kim</h5>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> BG Check: Pass
+                                </p>
+</div>
+</div>
+</div>
+<!-- Full Width List Card -->
+<div class="col-span-full bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline text-xl font-bold">Upcoming Onboarding Roadmap</h4>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-xs text-on-surface-variant bg-surface-container p-2 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Professional
+                                </span>
+<span class="flex items-center gap-1.5 text-xs text-on-surface-variant bg-surface-container p-2 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Standard
+                                </span>
+</div>
+</div>
+<div class="space-y-0 relative">
+<div class="absolute left-[21px] top-4 bottom-4 w-px bg-outline-variant/20"></div>
+<!-- Roadmap Entry -->
+<div class="relative flex gap-8 pb-10">
+<div class="relative z-10 w-11 h-11 rounded-full bg-surface-container flex items-center justify-center border-4 border-surface-container-low">
+<span class="material-symbols-outlined text-primary text-xl">event_available</span>
+</div>
+<div class="flex-1 pt-1">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-bold text-base">Elite Driver Training Workshop</h5>
+<p class="text-sm text-on-surface-variant mt-1">Mandatory for all Professional Class candidates. Focus on VIP handling.</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black text-primary">FRIDAY, SEP 29</p>
+<p class="text-xs text-on-surface-variant">08:00 AM - 12:00 PM</p>
+</div>
+</div>
+<div class="mt-4 flex -space-x-2">
+<img alt="Candidate" class="w-8 h-8 rounded-full border-2 border-surface-container-low object-cover" data-alt="professional portrait of a man in his 40s with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfxXxeGPm4Q0PaSFFpjKaOzbbDOrC1UAEKoo5iR7JjfR9dxh6_02hNkU15GmJE8i2gYVbV95oYAW7PUqWVKJReMg3Nk_pgJSnfyoNCm7sYbnboJk4ptXjZvZ1UKD3m_tKJj5d6DWru5R92HZEMeVmtxnnfyNsQsvpdXQyG_IkHzOMYf2otwZ67yCC4P6EuWJ-lqDsud534F8TBk58murNomrHqwPdx8FkiCKr9cYJ7CFUBcyh22j9_KSCxlY_FKnV8RxIUsRWkoLs"/>
+<img alt="Candidate" class="w-8 h-8 rounded-full border-2 border-surface-container-low object-cover" data-alt="professional woman in corporate attire smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYbEiMdUtPYSTtRhNZTa8wiqJ_ong3hNvTrpv6KoIa3KnZy-enO-sE8xhyMFcF4UX783sE0MxOagW7Bjl-7RXi0Pb57vkxBsYjXNKreXgxoU4j6Gg9zFehL_qkEDbEOdb0StXUVJYlFHepDXfkqNzf-pdWZPO0nz3GdVuF13tDTi7tRFeliXZE52uMzz0b8tTjd6Sztr2i2k4Id9juQlikiMMzLE5AZbaj1_Kg2QgRNjO-jQoa2Y27MStOwEltv2yGgsgubLbS1CM"/>
+<img alt="Candidate" class="w-8 h-8 rounded-full border-2 border-surface-container-low object-cover" data-alt="young professional man in white shirt smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEGTDBmxUbKaEp2FLZKL0oWcNvbuCcsPEIH_G6ypAFYi_UTXNQA4CG_nsvaKEa5761hwP5VYHBR2TKy4cWjZehGf4VHyK7ufvDF8y2OdIm9dGTmKtn34HlQPQoHelWm-RqT9nynyDCeBLvoj1FlGp9Ognn3Dqc3WUNGqHajdMS75gODMQ5VnBA2Nmr1RHgn9gWiwsQn2nLf86gDxMJKU1ngCg8pXli0Qaz2TU_vOs4m-wsF6_-WW6roR-CmD2PmZaQ6caVTGtvER0"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+4</div>
+</div>
+</div>
+</div>
+<!-- Roadmap Entry -->
+<div class="relative flex gap-8">
+<div class="relative z-10 w-11 h-11 rounded-full bg-surface-container flex items-center justify-center border-4 border-surface-container-low">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">assignment_turned_in</span>
+</div>
+<div class="flex-1 pt-1">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-bold text-base">Standard Class Orientation</h5>
+<p class="text-sm text-on-surface-variant mt-1">Onboarding for new regional fleet drivers. App training and safety protocols.</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black text-on-surface-variant">MONDAY, OCT 2</p>
+<p class="text-xs text-on-surface-variant">10:00 AM - 11:30 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar Panel (Data Dense) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Recruitment Stats -->
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high p-6 rounded-2xl border border-outline-variant/10">
+<h4 class="font-bold text-sm uppercase tracking-widest text-on-surface-variant mb-6">Pipeline Health</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<p class="text-2xl font-headline font-extrabold text-primary">84%</p>
+<p class="text-[10px] text-on-surface-variant mt-1">CONVERSION RATE</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl">
+<p class="text-2xl font-headline font-extrabold text-on-surface">3.2d</p>
+<p class="text-[10px] text-on-surface-variant mt-1">AVG ONBOARD TIME</p>
+</div>
+</div>
+</div>
+<!-- Recruiter Assignments Card -->
+<div class="bg-surface-container p-6 rounded-2xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-bold text-sm uppercase tracking-widest text-on-surface-variant">Active Recruiters</h4>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">more_horiz</span>
+</div>
+<div class="space-y-5">
+<!-- Recruiter Item -->
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Recruiter" class="w-10 h-10 rounded-full object-cover" data-alt="close up headshot of a professional woman with thoughtful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4o1DevZECG32h3tt2ajZkRYH7fcNfY2DuGhWSiEdRSb0zj0kK-jh1iBzmPNkTu0TcQD1yiELosNbVuvWCXQkqmCmE0quD3mLqCFpdaJcqFytz-37W3FL_54Gf3d7OcSsNsDGQBl15mAfQh0uJSAlhCf8YTeceXI4iryFhTox9z1lCLbrlYTpnWk-IIWw2LREu1HvqaRZSeMlsjV2JSjgrkm8N3rheoHAw7CiQENYsB2JhdYmj2dqCGsH90r409rVepuldSPKEiTI"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-surface-container rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Sarah Sterling</p>
+<p class="text-xs text-on-surface-variant">8 Active Candidates</p>
+</div>
+<div class="w-12 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+<!-- Recruiter Item -->
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Recruiter" class="w-10 h-10 rounded-full object-cover" data-alt="professional man in casual business attire looking at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Da_zwcW4VV63v6bkmlkMwF5VOubg4a7Wm85XIu-AJWPppgn6HHMVV_q7Fy8XJJZKOPAcVFAixLB5oe6WLc0ch1gtVbnvh5eR6U4fqTqvcAXRKt9Zi1o16-_Jx1loVb7NSDt4lv3bi5AeSTo4P63lgga8vx-0CFdX34bR5p8FyibRmitwW2DmmVKiJAUHXizgZblgAEHVq_Tt-3F5Pn1dCiq_aCuBcUhhlVN2g_XkQWSswuxaWclg1J-vrTg2K17KoWaMcgxj7WI"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-surface-container rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">James Vance</p>
+<p class="text-xs text-on-surface-variant">12 Active Candidates</p>
+</div>
+<div class="w-12 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error w-full"></div>
+</div>
+</div>
+<!-- Recruiter Item -->
+<div class="flex items-center gap-4 opacity-60">
+<div class="relative">
+<img alt="Recruiter" class="w-10 h-10 rounded-full object-cover" data-alt="professional woman in corporate attire looking away from camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5E4pSvKF2RsxEEQZFBSBs0dDDBCnc7RyHJdMnK1DBt3hgMUZcEZPUOaxtLOU9vpySfEZvtc8nYn-WZShGeli0mYQ2oSwxN4yG2-1CVumBxR3eaqG53-a31yOlvexuKC5b3r3M4h9nIzmGm6G2f27jkUJIfwmXKH4m9YY_jq4FqfodcSoUhYBfJuqd0KexasMYtE2L8rRQvC_nSX87t-Q8StiZt19RlxKSOfUDreEI18hEtfWL6jogFmX9WGwUyHNWEL_SFVywqHs"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-on-surface-variant/30 border-2 border-surface-container rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Linda Zhao</p>
+<p class="text-xs text-on-surface-variant">Away until Monday</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-dashed border-outline-variant/30 rounded-xl text-xs font-bold text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all">
+                        + MANAGE TEAM
+                    </button>
+</div>
+<!-- Quick Actions / Alerts -->
+<div class="bg-error-container/5 border border-error/10 p-6 rounded-2xl">
+<div class="flex items-center gap-2 text-error mb-4">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h4 class="text-sm font-bold">Action Required</h4>
+</div>
+<ul class="space-y-3">
+<li class="text-xs text-on-surface-variant bg-surface-container-low p-3 rounded-lg border-l-2 border-error">
+                            3 Background Checks failed this morning. Review required for <strong>Vance Fleet</strong> candidates.
+                        </li>
+<li class="text-xs text-on-surface-variant bg-surface-container-low p-3 rounded-lg border-l-2 border-primary">
+                            New Professional Class vehicle inspection request: <strong>Range Rover Autobiography (2024)</strong>.
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Element -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl shadow-primary/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">calendar_add_on</span>
+</button>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

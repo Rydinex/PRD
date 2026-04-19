@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Executive Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-primary-fixed-variant": "#00419f",
+                "surface-container-highest": "#333539",
+                "surface-container-high": "#282a2e",
+                "on-tertiary-fixed-variant": "#7b2f00",
+                "error-container": "#93000a",
+                "error": "#ffb4ab",
+                "surface": "#111317",
+                "primary-container": "#276ef1",
+                "outline-variant": "#424654",
+                "on-primary-fixed": "#001947",
+                "on-primary": "#002c71",
+                "primary": "#b1c5ff",
+                "on-secondary-fixed-variant": "#2f4579",
+                "tertiary-fixed": "#ffdbcc",
+                "inverse-on-surface": "#2f3035",
+                "tertiary-container": "#c65100",
+                "surface-container-lowest": "#0c0e12",
+                "on-background": "#e2e2e8",
+                "secondary-container": "#31477c",
+                "surface-bright": "#37393e",
+                "on-secondary-fixed": "#001947",
+                "surface-dim": "#111317",
+                "surface-container": "#1e2024",
+                "on-tertiary-fixed": "#351000",
+                "inverse-primary": "#0056d0",
+                "outline": "#8c90a0",
+                "on-secondary-container": "#a2b7f3",
+                "on-error-container": "#ffdad6",
+                "on-error": "#690005",
+                "primary-fixed-dim": "#b1c5ff",
+                "inverse-surface": "#e2e2e8",
+                "on-tertiary-container": "#fffdff",
+                "tertiary": "#ffb694",
+                "primary-fixed": "#dae2ff",
+                "surface-variant": "#333539",
+                "background": "#111317",
+                "secondary": "#b1c5ff",
+                "on-surface": "#e2e2e8",
+                "on-tertiary": "#561f00",
+                "surface-tint": "#b1c5ff",
+                "tertiary-fixed-dim": "#ffb694",
+                "on-primary-container": "#fffeff",
+                "surface-container-low": "#1a1c20",
+                "secondary-fixed": "#dae2ff",
+                "secondary-fixed-dim": "#b1c5ff",
+                "on-secondary": "#162e61",
+                "on-surface-variant": "#c2c6d7"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #111317; }
+        ::-webkit-scrollbar-thumb { background: #333539; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-white">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-[#080a0d] h-full w-64 border-r-0 font-['Manrope'] antialiased tracking-tight z-50">
+<div class="px-6 mb-10">
+<span class="text-xl font-bold text-white tracking-tighter">Rydinex Admin</span>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Platform Controller</p>
+</div>
+<nav class="flex-1 space-y-1 pr-4">
+<!-- Executive Dashboard Active -->
+<a class="flex items-center gap-4 px-6 py-3 text-[#276ef1] bg-[#1a1c20] rounded-r-full font-semibold active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm">Executive Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-gray-500 hover:text-white hover:bg-[#111317] transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_taxi">local_taxi</span>
+<span class="text-sm">Driver Management</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-gray-500 hover:text-white hover:bg-[#111317] transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-sm">Rider Management</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-gray-500 hover:text-white hover:bg-[#111317] transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-sm">Financials (Stripe)</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-gray-500 hover:text-white hover:bg-[#111317] transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="text-sm">Safety &amp; Compliance</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-gray-500 hover:text-white hover:bg-[#111317] transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm">System Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-6 border-t border-white/5 flex items-center gap-3">
+<img alt="Admin User Profile" class="w-8 h-8 rounded-full bg-surface-container" data-alt="professional portrait of a middle-aged male executive with short dark hair in a dark suit against a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyjpt9bc740n75YbP8JTMp4Qj3cLpUFjOzqbRmixFRVuYjg3Dn5OJh3OzpOCaT5vUsoxQpI8zFn77Jf3nUW8Z_2pF7rAz8TqifV7HbPV1XFtSpcSLSK-3mHpmBrRJXbYsr8eqY4b-bGQcGyAW1954jGY24Gu4k9ZibC1FqsOUDDICo3IT4OURXo7l6yOJPiluoeKME2dn6Era4oqv84P4ogospObvGrZOKtLriw2wgCGjRM3C6-OEYCvNNpt0j4eBPL8llZDNkZPY"/>
+<div>
+<p class="text-xs font-bold text-white">Chief Admin</p>
+<p class="text-[10px] text-gray-500">ID: 8842-AX</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="flex items-center justify-between px-8 w-full ml-64 bg-[#0f1115]/80 backdrop-blur-xl w-full h-16 sticky top-0 z-40 border-b border-white/5 font-['Manrope'] text-sm font-medium">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-lg w-96">
+<span class="material-symbols-outlined text-gray-500 text-lg mr-3" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm p-0 w-full placeholder:text-gray-600" placeholder="Global Search" type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-gray-400 hover:text-white transition-opacity cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-gray-400 hover:text-white transition-opacity cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-gray-400 hover:text-white transition-opacity cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 pb-16 min-h-screen bg-surface">
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<!-- Total Revenue -->
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-4">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Total Revenue (Stripe)</p>
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="text-3xl font-bold tracking-tighter">$2.4M</h2>
+<span class="text-xs font-semibold text-[#276ef1]">+12.4%</span>
+</div>
+<p class="text-[10px] text-gray-600 mt-2">vs last 30 days</p>
+</div>
+<!-- Daily Active Trips -->
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-4">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Daily Active Trips</p>
+<span class="material-symbols-outlined text-primary" data-icon="route">route</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="text-3xl font-bold tracking-tighter">14,202</h2>
+<span class="text-xs font-semibold text-[#276ef1]">+4.2%</span>
+</div>
+<p class="text-[10px] text-gray-600 mt-2">Current session peak</p>
+</div>
+<!-- growth -->
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-4">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Rider/Driver Growth</p>
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="text-3xl font-bold tracking-tighter">24%</h2>
+<span class="text-xs font-semibold text-[#276ef1]">+8%</span>
+</div>
+<p class="text-[10px] text-gray-600 mt-2">Acquisition velocity</p>
+</div>
+<!-- system health -->
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-4">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">System Health</p>
+<span class="material-symbols-outlined text-error" data-icon="bolt">bolt</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="text-3xl font-bold tracking-tighter">99.8%</h2>
+<span class="text-xs font-semibold text-error">-0.1%</span>
+</div>
+<p class="text-[10px] text-gray-600 mt-2">Avg. Latency: 42ms</p>
+</div>
+</div>
+<!-- Central Visualization Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Main Revenue Trends -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl overflow-hidden border border-white/5 flex flex-col">
+<div class="p-6 flex justify-between items-center">
+<div>
+<h3 class="text-lg font-bold">Revenue Trends</h3>
+<p class="text-xs text-gray-500">Gross transaction volume per hour</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low text-[10px] rounded-full text-white cursor-pointer hover:bg-surface-container-high">7D</span>
+<span class="px-3 py-1 bg-[#276ef1] text-[10px] rounded-full text-white cursor-pointer">30D</span>
+</div>
+</div>
+<div class="flex-1 min-h-[300px] relative px-6">
+<!-- Faux Graph Illustration -->
+<div class="absolute inset-0 m-6 overflow-hidden flex items-end gap-1">
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[40%] transition-all hover:to-primary"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[85%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[95%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[50%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-sm h-[40%]"></div>
+</div>
+</div>
+</div>
+<!-- Regional Demand Map -->
+<div class="bg-surface-container rounded-xl border border-white/5 flex flex-col">
+<div class="p-6">
+<h3 class="text-lg font-bold">Regional Demand</h3>
+<p class="text-xs text-gray-500">Live surge heat map</p>
+</div>
+<div class="flex-1 relative bg-surface-container-low mx-6 mb-6 rounded-lg overflow-hidden group">
+<div class="absolute inset-0 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700 bg-[url('https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?q=80&amp;w=600&amp;auto=format&amp;fit=crop')]" data-alt="abstract overhead architectural map of chicago city grid with glowing blue nodes for o'hare and midway airports" data-location="Chicago" style=""></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-lowest/80"></div>
+<!-- Hotspots -->
+<div class="absolute top-1/4 left-1/3 w-8 h-8 bg-primary-container/30 rounded-full animate-pulse flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center">
+<div class="w-3 h-3 bg-primary-container rounded-full"></div>
+</div>
+<div class="absolute bottom-6 left-6 space-y-2">
+<div class="flex items-center gap-2 bg-surface-container-highest px-2 py-1 rounded text-[10px] backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>O'Hare: High Surge</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest px-2 py-1 rounded text-[10px] backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Midway: Stable</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Grid: Feed and Detail Charts -->
+<div class="grid grid-cols-1 xl:grid-cols-4 gap-8">
+<!-- Recent Activity Feed -->
+<div class="xl:col-span-3 bg-surface-container rounded-xl border border-white/5 p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Critical Event Stream</h3>
+<button class="text-primary text-[10px] font-bold uppercase tracking-widest hover:underline">Export Logs</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-3 border-b border-white/5 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="local_taxi">local_taxi</span>
+</div>
+<div>
+<p class="text-sm font-semibold">High Value Trip Completed</p>
+<p class="text-xs text-gray-500">Rider ID: #AX-203 | Zone: O'Hare â†’ Downtown</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-white">$142.50</p>
+<p class="text-[10px] text-gray-500">2 mins ago</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-white/5 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-success text-xl" data-icon="verified" style="color:#4ade80">verified</span>
+</div>
+<div>
+<p class="text-sm font-semibold">System Optimization Pulse</p>
+<p class="text-xs text-gray-500">Cluster ORD-7 Scaling: +14 nodes</p>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 bg-green-500/10 text-green-400 text-[10px] font-bold rounded uppercase">Operational</span>
+<p class="text-[10px] text-gray-500 mt-1">12 mins ago</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-white/5 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-xl" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="text-sm font-semibold">Payment Exception Flag</p>
+<p class="text-xs text-gray-500">Stripe Terminal #9921 Latency Alert</p>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 bg-red-500/10 text-red-400 text-[10px] font-bold rounded uppercase">Processing</span>
+<p class="text-[10px] text-gray-500 mt-1">24 mins ago</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 hover:bg-white/5 transition-colors px-4 -mx-4 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="group_add">group_add</span>
+</div>
+<div>
+<p class="text-sm font-semibold">New Driver Onboarding</p>
+<p class="text-xs text-gray-500">Chicago South: Sarah Jenkins (Background Verified)</p>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-[10px] font-bold rounded uppercase">New</span>
+<p class="text-[10px] text-gray-500 mt-1">1h ago</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mini Performance Card -->
+<div class="bg-[#276ef1] rounded-xl p-8 flex flex-col justify-between text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-[120px]" data-icon="query_stats" style="font-variation-settings: 'wght' 200;">query_stats</span>
+</div>
+<div>
+<h4 class="text-sm font-bold opacity-80 uppercase tracking-widest mb-2">Peak Performance</h4>
+<p class="text-4xl font-extrabold tracking-tighter">11.2k</p>
+<p class="text-xs opacity-70 mt-1">Concurrent connections active</p>
+</div>
+<div class="mt-12">
+<div class="flex items-center gap-2 text-xs font-bold bg-white/10 w-fit px-3 py-1 rounded-full backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                        LIVE OPTIMIZATION ON
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Status Bar -->
+<footer class="fixed bottom-0 w-full h-8 z-50 bg-[#080a0d] border-t border-white/5 flex items-center justify-between px-6 ml-64 w-[calc(100%-16rem)] font-['Inter'] text-[10px] uppercase tracking-widest">
+<div class="flex items-center gap-4">
+<span class="text-[#276ef1] font-bold">System Health: Operational</span>
+<span class="text-gray-500">â€¢</span>
+<span class="text-gray-500">API: Normal</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-gray-500 hover:text-white transition-colors cursor-default">Active Drivers: 1,402</span>
+<span class="text-gray-500 hover:text-white transition-colors cursor-default">Trips: 843</span>
+<span class="text-gray-500">02:14:05 UTC</span>
+</div>
+</footer>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

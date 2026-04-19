@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex | System-wide Activity Logs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#b1c5ff",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "outline": "#8c90a0",
+              "surface-container-highest": "#333539",
+              "on-tertiary": "#561f00",
+              "surface-container-lowest": "#0c0e12",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-primary": "#002c71",
+              "on-primary-container": "#fffeff",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "tertiary-container": "#c65100",
+              "surface": "#111317",
+              "tertiary": "#ffb694",
+              "surface-container-low": "#1a1c20",
+              "primary": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "surface-tint": "#b1c5ff",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed": "#001947",
+              "secondary": "#b1c5ff",
+              "on-tertiary-fixed": "#351000",
+              "on-error": "#690005",
+              "outline-variant": "#424654",
+              "on-background": "#e2e2e8",
+              "background": "#111317",
+              "secondary-container": "#31477c",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-container": "#1e2024",
+              "inverse-primary": "#0056d0",
+              "on-secondary": "#162e61",
+              "secondary-fixed-dim": "#b1c5ff",
+              "secondary-fixed": "#dae2ff",
+              "surface-bright": "#37393e",
+              "inverse-on-surface": "#2f3035",
+              "surface-dim": "#111317",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary-fixed-variant": "#00419f",
+              "primary-fixed": "#dae2ff",
+              "on-surface-variant": "#c2c6d7",
+              "surface-variant": "#333539",
+              "on-surface": "#e2e2e8",
+              "surface-container-high": "#282a2e",
+              "primary-container": "#276ef1",
+              "tertiary-fixed": "#ffdbcc",
+              "inverse-surface": "#e2e2e8",
+              "on-primary-fixed": "#001947"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Inter', sans-serif; background-color: #111317; color: #e2e2e8; }
+      .headline { font-family: 'Manrope', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glass-card { background: rgba(51, 53, 57, 0.6); backdrop-filter: blur(20px); }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50 bg-[#111317] dark:bg-[#111317] bg-[#1a1c20] shadow-[0_1px_0_0_rgba(255,255,255,0.05)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-[#e2e2e8] headline">Rydinex</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors duration-200 font-medium" href="#">Dashboard</a>
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors duration-200 font-medium" href="#">User Management</a>
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors duration-200 font-medium" href="#">CEO Approvals</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer">search</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">settings</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img alt="Administrator Profile" data-alt="professional portrait of a corporate administrator in a modern dark-themed workspace with soft ambient blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEeqGp3BW_QcCnW3damLGlJdXaHw28MoFijmEnK7Q8mUR-Z7l2EPxXVQkNpI8NwYwq9EomfarvTqqA3217M6xVqr28lbGWAlH12PLf9tm1jsOn_lbAYEKGEhpBSgdAPHtVqzU3dHX5GdxrdEDpvBylt-c1mqZsFOEnbEBszlKFuIFJulnm4I88UDHX2d4w3N9dnoAV0fI7s_6uax9qinZOSbMD1mh_m_5X9TfZI4soRoGS5mqYzJIBtzRkNmK8qdMSeQyREGgDw_E"/>
+</div>
+</div>
+</nav>
+<div class="flex min-h-[calc(100vh-4rem)]">
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-[#1a1c20] dark:bg-[#1a1c20] flex flex-col border-r border-white/5 z-40">
+<div class="p-6">
+<div class="flex flex-col gap-1">
+<span class="font-black text-[#276ef1] tracking-widest uppercase text-xs">Rydinex Authority</span>
+<span class="text-[0.6875rem] text-on-surface-variant/60 uppercase tracking-tighter">Sovereign Observer</span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar py-4">
+<nav class="flex flex-col gap-1 px-3">
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 hover:bg-[#1e2024] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[0.6875rem] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 hover:bg-[#1e2024] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[0.6875rem] font-medium tracking-wide">User Management</span>
+</a>
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 hover:bg-[#1e2024] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-[0.6875rem] font-medium tracking-wide">CEO Approvals</span>
+</a>
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 hover:bg-[#1e2024] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[0.6875rem] font-medium tracking-wide">System Logs</span>
+</a>
+<a class="bg-gradient-to-r from-[#276ef1]/20 to-transparent border-l-4 border-[#276ef1] text-[#b1c5ff] font-semibold flex items-center gap-3 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-[0.6875rem] font-semibold tracking-wide">Audit Trails</span>
+</a>
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-3 hover:bg-[#1e2024] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="text-[0.6875rem] font-medium tracking-wide">Security</span>
+</a>
+</nav>
+</div>
+<div class="p-4 border-t border-white/5">
+<button class="w-full py-3 px-4 rounded-lg bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold text-xs uppercase tracking-widest shadow-lg hover:brightness-110 transition-all">
+                    Generate Report
+                </button>
+<div class="mt-4 flex flex-col gap-1">
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8]/80 flex items-center gap-3 px-4 py-2 text-[0.6875rem]" href="#">
+<span class="material-symbols-outlined text-sm">help_center</span>
+<span>Support</span>
+</a>
+<a class="text-[#e2e2e8]/40 hover:text-error flex items-center gap-3 px-4 py-2 text-[0.6875rem]" href="#">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 p-8 bg-surface">
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h1 class="headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Audit Trails</h1>
+<p class="text-on-surface-variant/60 font-body max-w-xl">Deep-level system forensics and behavioral observation for the Rydinex ecosystem.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-fixed-dim mr-2 text-lg">calendar_today</span>
+<span class="text-xs font-medium text-on-surface-variant">Last 24 Hours</span>
+</div>
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-fixed-dim mr-2 text-lg">filter_alt</span>
+<span class="text-xs font-medium text-on-surface-variant">Advanced Filters</span>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<!-- Primary Audit Table (Bento Style) -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-6 shadow-2xl border border-white/5">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant/40">Event Repository</h2>
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-success_green animate-pulse"></span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant/60 tracking-tighter">Live Sync Active</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-3">
+<thead class="text-[0.6875rem] uppercase tracking-widest text-on-surface-variant/40">
+<tr>
+<th class="pb-2 font-semibold px-4">Timestamp</th>
+<th class="pb-2 font-semibold px-4">User</th>
+<th class="pb-2 font-semibold px-4">Action</th>
+<th class="pb-2 font-semibold px-4">Module</th>
+<th class="pb-2 font-semibold px-4 text-right">IP Address</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body">
+<tr class="bg-surface-container hover:bg-surface-container-high transition-colors group">
+<td class="py-4 px-4 text-xs font-mono text-on-surface-variant/80">2023-10-24 14:22:01</td>
+<td class="py-4 px-4 font-medium">admin_m_chen</td>
+<td class="py-4 px-4">
+<span class="bg-primary-container/10 text-primary-fixed-dim px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Approved Refund</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">Financials</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-on-surface-variant/60">192.168.1.104</td>
+</tr>
+<tr class="bg-surface-container hover:bg-surface-container-high transition-colors group">
+<td class="py-4 px-4 text-xs font-mono text-on-surface-variant/80">2023-10-24 14:18:45</td>
+<td class="py-4 px-4 font-medium">system_core</td>
+<td class="py-4 px-4">
+<span class="bg-tertiary-container/10 text-tertiary px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Changed TNP Rate</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">Settings</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-on-surface-variant/60">10.0.0.12</td>
+</tr>
+<tr class="bg-surface-container hover:bg-surface-container-high transition-colors group">
+<td class="py-4 px-4 text-xs font-mono text-on-surface-variant/80">2023-10-24 14:15:30</td>
+<td class="py-4 px-4 font-medium">j_smith_ops</td>
+<td class="py-4 px-4">
+<span class="bg-on-surface-variant/5 text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Logged In</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">Auth Service</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-on-surface-variant/60">45.22.109.18</td>
+</tr>
+<tr class="bg-surface-container hover:bg-surface-container-high transition-colors group">
+<td class="py-4 px-4 text-xs font-mono text-on-surface-variant/80">2023-10-24 14:12:12</td>
+<td class="py-4 px-4 font-medium">admin_m_chen</td>
+<td class="py-4 px-4">
+<span class="bg-error-container/10 text-error px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Deleted Asset</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">User Management</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-on-surface-variant/60">192.168.1.104</td>
+</tr>
+<tr class="bg-surface-container hover:bg-surface-container-high transition-colors group">
+<td class="py-4 px-4 text-xs font-mono text-on-surface-variant/80">2023-10-24 13:58:04</td>
+<td class="py-4 px-4 font-medium">api_gateway_v2</td>
+<td class="py-4 px-4">
+<span class="bg-primary-container/10 text-primary-fixed-dim px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Updated Policy</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">Security</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-on-surface-variant/60">127.0.0.1</td>
+</tr>
+<tr class="bg-surface-container hover:bg-surface-container-high transition-colors group">
+<td class="py-4 px-4 text-xs font-mono text-on-surface-variant/80">2023-10-24 13:45:22</td>
+<td class="py-4 px-4 font-medium">k_robertson</td>
+<td class="py-4 px-4">
+<span class="bg-on-surface-variant/5 text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Exported CSV</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">Reports</td>
+<td class="py-4 px-4 text-right font-mono text-xs text-on-surface-variant/60">88.192.34.11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 flex justify-between items-center text-xs text-on-surface-variant/40 uppercase tracking-widest font-bold">
+<span>Showing 1-50 of 4,822 logs</span>
+<div class="flex gap-4">
+<button class="hover:text-primary transition-colors">Previous</button>
+<button class="text-primary-fixed-dim">Next</button>
+</div>
+</div>
+</div>
+<!-- Visual Summary Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-[10px] uppercase font-black text-primary tracking-widest mb-4">Integrity Status</p>
+<div class="flex items-end gap-3 mb-2">
+<span class="headline text-4xl font-bold">99.98%</span>
+<span class="text-success_green text-xs font-bold mb-1">+0.02%</span>
+</div>
+<p class="text-xs text-on-surface-variant/60">Blockchain-verified audit trails consistent across all regional nodes.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">verified</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-[10px] uppercase font-black text-tertiary tracking-widest mb-4">Threat Detection</p>
+<div class="flex items-end gap-3 mb-2">
+<span class="headline text-4xl font-bold">0</span>
+<span class="text-on-surface-variant/40 text-xs font-bold mb-1">Critical</span>
+</div>
+<p class="text-xs text-on-surface-variant/60">Real-time IP anomaly detection has flagged zero suspicious attempts today.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">shield_with_heart</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Activity Stream Sidebar -->
+<div class="col-span-12 lg:col-span-4 h-full">
+<div class="bg-[#1a1c20] rounded-xl p-6 h-full flex flex-col shadow-2xl border border-white/5 sticky top-24">
+<div class="flex justify-between items-center mb-8">
+<h2 class="headline text-lg font-bold">Global Stream</h2>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Live</span>
+</div>
+</div>
+<div class="flex-1 space-y-6 overflow-y-auto no-scrollbar pr-2">
+<!-- Stream Item -->
+<div class="relative pl-6 border-l border-white/5 space-y-2">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(39,110,241,0.5)]"></div>
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase">3 Minutes Ago</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-mono">FIN-902</span>
+</div>
+<p class="text-sm text-on-surface leading-tight">
+<span class="text-primary-fixed-dim font-semibold">admin_m_chen</span> executed a high-value refund for <span class="italic text-on-surface-variant">TXN_882910</span>.
+                                </p>
+</div>
+<div class="relative pl-6 border-l border-white/5 space-y-2">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase">12 Minutes Ago</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-mono">SYS-001</span>
+</div>
+<p class="text-sm text-on-surface leading-tight">
+<span class="text-primary-fixed-dim font-semibold">system_core</span> updated global TNP multiplier to <span class="text-tertiary">1.25x</span>.
+                                </p>
+</div>
+<div class="relative pl-6 border-l border-white/5 space-y-2">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase">19 Minutes Ago</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-mono">SEC-441</span>
+</div>
+<p class="text-sm text-on-surface leading-tight">
+                                    Password policy updated for all <span class="underline decoration-primary/30 underline-offset-4">Department Leads</span>.
+                                </p>
+</div>
+<div class="relative pl-6 border-l border-white/5 space-y-2">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-error shadow-[0_0_10px_rgba(255,180,171,0.3)]"></div>
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-error uppercase">24 Minutes Ago</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-error-container/20 text-error font-mono">AUTH-ERR</span>
+</div>
+<p class="text-sm text-on-surface leading-tight">
+                                    3 failed login attempts from <span class="font-mono text-error">212.4.99.1</span> detected and blocked.
+                                </p>
+</div>
+<div class="relative pl-6 border-l border-white/5 space-y-2">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase">31 Minutes Ago</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-mono">USR-221</span>
+</div>
+<p class="text-sm text-on-surface leading-tight">
+<span class="text-primary-fixed-dim font-semibold">j_smith_ops</span> requested export of 'October Driver Metrics'.
+                                </p>
+</div>
+<div class="relative pl-6 border-l border-white/5 space-y-2">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase">45 Minutes Ago</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-mono">FIN-011</span>
+</div>
+<p class="text-sm text-on-surface leading-tight">
+                                    Payout batch #9921 initialized for 1,240 contractors.
+                                </p>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5">
+<div class="flex items-center justify-center gap-4 bg-surface-container/50 py-3 rounded-lg cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">history</span>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-on-surface-variant">View Historical Archive</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Background Atmospheric Elements -->
+<div class="fixed top-0 right-0 w-[500px] h-[500px] bg-primary-container/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 w-[400px] h-[400px] bg-secondary-container/5 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

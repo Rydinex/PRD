@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Destination Reached - Rydinex Driver</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#00419f",
+              "inverse-surface": "#e5e2e3",
+              "surface-container-highest": "#353436",
+              "on-background": "#e5e2e3",
+              "primary-fixed": "#dae2ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-primary-container": "#fffeff",
+              "on-primary-fixed": "#001947",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-tertiary-fixed": "#351000",
+              "on-surface-variant": "#c2c6d7",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#1b1b1c",
+              "surface-dim": "#131314",
+              "on-tertiary": "#561f00",
+              "surface-container": "#1f1f20",
+              "primary-container": "#276ef1",
+              "surface-container-lowest": "#0e0e0f",
+              "on-secondary": "#162e61",
+              "background": "#131314",
+              "surface-tint": "#b1c5ff",
+              "on-primary": "#002c71",
+              "secondary": "#b1c5ff",
+              "inverse-primary": "#0056d0",
+              "surface-variant": "#353436",
+              "surface": "#131314",
+              "outline-variant": "#424654",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-error": "#690005",
+              "tertiary-container": "#c65100",
+              "error-container": "#93000a",
+              "surface-container-high": "#2a2a2b",
+              "inverse-on-surface": "#303031",
+              "outline": "#8c90a0",
+              "on-tertiary-container": "#fffdff",
+              "on-surface": "#e5e2e3",
+              "surface-bright": "#39393a",
+              "secondary-container": "#31477c",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-secondary-container": "#a2b7f3",
+              "tertiary-fixed": "#ffdbcc",
+              "primary": "#b1c5ff",
+              "tertiary": "#ffb694",
+              "secondary-fixed": "#dae2ff",
+              "tertiary-fixed-dim": "#ffb694",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#001947"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .kinetic-glow {
+        box-shadow: 0 0 60px -12px rgba(39, 110, 241, 0.4);
+      }
+      .editorial-spacing {
+        letter-spacing: -0.02em;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white antialiased">
+<!-- Top Navigation (Shared Component) -->
+<!-- Content & Identity: Trip Complete / leading_icon: check_circle -->
+<header class="w-full top-0 sticky z-[60] bg-[#1c1c1e] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#b1c5ff]" data-icon="check_circle">check_circle</span>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-white">Trip Complete</h1>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-gray-400 hover:bg-[#276ef1]/10 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<main class="min-h-[calc(100vh-140px)] flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden">
+<!-- Background Artistic Element -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-20 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[120%] h-[50%] bg-gradient-to-br from-primary-container to-transparent blur-[120px]"></div>
+</div>
+<!-- Success Animation/Icon Container -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
+<!-- Kinetic Icon -->
+<div class="mb-12 relative">
+<div class="absolute inset-0 bg-primary-container/20 blur-3xl rounded-full scale-150 animate-pulse"></div>
+<div class="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-primary to-primary-container rounded-full flex items-center justify-center kinetic-glow ring-8 ring-primary-container/10">
+<span class="material-symbols-outlined text-white text-6xl md:text-7xl" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Headlines -->
+<h2 class="font-headline text-5xl md:text-6xl font-extrabold editorial-spacing text-white mb-6">
+                Destination Reached
+            </h2>
+<p class="text-on-surface-variant font-medium text-lg leading-relaxed mb-12 max-w-md">
+                Your destination filter at <span class="text-primary">O'Hare International Airport</span> is now complete.
+            </p>
+<!-- Summary Bento Card -->
+<div class="w-full grid grid-cols-2 gap-4 mb-12">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-start gap-2 text-left ring-1 ring-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Filter Duration</p>
+<p class="font-headline text-2xl font-bold text-white">42m 15s</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-start gap-2 text-left ring-1 ring-outline-variant/10">
+<span class="material-symbols-outlined text-secondary" data-icon="route">route</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Total Distance</p>
+<p class="font-headline text-2xl font-bold text-white">18.4 mi</p>
+</div>
+<div class="col-span-2 bg-gradient-to-r from-surface-container-high to-surface-container p-6 rounded-xl flex items-center justify-between ring-1 ring-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+</div>
+<div class="text-left">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Earnings during filter</p>
+<p class="font-headline text-2xl font-bold text-white">$34.50</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col w-full gap-4 px-4">
+<button class="w-full py-5 bg-primary-container text-white font-headline font-bold text-lg rounded-xl shadow-[0_20px_40px_rgba(39,110,241,0.3)] active:scale-95 transition-all">
+                    Return to Dashboard
+                </button>
+<div class="flex items-center justify-center gap-4 mt-2">
+<button class="flex items-center gap-2 py-3 px-6 text-primary hover:bg-primary/10 rounded-lg transition-all active:scale-90">
+<span class="material-symbols-outlined text-sm" data-icon="edit_road">edit_road</span>
+<span class="font-headline font-bold uppercase text-xs tracking-widest">Set New Destination</span>
+</button>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">1/2 LIMIT</p>
+</div>
+</div>
+</div>
+<!-- Environmental Map Context (Glassmorphic Card) -->
+<div class="absolute bottom-32 right-12 hidden lg:block w-72 h-48 rounded-2xl overflow-hidden ring-1 ring-outline-variant/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Dark stylized map interface with glowing blue route line ending at a airport terminal illustration in minimalist neon style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuUfvdujU24IoS8KKU-IgH_liCsVypLV_y8xX95HyzQla72ozLuBxv_YEsjWF6955BASQFTskLheY639osEh5VqylpT0CCF2eVl2yDWkhFNOocyJrf0n_WdNiEXfdcvW1cUaY3kCK9bp1QIwsu5rWDciMYHcNy55Ae8o6s63zcOWpeZsBV_WaWFojO4CSWdB5i0cXnQ8Rx0_uMlSV2bFqITS1jX5jTFyTBNepmoP0UVABhke355UBknamQ9PFUBWFxWQUrgVRQ9As"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-primary font-bold tracking-tighter uppercase">Current Location</span>
+<p class="text-white text-xs font-bold mt-1">Terminal 3, O'Hare</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Shared Component) -->
+<!-- Content & Identity: Home, Earnings, Ratings, Account -->
+<!-- Active State Logic: Home is active -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/90 backdrop-blur-xl shadow-[0_-20px_40px_rgba(0,0,0,0.3)] flex justify-around items-center px-4 py-3 pb-safe">
+<div class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-2 hover:text-white transition-all scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Earnings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Ratings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 hover:text-white transition-all scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Account</span>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

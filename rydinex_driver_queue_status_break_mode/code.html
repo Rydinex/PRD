@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#276ef1",
+            "secondary-container": "#31477c",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-secondary": "#162e61",
+            "surface-container-lowest": "#0e0e0f",
+            "inverse-on-surface": "#303031",
+            "outline": "#8c90a0",
+            "on-surface": "#e5e2e3",
+            "surface-container-highest": "#353436",
+            "primary": "#b1c5ff",
+            "surface-variant": "#353436",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffdbcc",
+            "tertiary": "#ffb694",
+            "tertiary-fixed-dim": "#ffb694",
+            "surface-tint": "#b1c5ff",
+            "surface-dim": "#131314",
+            "on-tertiary-fixed": "#351000",
+            "secondary": "#b1c5ff",
+            "on-secondary-fixed": "#001947",
+            "surface-container-low": "#1b1b1c",
+            "on-tertiary": "#561f00",
+            "on-background": "#e5e2e3",
+            "on-secondary-fixed-variant": "#2f4579",
+            "on-error-container": "#ffdad6",
+            "error": "#ffb4ab",
+            "surface-bright": "#39393a",
+            "on-primary-container": "#fffeff",
+            "primary-fixed": "#dae2ff",
+            "inverse-surface": "#e5e2e3",
+            "tertiary-container": "#c65100",
+            "on-primary-fixed-variant": "#00419f",
+            "on-primary-fixed": "#001947",
+            "surface": "#131314",
+            "background": "#131314",
+            "surface-container-high": "#2a2a2b",
+            "on-surface-variant": "#c2c6d7",
+            "surface-container": "#1f1f20",
+            "secondary-fixed-dim": "#b1c5ff",
+            "on-secondary-container": "#a2b7f3",
+            "primary-fixed-dim": "#b1c5ff",
+            "outline-variant": "#424654",
+            "secondary-fixed": "#dae2ff",
+            "error-container": "#93000a",
+            "inverse-primary": "#0056d0",
+            "on-primary": "#002c71",
+            "on-tertiary-container": "#fffdff"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(53, 52, 54, 0.6);
+      backdrop-filter: blur(20px);
+    }
+    .tonal-shift {
+      background: linear-gradient(145deg, #1b1b1c, #131314);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-[#131314] dark:bg-[#131314]">
+<div class="flex items-center gap-3">
+<img alt="Driver profile photo" class="w-10 h-10 rounded-full border border-outline-variant/30" data-alt="Close-up portrait of a professional male driver in a dark polo shirt, warm studio lighting, blurred luxury car interior background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcybKfmEO9_C6SwTL8NZ2w640yZHZLVA-aQrzFpJimZiPoB0Ij_08Fq2TR6BltYgaGbf_86GfimZ7m3JuAfkWiwws-NuafroFPK3Sq7hJ9ffRl5UOmu05DrWTQ5t9EDkFeBIMcynR2zAeECJwQUP_fnAvCiqFI9pdMCBmBZmKK-QMlm6jTLlCMQ4kJTvHuMRlXbqCTddalU-iAQH4uHR2qLUJ0O1j2h1ZJpp4VVNdlWeNF9G4Ci1QKwPm-NKqzPPtZ8gubsdSluXk"/>
+<h1 class="font-headline font-bold text-[#b1c5ff] tracking-tighter text-2xl">Rydinex</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#b1c5ff] font-headline font-semibold tracking-tight uppercase text-xs px-3 py-1 bg-primary-container/20 rounded-full">BREAK MODE</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="relative h-screen pt-20 pb-24 overflow-y-auto px-6 flex flex-col items-center justify-center">
+<!-- Hero Visualization Area -->
+<div class="w-full max-w-md space-y-8 text-center">
+<!-- Queue Tracker Visual -->
+<div class="relative flex justify-center items-center py-12">
+<!-- Pulse Background -->
+<div class="absolute w-64 h-64 bg-primary-container/10 rounded-full blur-3xl animate-pulse"></div>
+<!-- Main Circular Meter -->
+<div class="relative w-56 h-56 rounded-full border-4 border-outline-variant/20 flex flex-col items-center justify-center bg-surface-container-low/80 backdrop-blur-xl shadow-2xl">
+<span class="text-primary-container font-headline font-extrabold text-5xl tracking-tighter">14</span>
+<div class="h-px w-12 bg-outline-variant/30 my-2"></div>
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em]">Of 150 Drivers</span>
+<!-- Status Chip -->
+<div class="absolute -bottom-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">pause_circle</span>
+<span class="font-label text-[10px] font-bold tracking-widest uppercase">Queue Paused</span>
+</div>
+</div>
+</div>
+<!-- Content Text -->
+<div class="space-y-3">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Your spot is held.</h2>
+<p class="text-on-surface-variant text-sm font-body max-w-[280px] mx-auto leading-relaxed">
+          Enjoy your break! You're currently <span class="text-primary font-bold">Holding Position</span> in the airport queue.
+        </p>
+</div>
+<!-- Bento-style Stats Cards -->
+<div class="grid grid-cols-2 gap-4 w-full mt-4">
+<div class="bg-surface-container-highest p-5 rounded-xl text-left flex flex-col justify-between h-32 relative overflow-hidden">
+<span class="material-symbols-outlined text-primary-container opacity-40 absolute -right-2 -top-2 scale-150">timer</span>
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-wider">Break duration</span>
+<span class="text-on-surface font-headline font-bold text-2xl tracking-tight">12:45</span>
+</div>
+<div class="bg-surface-container-highest p-5 rounded-xl text-left flex flex-col justify-between h-32 relative overflow-hidden">
+<span class="material-symbols-outlined text-tertiary opacity-40 absolute -right-2 -top-2 scale-150">coffee</span>
+<span class="text-on-surface-variant font-label text-[10px] uppercase tracking-wider">Status</span>
+<span class="text-on-tertiary-fixed font-headline font-bold text-lg tracking-tight leading-tight">Relaxing</span>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="pt-4">
+<button class="w-full bg-primary-container text-on-primary-container font-headline font-bold py-5 rounded-xl text-lg shadow-[0_20px_40px_rgba(39,110,241,0.2)] active:scale-95 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+          END BREAK
+        </button>
+<p class="text-[10px] text-outline mt-4 font-label uppercase tracking-widest">Instant rejoin upon completion</p>
+</div>
+</div>
+<section class="glass-panel p-5 rounded-2xl border border-primary/20" data-prd-role="ops-card">
+<h3 class="font-headline font-bold text-base mb-3">Driver Ops Control</h3>
+<div class="text-xs text-on-surface-variant space-y-1 mb-3">
+<p>Socket: <span class="text-error font-bold">Disconnected</span></p>
+<p>O'Hare (ORD): 41.9742, -87.9073</p>
+<p>Midway (MDW): 41.7868, -87.7522</p>
+</div>
+<div class="flex gap-2 mb-3">
+<label class="text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30"><input type="checkbox" checked/> Black</label>
+<label class="text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30"><input type="checkbox" checked/> Black SUV</label>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-xl mb-3" data-prd-role="queue-group">
+<span class="text-xs">Queue Group: Airport+Events</span>
+<button class="text-xs px-3 py-2 rounded-lg bg-error-container/30 border border-error/30" data-prd-action="remove-queue-group">Remove Queue Group</button>
+</div>
+<div class="grid grid-cols-2 gap-2" data-prd-role="state-rules">
+<button class="text-xs px-3 py-2 rounded-lg bg-surface-container-highest" data-prd-action="check-tracking">Check Tracking</button>
+<button class="text-xs px-3 py-2 rounded-lg bg-primary-container text-white" data-prd-action="save-state-rules">Save State Rules</button>
+</div>
+<div class="mt-2" data-prd-role="chauffeur">
+<button class="w-full text-xs px-3 py-2 rounded-lg bg-emerald-700/40 border border-emerald-400/40" data-prd-action="verify-chauffeur">Verify Chauffeur License</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-2 bg-[#131314]/90 backdrop-blur-xl no-border tonal-shift shadow-[0_-20px_40px_0_rgba(0,0,0,0.4)] rounded-t-[2rem]">
+<!-- Home Tab -->
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-[#b1c5ff] transition-transform duration-300 tap-highlight-none" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Earnings Tab -->
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-[#b1c5ff] transition-transform duration-300 tap-highlight-none" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Earnings</span>
+</a>
+<!-- Rating Tab (Placeholder - Adjust as needed for "active") -->
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-[#b1c5ff] transition-transform duration-300 tap-highlight-none" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Rating</span>
+</a>
+<!-- Account Tab -->
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-[#b1c5ff] transition-transform duration-300 tap-highlight-none" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Account</span>
+</a>
+</nav>
+<!-- Floating Map Background (Subtle) -->
+<div class="fixed inset-0 -z-10 opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface"></div>
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;q=80&amp;w=1200')] bg-cover opacity-30 grayscale contrast-125" data-alt="Dark monochromatic aerial city street map grid with glowing blue navigation lines and soft focus street textures" data-location="San Francisco" style=""></div>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+
+

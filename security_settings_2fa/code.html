@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0c0e12",
+              "secondary-container": "#31477c",
+              "surface-bright": "#37393e",
+              "on-tertiary-container": "#fffdff",
+              "surface-container-low": "#1a1c20",
+              "primary-container": "#276ef1",
+              "inverse-primary": "#0056d0",
+              "outline-variant": "#424654",
+              "tertiary-fixed": "#ffdbcc",
+              "secondary-fixed-dim": "#b1c5ff",
+              "surface-container-highest": "#333539",
+              "secondary-fixed": "#dae2ff",
+              "secondary": "#b1c5ff",
+              "surface-dim": "#111317",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-background": "#e2e2e8",
+              "tertiary-container": "#c65100",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-high": "#282a2e",
+              "on-secondary-container": "#a2b7f3",
+              "on-secondary-fixed": "#001947",
+              "surface": "#111317",
+              "on-secondary": "#162e61",
+              "on-primary-container": "#fffeff",
+              "on-primary-fixed": "#001947",
+              "error-container": "#93000a",
+              "on-surface": "#e2e2e8",
+              "surface-container": "#1e2024",
+              "on-error": "#690005",
+              "primary-fixed": "#dae2ff",
+              "tertiary": "#ffb694",
+              "on-tertiary-fixed": "#351000",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#b1c5ff",
+              "on-primary-fixed-variant": "#00419f",
+              "error": "#ffb4ab",
+              "inverse-surface": "#e2e2e8",
+              "primary": "#b1c5ff",
+              "surface-variant": "#333539",
+              "inverse-on-surface": "#2f3035",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-tertiary": "#561f00",
+              "on-surface-variant": "#c2c6d7",
+              "on-primary": "#002c71",
+              "outline": "#8c90a0",
+              "tertiary-fixed-dim": "#ffb694",
+              "background": "#111317"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 24px -4px rgba(226, 226, 232, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 px-4 bg-[#1a1c20] dark:bg-slate-900 w-64 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-bold tracking-tight text-[#e2e2e8] dark:text-slate-100 font-headline">Sovereign Admin</h1>
+<p class="text-[0.6875rem] text-slate-400 font-medium tracking-widest uppercase mt-1">High-Density Security</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-slate-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<!-- Active State for Security Settings -->
+<a class="flex items-center gap-3 px-3 py-2 text-[#b1c5ff] font-bold border-r-2 border-[#276ef1] bg-[#1e2024] transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg">admin_panel_settings</span>
+<span class="text-sm">Security</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-slate-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+<span class="text-sm font-medium">Access Logs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-slate-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">security</span>
+<span class="text-sm font-medium">Threat Detection</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-slate-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">hub</span>
+<span class="text-sm font-medium">Network</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-slate-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span class="text-sm font-medium">Global Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full py-2.5 px-4 bg-error-container/10 border border-error/20 text-error rounded-lg flex items-center justify-center gap-2 hover:bg-error-container/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-xs font-bold uppercase tracking-wider">Lock Terminal</span>
+</button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="sticky top-0 flex justify-between items-center w-full pl-72 pr-8 h-16 bg-[#111317]/80 backdrop-blur-xl dark:bg-slate-950/80 z-40 border-b border-outline-variant/15">
+<div class="flex items-center gap-8">
+<span class="text-lg font-black text-[#e2e2e8] dark:text-slate-100 font-headline">Command Center</span>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-500 text-sm">search</span>
+<input class="bg-surface-container-lowest border-none text-xs rounded-full py-2 pl-10 pr-4 w-64 focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Search security protocols..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-6">
+<a class="text-sm text-slate-400 hover:text-white transition-all" href="#">Audit</a>
+<a class="text-sm text-[#276ef1] border-b-2 border-[#276ef1] pb-1" href="#">Policies</a>
+<a class="text-sm text-slate-400 hover:text-white transition-all" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-3 border-l border-outline-variant/15 pl-6">
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-all text-xl">notifications</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-all text-xl">help_outline</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 overflow-hidden ml-2">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="minimalist 3d avatar of a male security administrator with glasses and professional attire on a neutral dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM3gtfBSGCnuoNE1ky9I2mmlclUiXlKsycBUSQ43VyTdE8SIIcW_cbI7uxCUngE6wtbc9YsdUMbHS4hdK0gY0scpLRue7vVS8jbsilUxKEpP5xoZaPeJ-A2_aKoILNnV55blBGRUcHIpeqz2T0lgAl6kwVq_dfxZJgFvpQygKNmkacnfRzVbHSpQmTjfiolXY8S9LkRlGU74ABI7R0Ud-dQFKEIFLJ6qplYM5DfwPDVqpsNrwEEP9ARv1sITbxvir_1SsPBAhKOfU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pl-72 pr-8 pt-10 pb-20 max-w-[1600px]">
+<!-- Header Section -->
+<header class="mb-10 flex justify-between items-end">
+<div>
+<span class="text-[0.6875rem] font-bold tracking-widest text-primary uppercase mb-2 block">Security Layer 04</span>
+<h2 class="text-[3.5rem] font-extrabold font-headline leading-none text-on-surface tracking-tight">Two-Factor Auth</h2>
+<p class="text-slate-400 mt-4 max-w-xl text-sm leading-relaxed">Strengthen your administrative account security by requiring a secondary verification method for every login attempt. Protected by Rydinex Sovereign Shield.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<div class="text-right">
+<p class="text-[0.6875rem] text-slate-500 font-bold uppercase">Activation Status</p>
+<p class="text-success_green font-bold text-sm text-[#4ade80]">Active &amp; Secured</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</header>
+<!-- Bento Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Primary Method Selection (Large Card) -->
+<section class="col-span-12 lg:col-span-8 bg-surface-container rounded-xl p-8 ambient-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/5 blur-[100px] -mr-32 -mt-32"></div>
+<h3 class="text-sm font-bold font-headline mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+                    Primary Verification Method
+                </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Method: App -->
+<div class="p-6 bg-surface-container-high border-2 border-primary-container rounded-xl transition-all relative group cursor-pointer">
+<div class="absolute top-3 right-3">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="material-symbols-outlined text-3xl mb-4 text-primary">phonelink_lock</span>
+<h4 class="font-bold text-sm mb-1">Authenticator App</h4>
+<p class="text-[0.6875rem] text-slate-400 mb-4">Google Authenticator, Authy, or Microsoft Auth.</p>
+<span class="px-2 py-0.5 bg-primary-container/10 text-primary text-[0.625rem] font-bold rounded uppercase">Recommended</span>
+</div>
+<!-- Method: SMS -->
+<div class="p-6 bg-surface-container-low border border-outline-variant/10 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-3xl mb-4 text-slate-500 group-hover:text-primary transition-colors">sms</span>
+<h4 class="font-bold text-sm mb-1">SMS Message</h4>
+<p class="text-[0.6875rem] text-slate-400">Receive a 6-digit code via your registered mobile number.</p>
+</div>
+<!-- Method: Email -->
+<div class="p-6 bg-surface-container-low border border-outline-variant/10 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-3xl mb-4 text-slate-500 group-hover:text-primary transition-colors">alternate_email</span>
+<h4 class="font-bold text-sm mb-1">Email Code</h4>
+<p class="text-[0.6875rem] text-slate-400">Security code sent to your primary admin email address.</p>
+</div>
+</div>
+<!-- Detailed Setup Guide -->
+<div class="mt-10 pt-10 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row gap-10">
+<div class="flex-1">
+<h4 class="text-sm font-bold mb-4">Configuration Protocol</h4>
+<ol class="space-y-6">
+<li class="flex gap-4">
+<span class="flex-none w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[0.625rem] font-black text-primary">01</span>
+<div class="text-[0.8125rem]">
+<p class="font-bold text-on-surface">Install Application</p>
+<p class="text-slate-500">Download Google Authenticator or Authy from your device's app store.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="flex-none w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[0.625rem] font-black text-primary">02</span>
+<div class="text-[0.8125rem]">
+<p class="font-bold text-on-surface">Scan Manifest</p>
+<p class="text-slate-500">Open the app and scan the security QR code displayed on the right.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="flex-none w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[0.625rem] font-black text-primary">03</span>
+<div class="text-[0.8125rem]">
+<p class="font-bold text-on-surface">Finalize Handshake</p>
+<p class="text-slate-500">Enter the 6-digit code generated by your app to verify the sync.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="flex-none w-full md:w-48 text-center">
+<div class="aspect-square bg-white p-2 rounded-lg mb-4 inline-block">
+<img alt="Authenticator QR Code" class="w-full h-full grayscale" data-alt="a crisp high contrast qr code used for two factor authentication setup on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9c1mM1-7lojOE9EDDvtBn1zswKBoTOYxg_1jyRE7SWQr63aE7aRnZwGgLM30fxBXCbJPV8vAMvvE9hnnnoQpevJdprLcuSlFDWIC_0vNyfYtRPQEoNDOHEVW7WFwnA4nhGjTvbBGm5Ke1f4ja-CedY_22V9cBbq3c5BYrfYXsOx7yaKGiwFt-c7jZOyLZc74uoAsIX3MWKQpJedzbMNvGZXt4Pka7SUNsGjQogQ5vpLvKfSn0MFd-ocCx_a8pFrSLaTwArZfuR18"/>
+</div>
+<p class="text-[0.625rem] text-slate-500 font-medium uppercase tracking-tighter">Secret Key: RYDX-9921-X921</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recovery Codes (Side Card) -->
+<section class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Backup Codes Panel -->
+<div class="bg-surface-container-low border border-outline-variant/10 rounded-xl p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-sm font-bold font-headline mb-1">Emergency Recovery</h3>
+<p class="text-[0.6875rem] text-slate-500">Use these if you lose access to your device.</p>
+</div>
+<span class="material-symbols-outlined text-tertiary">key</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-6">
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-xs text-center border border-outline-variant/5 text-slate-300">A82J-92KL</div>
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-xs text-center border border-outline-variant/5 text-slate-300">MK92-11PO</div>
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-xs text-center border border-outline-variant/5 text-slate-300">X091-VV28</div>
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-xs text-center border border-outline-variant/5 text-slate-300">QP01-88NM</div>
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-xs text-center border border-outline-variant/5 text-slate-300">TR81-992B</div>
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-xs text-center border border-outline-variant/5 text-slate-300">ZX42-817C</div>
+</div>
+<div class="mt-auto space-y-2">
+<button class="w-full py-2 bg-primary-container text-white text-[0.6875rem] font-bold rounded uppercase tracking-wider hover:bg-primary-container/90 transition-all">Download Codes</button>
+<button class="w-full py-2 bg-transparent border border-outline-variant/20 text-on-surface text-[0.6875rem] font-bold rounded uppercase tracking-wider hover:bg-surface-container-high transition-all">Regenerate New</button>
+</div>
+</div>
+<!-- Visual Security Graphic Card -->
+<div class="bg-primary-container/10 border border-primary-container/20 rounded-xl p-6 relative overflow-hidden h-40">
+<div class="relative z-10">
+<h4 class="text-sm font-bold mb-2">Security Score: 98%</h4>
+<p class="text-xs text-slate-400">Account status is categorized as "Fortified". No anomalies detected in last 30 days.</p>
+</div>
+<div class="absolute bottom-0 right-0 opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+</div>
+</section>
+<!-- Trusted Devices (Table Section) -->
+<section class="col-span-12 bg-surface-container-low rounded-xl p-8 border border-outline-variant/5 ambient-shadow">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-sm font-bold font-headline mb-1">Authenticated Terminal Fleet</h3>
+<p class="text-[0.6875rem] text-slate-500">Active sessions and recognized devices permitted for bypass.</p>
+</div>
+<button class="text-[0.6875rem] font-bold text-primary hover:underline uppercase tracking-tighter">Revoke All Access</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[0.625rem] font-black uppercase text-slate-500 border-b border-outline-variant/10">
+<th class="pb-4 font-black">Device Identifier</th>
+<th class="pb-4 font-black">Location / IP</th>
+<th class="pb-4 font-black">Last Interrogation</th>
+<th class="pb-4 font-black">Status</th>
+<th class="pb-4 text-right font-black">Actions</th>
+</tr>
+</thead>
+<tbody class="text-[0.8125rem]">
+<tr class="group border-b border-outline-variant/5 hover:bg-surface-container-high transition-all">
+<td class="py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">laptop_mac</span>
+<div>
+<p class="font-bold text-on-surface">MacBook Pro 16" (M3 Max)</p>
+<p class="text-[0.625rem] text-slate-500">macOS 14.4 â€¢ Chrome Browser</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<p class="text-on-surface">London, UK</p>
+<p class="text-[0.625rem] text-slate-500">192.168.1.45</p>
+</td>
+<td class="py-4 text-slate-400">04 mins ago</td>
+<td class="py-4">
+<span class="px-2 py-0.5 bg-[#4ade80]/10 text-[#4ade80] text-[0.625rem] font-bold rounded uppercase">Current Session</span>
+</td>
+<td class="py-4 text-right">
+<button class="text-slate-500 hover:text-error transition-colors material-symbols-outlined">logout</button>
+</td>
+</tr>
+<tr class="group border-b border-outline-variant/5 hover:bg-surface-container-high transition-all">
+<td class="py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">smartphone</span>
+<div>
+<p class="font-bold text-on-surface">iPhone 15 Pro</p>
+<p class="text-[0.625rem] text-slate-500">iOS 17.2 â€¢ Native Application</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<p class="text-on-surface">New York, US</p>
+<p class="text-[0.625rem] text-slate-500">45.21.102.3</p>
+</td>
+<td class="py-4 text-slate-400">12 hours ago</td>
+<td class="py-4">
+<span class="px-2 py-0.5 bg-slate-500/10 text-slate-500 text-[0.625rem] font-bold rounded uppercase">Trusted</span>
+</td>
+<td class="py-4 text-right">
+<button class="text-slate-500 hover:text-error transition-colors material-symbols-outlined">logout</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-high transition-all">
+<td class="py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">desktop_windows</span>
+<div>
+<p class="font-bold text-on-surface">Workstation-X01</p>
+<p class="text-[0.625rem] text-slate-500">Windows 11 â€¢ Edge Browser</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<p class="text-on-surface">Berlin, DE</p>
+<p class="text-[0.625rem] text-slate-500">82.112.4.99</p>
+</td>
+<td class="py-4 text-slate-400">2 days ago</td>
+<td class="py-4">
+<span class="px-2 py-0.5 bg-slate-500/10 text-slate-500 text-[0.625rem] font-bold rounded uppercase">Trusted</span>
+</td>
+<td class="py-4 text-right">
+<button class="text-slate-500 hover:text-error transition-colors material-symbols-outlined">logout</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB (Hidden as per hierarchy on details screen) -->
+<!-- SUPPRESSED -->
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

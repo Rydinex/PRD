@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#a2b7f3",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-error": "#690005",
+              "inverse-surface": "#e5e2e3",
+              "on-tertiary-container": "#fffdff",
+              "tertiary": "#ffb694",
+              "primary-fixed": "#dae2ff",
+              "surface-variant": "#353436",
+              "background": "#131314",
+              "secondary": "#b1c5ff",
+              "on-surface": "#e5e2e3",
+              "on-tertiary": "#561f00",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-tint": "#b1c5ff",
+              "on-primary-container": "#fffeff",
+              "surface-container-low": "#1b1b1c",
+              "secondary-fixed-dim": "#b1c5ff",
+              "secondary-fixed": "#dae2ff",
+              "on-secondary": "#162e61",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container-highest": "#353436",
+              "on-primary-fixed-variant": "#00419f",
+              "surface-container-high": "#2a2a2b",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface": "#131314",
+              "primary-container": "#276ef1",
+              "outline-variant": "#424654",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "primary": "#b1c5ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed": "#ffdbcc",
+              "inverse-on-surface": "#303031",
+              "tertiary-container": "#c65100",
+              "surface-container-lowest": "#0e0e0f",
+              "on-background": "#e5e2e3",
+              "secondary-container": "#31477c",
+              "surface-bright": "#39393a",
+              "on-secondary-fixed": "#001947",
+              "surface-dim": "#131314",
+              "surface-container": "#1f1f20",
+              "on-tertiary-fixed": "#351000",
+              "outline": "#8c90a0",
+              "inverse-primary": "#0056d0"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .kinetic-gradient {
+        background: linear-gradient(135deg, #276ef1 0%, #162e61 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopAppBar Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-[60] bg-gradient-to-b from-[#1c1c1e] to-[#131314] flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b1c5ff] text-2xl cursor-pointer hover:bg-[#2c2c2e] transition-colors p-2 rounded-full">menu</span>
+<h1 class="font-headline font-bold tracking-tight text-3xl text-[#b1c5ff]">Support Center</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20 shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a professional driver with a friendly expression in a modern vehicle interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAyJ9Ir2MzKn1zgSfNZVx6_wiPLbGkTUQVdaNVUnobR9wtQa_bBg_oIL3NibRWVq7Lb1P9aIeoY8I6eBeeLktW1MJwGZtvTZ6SSKKODXq6MP8zdclO7WhnDh1YdJ-hv1zBKdz_LVgDoeX4LWMmVog_SjVx6398KnVGjvZ8OVRwJ4fC6g7_Gqxh_HMiI8bXE_aW4kjCPUqT0UO6bXUT-Gsu1ZCjRf7ToI16tzorfMGKLUaekflbAXpWeRJb3O7sZUFMFg_yn04-xuY"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-12">
+<!-- Search Hero Section -->
+<section class="relative space-y-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter mb-4 text-on-surface">How can we help you today?</h2>
+<p class="text-on-surface-variant text-lg max-w-lg">Access driver resources, legal documentation, and priority support channels.</p>
+</div>
+<!-- Kinetic Search Bar -->
+<div class="relative max-w-3xl group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary">search</span>
+</div>
+<input class="w-full h-16 pl-14 pr-6 bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline font-medium transition-all shadow-xl" placeholder="Search help articles, policies, or topics..." type="text"/>
+</div>
+</section>
+<!-- Bento Grid: Categorized Support -->
+<section class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<!-- Account Access -->
+<div class="group bg-surface-container-low p-6 rounded-xl hover:bg-[#1c1c1e] transition-all cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">lock</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface">Account Access</h3>
+<p class="text-on-surface-variant text-sm mt-1">Profile, Security, Payouts</p>
+</div>
+<!-- Vehicle Support -->
+<div class="group bg-surface-container-low p-6 rounded-xl hover:bg-[#1c1c1e] transition-all cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">directions_car</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface">Vehicle Support</h3>
+<p class="text-on-surface-variant text-sm mt-1">Inspection, Fleet, Rentals</p>
+</div>
+<!-- Earnings & Tax -->
+<div class="group bg-surface-container-low p-6 rounded-xl hover:bg-[#1c1c1e] transition-all cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface">Earnings &amp; Tax</h3>
+<p class="text-on-surface-variant text-sm mt-1">Statements, 1099, Instant Pay</p>
+</div>
+<!-- Safety Center -->
+<div class="group bg-surface-container-low p-6 rounded-xl hover:bg-[#1c1c1e] transition-all cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-3xl">shield</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface">Safety Center</h3>
+<p class="text-on-surface-variant text-sm mt-1">Incident Reporting, ADAS</p>
+</div>
+<!-- App Feedback -->
+<div class="group bg-surface-container-low p-6 rounded-xl hover:bg-[#1c1c1e] transition-all cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">rate_review</span>
+</div>
+<h3 class="font-headline font-semibold text-lg text-on-surface">App Feedback</h3>
+<p class="text-on-surface-variant text-sm mt-1">Bug Reports, Requests</p>
+</div>
+</section>
+<!-- Main Content Area: Recent Support & Featured CTA -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Support Activity -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Recent Support</h2>
+<button class="text-primary font-bold text-sm hover:underline">View History</button>
+</div>
+<div class="space-y-4">
+<!-- Activity Card 1 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-5 border border-outline-variant/10">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">chat_bubble</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-on-surface">Payout inquiry for Oct 12</h4>
+<p class="text-sm text-on-surface-variant">Closed â€¢ Oct 14, 2023</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-xs font-bold rounded-full">RESOLVED</span>
+</div>
+<!-- Activity Card 2 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-5 border border-outline-variant/10">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">warning</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-on-surface">Vehicle Documents Expiring</h4>
+<p class="text-sm text-on-surface-variant">Pending Review â€¢ 2h ago</p>
+</div>
+<span class="px-3 py-1 bg-primary-container text-white text-xs font-bold rounded-full uppercase tracking-tighter">Active</span>
+</div>
+</div>
+</div>
+<!-- Book In-Person Support CTA -->
+<div class="relative overflow-hidden rounded-3xl kinetic-gradient p-8 text-white flex flex-col justify-between min-h-[400px] shadow-2xl">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-3xl">location_on</span>
+</div>
+<h2 class="font-headline text-3xl font-extrabold leading-tight mb-4">Visit a Rydinex Hub</h2>
+<p class="text-white/80 font-medium">Need hands-on help? Schedule a 1-on-1 session with our expert support team at a local service center.</p>
+</div>
+<div class="relative z-10 space-y-4">
+<div class="flex -space-x-3 mb-4">
+<img class="w-10 h-10 rounded-full border-2 border-[#276ef1] object-cover" data-alt="Portrait of a professional female support specialist with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAveIjblP-FhP5px1WnbuQlWjPp_zIKZimc-c2_kfAOkJgnkDTeL0lSn36LYGR3CYEvK58IIV2y7sFE_qh3Q9NAJcEEt5mcOnGc9fcfLPZLb2a6NMgvMthnrfJ2mFX5EOkxeaFsoLB8X1iMMMAMqCXA8N_YNxR-S3qG2bumftJDBLxb7rYEVrednqaeuH-QEdnh52lCjlHKkWHxkV5Knh0Ly8TUB0xZuMnb-l3TNVWdv438jpuRAqF4goSjbRXSklLd0Ep-UDc4lYw"/>
+<img class="w-10 h-10 rounded-full border-2 border-[#276ef1] object-cover" data-alt="Portrait of a young male professional in a corporate casual setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6jM6c5HCzPVhptzMo-FIrEpYvnHgvffldNc_r14WSKIDMrjPTFJvsEYZAYIbXpqxvwMo2_T8uMkcRSUDVMyx1EfOKvZ__d7iWI3q7OLSC07BzOotTedrZOOElB9JBw2C7r4glNGYAcUxMzuYu9ytdPYSgmA4euIusXExNawl1rZPFPJroc0cSkKakczT5iVTXcwGs6hYYDjIi54JnW-egGrmEh3fO55_XxXxnak5Lb2wUDg9aPAobo5XnHX3zW3o1Uhqt9HgdJBk"/>
+<img class="w-10 h-10 rounded-full border-2 border-[#276ef1] object-cover" data-alt="Headshot of a confident woman against a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmqFK_Ucpp_kSIuqwvuDcjQe4VZLzzof1pEgAsVTL3gx6C3PFYw-9b23GzW6ze-3i7crYcAP3QUjPmGpX3lnenNVxXd8KD3ihhPA8xRlzTLQz6wU3TTlQI9gZpiHld7jwOG43y_mnvTOsJcp8UW1og4Q7a8zDcl0aS5Ny4oq2sQNFnn9ZMbQ4ArzJerY7lp8coVe2xTGDO24SDya4MHX3TZMJkvVujhyZRgTt59ED61hdWOiORCU75KZKSWsdOieTkXLW-29cHDwc"/>
+<div class="w-10 h-10 rounded-full border-2 border-[#276ef1] bg-white/20 backdrop-blur-sm flex items-center justify-center text-xs font-bold">+12</div>
+</div>
+<button class="w-full bg-white text-[#276ef1] font-extrabold py-4 rounded-xl shadow-xl hover:scale-95 transition-transform duration-150">Book In-Person Support</button>
+<p class="text-center text-white/60 text-xs font-semibold tracking-wider uppercase">Next Available: Today, 2:30 PM</p>
+</div>
+</div>
+</section>
+<!-- Help Documentation Highlights -->
+<section class="space-y-6">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Essential Guides</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card p-6 rounded-2xl flex items-start gap-4 border border-outline-variant/10 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="aspect-square w-24 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean modern electric vehicle charging station with premium lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYrEPZd6F4ddX-0AfTRr016fxVQwp6PQ4zqqWmkOMqj_mP2GgrFfwZVDz0U6995itUcZ7Pj54ZtkiKo9FoOSB3qneGP05xADrik2IsOAMMza8cGd5cDekYm05QmfPm0ptJDrsMLe6iYui6ADt0d7sMt3WWpq02qfYDcLzjCF7RcPgzcDVzsGxz97WlvXgvbTS2NhGrl9Jm95x_kx7jFGt95vZpE4u2zvOUh2_xHM8XwS528iX0IG-ZNLx4ovknHTbFdxiEZ3zXNUg"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg text-primary">Mastering EV Charging</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Optimize your battery life and find the fastest charging hubs in the Rydinex network.</p>
+<div class="flex items-center gap-2 mt-3 text-primary font-bold text-xs uppercase tracking-widest">
+                            Read Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl flex items-start gap-4 border border-outline-variant/10 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="aspect-square w-24 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of a financial spreadsheet on a tablet screen with modern data visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSi4KlH6_8-o-pGBZRZ8sd-wWY7jyLX7RHN_BIbpE0IVbco9vKG3eDlRtXYGRZQtBpo8Sbfabv8W2UlBRIVeO34QLRBXlH56J7jos9bQ6vfKEgcKutxT7uvdagZq5rQkE1RiTP-E-BG8l588LJ4Syt6q8K251lGZJeMU6ZvSxQ8Lq_tD3sgEPwu_O_M7y7USlpxfHIAleTqb2LnQG6Noad_Kd45jCw66qgn0pPBvqvBVGdihxuLU8XM7bJ_clDU_s0xO9clIG2tEc"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg text-primary">Tax Season 2024</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Everything you need to know about your 1099 forms and deductible driver expenses.</p>
+<div class="flex items-center gap-2 mt-3 text-primary font-bold text-xs uppercase tracking-widest">
+                            Read Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#1c1c1e]/80 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">mail</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Inbox</span>
+</a>
+<!-- Support sits under Profile or is a sub-page, but here we treat it as an active Profile/Support context -->
+<a class="flex flex-col items-center justify-center bg-[#276ef1] text-white rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trip Analysis | Rydinex Sovereign</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#0056d0",
+                        "surface-tint": "#b1c5ff",
+                        "primary": "#b1c5ff",
+                        "on-tertiary": "#561f00",
+                        "on-error": "#690005",
+                        "on-secondary": "#162e61",
+                        "surface-dim": "#111317",
+                        "surface-container-high": "#282a2e",
+                        "on-secondary-container": "#a2b7f3",
+                        "primary-container": "#276ef1",
+                        "inverse-surface": "#e2e2e8",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "outline-variant": "#424654",
+                        "on-secondary-fixed": "#001947",
+                        "on-background": "#e2e2e8",
+                        "surface-container-low": "#1a1c20",
+                        "surface": "#111317",
+                        "on-primary": "#002c71",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "background": "#111317",
+                        "error-container": "#93000a",
+                        "surface-container": "#1e2024",
+                        "on-primary-fixed": "#001947",
+                        "tertiary-container": "#c65100",
+                        "on-tertiary-container": "#fffdff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "outline": "#8c90a0",
+                        "tertiary": "#ffb694",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#333539",
+                        "on-primary-container": "#fffeff",
+                        "primary-fixed": "#dae2ff",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-tertiary-fixed": "#351000",
+                        "secondary-container": "#31477c",
+                        "secondary-fixed": "#dae2ff",
+                        "on-primary-fixed-variant": "#00419f",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-bright": "#37393e",
+                        "on-surface": "#e2e2e8",
+                        "surface-container-highest": "#333539",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-surface-variant": "#c2c6d7",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "secondary": "#b1c5ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary/30">
+<!-- Top Navigation Shell -->
+<nav class="sticky top-0 z-50 flex justify-between items-center px-6 w-full bg-[#111317]/80 backdrop-blur-xl h-16 border-b border-white/10 font-['Manrope'] antialiased">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-[#E2E2E8]">Trip Intelligence</span>
+<div class="hidden md:flex gap-6 text-sm">
+<a class="text-[#E2E2E8]/60 hover:text-[#E2E2E8] transition-colors duration-200" href="#">Live Maps</a>
+<a class="text-[#B1C5FF] font-semibold" href="#">Analytics</a>
+<a class="text-[#E2E2E8]/60 hover:text-[#E2E2E8] transition-colors duration-200" href="#">Fleets</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="cursor-pointer active:scale-95 p-2 hover:bg-[#333539]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</div>
+<div class="cursor-pointer active:scale-95 p-2 hover:bg-[#333539]/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Administrator profile" class="w-full h-full object-cover" data-alt="professional portrait of a system administrator in a high-tech office environment, soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJtU9dMV1MygkrjtCTD_7RgP_OGjtRJPXR94uEIvMZNJjvDZ7pgJzAZtqhEPfMfAirrg8LIMB5l4-L3RjcV64VbJZ35I0K-203jRfAr1ZI55zVBCXynXwx8gFcVyE2WeS9lmn0-vaHDdBIJMGkmL7CMZLMWDV92lBqvF3kxtfSC-8-LMy1bn3pyzAqcDePiZqxEMcxDb3TdWjDHU4Q1Q0UJcxUTecs8-3runOjhtyuX9gidF7XzP0-QXHffWS4Ff4HPoP298M21g"/>
+</div>
+</div>
+</nav>
+<div class="flex min-h-[calc(100vh-4rem)]">
+<!-- Side Navigation Shell -->
+<aside class="hidden lg:flex flex-col w-64 bg-[#1a1c20] border-r border-[#E2E2E8]/10 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto no-scrollbar font-['Inter'] text-sm font-medium">
+<div class="flex flex-col gap-1 py-6 px-3">
+<div class="group flex items-center px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-[#E2E2E8]/50 hover:bg-[#1e2024] hover:text-[#E2E2E8]">
+<span class="material-symbols-outlined mr-3">dashboard</span> Overview
+                </div>
+<div class="group flex items-center px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-[#E2E2E8]/50 hover:bg-[#1e2024] hover:text-[#E2E2E8]">
+<span class="material-symbols-outlined mr-3">map</span> Live Maps
+                </div>
+<div class="group flex items-center px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-[#B1C5FF] border-r-2 border-[#276EF1] bg-[#276EF1]/10">
+<span class="material-symbols-outlined mr-3">leaderboard</span> Analytics
+                </div>
+<div class="group flex items-center px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-[#E2E2E8]/50 hover:bg-[#1e2024] hover:text-[#E2E2E8]">
+<span class="material-symbols-outlined mr-3">local_shipping</span> Fleets
+                </div>
+<div class="group flex items-center px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-[#E2E2E8]/50 hover:bg-[#1e2024] hover:text-[#E2E2E8]">
+<span class="material-symbols-outlined mr-3">history</span> History
+                </div>
+</div>
+<div class="mt-auto border-t border-[#E2E2E8]/10 p-4">
+<button class="w-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold py-2.5 rounded-lg mb-6 shadow-lg shadow-primary-container/20 active:scale-[0.98] transition-transform">
+                    Generate Report
+                </button>
+<div class="flex flex-col gap-1">
+<div class="group flex items-center px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-[#E2E2E8]/50 hover:text-[#E2E2E8]">
+<span class="material-symbols-outlined mr-3 text-sm">help</span> Support
+                    </div>
+<div class="group flex items-center px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out hover:pl-2 text-error/60 hover:text-error">
+<span class="material-symbols-outlined mr-3 text-sm">logout</span> Logout
+                    </div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-6 lg:p-10 space-y-10">
+<!-- Hero Header & Actions -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">TRIP #RYD-9921-X</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tight">Trip Analysis</h1>
+<p class="text-on-surface-variant mt-2 max-w-xl font-light">Comprehensive operational breakdown for route execution, fare integrity, and safety telemetry conducted on October 24, 2023.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/30 text-on-surface text-sm font-semibold rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">flag</span> Flag for Review
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/30 text-on-surface text-sm font-semibold rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">download</span> Download Receipt
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-error-container/20 hover:bg-error-container/40 border border-error/20 text-error text-sm font-semibold rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">replay</span> Refund Trip
+                    </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Interactive Map: Primary Focus (2/3 width) -->
+<section class="col-span-12 lg:col-span-8 h-[500px] rounded-xl overflow-hidden relative group border border-outline-variant/10 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="dark themed digital map of city streets with a neon blue glowing path representing a vehicle route from downtown to the hills" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKNQRnHLs8C6cIolkJtLfq4oXr_qSxLdYhQkV6pX4Lk2Y6bm3X-XS9fjlaeJtfmlOB_0Qx9A5vM3g3XgmEb19FyDlbrH1RUYiegVvFaQuOZTlHhaYSw228HK3sFxz1k_07GhpjlOts_geDXKQNnwrMMmKUrJgpzjAX9mHgyLnonSs4d13OPkkp8iHn0DvFAyKC13nPMixbJRzymZfQy_h4pg6zo8zwpoI15ZGHPXzr3ZZljUl2RMHo-urO6n7PFWHHxDAkXjaZLEQ"/>
+<!-- Floating Map Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-surface/20"></div>
+<div class="absolute top-6 left-6 space-y-3">
+<div class="glass-panel px-4 py-3 rounded-xl border border-white/5 flex items-center gap-4">
+<div class="h-2 w-2 rounded-full bg-success-green ring-4 ring-green-500/20"></div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Origin</p>
+<p class="text-sm font-semibold">142 Mission District, SF</p>
+</div>
+</div>
+<div class="glass-panel px-4 py-3 rounded-xl border border-white/5 flex items-center gap-4">
+<div class="h-2 w-2 rounded-full bg-error ring-4 ring-error/20"></div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Destination</p>
+<p class="text-sm font-semibold">Pier 39, Fisherman's Wharf</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-6 right-6 glass-panel p-4 rounded-xl border border-white/5 min-w-[200px]">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-on-surface-variant font-medium">Route Distance</span>
+<span class="text-sm font-bold">12.4 km</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-on-surface-variant font-medium">Est. Variance</span>
+<span class="text-sm font-bold text-success-green">+ 0.2 km</span>
+</div>
+</div>
+</section>
+<!-- Fare Breakdown & Revenue Split (1/3 width) -->
+<section class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Fare Card -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 flex-1">
+<h3 class="text-xs font-bold tracking-[0.2em] text-on-surface-variant uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">payments</span> Fare Breakdown
+                        </h3>
+<div class="space-y-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Base Fare</span>
+<span class="font-medium">$4.50</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Distance (12.4km)</span>
+<span class="font-medium">$18.60</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Time (24min)</span>
+<span class="font-medium">$7.20</span>
+</div>
+<div class="flex justify-between text-sm items-center">
+<span class="text-on-surface-variant">Surge Pricing (1.4x)</span>
+<span class="font-bold text-primary">+$12.12</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Tips</span>
+<span class="font-medium">$5.00</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-end">
+<span class="text-sm font-semibold">Total Fare</span>
+<span class="text-3xl font-headline font-extrabold text-on-surface">$47.42</span>
+</div>
+</div>
+</div>
+<!-- Revenue Split -->
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<h3 class="text-xs font-bold tracking-[0.2em] text-on-surface-variant uppercase mb-6">Revenue Distribution</h3>
+<div class="flex h-4 w-full rounded-full overflow-hidden mb-6">
+<div class="h-full bg-primary-container w-[70%]"></div>
+<div class="h-full bg-surface-container-highest w-[30%]"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Driver (70%)</p>
+<p class="text-xl font-bold">$33.19</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-1">Platform (30%)</p>
+<p class="text-xl font-bold">$14.23</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Rider/Driver Profiles (Full width) -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Rider Profile -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-6 border border-outline-variant/5">
+<div class="h-20 w-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Rider profile" class="w-full h-full object-cover" data-alt="portrait of a young smiling professional woman with a clean bright background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF6ESdPqbgMVxcnjAQd6vr8HCMm5_BM1ag5MdZdlEQpjUTxCOjPY_TsmjZrQ3jSlK__0OUXS8PFjBduQom2NZoRsaDcVWdV8GHbQGmvypoHtyIgJdAHVPeqtVwMTCR4B8DRCZtAITB62HP9erYlqvmbBx7ptEr8znqNfxVEONcbpJ_1VGzWY3pGx3p6awawDxB_NaYDRp-fDwrxz5UcxwnAwC0GfW1Y-C-Bl-HyXgLi-eK5uueBb2EV_g0lNS2jm0kU_eVZbFjk84"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">Elena Vance</h4>
+<p class="text-xs text-on-surface-variant">Rider since 2021 â€¢ Premium Tier</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.92</span>
+</div>
+</div>
+<div class="flex gap-4 mt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Trips</p>
+<p class="text-sm font-semibold">312</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Cancel Rate</p>
+<p class="text-sm font-semibold">0.4%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Driver Profile -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-6 border border-outline-variant/5">
+<div class="h-20 w-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Driver profile" class="w-full h-full object-cover" data-alt="middle aged man with a friendly expression wearing a casual jacket, professional driver portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRQNXE-eMh5a_kHePfIcmAzx0JZh25qcgeYiHIudOZddwHyUi5FZ1EDWS4eaMqVj3r5j1_Fz_9_bFW6kRuDAwXh5ehGeRx9qKoyN88jszPZE6wqlu6PCcK2-O-gduaX6PFcwoyEcQFiCbw174hwmmL9i21npLFqlj2NjwxyzwoHFXSbIJ4sEil-a8p-AL-yLkJqhHMSFg1Le_rIiBcRSBduCnLfEnH44gH4XF_iOZhKo2wz81XRzDLAX6pOJyc7TmlzOF43B1iYMg"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">Marcus Thorne</h4>
+<p class="text-xs text-on-surface-variant">Tesla Model 3 â€¢ White â€¢ ABC-1234</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.85</span>
+</div>
+</div>
+<div class="flex gap-4 mt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Total Experience</p>
+<p class="text-sm font-semibold">2,410 km</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Compliance Score</p>
+<p class="text-sm font-semibold">98%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Timeline (1/3 width) -->
+<section class="col-span-12 md:col-span-4 bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<h3 class="text-xs font-bold tracking-[0.2em] text-on-surface-variant uppercase mb-8">Event Timeline</h3>
+<div class="relative space-y-8 pl-6 border-l-2 border-outline-variant/20">
+<div class="relative">
+<div class="absolute -left-[1.65rem] top-1 h-3 w-3 rounded-full bg-primary-container ring-4 ring-primary-container/20"></div>
+<p class="text-xs font-bold text-on-surface-variant">14:10:02</p>
+<p class="text-sm font-semibold">Trip Requested</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[1.65rem] top-1 h-3 w-3 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+<p class="text-xs font-bold text-on-surface-variant">14:12:15</p>
+<p class="text-sm font-semibold">Accepted by Driver</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[1.65rem] top-1 h-3 w-3 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+<p class="text-xs font-bold text-on-surface-variant">14:18:40</p>
+<p class="text-sm font-semibold">Driver Arrived</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[1.65rem] top-1 h-3 w-3 rounded-full bg-primary border-2 border-primary-container"></div>
+<p class="text-xs font-bold text-on-surface-variant">14:20:01</p>
+<p class="text-sm font-semibold">Trip Started</p>
+</div>
+<div class="relative opacity-60">
+<div class="absolute -left-[1.65rem] top-1 h-3 w-3 rounded-full bg-surface-container-highest border border-outline-variant"></div>
+<p class="text-xs font-bold text-on-surface-variant">14:44:22</p>
+<p class="text-sm font-semibold">Completed</p>
+</div>
+</div>
+</section>
+<!-- Telemetry & Safety (2/3 width) -->
+<section class="col-span-12 md:col-span-8 bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xs font-bold tracking-[0.2em] text-on-surface-variant uppercase">Safety &amp; Telemetry Highlights</h3>
+<div class="bg-success-green/10 text-success-green px-3 py-1 rounded-full text-[10px] font-black uppercase">Normal Operating Profile</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Speed -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">speed</span>
+<span class="text-xs font-bold text-on-surface-variant">Avg Speed</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-bold">42.5</span>
+<span class="text-xs text-on-surface-variant">km/h</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%]"></div>
+</div>
+</div>
+<!-- Braking -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-error">front_hand</span>
+<span class="text-xs font-bold text-on-surface-variant">Hard Braking</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-bold">1</span>
+<span class="text-xs text-on-surface-variant">Detected</span>
+</div>
+<p class="mt-4 text-[10px] text-on-surface-variant italic leading-relaxed">System threshold exceeded at 14:32:05 during deceleration flow.</p>
+</div>
+<!-- Acceleration -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary">bolt</span>
+<span class="text-xs font-bold text-on-surface-variant">Rapid Accel.</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-headline font-bold">0</span>
+<span class="text-xs text-on-surface-variant">Events</span>
+</div>
+<p class="mt-4 text-[10px] text-success-green font-bold">SMOOTH TRANSITIONS</p>
+</div>
+</div>
+<!-- G-Force Visualization (Abstract) -->
+<div class="mt-8 p-6 bg-surface-container-low rounded-xl border border-outline-variant/5">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-4">Inertial Stability Index</p>
+<div class="flex items-center justify-between gap-1 h-12">
+<div class="w-2 bg-primary/20 h-4 rounded-full"></div>
+<div class="w-2 bg-primary/20 h-6 rounded-full"></div>
+<div class="w-2 bg-primary/40 h-8 rounded-full"></div>
+<div class="w-2 bg-primary/60 h-10 rounded-full"></div>
+<div class="w-2 bg-primary h-12 rounded-full shadow-[0_0_15px_rgba(177,197,255,0.4)]"></div>
+<div class="w-2 bg-primary/80 h-10 rounded-full"></div>
+<div class="w-2 bg-primary/40 h-7 rounded-full"></div>
+<div class="w-2 bg-primary/20 h-5 rounded-full"></div>
+<div class="w-2 bg-primary/10 h-3 rounded-full"></div>
+<div class="w-2 bg-primary/10 h-2 rounded-full"></div>
+<div class="w-2 bg-primary/20 h-6 rounded-full"></div>
+<div class="w-2 bg-primary/40 h-9 rounded-full"></div>
+<div class="w-2 bg-primary/10 h-4 rounded-full"></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 w-1/2 h-1/2 bg-primary/5 blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-1/3 h-1/3 bg-tertiary/5 blur-[100px] pointer-events-none"></div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

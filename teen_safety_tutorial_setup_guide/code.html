@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#001947",
+            "on-background": "#e5e2e3",
+            "surface-tint": "#b1c5ff",
+            "primary-fixed-dim": "#b1c5ff",
+            "outline-variant": "#424654",
+            "secondary": "#b1c5ff",
+            "primary-fixed": "#dae2ff",
+            "on-primary-container": "#fffeff",
+            "on-secondary": "#162e61",
+            "outline": "#8c90a0",
+            "tertiary": "#ffb694",
+            "inverse-on-surface": "#303031",
+            "background": "#131314",
+            "on-secondary-container": "#a2b7f3",
+            "on-tertiary": "#561f00",
+            "on-secondary-fixed-variant": "#2f4579",
+            "inverse-surface": "#e5e2e3",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-primary": "#002c71",
+            "on-error-container": "#ffdad6",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "tertiary-container": "#c65100",
+            "error": "#ffb4ab",
+            "on-primary-fixed-variant": "#00419f",
+            "surface-variant": "#353436",
+            "primary-container": "#276ef1",
+            "tertiary-fixed-dim": "#ffb694",
+            "on-primary-fixed": "#001947",
+            "surface-container-lowest": "#0e0e0f",
+            "on-tertiary-container": "#fffdff",
+            "surface": "#131314",
+            "surface-container-high": "#2a2a2b",
+            "inverse-primary": "#0056d0",
+            "secondary-fixed-dim": "#b1c5ff",
+            "secondary-fixed": "#dae2ff",
+            "on-surface-variant": "#c2c6d7",
+            "surface-bright": "#39393a",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-container-low": "#1b1b1c",
+            "surface-container-highest": "#353436",
+            "on-surface": "#e5e2e3",
+            "secondary-container": "#31477c",
+            "surface-dim": "#131314",
+            "surface-container": "#1f1f20",
+            "primary": "#b1c5ff",
+            "on-tertiary-fixed": "#351000"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #131314;
+      color: #e5e2e3;
+    }
+    /* Hide scrollbar */
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body antialiased min-h-screen flex flex-col">
+<!-- TopAppBar: Predicted Component -->
+<header class="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276EF1]/10 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-[#b1c5ff] text-lg">Teen Safety</h1>
+</div>
+<button class="text-[#b1c5ff] active:scale-95 duration-200 hover:bg-[#276EF1]/10 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-24 pb-32 px-6 flex flex-col max-w-lg mx-auto w-full">
+<!-- Hero Editorial Text -->
+<section class="mb-10">
+<span class="text-tertiary font-headline font-extrabold uppercase tracking-[0.2em] text-[10px] mb-2 block">The Digital Concierge</span>
+<h2 class="font-headline font-extrabold text-[2.75rem] leading-[1.1] text-on-surface tracking-tight mb-4">
+        Step 1:<br/>Simple Setup
+      </h2>
+<p class="text-on-surface-variant text-base leading-relaxed opacity-80 max-w-[90%]">
+        Add your teen to your Family Profile in seconds. Set up automated notifications for every ride start and finish.
+      </p>
+</section>
+<!-- Visual Steps Bento/Grid -->
+<div class="grid grid-cols-1 gap-6 mb-8">
+<!-- Step 1 Card -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white font-headline font-bold">1</div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Create Teen Profile</h3>
+</div>
+<div class="bg-surface-container-highest rounded-lg p-4 flex items-center gap-4 border-b border-white/5">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling teenager wearing a denim jacket in soft natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9HmqcZlTO9vZjcu73hD0fatBbQNfgRDa1qMOxy7pVDxECfvyEyuowymyeOUkX8Gd-gU1h5crxczTBw5H5EO7B68UX75VuXhVvx2X9-hX-PwZV0x0hvOwgdKkpDvpAAtZ9v3fjVb-SNFPoZhHUVXgZg2ogWjZ0W3zHPJq5Oc9yTV2HkDtI0ANnAE90Za22nfuaVKqX-g8wwa6aNX4xOLPsyQuVbgsWH_0ieR1Is7MC7Nocw0LEa4sxOWDNq-tjvhsHv7dbCyBbGCo"/>
+</div>
+<div class="flex-grow">
+<div class="text-sm font-semibold text-on-surface">Alex Johnson</div>
+<div class="text-xs text-on-surface-variant">Teen Account Status: Active</div>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Step 2 Card (Asymmetric Layout Hint) -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-variant rounded-lg flex items-center justify-center text-on-surface font-headline font-bold">2</div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Emergency Contacts</h3>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center py-2 px-3 bg-surface-container-highest/50 rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">person</span>
+<span class="text-sm font-medium">Mom (Sarah)</span>
+</div>
+<span class="text-[10px] bg-tertiary/20 text-tertiary px-2 py-0.5 rounded-full font-bold">PRIMARY</span>
+</div>
+<div class="flex justify-between items-center py-2 px-3 bg-surface-container-highest/50 rounded-lg opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+<span class="text-sm font-medium">Add Contact...</span>
+</div>
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+<!-- Notification Feature Card -->
+<div class="bg-gradient-to-br from-primary-container/20 to-transparent border border-white/5 rounded-xl p-6">
+<div class="flex gap-4 items-start">
+<div class="bg-primary-container p-3 rounded-xl shadow-[0_0_20px_rgba(39,110,241,0.3)]">
+<span class="material-symbols-outlined text-white">notifications_active</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-1">Live Notifications</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Both you and your teen will receive real-time updates for every trip leg.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Button (Task Focused) -->
+<div class="mt-auto">
+<button class="w-full bg-primary-container text-white py-5 rounded-xl font-headline font-extrabold text-lg shadow-[0_20px_40px_rgba(39,110,241,0.2)] hover:brightness-110 active:scale-[0.98] transition-all">
+        Next
+      </button>
+</div>
+</main>
+<!-- BottomNavBar: Suppressed per "Task-Focused" rule in JSON logic, but standard layout includes it for consistency if it were a dashboard. 
+       Actually, the prompt asks for a "Tutorial Screen 2", which is linear/transactional onboarding. 
+       Per "Shell Visibility & Relevance (THE FILTER)", I MUST exclude navigation shell for Onboarding.
+  -->
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

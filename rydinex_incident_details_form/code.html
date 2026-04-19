@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex - Report Incident</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#353436",
+              "on-error": "#690005",
+              "primary": "#b1c5ff",
+              "on-secondary-container": "#a2b7f3",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-dim": "#131314",
+              "on-surface": "#e5e2e3",
+              "tertiary-fixed-dim": "#ffb694",
+              "background": "#131314",
+              "surface-bright": "#39393a",
+              "on-secondary": "#162e61",
+              "on-primary-fixed-variant": "#00419f",
+              "on-primary-container": "#fffeff",
+              "on-background": "#e5e2e3",
+              "error-container": "#93000a",
+              "surface-variant": "#353436",
+              "surface-tint": "#b1c5ff",
+              "outline": "#8c90a0",
+              "on-primary-fixed": "#001947",
+              "secondary": "#b1c5ff",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "surface-container-low": "#1b1b1c",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "on-tertiary": "#561f00",
+              "surface-container": "#1f1f20",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-tertiary-fixed": "#351000",
+              "tertiary": "#ffb694",
+              "on-tertiary-container": "#fffdff",
+              "surface-container-high": "#2a2a2b",
+              "outline-variant": "#424654",
+              "primary-fixed": "#dae2ff",
+              "inverse-surface": "#e5e2e3",
+              "on-primary": "#002c71",
+              "surface-container-lowest": "#0e0e0f",
+              "secondary-fixed": "#dae2ff",
+              "secondary-fixed-dim": "#b1c5ff",
+              "primary-container": "#276ef1",
+              "inverse-on-surface": "#303031",
+              "inverse-primary": "#0056d0",
+              "surface": "#131314",
+              "tertiary-container": "#c65100",
+              "secondary-container": "#31477c",
+              "on-surface-variant": "#c2c6d7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #131314;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #353436;
+        border-radius: 10px;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#1d1d1f] no-border">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]">arrow_back</span>
+</button>
+<h1 class="font-manrope text-xl font-bold tracking-tight text-[#b1c5ff]">Report Incident</h1>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff]">contact_support</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Header Message -->
+<section class="space-y-2">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">Safety First</span>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Tell us what happened</h2>
+<p class="text-on-surface-variant text-sm max-w-md">Our safety team is available 24/7 to support you. Please provide as much detail as possible.</p>
+</section>
+<!-- Form Content -->
+<div class="space-y-10">
+<!-- Details Textarea -->
+<div class="group">
+<label class="block font-label text-[0.75rem] font-medium text-on-surface-variant opacity-60 mb-3 tracking-wider uppercase" for="incident-details">What happened?</label>
+<div class="relative bg-surface-container-highest rounded-xl p-4 transition-all duration-300 focus-within:ring-1 ring-primary-container/30">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant/40 resize-none font-body" id="incident-details" placeholder="Describe the incident in detail..." rows="4"></textarea>
+</div>
+</div>
+<!-- Image Upload Grid -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<label class="font-label text-[0.75rem] font-medium text-on-surface-variant opacity-60 tracking-wider uppercase">Upload Photos/Evidence</label>
+<span class="text-[0.65rem] text-primary/70">Optional</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="aspect-square rounded-xl bg-surface-container-highest flex flex-col items-center justify-center gap-2 border-2 border-dashed border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-high transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">add_a_photo</span>
+<span class="text-[10px] text-on-surface-variant">Add photo</span>
+</button>
+<!-- Placeholder 1 -->
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-low group relative">
+<img alt="Interior of a modern ride-share vehicle with clean leather seats and ambient lighting" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="interior view of a clean ride-share car with black leather seats and blue ambient LED lighting strips" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDncz5BtOIcdDsoY9cvpERVbgzVhHIkwIa7NEJAoK01u0v1S5o5IMKR7eyb1Vo3tNCHKRCEoKsdh53rcVe7WV6RbFfKgI7vH1nXd7cSXZZ2AZNBp2zkMjmNH-R6m5QsvLcC3m1isask_ghFWpdwW9zJpSex6j8WwvFYtq__OEjd6fmFRXKcDVWZay1QsCmX9ZjlZbVnIo6GX-omnvAFuxSM7-YE5dCwHOhZRIX9y5FeYAcnfL1iM1sy0LWHHbUtSpg_RAMeXYEW4C4"/>
+<button class="absolute top-1 right-1 w-6 h-6 bg-surface/80 backdrop-blur rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+<!-- Placeholder 2 -->
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-low group relative">
+<img alt="Dashboard view of a car at night with illuminated gauges and navigation screen" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="blurry dashboard of a car at night showing glowing instrument cluster and digital display with urban lights outside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPsucNLMJbAzO6PRjZ5Sd2yDHBCAYwBvLIdaKVg2P6M6-91ls3ZuJhyYe4LLJk-FWdV03aEuyh3ScYra1GvVQqP8lMyyZpGuHV6DIKYGpUp61o_bkdr6OBZmqCAITDQFdfrb95VZIrQuqT-tIPY3G3qgIop8eBQ3HIfVh2oxRzgRi4eF4xIYKKXdGlOJs0rW82mkBgJQBNkOx2ZJ3YCTDLPhb-dcPSR0zECzc7nlA7iAxyOyLzHzOHa2Ty-QBl-4DVP-xC5GJPnFI"/>
+<button class="absolute top-1 right-1 w-6 h-6 bg-surface/80 backdrop-blur rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Map Verification -->
+<section class="space-y-4">
+<label class="block font-label text-[0.75rem] font-medium text-on-surface-variant opacity-60 tracking-wider uppercase">Verify Location</label>
+<div class="relative h-48 rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="stylized dark mode city map with glowing blue arterial roads and a prominent location marker icon" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt2DpbHqzqWmvSkXBcNi5ZB9QP8G-2Vv3DB7qgB51xfkwa-XUhYxbv6M1F4jHwgHpx9zw0nc4UndygKqwQTcgOIbOjAD5oc1c0tBCmSk2IUYaiGf4EKIW_6RY15R78D70VabprsHATiarMVUYVPbi9C1PSuRiprhTDdICHbcmCaqHYQMWvCxi5TEnDKurAOCppP2MDT5qvCz65Fyblkjg5ihsbyukqIABQNYbtQ7_CTYi8m5hKqueBbe2uyHisVYFi8CjHe1fuAzk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center gap-3 glass-card p-3 rounded-xl border border-white/5">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-white">455 Market Street</p>
+<p class="text-[10px] text-white/60">San Francisco, CA 94105</p>
+</div>
+<button class="text-xs font-bold text-primary px-3 py-1 hover:bg-primary/10 rounded-lg transition-colors">Edit</button>
+</div>
+</div>
+</section>
+<!-- Confidentiality Note -->
+<div class="flex gap-4 p-5 rounded-2xl bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="space-y-1">
+<h4 class="text-sm font-bold text-on-surface">Confidentiality Assured</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed opacity-70">Your data is encrypted and protected. Incident reports are only shared with our specialized safety investigators and authorized authorities if required by law.</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<button class="w-full py-5 bg-primary-container text-white font-manrope font-bold rounded-xl shadow-[0_20px_40px_rgba(39,110,241,0.2)] active:scale-95 transition-all duration-200">
+                    Submit Report
+                </button>
+<p class="text-center mt-6 text-[10px] text-on-surface-variant tracking-widest uppercase opacity-40">Reference ID: RX-9921-XQ</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#131314]/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-20px_40px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 hover:text-white transition-all tap-highlight-none active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Safety</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all tap-highlight-none active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

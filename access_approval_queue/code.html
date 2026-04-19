@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex | CEO Approvals &amp; Access Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#c65100",
+                        "on-primary-container": "#fffeff",
+                        "on-background": "#e2e2e8",
+                        "on-tertiary": "#561f00",
+                        "primary-fixed": "#dae2ff",
+                        "tertiary": "#ffb694",
+                        "primary": "#b1c5ff",
+                        "on-secondary-container": "#a2b7f3",
+                        "inverse-surface": "#e2e2e8",
+                        "primary-container": "#276ef1",
+                        "surface": "#111317",
+                        "on-secondary-fixed": "#001947",
+                        "on-primary": "#002c71",
+                        "surface-bright": "#37393e",
+                        "secondary": "#b1c5ff",
+                        "on-tertiary-fixed": "#351000",
+                        "on-secondary": "#162e61",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-tertiary-container": "#fffdff",
+                        "surface-tint": "#b1c5ff",
+                        "on-surface-variant": "#c2c6d7",
+                        "tertiary-fixed": "#ffdbcc",
+                        "secondary-fixed": "#dae2ff",
+                        "surface-container": "#1e2024",
+                        "surface-container-highest": "#333539",
+                        "surface-container-low": "#1a1c20",
+                        "outline": "#8c90a0",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e2e2e8",
+                        "outline-variant": "#424654",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "inverse-on-surface": "#2f3035",
+                        "background": "#111317",
+                        "surface-variant": "#333539",
+                        "surface-container-high": "#282a2e",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "on-primary-fixed-variant": "#00419f",
+                        "on-primary-fixed": "#001947",
+                        "inverse-primary": "#0056d0",
+                        "error-container": "#93000a",
+                        "surface-dim": "#111317",
+                        "secondary-container": "#31477c"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-effect {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center w-full px-6 py-3 sticky top-0 z-50 bg-[#111317] dark:bg-[#111317]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tight text-white dark:text-white font-headline">Rydinex</span>
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Dashboard</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Analytics</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Administrator Profile" data-alt="professional headshot of a corporate executive in a dark suit with a neutral background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyo6U6REIKujxljzvkyjwDYWv4m9EIvFt6silYKqwGx1LTi6ZwhIqw3vIRBuI1MKZQ7XwDYUvA93ZsuiC3QQcJtrRkc_6qEUoA-i4J8-FOTiJQIVDsRHdwqwdZsrU5fLlJ4cVbajPv-XlMG4JVJfEssswZOwZ3OcbDAeqfOxHkJ6NAjNV6_cDnzQLkm-JxKMmMYd1p2IWemtX4zjSwi3p68lGwswxa7JXajlpbwA1CJ1P9ONc7lV3BX2c3ZCqwJrNU99s6-PYTyBw"/>
+</div>
+</div>
+</header>
+<div class="flex h-[calc(100vh-60px)]">
+<!-- Side Navigation Bar -->
+<aside class="flex flex-col h-full sticky left-0 top-0 overflow-y-auto z-40 bg-[#1a1c20] dark:bg-[#1a1c20] w-64 border-r border-white/5">
+<div class="p-6">
+<div class="flex items-center space-x-3 mb-8">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shield</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-white leading-tight">Rydinex Admin</h2>
+<p class="text-[0.6875rem] uppercase tracking-wider text-gray-500">Sovereign Observer</p>
+</div>
+</div>
+<nav class="flex flex-col space-y-1">
+<a class="text-gray-500 hover:text-gray-200 px-4 py-3 flex items-center space-x-3 transition-all duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">User Management</span>
+</a>
+<a class="bg-[#333539] text-white rounded-md px-4 py-3 flex items-center space-x-3 transition-all duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">CEO Approvals</span>
+</a>
+<a class="text-gray-500 hover:text-gray-200 px-4 py-3 flex items-center space-x-3 transition-all duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">System Logs</span>
+</a>
+<a class="text-gray-500 hover:text-gray-200 px-4 py-3 flex items-center space-x-3 transition-all duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">policy</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">Audit Trails</span>
+</a>
+<a class="text-gray-500 hover:text-gray-200 px-4 py-3 flex items-center space-x-3 transition-all duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">Security</span>
+</a>
+</nav>
+<div class="mt-8">
+<button class="w-full bg-gradient-to-br from-primary-container to-primary text-on-primary-fixed font-bold py-3 px-4 rounded-md text-[0.6875rem] uppercase tracking-widest shadow-lg">
+                        New System Audit
+                    </button>
+</div>
+</div>
+<div class="mt-auto p-6 border-t border-white/5">
+<nav class="flex flex-col space-y-1">
+<a class="text-gray-500 hover:text-gray-200 px-4 py-3 flex items-center space-x-3" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">Support</span>
+</a>
+<a class="text-gray-500 hover:text-gray-200 px-4 py-3 flex items-center space-x-3" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-[0.6875rem] uppercase tracking-wider">Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-surface p-10">
+<div class="max-w-6xl mx-auto">
+<!-- Hero Header Section -->
+<div class="mb-12">
+<h1 class="font-headline text-5xl font-extrabold text-on-surface mb-2 tracking-tight">CEO Access Vault</h1>
+<p class="text-on-surface-variant font-body">Reviewing <span class="text-primary font-bold">12 Pending Requests</span> requiring immediate executive authorization.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Main Pending Approvals Feed -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Request Card 1 -->
+<div class="bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-colors duration-300">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center space-x-4">
+<div class="h-14 w-14 rounded-full border-2 border-primary/20 p-1">
+<img alt="Applicant Profile" class="h-full w-full rounded-full object-cover" data-alt="headshot of a confident woman in business attire with professional lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATzI3A6aa4MuU-l1VfPWxJ7f1dGwYht4Hi1GEeoUnXuXu0CDpjU92ODf4CKKak7Aj_xTaXncpJwKLEbPdpE-Q6D4MohRMSX0X59U2cbulesEYOI6ArogBS0WbzZMUZAvBEfl657N7Vm0rg-ksbs8OBnvrGmKqvaTEvvh5dml8zxLq_m12XaVv4Y3D47cX7QTZrLB5TeAzNrMerFayzv-mDLoDjkafJRGfA1ZqpiNvR1K2rZVJIlXbUPO3xQVpyHp7ILcp_IZkQtQs"/>
+</div>
+<div>
+<h3 class="text-xl font-headline font-bold text-white">Sarah Jenkins</h3>
+<p class="text-sm text-on-surface-variant">Lead Data Scientist â€¢ Applied Labs Division</p>
+</div>
+</div>
+<div class="bg-primary-container/10 text-primary px-3 py-1 rounded text-[0.6875rem] font-bold uppercase tracking-tighter">
+                                        Level 4 Clearance
+                                    </div>
+</div>
+<div class="space-y-4 mb-8">
+<div>
+<label class="text-[0.6875rem] uppercase tracking-widest text-gray-500 block mb-1">Requested Role</label>
+<p class="text-on-surface font-semibold">Strategic Infrastructure Overseer</p>
+</div>
+<div>
+<label class="text-[0.6875rem] uppercase tracking-widest text-gray-500 block mb-1">Business Justification</label>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                            Requires access to the production kernel to implement the new anomaly detection protocols for the Q4 infrastructure audit. Current Level 3 access is insufficient for direct neural-link debugging.
+                                        </p>
+</div>
+</div>
+<div class="flex space-x-4">
+<button class="flex-1 bg-gradient-to-r from-primary-container to-secondary py-3 rounded-lg text-on-primary-fixed font-black uppercase tracking-widest text-xs flex items-center justify-center space-x-2 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Approve Request</span>
+</button>
+<button class="px-6 py-3 rounded-lg border border-outline-variant text-on-surface-variant font-bold uppercase tracking-widest text-xs hover:border-error hover:text-error transition-all active:bg-error/10">
+                                        Reject
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Request Card 2 -->
+<div class="bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-colors duration-300">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center space-x-4">
+<div class="h-14 w-14 rounded-full border-2 border-primary/20 p-1">
+<img alt="Applicant Profile" class="h-full w-full rounded-full object-cover" data-alt="portrait of a focused man with glasses in a modern office setting with cool tone lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVVO8dkk4PuMbmCJ81W8c1yNZOu52UYZUX5KnSDhI9i7jA_rpUS51OLr9KQoIMSiAc9Fg2nfebOyb8I4lO6IRPnLZi25KElHtfC1txlUmju62sgtlHUOMDfqXPLVH4weLW0uDmC_4nKC_V31KbGkztXPSxt41kEDRAInwkUC8g9Ayn2K0BOEDA5H8A5j0QDT0DZGBF8HBwnjNnf4eheIC9LML0iWuDAZGFCJRAQ5H2ReopDPdKoa6RrSnLiqbnq30UOauIJRkJyYU"/>
+</div>
+<div>
+<h3 class="text-xl font-headline font-bold text-white">Marcus Thorne</h3>
+<p class="text-sm text-on-surface-variant">Senior Security Auditor â€¢ EMEA Division</p>
+</div>
+</div>
+<div class="bg-tertiary-container/10 text-tertiary px-3 py-1 rounded text-[0.6875rem] font-bold uppercase tracking-tighter">
+                                        Temporary Grant
+                                    </div>
+</div>
+<div class="space-y-4 mb-8">
+<div>
+<label class="text-[0.6875rem] uppercase tracking-widest text-gray-500 block mb-1">Requested Role</label>
+<p class="text-on-surface font-semibold">External Audit Liaison</p>
+</div>
+<div>
+<label class="text-[0.6875rem] uppercase tracking-widest text-gray-500 block mb-1">Business Justification</label>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                            Cross-border regulatory compliance check. Access needed for the Zurich server cluster for a period of 48 hours to export encrypted log telemetry.
+                                        </p>
+</div>
+</div>
+<div class="flex space-x-4">
+<button class="flex-1 bg-gradient-to-r from-primary-container to-secondary py-3 rounded-lg text-on-primary-fixed font-black uppercase tracking-widest text-xs flex items-center justify-center space-x-2 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Approve Request</span>
+</button>
+<button class="px-6 py-3 rounded-lg border border-outline-variant text-on-surface-variant font-bold uppercase tracking-widest text-xs hover:border-error hover:text-error transition-all active:bg-error/10">
+                                        Reject
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar: Summary & Logs -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Approval Stats Card -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+<h4 class="text-[0.6875rem] uppercase tracking-widest text-gray-500 mb-6">Approval Metrics</h4>
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<span class="text-on-surface-variant text-sm">Approval Rate</span>
+<span class="text-2xl font-headline font-bold text-primary">84.2%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 84%;"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-lg">
+<p class="text-[0.6875rem] uppercase text-gray-500 mb-1">Pending</p>
+<p class="text-xl font-headline font-bold">12</p>
+</div>
+<div class="bg-surface-container p-4 rounded-lg">
+<p class="text-[0.6875rem] uppercase text-gray-500 mb-1">Resolved</p>
+<p class="text-xl font-headline font-bold">148</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Decisions Log -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+<h4 class="text-[0.6875rem] uppercase tracking-widest text-gray-500 mb-6">Recent Decisions</h4>
+<div class="space-y-6 relative">
+<!-- Log Item 1 -->
+<div class="flex items-start space-x-3">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-white">Elena Rodriguez Approved</p>
+<p class="text-xs text-on-surface-variant mb-1">System Architect Access</p>
+<p class="text-[0.625rem] text-gray-600 uppercase">2 hours ago</p>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="flex items-start space-x-3">
+<div class="mt-1">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-white">David Chen Rejected</p>
+<p class="text-xs text-on-surface-variant mb-1">Global Admin Privileges</p>
+<p class="text-[0.625rem] text-gray-600 uppercase">5 hours ago</p>
+</div>
+</div>
+<!-- Log Item 3 -->
+<div class="flex items-start space-x-3">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-white">Alistair Vaughn Approved</p>
+<p class="text-xs text-on-surface-variant mb-1">Junior Network Access</p>
+<p class="text-[0.625rem] text-gray-600 uppercase">Yesterday</p>
+</div>
+</div>
+<button class="w-full text-center text-primary-fixed-dim text-[0.6875rem] font-bold uppercase tracking-widest pt-4 border-t border-white/5">
+                                    View Full Audit Log
+                                </button>
+</div>
+</div>
+<!-- Policy Reminder Glass Card -->
+<div class="glass-effect rounded-xl p-6 border border-white/10 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">verified_user</span>
+</div>
+<h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">info</span>
+                                Sovereign Protocol
+                            </h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                                High-level access grants require two-factor CEO verification and are logged in the immutable system ledger for a period of 7 years.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

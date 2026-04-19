@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payout Methods - Rydinex Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#131314",
+              "surface-variant": "#353436",
+              "on-primary-container": "#fffeff",
+              "secondary-fixed-dim": "#b1c5ff",
+              "secondary-container": "#31477c",
+              "error": "#ffb4ab",
+              "primary-container": "#276ef1",
+              "surface": "#131314",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-bright": "#39393a",
+              "on-surface": "#e5e2e3",
+              "surface-container-highest": "#353436",
+              "on-secondary-fixed": "#001947",
+              "inverse-primary": "#0056d0",
+              "on-primary": "#002c71",
+              "inverse-on-surface": "#303031",
+              "surface-container": "#1f1f20",
+              "on-tertiary": "#561f00",
+              "tertiary-container": "#c65100",
+              "error-container": "#93000a",
+              "on-surface-variant": "#c2c6d7",
+              "tertiary-fixed-dim": "#ffb694",
+              "primary-fixed": "#dae2ff",
+              "primary": "#b1c5ff",
+              "outline-variant": "#424654",
+              "on-background": "#e5e2e3",
+              "secondary-fixed": "#dae2ff",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "background": "#131314",
+              "secondary": "#b1c5ff",
+              "tertiary": "#ffb694",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "surface-container-high": "#2a2a2b",
+              "surface-container-lowest": "#0e0e0f",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary-fixed-variant": "#00419f",
+              "on-tertiary-fixed": "#351000",
+              "on-tertiary-container": "#fffdff",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-secondary": "#162e61",
+              "outline": "#8c90a0",
+              "inverse-surface": "#e5e2e3",
+              "on-primary-fixed": "#001947"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body antialiased">
+<!-- TopAppBar Component -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#131314] dark:bg-[#131314] flex justify-between items-center px-6 py-4 border-none shadow-none">
+<div class="flex items-center gap-4">
+<button class="text-[#b1c5ff] active:scale-95 duration-100 p-2 -ml-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline text-on-surface text-xl font-extrabold tracking-tighter">Payout Methods</h1>
+</div>
+<button class="text-[#b1c5ff] active:scale-95 duration-100 p-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-12">
+<!-- Hero Visual Section -->
+<section class="relative overflow-hidden rounded-xl h-48 flex items-end p-8 bg-gradient-to-br from-primary-container to-surface-container-highest">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="relative z-10">
+<p class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-2">Earnings Balance</p>
+<h2 class="font-headline text-4xl font-extrabold text-white tracking-tighter">$1,248.50</h2>
+</div>
+<div class="absolute top-8 right-8">
+<div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+</div>
+</div>
+</section>
+<!-- Instant Pay Section -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Instant Pay</h3>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label text-[10px] font-bold tracking-widest uppercase">Immediate</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-8 rounded bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/15">
+<img class="w-full h-full object-cover" data-alt="visa card logo on a clean technical background with holographic elements and dark minimalist styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-vCCUpWB40ySff9z045fFUPnOA5scLpAdyDWoa8MCQ1Oh8QNR_-RUHb1KNNg5INu_Yb6Bg-3A_EqYuIRgqZ8YdHIy2QA0UdVKgNo92pzt9620SMsv4J9JYKL9zwqioHiz0PUXleUuH5iF6GMJH8m39o-36AclWmoBdCEXi4WXZ-ghBkHB6I9h0usD8apCRc_XdInN4kXXYHU7H475Sc6okV97XsVhZTFDC5hndV-wj_PamARrYHOjJ5A8GtPd5wC3XFTUHJFrJU4"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Visa Debit Card</p>
+<p class="font-body text-sm text-on-surface-variant opacity-70">â€¢â€¢â€¢â€¢ 4242</p>
+<p class="mt-4 text-xs font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                                Get your earnings in minutes
+                            </p>
+</div>
+</div>
+<button class="text-primary font-label text-xs font-bold hover:underline transition-all">Update</button>
+</div>
+</div>
+</section>
+<!-- Bank Account Section -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Bank Account</h3>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-[10px] font-bold tracking-widest uppercase">Weekly</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Chase Checking</p>
+<p class="font-body text-sm text-on-surface-variant opacity-70">â€¢â€¢â€¢â€¢ 8812</p>
+<p class="mt-4 text-xs font-medium text-on-surface-variant opacity-50 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                Weekly on Mondays
+                            </p>
+</div>
+</div>
+<button class="text-primary font-label text-xs font-bold hover:underline transition-all">Edit</button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<div class="pt-4">
+<button class="w-full py-5 rounded-xl bg-primary-container text-white font-headline font-bold text-lg flex items-center justify-center gap-2 shadow-[0_20px_40px_rgba(39,110,241,0.2)] active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                Add Payout Method
+            </button>
+<p class="mt-6 text-center text-xs text-on-surface-variant opacity-40 leading-relaxed px-8">
+                Rydinex Pro partners with Stripe to ensure secure and timely transfers. Standard processing times may vary based on your financial institution.
+            </p>
+</div>
+</main>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#131314]/60 backdrop-blur-xl flex justify-around items-center px-4 pb-8 pt-4 border-t border-white/5 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-white/50 px-4 py-2 hover:text-white transition-all tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Home</span>
+</a>
+<!-- Earnings -->
+<a class="flex flex-col items-center justify-center text-white/50 px-4 py-2 hover:text-white transition-all tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Earnings</span>
+</a>
+<!-- Payouts (Active) -->
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-2 tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Payouts</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-white/50 px-4 py-2 hover:text-white transition-all tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

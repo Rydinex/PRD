@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#ffb694",
+              "on-tertiary-fixed": "#351000",
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#e5e2e3",
+              "surface-tint": "#b1c5ff",
+              "on-primary-fixed-variant": "#00419f",
+              "error": "#ffb4ab",
+              "primary-fixed": "#dae2ff",
+              "on-error": "#690005",
+              "surface-container": "#1f1f20",
+              "on-surface": "#e5e2e3",
+              "on-secondary-fixed": "#001947",
+              "surface-container-high": "#2a2a2b",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary-fixed": "#001947",
+              "error-container": "#93000a",
+              "surface": "#131314",
+              "on-secondary": "#162e61",
+              "on-primary-container": "#fffeff",
+              "tertiary-fixed-dim": "#ffb694",
+              "background": "#131314",
+              "on-surface-variant": "#c2c6d7",
+              "on-primary": "#002c71",
+              "outline": "#8c90a0",
+              "surface-variant": "#353436",
+              "inverse-on-surface": "#303031",
+              "primary": "#b1c5ff",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-tertiary": "#561f00",
+              "secondary-fixed-dim": "#b1c5ff",
+              "primary-container": "#276ef1",
+              "inverse-primary": "#0056d0",
+              "surface-container-low": "#1b1b1c",
+              "tertiary-fixed": "#ffdbcc",
+              "outline-variant": "#424654",
+              "secondary-container": "#31477c",
+              "on-tertiary-container": "#fffdff",
+              "surface-bright": "#39393a",
+              "surface-container-lowest": "#0e0e0f",
+              "tertiary-container": "#c65100",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-background": "#e5e2e3",
+              "surface-dim": "#131314",
+              "on-secondary-fixed-variant": "#2f4579",
+              "surface-container-highest": "#353436",
+              "secondary-fixed": "#dae2ff",
+              "secondary": "#b1c5ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 54, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      body {
+        background-color: #131314;
+        color: #e5e2e3;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="flex items-center px-4 h-16 w-full z-50 bg-[#131314] dark:bg-[#131314] docked full-width top-0 no-border bg-[#1c1c1e] sticky">
+<button class="mr-4 p-2 rounded-full hover:bg-white/10 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b1c5ff] dark:text-[#b1c5ff]">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-xl text-[#b1c5ff] dark:text-[#b1c5ff]">Trip Details</h1>
+</header>
+<main class="max-w-2xl mx-auto px-4 pb-32 pt-4 space-y-6">
+<!-- Map View Section (Editorial Asymmetry) -->
+<section class="relative h-64 w-full overflow-hidden rounded-xl bg-surface-container-low shadow-2xl">
+<div class="absolute inset-0 opacity-80" data-location="San Francisco" style="">
+<img alt="dark mode stylized map of san francisco downtown showing a glowing electric blue route path from mission street to sfo airport" class="w-full h-full object-cover grayscale brightness-50" data-alt="dark mode stylized map of san francisco downtown showing a glowing electric blue route path from mission street to sfo airport" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdT3kjY-BhHhOOd2Be2hWq8NJ6jdy1QNZRlnAZhNrJhKZ0X5rj7lyZ_6ikx1_JYvC_UgodS6EBlIpRuRSj4aoguYQyRcIp3iIBtptAXSN_X537sBQgSljREMeK1HYBt7R0IYly2_cDQd2be6VFxKRfQc7paJirLfqzYSgx1fWfUZ6cABfl8DEmObV5fu0qhZALcD9uT-a9jswQ2O8ku__yzgQ5oy5NxHZoPaotfb9Hza1O8vGa3PogzHu7Ik7XWmsQLjYcrMyit9s"/>
+</div>
+<!-- Route Pulse Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-full h-full bg-gradient-to-br from-primary-container/20 to-transparent"></div>
+</div>
+<!-- Floating Trip Summary -->
+<div class="absolute bottom-4 left-4 right-4 glass-card p-4 rounded-xl flex justify-between items-center">
+<div class="space-y-1">
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant opacity-70">Completed</p>
+<p class="font-headline font-bold text-lg">Oct 24, 14:15</p>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<p class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Duration</p>
+<p class="font-headline font-semibold text-primary">12m 4s</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Distance</p>
+<p class="font-headline font-semibold text-primary">4.2 mi</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Earnings Breakdown (High Contrast Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-3 bg-primary-container p-6 rounded-xl flex flex-col justify-center items-center text-center">
+<p class="text-sm font-label uppercase tracking-widest text-white/80 mb-1">Total Earnings</p>
+<h2 class="font-headline text-5xl font-extrabold text-white tracking-tight">$18.45</h2>
+</div>
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col justify-between h-32">
+<p class="text-xs font-label uppercase text-on-surface-variant">Base Fare</p>
+<p class="font-headline text-2xl font-bold">$3.50</p>
+</div>
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<p class="text-xs font-label uppercase text-on-surface-variant">Distance &amp; Time</p>
+<span class="material-symbols-outlined text-primary text-sm">speed</span>
+</div>
+<div>
+<p class="font-headline text-2xl font-bold">$8.70</p>
+<p class="text-[10px] text-on-surface-variant">4.2 mi â€¢ 12m</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-tertiary text-6xl">bolt</span>
+</div>
+<div class="flex justify-between items-start">
+<p class="text-xs font-label uppercase text-tertiary">Surge (1.5x)</p>
+</div>
+<p class="font-headline text-2xl font-bold text-tertiary">$4.10</p>
+</div>
+</section>
+<!-- Secondary Earnings Row -->
+<div class="bg-surface-container-low p-5 rounded-xl flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">redeem</span>
+</div>
+<p class="font-headline font-semibold">Rider Tip</p>
+</div>
+<p class="font-headline text-xl font-bold text-primary">+$2.15</p>
+</div>
+<!-- Trip Details (Path layout) -->
+<section class="bg-surface-container p-6 rounded-xl space-y-6">
+<h3 class="text-xs font-label uppercase tracking-widest text-on-surface-variant border-b border-outline-variant/15 pb-4">Route Details</h3>
+<div class="relative pl-8 space-y-8">
+<!-- Vertical Line -->
+<div class="absolute left-3 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary to-surface-variant"></div>
+<div class="relative">
+<div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-surface-container border-2 border-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase text-on-surface-variant mb-1">Pickup</p>
+<p class="font-headline font-bold text-on-surface">882 Mission St</p>
+<p class="text-xs text-on-surface-variant">San Francisco, CA</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-8 top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-[14px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase text-on-surface-variant mb-1">Drop-off</p>
+<p class="font-headline font-bold text-on-surface">SFO International Airport</p>
+<p class="text-xs text-on-surface-variant">Terminal 2, Departures</p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/15 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">electric_car</span>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">Vehicle</p>
+<p class="font-headline font-bold">Tesla Model 3</p>
+</div>
+</div>
+<span class="bg-tertiary-fixed-dim/10 text-tertiary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">Premier EV</span>
+</div>
+</section>
+<!-- Rider Profile Card -->
+<section class="bg-surface-container-highest p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="portrait of a professional woman with a friendly expression in soft daylight" class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a professional woman with a friendly expression in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6MznCKYewpxaqB7McUtulKsfu0pENSzrZSSc-okdTHcMkZHcvMWQ4CRR93dh2h9cRDziup3MeRs19oz4DDFztkBQNg2PseG3mcKOgrYaIb_7RJILzyqClbaPr0mADipuDfzH2iTXgEE8XbGp45WZSeG0hq_1S-xwH5SGXsS2nYdw3P4H1xRlY4wPIN8_NjMrR5r1LFepJKsfzJu_9hu48htn5SYGSqcJgqiC-uWtfQR52PPaO2aW8g7arp4-RgMW0sxReAiH7HYM"/>
+<div class="absolute -bottom-1 -right-1 bg-primary w-5 h-5 rounded-full flex items-center justify-center border-2 border-surface-container-highest">
+<span class="material-symbols-outlined text-[10px] text-surface" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">Rider</p>
+<p class="font-headline font-bold text-lg leading-tight">Sarah J.</p>
+</div>
+</div>
+<div class="text-right">
+<div class="flex items-center justify-end gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<p class="font-headline font-bold">4.9</p>
+</div>
+<p class="text-[10px] text-on-surface-variant">Verified Rider</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-3 bg-[#131314]/90 backdrop-blur-xl no-border shadow-[0_-1px_0_0_rgba(255,255,255,0.05)] shadow-2xl rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-wider mt-1">Earnings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] font-bold bg-[#276ef1]/20 rounded-xl px-3 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-wider mt-1">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-wider mt-1">Account</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

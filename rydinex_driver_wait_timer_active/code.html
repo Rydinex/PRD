@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Driver - Arrived</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#424654",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2b",
+                        "on-primary-fixed": "#001947",
+                        "on-secondary-fixed": "#001947",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b1c5ff",
+                        "surface": "#131314",
+                        "outline": "#8c90a0",
+                        "on-tertiary-container": "#fffdff",
+                        "background": "#131314",
+                        "surface-dim": "#131314",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-secondary-fixed-variant": "#2f4579",
+                        "on-tertiary": "#561f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353436",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "on-primary": "#002c71",
+                        "primary": "#b1c5ff",
+                        "secondary-fixed": "#dae2ff",
+                        "surface-bright": "#39393a",
+                        "secondary-container": "#31477c",
+                        "on-background": "#e5e2e3",
+                        "on-primary-container": "#fffeff",
+                        "inverse-primary": "#0056d0",
+                        "inverse-surface": "#e5e2e3",
+                        "primary-container": "#276ef1",
+                        "inverse-on-surface": "#303031",
+                        "on-secondary-container": "#a2b7f3",
+                        "secondary": "#b1c5ff",
+                        "on-surface-variant": "#c2c6d7",
+                        "on-primary-fixed-variant": "#00419f",
+                        "on-surface": "#e5e2e3",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-container": "#c65100",
+                        "primary-fixed": "#dae2ff",
+                        "on-secondary": "#162e61",
+                        "on-error": "#690005",
+                        "surface-container": "#1f1f20",
+                        "tertiary": "#ffb694",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container-low": "#1b1b1c",
+                        "surface-container-highest": "#353436"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .route-pulse {
+            background: linear-gradient(90deg, #276ef1 0%, transparent 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] dark:bg-[#131314] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:bg-white/10 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform text-[#b1c5ff]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold tracking-tight text-[#b1c5ff] text-lg">Trip Status</h1>
+</div>
+<button class="hover:bg-white/10 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform text-[#b1c5ff]">
+<span class="material-symbols-outlined">help</span>
+</button>
+</header>
+<main class="pt-16 pb-32 min-h-screen">
+<!-- Map Visualization Section -->
+<section class="relative h-[353px] w-full overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-low">
+<img class="w-full h-full object-cover opacity-60 grayscale brightness-50" data-alt="Dark aesthetic night city map view with soft blue glowing route lines and subtle street highlights" data-location="San Francisco, California" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRmqQXgjHZPt9DQYuPJm4JkjSj10yLStFPt9EouxlDaN1MS4xcmi8lPQ6G-WMO6-neja1kpy80jv5s2AobD8n46PppOz9t03m2Es9X5ubIU6L4caRs0Jq5OthzT4EzRKAqNhfD8XODD2hN6hhB-kCWhyuW5kz3JbMLKSLPcaFj1Tm62oeXE8pJa2saz1Ybi5kWxLDUl7xmGcG193hAnBF2HwZAYh7NGvTO40ezJxwmTu62r1iWhGPv0B02ESYgM992lx5asGU03QQ"/>
+</div>
+<!-- Rider Indicator -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full animate-ping"></div>
+<div class="relative w-12 h-12 rounded-full border-4 border-primary bg-surface overflow-hidden shadow-[0_0_20px_rgba(39,110,241,0.5)]">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a young professional man in a clean white shirt with soft urban background lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6FH6LJivPbF0dUXSDM4TmpkFw7AnqJDWRjVY_itZOd6qx7y5skSD8WF71so9ZMCmjb5HCiXIE4a4pVPuIsT1Bqgp0ALufs9OTMxefTNhRvI-9YmStDzQmn8lwZhjXIJR84UFH9cd-6BQfzGKsz2QjCZULzQio3bWlpU6RHUgWPEZt5X8go-Wir-MdybWNpZFRqcrjM7XpKdKZ4CTPI2XwP3TnXydzqgdWA9NPGgrbQa98L9VkbxqpfGqt5Oa0m1zp2mahEkfpOdI"/>
+</div>
+</div>
+<div class="mt-3 bg-surface-container-highest px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary border border-white/5">
+                    Arrived at Pickup
+                </div>
+</div>
+</section>
+<!-- Main Content Area -->
+<section class="px-6 -mt-8 relative z-10">
+<!-- Timer Card -->
+<div class="glass-card rounded-[2rem] p-8 shadow-2xl border border-white/5">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="space-y-1">
+<span class="text-tertiary font-label text-[10px] uppercase tracking-[0.2em] font-bold">Current Grace Period</span>
+<div class="font-headline text-7xl font-extrabold tracking-tighter text-on-surface">
+                            02:48
+                        </div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[70%] rounded-full shadow-[0_0_12px_rgba(39,110,241,0.6)]"></div>
+</div>
+<p class="text-on-surface-variant text-sm max-w-[280px] leading-relaxed">
+                        Waiting for <span class="text-on-surface font-bold">Jonathan D.</span> at the main entrance.
+                    </p>
+</div>
+<!-- Phase Info -->
+<div class="mt-8 pt-8 border-t border-white/5 grid grid-cols-1 gap-4">
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Charging Wait Time</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Starts after grace period. <span class="text-primary font-medium">Black/SUV: 10m</span>, Standard: 5m.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-error-container/10 border border-error/5">
+<div class="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-error">Cancelation Fee</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Ineligible for fee. Wait at least 5 minutes to become eligible for rider no-show fee.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons Grid -->
+<div class="grid grid-cols-2 gap-4 mt-6">
+<button class="h-16 rounded-2xl glass-card flex items-center justify-center gap-2 hover:bg-white/10 active:scale-95 transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">call</span>
+<span class="font-bold text-sm">Call Rider</span>
+</button>
+<button class="h-16 rounded-2xl glass-card flex items-center justify-center gap-2 hover:bg-error-container/20 active:scale-95 transition-all group">
+<span class="material-symbols-outlined text-error group-hover:scale-110 transition-transform">close</span>
+<span class="font-bold text-sm">Cancel Trip</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full rounded-t-3xl z-50 bg-[#131314]/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-20px_40px_0_rgba(0,0,0,0.4)] flex justify-around items-center pt-3 pb-8 px-6 w-full">
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276ef1]/20 rounded-xl px-4 py-1 scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-weight="fill">directions_car</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Ride</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#909094] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

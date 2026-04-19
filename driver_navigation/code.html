@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#ffb694",
+              "secondary": "#b1c5ff",
+              "surface-container-high": "#2a2a2b",
+              "on-surface": "#e5e2e3",
+              "background": "#131314",
+              "inverse-on-surface": "#303031",
+              "inverse-surface": "#e5e2e3",
+              "surface-variant": "#353436",
+              "on-primary-container": "#fffeff",
+              "on-surface-variant": "#c2c6d7",
+              "secondary-fixed-dim": "#b1c5ff",
+              "tertiary-container": "#c65100",
+              "on-secondary-fixed": "#001947",
+              "on-error": "#690005",
+              "outline": "#8c90a0",
+              "inverse-primary": "#0056d0",
+              "secondary-fixed": "#dae2ff",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "surface-tint": "#b1c5ff",
+              "surface": "#131314",
+              "on-tertiary-fixed": "#351000",
+              "on-primary-fixed": "#001947",
+              "on-background": "#e5e2e3",
+              "on-secondary-container": "#a2b7f3",
+              "surface-dim": "#131314",
+              "primary-container": "#276ef1",
+              "on-primary": "#002c71",
+              "on-tertiary": "#561f00",
+              "on-secondary": "#162e61",
+              "tertiary-fixed-dim": "#ffb694",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "surface-container": "#1f1f20",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed": "#ffdbcc",
+              "outline-variant": "#424654",
+              "surface-container-highest": "#353436",
+              "secondary-container": "#31477c",
+              "primary-fixed": "#dae2ff",
+              "surface-container-lowest": "#0e0e0f",
+              "on-tertiary-container": "#fffdff",
+              "primary": "#b1c5ff",
+              "surface-container-low": "#1b1b1c",
+              "surface-bright": "#39393a",
+              "on-primary-fixed-variant": "#00419f",
+              "error": "#ffb4ab",
+              "primary-fixed-dim": "#b1c5ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .map-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation Card (Instructional) -->
+<header class="fixed top-0 left-0 right-0 z-50 p-4">
+<div class="max-w-md mx-auto">
+<div class="bg-primary-container text-on-primary-container rounded-xl p-5 shadow-2xl flex items-center gap-6 relative overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+<div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 700;">turn_right</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-label uppercase tracking-widest opacity-80">Next Turn</span>
+<span class="text-xs font-headline font-bold">400 ft</span>
+</div>
+<h1 class="font-headline font-extrabold text-2xl tracking-tight leading-none">Turn Right onto Market St</h1>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Map Interface -->
+<main class="flex-1 relative w-full h-full bg-surface-container-lowest overflow-hidden">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 z-0 bg-[#0f1115] map-mesh" data-location="San Francisco" style="">
+<!-- Simulated Blue Route Line -->
+<svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<path class="opacity-90 shadow-lg" d="M 200,800 L 200,500 L 400,500 L 400,200 L 600,200" fill="none" stroke="#276ef1" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+<!-- Pulse effect at destination -->
+<circle class="animate-pulse" cx="600" cy="200" fill="#b1c5ff" r="15">
+<animate attributename="r" dur="2s" repeatcount="indefinite" values="8;18;8"></animate>
+</circle>
+<circle cx="600" cy="200" fill="#276ef1" r="6"></circle>
+</svg>
+<!-- Map Decorative Elements (Roads) -->
+<div class="absolute top-1/4 left-0 w-full h-[2px] bg-white/5"></div>
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-white/5"></div>
+<div class="absolute top-3/4 left-0 w-full h-[2px] bg-white/5"></div>
+<div class="absolute left-1/4 top-0 w-[2px] h-full bg-white/5"></div>
+<div class="absolute left-2/4 top-0 w-[2px] h-full bg-white/5"></div>
+<div class="absolute left-3/4 top-0 w-[2px] h-full bg-white/5"></div>
+</div>
+<!-- Floating Quick Actions -->
+<div class="absolute right-4 top-32 flex flex-col gap-3 z-10">
+<button class="w-12 h-12 rounded-full bg-surface-container-highest/80 backdrop-blur-xl flex items-center justify-center text-on-surface shadow-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-highest/80 backdrop-blur-xl flex items-center justify-center text-on-surface shadow-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+</main>
+<!-- Bottom Rider & Action Drawer -->
+<section class="relative z-50 px-4 pb-8">
+<div class="max-w-md mx-auto space-y-4">
+<!-- Arrived Prompt (Floating Contextual Action) -->
+<button class="w-full bg-primary-container text-on-primary-container py-5 rounded-xl font-headline font-extrabold text-xl tracking-wider shadow-[0_20px_40px_rgba(39,110,241,0.3)] hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                ARRIVED
+            </button>
+<!-- Rider Detail Card -->
+<div class="bg-surface-container-low/95 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Rider Profile" class="w-14 h-14 rounded-full object-cover border-2 border-primary/20" data-alt="Close-up portrait of a professional man in his 30s with a warm smile, outdoor urban lighting with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwPqKVkvarDO0_a6dBK--66lvodjXQ_jdKsVUSrEsBBEOaFPsFAKExeJuyO34xGq9J54apLpc1XJDzR8EqNZLxNJbpOC2W7TRG3DEJ-3XNtPAma0js9hzTafCIKERXhJybqTyYJsKIMSMGHpiSw0lYoQ4KTzb3so8UgIB0axcSOS5KKCg28rW1Vx887EVKF0-0QQQNXlTmq_b-V5LvkkoV9f8RAVTVY8Ybx40M3qXensy-vFUGtC8JNLf_7Kuq_EHn21o1RfDIpU"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold">
+                                4.9
+                            </div>
+</div>
+<div>
+<h2 class="font-headline font-bold text-lg leading-tight">Marcus Thompson</h2>
+<p class="font-label text-sm text-on-surface-variant/70">Pickup at Market Square</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline font-extrabold text-2xl text-primary leading-tight">4 <span class="text-sm font-label uppercase opacity-60">min</span></div>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/50">Arriving in</p>
+</div>
+</div>
+<!-- Horizontal Action Bar -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest py-3.5 rounded-xl font-headline font-bold text-sm text-on-surface hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+                        Contact
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-surface-container-highest py-3.5 rounded-xl font-headline font-bold text-sm text-on-surface hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+                        Details
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Nav Shell (Filtering for Driver Context) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container-lowest/95 backdrop-blur-md rounded-t-2xl z-50">
+<div class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-4 py-1 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Navigate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/50 hover:text-primary transition-all active:scale-90">
+<span class="material-symbols-outlined">reorder</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Queue</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/50 hover:text-primary transition-all active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-widest mt-1">Account</span>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Admin - State Launch Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e8",
+              "inverse-on-surface": "#2f3035",
+              "primary-fixed-dim": "#b1c5ff",
+              "surface-container-lowest": "#0c0e12",
+              "on-tertiary-fixed": "#351000",
+              "on-secondary": "#162e61",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e2e2e8",
+              "surface": "#111317",
+              "on-tertiary": "#561f00",
+              "surface-container-high": "#282a2e",
+              "on-secondary-container": "#a2b7f3",
+              "on-surface-variant": "#c2c6d7",
+              "inverse-primary": "#0056d0",
+              "error": "#ffb4ab",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-variant": "#333539",
+              "tertiary-container": "#c65100",
+              "primary": "#b1c5ff",
+              "secondary": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "on-primary-container": "#fffeff",
+              "primary-fixed": "#dae2ff",
+              "surface-bright": "#37393e",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-primary-fixed": "#001947",
+              "on-primary": "#002c71",
+              "surface-container-highest": "#333539",
+              "tertiary": "#ffb694",
+              "on-primary-fixed-variant": "#00419f",
+              "primary-container": "#276ef1",
+              "outline-variant": "#424654",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-dim": "#111317",
+              "on-secondary-fixed-variant": "#2f4579",
+              "secondary-fixed": "#dae2ff",
+              "outline": "#8c90a0",
+              "on-error": "#690005",
+              "background": "#111317",
+              "on-surface": "#e2e2e8",
+              "on-secondary-fixed": "#001947",
+              "secondary-container": "#31477c",
+              "surface-tint": "#b1c5ff",
+              "surface-container-low": "#1a1c20",
+              "surface-container": "#1e2024",
+              "on-tertiary-fixed-variant": "#7b2f00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-[#111317] docked full-width top-0 z-50 font-['Manrope'] antialiased tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#e2e2e8]">Sovereign Admin</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors" href="#">Monitoring</a>
+<a class="text-[#b1c5ff] border-b-2 border-[#276ef1] pb-2" href="#">Systems</a>
+<a class="text-[#e2e2e8]/60 hover:text-[#e2e2e8] transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-[#1e2024] rounded px-3 py-1.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-outline">search</span>
+<span class="text-xs text-outline">Search systems...</span>
+</div>
+<button class="material-symbols-outlined text-[#e2e2e8]/60 hover:bg-[#1e2024] p-2 rounded transition-all">notifications</button>
+<button class="material-symbols-outlined text-[#e2e2e8]/60 hover:bg-[#1e2024] p-2 rounded transition-all">settings</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center border border-outline-variant">
+<img alt="Administrator Profile" class="w-full h-full rounded-full object-cover" data-alt="professional portrait of a high-level system administrator in a dark tech environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1TeOWAb3EC8td1woRSiPgxOG3ctQyyuKqfNZWNA-_P7w0g7gm9UjhUlhhQ3HxZjgBxygwfLsrG7e6KrnFNant-3MoGcydAAuLRf_sX1Q4SvSr7jwQqkbIxIgT3_j_5c4y8cEvVfOLWNEQ0VhrZbA9YAPe1a288VOHmbxF5ZTERkdjfFBbkX2Zg_r0QyoLsgZqgSN2awoFT3nxCa93W5GP37wk40KQr4sXmQsI-UEwLBXDRPU2M_9giYWYn_e_gFM7U85NAB8s34Y"/>
+</div>
+</div>
+</header>
+<div class="bg-[#1a1c20] h-[1px] w-full"></div>
+<div class="flex h-[calc(100vh-65px)]">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full py-6 gap-2 bg-[#1a1c20] docked left-0 h-screen w-64 border-r border-[#e2e2e8]/10 font-['Inter'] text-sm font-medium">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<div>
+<div class="text-lg font-black text-[#e2e2e8]">State Launch</div>
+<div class="text-[10px] uppercase tracking-widest text-[#e2e2e8]/40">Wizard v2.4</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-[#e2e2e8]/50 hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#e2e2e8]/50 hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span>State Rules</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#e2e2e8]/50 hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>TNP Fees</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#e2e2e8]/50 hover:bg-[#1e2024] hover:text-[#e2e2e8] transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span>Geofencing</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#b1c5ff] bg-[#1e2024] border-r-4 border-[#276ef1] translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span>Review</span>
+</a>
+</nav>
+<div class="mt-auto px-6 space-y-1">
+<a class="flex items-center gap-3 py-2 text-[#e2e2e8]/50 hover:text-[#e2e2e8]" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 py-2 text-[#e2e2e8]/50 hover:text-[#e2e2e8]" href="#">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>Logs</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-surface-dim p-10">
+<div class="max-w-6xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12 flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Step 4 of 4</span>
+<div class="h-[1px] w-8 bg-outline-variant"></div>
+<span class="text-on-surface-variant text-xs">Final Validation</span>
+</div>
+<h1 class="text-5xl font-extrabold tracking-tighter text-on-surface">Review &amp; Activate</h1>
+<p class="text-on-surface-variant mt-3 max-w-xl font-body">Verification of all deployment protocols for the <span class="text-primary font-semibold">Chicago, Illinois</span> regional cluster.</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-[10px] text-outline uppercase tracking-widest">Environment</span>
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/30">
+<div class="w-2 h-2 rounded-full bg-[#34c759] shadow-[0_0_8px_#34c759]"></div>
+<span class="text-xs font-bold">PRODUCTION READY</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Left Column: High-Level Summary -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Configuration Summary Card -->
+<section class="bg-surface-container rounded-xl p-8 border border-outline-variant/10 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-5">
+<span class="material-symbols-outlined text-9xl">analytics</span>
+</div>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary">Configuration Summary</h3>
+<button class="text-xs text-outline hover:text-primary flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span> EDIT
+                                </button>
+</div>
+<div class="grid grid-cols-3 gap-12">
+<div>
+<label class="text-[10px] uppercase text-outline font-bold tracking-widest block mb-1">Launch Node</label>
+<div class="text-2xl font-bold tracking-tight">Chicago (IL)</div>
+<div class="text-xs text-on-surface-variant mt-1">Midwest-US Region</div>
+</div>
+<div>
+<label class="text-[10px] uppercase text-outline font-bold tracking-widest block mb-1">Active Fleet</label>
+<div class="text-2xl font-bold tracking-tight">4,200+</div>
+<div class="text-xs text-on-surface-variant mt-1">Projected Drivers</div>
+</div>
+<div>
+<label class="text-[10px] uppercase text-outline font-bold tracking-widest block mb-1">Currency</label>
+<div class="text-2xl font-bold tracking-tight">USD ($)</div>
+<div class="text-xs text-on-surface-variant mt-1">Base rate + Dynamic</div>
+</div>
+</div>
+</section>
+<!-- Airport & Geofence Review -->
+<section class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-8 pb-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Airport &amp; Geofence Protocols</h3>
+</div>
+<div class="h-64 relative bg-surface-container-lowest">
+<img alt="Chicago Airport Geofences Map" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="detailed dark mode digital map of Chicago showing neon blue highlighted geofences around O'Hare and Midway airports with data overlays" data-location="Chicago" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsN8TvIhfQ7h9cjFVxsn--dbkC9mtAGv40C1sD12xdT1Q3plswdnRmWbU3IMdU7yrDS-FdNFeSlYjgTOnNpKKKKWbWn6_vi1R6aPaeRnrVHFMH0v2Y3W7Q6xDc_5SrHWKQSo4KXSZhaQur-HaUsXm_t6XYW2NYm10aE3udoxh8JyoLUuU0ubgIW2KDsmKLW2VEkiAv0gtfvyE50bTADWdrc7iWWk54-OsR6PNjE46npVeEvJd56-3HIhKQ7Tp-v-xuLkhFpgIIJu0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-8 right-8 flex gap-4">
+<div class="flex-1 bg-surface-container-high/90 backdrop-blur-md p-4 rounded-lg border border-outline-variant/20">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold">O'Hare (ORD)</span>
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">ACTIVE</span>
+</div>
+<p class="text-xs text-on-surface-variant">20-minute staging lot rule enforced. TNC Zone B pickup only.</p>
+</div>
+<div class="flex-1 bg-surface-container-high/90 backdrop-blur-md p-4 rounded-lg border border-outline-variant/20">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold">Midway (MDW)</span>
+<span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">ACTIVE</span>
+</div>
+<p class="text-xs text-on-surface-variant">Inner-ring geofence logic applied. Automated queue position sync.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Fees & Policy -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Regulatory & Fee Recap -->
+<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-6">Financial Matrix</h3>
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-sm">TNP Fee (Per Ride)</span>
+<span class="text-xl font-bold tracking-tight">$0.02</span>
+</div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-sm">Commission Split</span>
+<span class="text-xl font-bold tracking-tight">70 / 30</span>
+</div>
+<div class="pb-4 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-sm block mb-2">Insurance Protocol</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<span class="text-sm font-semibold">IL-SB2857 Compliance</span>
+</div>
+</div>
+<div class="pt-2">
+<p class="text-[11px] text-outline leading-relaxed italic">All rates validated against Illinois Department of Transportation (IDOT) 2024 directives.</p>
+</div>
+</div>
+</section>
+<!-- Policy Certification -->
+<section class="bg-surface-container rounded-xl p-8 border border-outline-variant/10">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-6">Policy Certification</h3>
+<div class="space-y-4">
+<label class="flex items-start gap-4 group cursor-pointer">
+<div class="mt-1 relative flex items-center justify-center">
+<input checked="" class="w-5 h-5 bg-surface-container-high border-outline-variant rounded focus:ring-primary text-primary-container" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="text-sm font-semibold group-hover:text-primary transition-colors">Non-Discrimination Policy</div>
+<div class="text-xs text-outline">Localized for Illinois Human Rights Act.</div>
+</div>
+</label>
+<label class="flex items-start gap-4 group cursor-pointer">
+<div class="mt-1 relative flex items-center justify-center">
+<input checked="" class="w-5 h-5 bg-surface-container-high border-outline-variant rounded focus:ring-primary text-primary-container" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="text-sm font-semibold group-hover:text-primary transition-colors">Refund &amp; Dispute Rules</div>
+<div class="text-xs text-outline">Consumer protection clauses appended.</div>
+</div>
+</label>
+<label class="flex items-start gap-4 group cursor-pointer">
+<div class="mt-1 relative flex items-center justify-center">
+<input class="w-5 h-5 bg-surface-container-high border-outline-variant rounded focus:ring-primary text-primary-container" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="text-sm font-semibold group-hover:text-primary transition-colors">Safety Transparency</div>
+<div class="text-xs text-outline">Background check standards verified.</div>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Final Action Footer -->
+<div class="col-span-12 mt-6">
+<div class="bg-surface-container-high rounded-xl p-8 flex items-center justify-between border border-primary/20 bg-gradient-to-r from-surface-container-high to-primary-container/5">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 rounded-full border-4 border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold tracking-tight">Final Authorization Required</h2>
+<p class="text-sm text-on-surface-variant">By clicking activate, you initiate the regional node for Chicago, Illinois. System sync takes ~45 seconds.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-8 py-3 text-sm font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">
+                                    Save Draft
+                                </button>
+<button class="px-10 py-4 bg-gradient-to-br from-primary-container to-primary text-on-primary-fixed font-black text-sm uppercase tracking-widest rounded-lg shadow-[0_0_30px_rgba(39,110,241,0.3)] hover:scale-105 active:scale-95 transition-all duration-200">
+                                    Activate State
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<footer class="mt-16 pt-8 border-t border-outline-variant/10 flex justify-between items-center text-[10px] text-outline uppercase tracking-widest">
+<div>Session ID: SV-CHI-2024-00192</div>
+<div class="flex gap-8">
+<span>System Status: Optimal</span>
+<span>Node: US-MW-1</span>
+<span>Last Synced: 02:44:11 GMT</span>
+</div>
+</footer>
+</main>
+</div>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

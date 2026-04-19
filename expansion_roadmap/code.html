@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Admin | Expansion Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#276ef1",
+              "secondary-container": "#31477c",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-secondary": "#162e61",
+              "surface-container-lowest": "#0c0e12",
+              "inverse-on-surface": "#2f3035",
+              "outline": "#8c90a0",
+              "on-surface": "#e2e2e8",
+              "surface-container-highest": "#333539",
+              "primary": "#b1c5ff",
+              "surface-variant": "#333539",
+              "on-error": "#690005",
+              "tertiary-fixed": "#ffdbcc",
+              "tertiary": "#ffb694",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-tint": "#b1c5ff",
+              "surface-dim": "#111317",
+              "on-tertiary-fixed": "#351000",
+              "secondary": "#b1c5ff",
+              "on-secondary-fixed": "#001947",
+              "surface-container-low": "#1a1c20",
+              "on-tertiary": "#561f00",
+              "on-background": "#e2e2e8",
+              "on-secondary-fixed-variant": "#2f4579",
+              "on-error-container": "#ffdad6",
+              "error": "#ffb4ab",
+              "surface-bright": "#37393e",
+              "on-primary-container": "#fffeff",
+              "primary-fixed": "#dae2ff",
+              "inverse-surface": "#e2e2e8",
+              "tertiary-container": "#c65100",
+              "on-primary-fixed-variant": "#00419f",
+              "on-primary-fixed": "#001947",
+              "surface": "#111317",
+              "background": "#111317",
+              "surface-container-high": "#282a2e",
+              "on-surface-variant": "#c2c6d7",
+              "surface-container": "#1e2024",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-secondary-container": "#a2b7f3",
+              "primary-fixed-dim": "#b1c5ff",
+              "outline-variant": "#424654",
+              "secondary-fixed": "#dae2ff",
+              "error-container": "#93000a",
+              "inverse-primary": "#0056d0",
+              "on-primary": "#002c71",
+              "on-tertiary-container": "#fffdff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex h-screen overflow-hidden selection:bg-primary-container/30">
+<!-- SIDE NAV BAR (The Anchor) -->
+<aside class="flex flex-col h-full py-6 bg-[#1a1c20] dark:bg-slate-900 h-screen w-64 border-r border-[#333539]/15 flex-shrink-0">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold tracking-tight text-white headline">Rydinex Admin</h1>
+<p class="text-[0.6875rem] text-slate-400 font-medium">Sovereign Observer</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center px-6 py-3 text-slate-400 font-medium hover:text-white hover:bg-[#333539]/20 transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<!-- Expansion (Active) -->
+<a class="flex items-center px-6 py-3 text-[#b1c5ff] font-semibold border-r-2 border-[#276ef1] bg-[#333539]/10 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">mobile_dots</span>
+<span class="text-sm">Expansion</span>
+</a>
+<!-- Fleet -->
+<a class="flex items-center px-6 py-3 text-slate-400 font-medium hover:text-white hover:bg-[#333539]/20 transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">electric_car</span>
+<span class="text-sm">Fleet</span>
+</a>
+<!-- Revenue -->
+<a class="flex items-center px-6 py-3 text-slate-400 font-medium hover:text-white hover:bg-[#333539]/20 transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">payments</span>
+<span class="text-sm">Revenue</span>
+</a>
+<!-- Analytics -->
+<a class="flex items-center px-6 py-3 text-slate-400 font-medium hover:text-white hover:bg-[#333539]/20 transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3">monitoring</span>
+<span class="text-sm">Analytics</span>
+</a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full py-2.5 rounded-lg bg-gradient-to-br from-primary-container to-primary text-on-primary-container font-bold text-xs tracking-wider flex items-center justify-center gap-2 transform transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Expansion
+            </button>
+</div>
+<div class="border-t border-[#333539]/15 pt-4 space-y-1">
+<a class="flex items-center px-6 py-2 text-slate-400 font-medium hover:text-white hover:bg-[#333539]/20 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="text-xs">Settings</span>
+</a>
+<a class="flex items-center px-6 py-2 text-slate-400 font-medium hover:text-white hover:bg-[#333539]/20 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">help</span>
+<span class="text-xs">Support</span>
+</a>
+<div class="mt-6 px-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of professional male executive in dark tech environment with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYGhswMaQYAcqqDggj-cTfrIEAIgXpP21Dlk8zodsz9oU4RzHj1s5s71KfA_EhMfCfXOJrKVz_HL0x46-ZQgF1hrC7XeBgg70c7Lz5UsDHYry7H5P1YuFS22fbX60li5XHz7OGveUvvXlDxm9rYTRBfxfAK8zECVdgiUB64y5q-kkrihjnjL-0KuZOa4nwXxUUeDzGYd7b3A5ZzTOw_nCEpSORftw8pdbCuTWKMSVZQ_DkiO92XKdP2xzuf5z4uRNigt16ggKHrKw"/>
+</div>
+<div>
+<p class="text-[0.75rem] font-bold text-white leading-tight">Admin Observer</p>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest">Master Access</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface">
+<!-- TOP NAV BAR -->
+<header class="flex justify-between items-center w-full px-8 h-16 bg-[#111317]/80 backdrop-blur-xl border-b border-[#333539]/15 sticky top-0 z-30">
+<div class="flex items-center gap-8">
+<span class="text-lg font-black text-white headline">Expansion Roadmap</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#276ef1] border-b-2 border-[#276ef1] pb-1 text-[0.6875rem] font-semibold tracking-wide uppercase" href="#">Q1 Alpha</a>
+<a class="text-slate-500 hover:text-white text-[0.6875rem] font-semibold tracking-wide uppercase transition-colors" href="#">Q2 Beta</a>
+<a class="text-slate-500 hover:text-white text-[0.6875rem] font-semibold tracking-wide uppercase transition-colors" href="#">Q3 Global</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg">search</span>
+<input class="bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-1.5 text-xs text-on-surface w-64 focus:ring-1 ring-[#276ef1] placeholder:text-slate-600 transition-all" placeholder="Search markets..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-colors">notifications</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-colors">apps</button>
+<button class="px-4 py-1.5 bg-surface-container-highest text-white text-[0.6875rem] font-bold uppercase tracking-wider rounded-md border border-outline-variant/20 hover:bg-surface-bright transition-colors">Export Data</button>
+</div>
+</div>
+</header>
+<!-- CANVAS -->
+<div class="flex-1 overflow-y-auto p-8 space-y-10 no-scrollbar">
+<!-- SECTION 1: TIMELINE HERO & MAP BENTO -->
+<section class="grid grid-cols-12 gap-6 items-start">
+<!-- ASYMMETRIC GRID: MAP VIEW (Primary Focal Point) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl overflow-hidden relative border border-outline-variant/10 group">
+<div class="absolute top-6 left-6 z-10">
+<h2 class="text-2xl font-extrabold headline text-white tracking-tight">Regional Priority Nodes</h2>
+<p class="text-xs text-slate-500 mt-1 uppercase tracking-[0.15em]">Live Deployment Visualization</p>
+</div>
+<div class="absolute bottom-6 left-6 z-10 flex gap-4 bg-surface/80 backdrop-blur-md p-3 rounded-lg border border-outline-variant/15">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(39,110,241,0.5)]"></span>
+<span class="text-[0.6rem] font-bold text-white uppercase tracking-widest">Active</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container shadow-[0_0_8px_rgba(198,81,0,0.5)]"></span>
+<span class="text-[0.6rem] font-bold text-white uppercase tracking-widest">Expansion</span>
+</div>
+</div>
+<div class="h-[460px] w-full bg-[#0c0e12] relative overflow-hidden">
+<!-- Simulated Map Background -->
+<img alt="Map View" class="w-full h-full object-cover opacity-40 grayscale contrast-125" data-alt="stylized dark topological map of the United States with glowing blue and gold node points connected by thin faint lines" data-location="USA" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9LfFdllgZiRvkxuR75FJ0X-HC-aPRFc0jbG-6m-ll0o0RJDMkt6BsBlrhhRSaGZtof-PLFddX0PxViJXfnVIhUlt2RKgvuIeUl4Tl3NvqOWvMawXAA8bKYA3u6zPkCpKldEcA7z717rCLkOqFmiLb_ze04cdMQVUrXeWqCslNZmuMmyXORec9Yo1745GJkl92Djr2rWWq5b22TX0QjyDMVcDjIamrn3J3Ga5nAxihq8ygEgGnvKBbHMtNoIqOyigtFjtTHZ8N_k4"/>
+<!-- Pulse Pins -->
+<div class="absolute top-1/3 left-1/4 group/pin cursor-pointer">
+<span class="absolute inline-flex h-4 w-4 rounded-full bg-primary-container opacity-75 animate-ping"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-primary-container border-2 border-white shadow-xl"></span>
+<div class="absolute left-6 top-0 hidden group-hover/pin:block bg-surface-container-highest p-2 rounded border border-outline-variant text-[0.6rem] whitespace-nowrap z-20">California Node [LOCKED]</div>
+</div>
+<div class="absolute top-1/2 left-1/2 group/pin cursor-pointer">
+<span class="absolute inline-flex h-4 w-4 rounded-full bg-tertiary-container opacity-75 animate-ping"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-tertiary-container border-2 border-white shadow-xl"></span>
+<div class="absolute left-6 top-0 hidden group-hover/pin:block bg-surface-container-highest p-2 rounded border border-outline-variant text-[0.6rem] whitespace-nowrap z-20">Texas Node [STAGING]</div>
+</div>
+<div class="absolute bottom-1/4 right-1/4 group/pin cursor-pointer">
+<span class="absolute inline-flex h-4 w-4 rounded-full bg-tertiary-container opacity-75 animate-ping"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-tertiary-container border-2 border-white shadow-xl"></span>
+</div>
+</div>
+</div>
+<!-- STRATEGIC ROADMAP TIMELINE (Vertical Column) -->
+<div class="col-span-12 lg:col-span-4 h-full flex flex-col gap-6">
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 flex-1">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-sm font-bold text-white uppercase tracking-widest headline">Timeline Sequence</h3>
+<span class="text-[0.6rem] text-primary bg-primary-container/10 px-2 py-0.5 rounded">2026 ROADMAP</span>
+</div>
+<div class="relative space-y-8 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant/30">
+<!-- Q1 Texas -->
+<div class="relative pl-10">
+<span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-tertiary-container border-2 border-surface"></span>
+<div class="space-y-1">
+<span class="text-[0.6rem] font-bold text-tertiary uppercase tracking-widest">Q1 - JAN 2026</span>
+<h4 class="text-base font-bold text-white headline">Texas Deployment</h4>
+<p class="text-xs text-slate-500">Austin, Dallas, Houston Corridors</p>
+<div class="mt-3 flex items-center gap-4">
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[88%]"></div>
+</div>
+<span class="text-[0.6rem] font-bold text-on-surface">88%</span>
+</div>
+</div>
+</div>
+<!-- Q2 Florida -->
+<div class="relative pl-10">
+<span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-surface"></span>
+<div class="space-y-1">
+<span class="text-[0.6rem] font-bold text-slate-500 uppercase tracking-widest">Q2 - APR 2026</span>
+<h4 class="text-base font-bold text-white/60 headline">Florida Hub</h4>
+<p class="text-xs text-slate-600">Miami Metro &amp; Orlando Logistics</p>
+<div class="mt-3 flex items-center gap-4">
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[34%]"></div>
+</div>
+<span class="text-[0.6rem] font-bold text-on-surface/50">34%</span>
+</div>
+</div>
+</div>
+<!-- Q3 New York -->
+<div class="relative pl-10">
+<span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-800 border-2 border-surface"></span>
+<div class="space-y-1">
+<span class="text-[0.6rem] font-bold text-slate-700 uppercase tracking-widest">Q3 - AUG 2026</span>
+<h4 class="text-base font-bold text-white/30 headline">New York Integration</h4>
+<p class="text-xs text-slate-700">Manhattan &amp; Brooklyn Fleets</p>
+<div class="mt-3 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-surface-container-highest transition-all border border-outline-variant/15 p-6 rounded-xl flex items-center justify-between group">
+<div class="text-left">
+<p class="text-[0.6rem] font-bold text-primary uppercase tracking-[0.2em] mb-1">Strategic Action</p>
+<p class="text-sm font-bold text-white">Initialize New Market</p>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: READINESS SCORES & INTELLIGENCE -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-xl font-extrabold headline text-white tracking-tight">Market Readiness &amp; Intelligence</h2>
+<p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Cross-referencing Regulatory vs Fleet Logistics</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- MARKET CARD: TEXAS -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 hover:border-tertiary/30 transition-all duration-500 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">account_balance</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="text-lg font-bold text-white headline">Texas (TX)</h4>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest">Priority Target Alpha</p>
+</div>
+<span class="text-[0.6rem] font-bold text-success_green bg-green-500/10 px-2 py-1 rounded">NEAR READY</span>
+</div>
+<!-- Progress Bars -->
+<div class="space-y-4 mb-8">
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Regulatory Approval</span>
+<span class="text-white">100%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-full shadow-[0_0_8px_rgba(39,110,241,0.4)]"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Fleet Recruitment</span>
+<span class="text-white">82%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[82%]"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Marketing Readiness</span>
+<span class="text-white">64%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[64%]"></div>
+</div>
+</div>
+</div>
+<!-- Intelligence Data -->
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/15 pt-4">
+<div>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest mb-1">TNP Fee Est.</p>
+<p class="text-sm font-bold text-white">$0.22 <span class="text-[0.6rem] font-normal text-slate-400">/ mile</span></p>
+</div>
+<div>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest mb-1">Proj. Density</p>
+<p class="text-sm font-bold text-white">4.2k <span class="text-[0.6rem] font-normal text-slate-400">req/hr</span></p>
+</div>
+</div>
+</div>
+<!-- MARKET CARD: FLORIDA -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">hub</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="text-lg font-bold text-white headline">Florida (FL)</h4>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest">Priority Target Beta</p>
+</div>
+<span class="text-[0.6rem] font-bold text-tertiary bg-tertiary-container/10 px-2 py-1 rounded">STAGING</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Regulatory Approval</span>
+<span class="text-white">45%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[45%]"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Fleet Recruitment</span>
+<span class="text-white">12%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[12%]"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Marketing Readiness</span>
+<span class="text-white">8%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[8%]"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/15 pt-4">
+<div>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest mb-1">TNP Fee Est.</p>
+<p class="text-sm font-bold text-white">$0.18 <span class="text-[0.6rem] font-normal text-slate-400">/ mile</span></p>
+</div>
+<div>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest mb-1">Proj. Density</p>
+<p class="text-sm font-bold text-white">6.8k <span class="text-[0.6rem] font-normal text-slate-400">req/hr</span></p>
+</div>
+</div>
+</div>
+<!-- MARKET CARD: NEW YORK -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 hover:border-primary/10 transition-all duration-500 relative overflow-hidden group grayscale opacity-60">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">domain</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="text-lg font-bold text-white headline">New York (NY)</h4>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest">Backlog / Phase II</p>
+</div>
+<span class="text-[0.6rem] font-bold text-slate-500 bg-surface-container-highest px-2 py-1 rounded">QUEUED</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Regulatory Approval</span>
+<span class="text-white">0%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-0"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Fleet Recruitment</span>
+<span class="text-white">0%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-0"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[0.65rem] font-medium">
+<span class="text-slate-400">Marketing Readiness</span>
+<span class="text-white">0%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-0"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/15 pt-4">
+<div>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest mb-1">TNP Fee Est.</p>
+<p class="text-sm font-bold text-white">$0.35 <span class="text-[0.6rem] font-normal text-slate-400">/ mile</span></p>
+</div>
+<div>
+<p class="text-[0.6rem] text-slate-500 uppercase tracking-widest mb-1">Proj. Density</p>
+<p class="text-sm font-bold text-white">12.1k <span class="text-[0.6rem] font-normal text-slate-400">req/hr</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: RECENT ACTIVITY LOG (The Sovereign Log) -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/10 overflow-hidden">
+<div class="px-8 py-5 border-b border-outline-variant/10 flex justify-between items-center">
+<h3 class="text-sm font-extrabold text-white headline uppercase tracking-[0.2em]">Operational Pulse</h3>
+<div class="flex gap-4">
+<button class="text-[0.6rem] font-bold text-slate-500 uppercase hover:text-white transition-colors">View Archives</button>
+</div>
+</div>
+<div class="p-0">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-highest/30">
+<tr>
+<th class="px-8 py-4 text-[0.6rem] font-bold text-slate-500 uppercase tracking-widest">Event Source</th>
+<th class="px-8 py-4 text-[0.6rem] font-bold text-slate-500 uppercase tracking-widest">Context</th>
+<th class="px-8 py-4 text-[0.6rem] font-bold text-slate-500 uppercase tracking-widest">Status</th>
+<th class="px-8 py-4 text-[0.6rem] font-bold text-slate-500 uppercase tracking-widest">Timestamp</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-xs font-bold text-white">TX Regulatory Desk</span>
+</div>
+</td>
+<td class="px-8 py-4 text-[0.7rem] text-slate-400">Passed initial TNP compliance review in Travis County.</td>
+<td class="px-8 py-4">
+<span class="text-[0.6rem] font-bold text-success_green uppercase bg-green-500/10 px-2 py-0.5 rounded">Verified</span>
+</td>
+<td class="px-8 py-4 text-[0.65rem] font-medium text-slate-500 font-mono">2023-11-24 14:22:10</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm">group_add</span>
+<span class="text-xs font-bold text-white">FL Fleet Acquisition</span>
+</div>
+</td>
+<td class="px-8 py-4 text-[0.7rem] text-slate-400">Onboarded 140 premium electric vehicles in Miami hub.</td>
+<td class="px-8 py-4">
+<span class="text-[0.6rem] font-bold text-primary uppercase bg-primary-container/10 px-2 py-0.5 rounded">In Progress</span>
+</td>
+<td class="px-8 py-4 text-[0.65rem] font-medium text-slate-500 font-mono">2023-11-24 12:45:04</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-sm">warning</span>
+<span class="text-xs font-bold text-white">NY Legal Council</span>
+</div>
+</td>
+<td class="px-8 py-4 text-[0.7rem] text-slate-400">Delayed: Legislative bottleneck in NY State Assembly.</td>
+<td class="px-8 py-4">
+<span class="text-[0.6rem] font-bold text-error uppercase bg-error/10 px-2 py-0.5 rounded">Flagged</span>
+</td>
+<td class="px-8 py-4 text-[0.65rem] font-medium text-slate-500 font-mono">2023-11-23 09:15:22</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+

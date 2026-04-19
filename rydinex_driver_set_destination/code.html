@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rydinex Pro - Set Destination</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0e0e0f",
+              "surface-container": "#1f1f20",
+              "on-tertiary-fixed": "#351000",
+              "secondary-container": "#31477c",
+              "inverse-primary": "#0056d0",
+              "surface-container-low": "#1b1b1c",
+              "surface": "#131314",
+              "on-secondary": "#162e61",
+              "on-surface-variant": "#c2c6d7",
+              "on-secondary-fixed": "#001947",
+              "tertiary-fixed": "#ffdbcc",
+              "outline": "#8c90a0",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface-variant": "#353436",
+              "surface-dim": "#131314",
+              "inverse-surface": "#e5e2e3",
+              "on-tertiary": "#561f00",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a2b7f3",
+              "on-primary": "#002c71",
+              "secondary": "#b1c5ff",
+              "surface-bright": "#39393a",
+              "on-primary-fixed-variant": "#00419f",
+              "tertiary-container": "#c65100",
+              "on-background": "#e5e2e3",
+              "primary-container": "#276ef1",
+              "tertiary": "#ffb694",
+              "surface-container-high": "#2a2a2b",
+              "on-surface": "#e5e2e3",
+              "on-error": "#690005",
+              "primary": "#b1c5ff",
+              "inverse-on-surface": "#303031",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "secondary-fixed-dim": "#b1c5ff",
+              "on-tertiary-container": "#fffdff",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-primary-container": "#fffeff",
+              "primary-fixed": "#dae2ff",
+              "on-secondary-fixed-variant": "#2f4579",
+              "tertiary-fixed-dim": "#ffb694",
+              "surface-tint": "#b1c5ff",
+              "background": "#131314",
+              "secondary-fixed": "#dae2ff",
+              "outline-variant": "#424654",
+              "on-primary-fixed": "#001947",
+              "surface-container-highest": "#353436"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 31, 32, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314] shadow-none">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Driver profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional driver with a friendly expression in a dark high-end vehicle interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdreaQzGrwa616fFC6VB5gabwGuC7PM38pefBWF-pVUXPlkzaNjXkoBmzy4SMQvkA8x0b5VluE7-02E-9mSr_pr_VPLXSPSbp4KEw0w3_csACb307kx-FwpYZ84Y55xvTnfJtbVdxKudGTwSwip_GnqocEO-TqyvxeL6anCk3g1GGULVGk2XS0ZdAO4KqsUPmbmwi1GrkJ2RoROfLssX37tGAOI5t8zHeQcX3DyM0EnIRFVjCSx_MenTuw9U-yk5NUg8yjaiPZEk0"/>
+</div>
+<h1 class="font-['Manrope'] tracking-tight font-bold text-2xl text-[#b1c5ff]">RYDINEX PRO</h1>
+</div>
+<button class="text-[#b1c5ff] hover:bg-[#282a2d] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Map Canvas -->
+<main class="relative h-screen w-full overflow-hidden">
+<!-- Interactive Map Layer -->
+<div class="absolute inset-0 z-0">
+<img alt="City Navigation Map" class="w-full h-full object-cover grayscale brightness-50" data-alt="Nighttime urban city map with glowing street lines in deep blues and greys, reflecting a high-tech navigation interface" data-location="Chicago" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSZLxmgJ7_Kl5uX2PirbGSKBSdJi12q3tv0HvppS0xI9nvYGKgQdiilH20jYqFe-41x4JQ1Du9ONJ7nJHMNxAiOmUclyL9BHyt3e2n9PjL3LUS31pIbLb4PsjX9Pptda1EUrRrDSpaQiq_qeR5kAiFJLcDnfBbxscG563DYfr6SeXZKzrcr1_HfslZQZ4NAoBbCJeVsnGPPjc43cxAB_dtQamXv8FEDXhmPGmrC3U0VGfbb9_J-zLoupORRO4wJ3NIKAOudMG_vIk"/>
+<!-- Map Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+</div>
+<!-- Floating UI Elements -->
+<div class="relative z-10 flex flex-col items-center justify-start pt-24 px-6 h-full">
+<!-- Destinations Remaining Counter -->
+<div class="glass-panel border border-outline-variant/15 px-4 py-2 rounded-full mb-8">
+<p class="font-label text-xs font-semibold tracking-widest uppercase text-tertiary">
+                    Destinations Remaining: 1 of 2
+                </p>
+</div>
+<!-- Set Destination Bento Shell -->
+<div class="w-full max-w-md space-y-4">
+<!-- Active Destination Status Card -->
+<div class="glass-panel p-6 rounded-xl border border-outline-variant/15 shadow-2xl">
+<div class="flex items-start justify-between mb-6">
+<div class="space-y-1">
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Active Destination</span>
+<h2 class="text-xl font-headline font-bold text-on-surface">O'Hare International Airport</h2>
+</div>
+<div class="bg-primary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">flight_takeoff</span>
+</div>
+</div>
+<!-- Countdown Timer Section -->
+<div class="flex items-end gap-4 pb-4">
+<div class="flex-1">
+<span class="text-[10px] font-bold uppercase text-tertiary tracking-tighter">Expires in</span>
+<div class="text-5xl font-headline font-extrabold tracking-tighter text-primary italic">44:59</div>
+</div>
+<button class="bg-surface-container-highest/50 hover:bg-surface-container-highest transition-colors px-4 py-2 rounded-lg text-xs font-bold text-on-surface active:scale-95 duration-200">
+                            EXTEND
+                        </button>
+</div>
+<!-- Progress Bar (Timer Visualizer) -->
+<div class="w-full h-1 bg-surface-variant rounded-full overflow-hidden mt-2">
+<div class="h-full bg-primary-container w-3/4"></div>
+</div>
+</div>
+<!-- Input/Search Surface -->
+<div class="bg-surface-container-highest/80 backdrop-blur-md rounded-xl p-4 flex items-center gap-4 border-b-2 border-primary-container shadow-lg">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div class="flex-1">
+<label class="sr-only">Set New Destination</label>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-on-surface-variant/50 font-medium" placeholder="Search for another destination..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/50">search</span>
+</div>
+<!-- Action Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-primary-container/10 transition-colors group cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-container group-hover:scale-110 transition-transform">home</span>
+<span class="text-xs font-bold text-on-surface uppercase">Heading Home</span>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-tertiary/10 transition-colors group cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary group-hover:scale-110 transition-transform">local_gas_station</span>
+<span class="text-xs font-bold text-on-surface uppercase">Fuel Stop</span>
+</div>
+</div>
+</div>
+<!-- Map Controls (Floating Sidebar) -->
+<div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+<button class="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-on-surface hover:bg-primary-container/20 transition-all">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-on-surface hover:bg-primary-container/20 transition-all">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/90 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center w-full px-4 pt-2 pb-6">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Dashboard</span>
+</a>
+<!-- Reservations -->
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Reservations</span>
+</a>
+<!-- Maps (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-[#b1c5ff] bg-[#276EF1]/10 rounded-xl px-3 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Maps</span>
+</a>
+<!-- Safety -->
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Safety</span>
+</a>
+<!-- Earnings -->
+<a class="flex flex-col items-center justify-center text-[#909094] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Earnings</span>
+</a>
+</div>
+</nav>
+<script src="../apps/prd-manifest.js"></script>
+<script src="../apps/prd-runtime.js"></script>
+</body></html>
+
+
+
+
