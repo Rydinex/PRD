@@ -107,6 +107,8 @@ main{max-width:1100px;margin:0 auto;padding:28px 18px 44px}h1{margin:0 0 8px;fon
 $cards
 </div>
 </main>
+<script src='../prd-manifest.js'></script>
+<script src='../prd-runtime.js'></script>
 </body>
 </html>
 "@

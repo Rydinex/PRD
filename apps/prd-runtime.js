@@ -30,6 +30,7 @@
   wireKeyboardShortcuts();
   initDriverOpsControls();
   wireDriverNativeControls();
+  wireHubCards();
 
   window.addEventListener("resize", debounce(applyMobileFit, 120));
   window.addEventListener("orientationchange", function () {
@@ -98,11 +99,15 @@
         return;
       }
 
+      if (shouldIgnoreAutoNavigate(button, label)) {
+        return;
+      }
+
       if (/(go|online|offline|break mode|break)/i.test(label)) {
         toggleOnlineState(button, label);
         return;
       }
-      if (/(next|continue|proceed|book|request|confirm|approve|reject|submit|save|done|start)/i.test(label)) {
+      if (/(next|continue|proceed|book|request|confirm|approve|reject|submit|save|done|start|schedule|payment|promo|login|sign in|open|launch|finish|review)/i.test(label)) {
         toast(label + " complete");
         moveNext();
         return;
@@ -112,6 +117,7 @@
         return;
       }
 
+      queueFallbackNavigation();
       toast(label + " tapped");
     });
   }
@@ -126,6 +132,9 @@
         toast("Tapped");
         return;
       }
+      if (shouldIgnoreAutoNavigate(target, label)) {
+        return;
+      }
       if (/(next|continue|proceed|book|request|confirm|submit|save|done|start|go)/i.test(label)) {
         toast(label + " complete");
         moveNext();
@@ -135,6 +144,7 @@
         goPrev();
         return;
       }
+      queueFallbackNavigation();
       toast(label + " tapped");
     });
   }
@@ -246,6 +256,23 @@
       return;
     }
     toast("Navigation action");
+  }
+
+  function queueFallbackNavigation() {
+    var startUrl = window.location.href;
+    window.setTimeout(function () {
+      if (window.location.href === startUrl) {
+        moveNext();
+      }
+    }, 120);
+  }
+
+  function shouldIgnoreAutoNavigate(node, label) {
+    if (!node) return true;
+    if (node.closest("#prd-driver-panel")) return true;
+    if (node.closest("[data-prd-role='ops-card']")) return true;
+
+    return /(notifications|refresh estimate|choose on map|set pickup|set destination|use current location|my location|layers|visibility|maps|earnings|fleet|blacksuv|rydinex black|rydinex regular|rydinex comfort|rydinex xl|rydinex economy|refresh|toggle|check tracking|remove queue group|save state rules|verify and close|apply mobile fit)/i.test(label);
   }
 
   function moveNext() {
@@ -375,6 +402,8 @@
       + ".prd-driver-btn.good{background:#1f4436;border-color:rgba(117,221,171,.65);}"
       + ".prd-kv{font:600 11px/1.2 Inter,sans-serif;color:#d7e6ff;}"
       + ".prd-kv span{color:#8fb0d6;}"
+      + ".prd-hub-note{margin:0 0 16px;color:#b7c9e2;font:700 12px/1.4 Inter,sans-serif;}"
+      + ".prd-variant-badge{display:inline-flex;align-items:center;gap:4px;margin-top:8px;background:rgba(78,194,255,.12);color:#cfefff;border:1px solid rgba(78,194,255,.25);padding:4px 8px;border-radius:999px;font:700 11px/1 Inter,sans-serif;}"
       + "@media (max-width:430px){body{min-height:100dvh!important;height:auto!important;} .prd-pill{top:8px;right:8px;padding:6px 9px;font-size:10px;}}";
     document.head.appendChild(style);
 
@@ -382,6 +411,75 @@
     pill.className = "prd-pill";
     pill.textContent = app.toUpperCase() + " APP";
     document.body.appendChild(pill);
+  }
+
+  function wireHubCards() {
+    if (!/^apps\/(rider|driver|admin)\/index\.html$/i.test(currentPath)) return;
+
+    var grid = document.querySelector(".grid");
+    if (!grid) return;
+
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(".card[href]"));
+    if (!cards.length) return;
+
+    var groups = new Map();
+    cards.forEach(function (card) {
+      var href = card.getAttribute("href") || "";
+      var key = hubSemanticKey(href);
+      if (!groups.has(key)) {
+        groups.set(key, []);
+      }
+      groups.get(key).push(card);
+    });
+
+    var collapsedGroups = 0;
+    groups.forEach(function (items) {
+      if (!items || items.length < 2) return;
+
+      var lead = items[0];
+      var label = lead.querySelector(".k");
+      var pathNode = lead.querySelector(".p");
+      if (label) {
+        label.textContent = prettifyHubLabel(label.textContent || "");
+      }
+      if (pathNode) {
+        pathNode.textContent = pathNode.textContent + " + " + (items.length - 1) + " related variants";
+      }
+
+      var badge = document.createElement("span");
+      badge.className = "prd-variant-badge";
+      badge.textContent = "+" + (items.length - 1) + " variants";
+      lead.appendChild(badge);
+
+      items.slice(1).forEach(function (item) { item.remove(); });
+      collapsedGroups += 1;
+    });
+
+    if (!collapsedGroups) return;
+
+    var note = document.createElement("p");
+    note.className = "prd-hub-note";
+    note.textContent = "Similar PRD variants are grouped here to reduce duplicate screen clutter. Open the first card in each group to start the flow.";
+
+    var main = document.querySelector("main");
+    var top = document.querySelector(".top");
+    if (main && top && top.nextSibling) {
+      main.insertBefore(note, top.nextSibling);
+    }
+  }
+
+  function hubSemanticKey(href) {
+    var raw = (href || "").replace(/^\.\.\/\.\.\//, "").replace(/\?app=.*$/i, "");
+    return raw
+      .replace(/\/code\.html$/i, "")
+      .replace(/(?:_[0-9]+|_refined_surge|_updated_surge|_with_fair_pay_badge|_with_audit|_break_mode)$/i, "");
+  }
+
+  function prettifyHubLabel(value) {
+    return String(value || "")
+      .replace(/(?:_[0-9]+|_refined_surge|_updated_surge|_with_fair_pay_badge|_with_audit|_break_mode)$/i, "")
+      .replace(/_/g, " ")
+      .trim();
   }
 
   function applyMobileFit() {
