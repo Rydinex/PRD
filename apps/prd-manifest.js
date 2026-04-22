@@ -35,6 +35,7 @@
                            ],
                  "driver":  [
                                 "driver_dashboard/code.html",
+                                "rydinex_driver_online_map/code.html",
                                 "driver_navigation/code.html",
                                 "earnings_summary/code.html",
                                 "incoming_request/code.html",

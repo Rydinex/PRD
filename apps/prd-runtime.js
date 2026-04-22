@@ -271,6 +271,7 @@
     if (!node) return true;
     if (node.closest("#prd-driver-panel")) return true;
     if (node.closest("[data-prd-role='ops-card']")) return true;
+    if (node.closest("[data-prd-no-auto-nav='true']")) return true;
 
     return /(notifications|refresh estimate|choose on map|set pickup|set destination|use current location|my location|layers|visibility|maps|earnings|fleet|blacksuv|rydinex black|rydinex regular|rydinex comfort|rydinex xl|rydinex economy|refresh|toggle|check tracking|remove queue group|save state rules|verify and close|apply mobile fit)/i.test(label);
   }
@@ -527,8 +528,8 @@
   }
 
   function initDriverOpsControls() {
-    if (app !== "driver") return;
-    if (document.getElementById("prd-driver-panel")) return;
+    // Ops panel suppressed globally — driver screens use their own native UI controls.
+    return;
 
     var panel = document.createElement("div");
     panel.id = "prd-driver-panel";
