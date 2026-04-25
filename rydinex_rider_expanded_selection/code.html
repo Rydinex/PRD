@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
@@ -132,15 +132,97 @@
 </div>
 </div>
 
-<div>
-<p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2">Ride Type</p>
-<div id="rideTypeGroup" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-<button data-fare="1.8" class="ride-type h-11 rounded-xl border border-primary bg-primary/20 text-primary font-bold text-xs uppercase tracking-wider">Rydinex Black</button>
-<button data-fare="2.2" class="ride-type h-11 rounded-xl border border-outline-variant/40 text-on-surface text-xs font-bold uppercase tracking-wider">Rydinex BlackSUV</button>
-<button data-fare="1" class="ride-type h-11 rounded-xl border border-outline-variant/40 text-on-surface text-xs font-bold uppercase tracking-wider">Rydinex Regular</button>
-<button data-fare="1.3" class="ride-type h-11 rounded-xl border border-outline-variant/40 text-on-surface text-xs font-bold uppercase tracking-wider">Rydinex Comfort</button>
-<button data-fare="1.5" class="ride-type h-11 rounded-xl border border-outline-variant/40 text-on-surface text-xs font-bold uppercase tracking-wider">Rydinex XL</button>
-<button data-fare="1.1" class="ride-type h-11 rounded-xl border border-outline-variant/40 text-on-surface text-xs font-bold uppercase tracking-wider">Rydinex Economy</button>
+<div class="mt-4">
+<!-- Popular Section -->
+<p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">Popular</p>
+<div id="rideTypeGroup" class="space-y-2 mb-6">
+  <div data-fare="1" class="ride-type flex items-center p-3 rounded-xl border border-primary bg-primary/10 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-primary w-12 text-center" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex Regular</h3>
+      <p class="text-[10px] text-on-surface-variant">Affordable, everyday rides</p>
+    </div>
+  </div>
+  
+  <div data-fare="1.3" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">airport_shuttle</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex Comfort</h3>
+      <p class="text-[10px] text-on-surface-variant">Newer cars with extra legroom</p>
+    </div>
+  </div>
+
+  <div data-fare="1.5" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">electric_car</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex XL</h3>
+      <p class="text-[10px] text-on-surface-variant">Groups up to 6</p>
+    </div>
+  </div>
+  
+  <div data-fare="1.2" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">bolt</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex Electric</h3>
+      <p class="text-[10px] text-on-surface-variant">Premium eco-friendly rides</p>
+    </div>
+  </div>
+
+  <div data-fare="1.1" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">family_restroom</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Teen Ride</h3>
+      <p class="text-[10px] text-on-surface-variant">Requires Popular/Premium car selection next</p>
+    </div>
+  </div>
+
+  <div data-fare="1.4" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">pets</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex Pet</h3>
+      <p class="text-[10px] text-on-surface-variant">Service dogs and friendly pets welcome</p>
+    </div>
+  </div>
+</div>
+
+<!-- Premium Section -->
+<p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">Premium</p>
+<div class="space-y-2 mb-6">
+  <div data-fare="1.8" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex Black</h3>
+      <p class="text-[10px] text-on-surface-variant">Luxury sedans with top drivers</p>
+    </div>
+  </div>
+
+  <div data-fare="2.2" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">airport_shuttle</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Rydinex Black SUV</h3>
+      <p class="text-[10px] text-on-surface-variant">Luxury SUVs for up to 6</p>
+    </div>
+  </div>
+</div>
+
+<!-- Reservation Section -->
+<p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">Reservation</p>
+<div class="space-y-2">
+  <div data-fare="2.0" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">event_available</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Reserve in Advance</h3>
+      <p class="text-[10px] text-on-surface-variant">Schedule a ride for later</p>
+    </div>
+  </div>
+
+  <div data-fare="2.5" class="ride-type flex items-center p-3 rounded-xl border border-outline-variant/40 bg-surface-container-highest/30 cursor-pointer transition-colors">
+    <span class="material-symbols-outlined text-3xl text-on-surface-variant w-12 text-center" style="font-variation-settings: 'FILL' 1;">schedule</span>
+    <div class="flex-1 ml-3">
+      <h3 class="font-headline font-bold text-sm text-on-surface">Hourly Booking</h3>
+      <p class="text-[10px] text-on-surface-variant">Keep your driver for 2+ hours</p>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -194,11 +276,21 @@
     function selectRideType(btn) {
       var all = document.querySelectorAll(".ride-type");
       all.forEach(function (node) {
-        node.classList.remove("border-primary", "bg-primary/20", "text-primary");
-        node.classList.add("border-outline-variant/40", "text-on-surface");
+        node.classList.remove("border-primary", "bg-primary/10");
+        node.classList.add("border-outline-variant/40", "bg-surface-container-highest/30");
+        var icon = node.querySelector(".material-symbols-outlined");
+        if(icon) {
+          icon.classList.remove("text-primary");
+          icon.classList.add("text-on-surface-variant");
+        }
       });
-      btn.classList.add("border-primary", "bg-primary/20", "text-primary");
-      btn.classList.remove("border-outline-variant/40", "text-on-surface");
+      btn.classList.add("border-primary", "bg-primary/10");
+      btn.classList.remove("border-outline-variant/40", "bg-surface-container-highest/30");
+      var icon = btn.querySelector(".material-symbols-outlined");
+      if(icon) {
+        icon.classList.remove("text-on-surface-variant");
+        icon.classList.add("text-primary");
+      }
       selectedRate = parseFloat(btn.getAttribute("data-fare") || "1.0");
       recalcFare();
     }
@@ -231,6 +323,7 @@
 <script src="../apps/prd-manifest.js"></script>
 <script src="../apps/prd-runtime.js"></script>
 </body></html>
+
 
 
 

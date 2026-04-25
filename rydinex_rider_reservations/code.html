@@ -85,13 +85,14 @@
     </style>
 <style>
     body {
-      min-height: max(884px, 100dvh);
+      background-color: #000;
     }
   </style>
   </head>
-<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<body class="text-on-background font-body selection:bg-primary selection:text-on-primary flex justify-center items-center h-screen overflow-hidden">
+  <div class="relative w-full max-w-[430px] h-full bg-surface shadow-2xl flex flex-col md:border-x border-white/10 overflow-hidden">
 <!-- TopAppBar -->
-<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 w-full no-border bg-[#1c1c1e] text-[#b1c5ff]">
+<nav class="w-full z-50 flex-none flex items-center justify-between px-6 h-16 bg-[#1c1c1e] text-[#b1c5ff]">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
 <img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male driver in a dark suit with a warm, confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCItchOaQzcpqAt6Q9EguC9SjzsEjUxU_UTj9IzDQfqmvHwRfbS_PhsVspZzCm1mMdrZ6KLineSyW_19HOTH8NBrSuqvVG996kVZBokIL4ZD63LhzZzlq2saHkGsqvc5dNDGMgGzNY-js3T-IWAbu8vq8GAkHFTqrDIych6RqmyGPdYotvnZ8sizFtAwAik_ntM1aiYZMQRuEQJ8Ar-cThe_dXntjubaXraM6dFG9a3zjQGsA95743sN2iVbrSofkfWsac_aZwOMFI"/>
@@ -105,7 +106,7 @@
 <span class="text-xl font-black tracking-tighter text-[#276ef1] italic">RYDINEX</span>
 </div>
 </nav>
-<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto space-y-12">
+<main class="flex-1 overflow-y-auto pt-6 pb-32 px-6 space-y-12">
 <!-- Hero Section: Header & Editorial Scale -->
 <section class="space-y-2">
 <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-[0.9]">
@@ -115,9 +116,9 @@
 <p class="font-label text-sm uppercase tracking-[0.2em] text-on-surface-variant opacity-60">Curated Mobility &amp; Hourly Concierge</p>
 </section>
 <!-- Bento Grid: Main Functionality -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="flex flex-col gap-6">
 <!-- Calendar/Upcoming Trips: Large Bento -->
-<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 space-y-8 min-h-[400px]">
+<div class="bg-surface-container-low rounded-xl p-6 space-y-8 min-h-[400px]">
 <div class="flex justify-between items-end">
 <div class="space-y-1">
 <h2 class="text-2xl font-headline font-bold">Upcoming Trips</h2>
@@ -130,7 +131,7 @@
 <div class="space-y-4">
 <!-- Reservation Card 1 -->
 <div class="group relative bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start md:items-center">
-<div class="flex flex-col items-center justify-center bg-primary-container/10 text-primary-container p-4 rounded-xl min-w-[70px]">
+<div class="flex flex-col items-center justify-center bg-primary-container/10 text-primary-container p-4 rounded-xl w-full">
 <span class="text-xs font-bold uppercase tracking-widest">Tue</span>
 <span class="text-2xl font-headline font-black">24</span>
 </div>
@@ -145,8 +146,8 @@
                                 10000 W O'Hare Ave, Chicago, IL
                             </p>
 </div>
-<div class="flex items-center gap-4 w-full md:w-auto border-t md:border-t-0 border-outline-variant pt-4 md:pt-0">
-<div class="text-right flex-grow md:flex-grow-0">
+<div class="flex items-center justify-between w-full border-t border-outline-variant pt-4 mt-2">
+<div class="text-left flex-grow">
 <p class="text-xs text-on-surface-variant uppercase tracking-tighter">Est. Fare</p>
 <p class="text-xl font-headline font-extrabold text-primary-container">$114.50</p>
 </div>
@@ -156,8 +157,8 @@
 </div>
 </div>
 <!-- Reservation Card 2 -->
-<div class="group relative bg-surface-container-high/50 p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start md:items-center opacity-80">
-<div class="flex flex-col items-center justify-center bg-surface-variant text-on-surface-variant p-4 rounded-xl min-w-[70px]">
+<div class="group relative bg-surface-container-high/50 p-6 rounded-xl flex flex-col gap-6 items-start opacity-80">
+<div class="flex flex-col items-center justify-center bg-surface-variant text-on-surface-variant p-4 rounded-xl w-full">
 <span class="text-xs font-bold uppercase tracking-widest">Fri</span>
 <span class="text-2xl font-headline font-black">27</span>
 </div>
@@ -172,8 +173,8 @@
                                 4 Hour Fixed Duration
                             </p>
 </div>
-<div class="flex items-center gap-4 w-full md:w-auto border-t md:border-t-0 border-outline-variant pt-4 md:pt-0">
-<div class="text-right flex-grow md:flex-grow-0">
+<div class="flex items-center justify-between w-full border-t border-outline-variant pt-4 mt-2">
+<div class="text-left flex-grow">
 <p class="text-xs text-on-surface-variant uppercase tracking-tighter">Est. Fare</p>
 <p class="text-xl font-headline font-extrabold">$480.00</p>
 </div>
@@ -185,7 +186,7 @@
 </div>
 </div>
 <!-- Booking Column: Right Side -->
-<div class="md:col-span-4 space-y-6">
+<div class="space-y-6">
 <!-- Hourly Booking Quick Card -->
 <div class="relative overflow-hidden bg-primary-container rounded-xl p-6 text-on-primary-container h-fit shadow-2xl shadow-primary-container/20">
 <div class="relative z-10 space-y-4">
@@ -220,7 +221,7 @@
 </div>
 </div>
 <!-- Teen Pickup Special Section: Asymmetric Editorial Layout -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-surface-container-low/40 rounded-3xl p-8 lg:p-12 overflow-hidden border border-outline-variant/10">
+<section class="flex flex-col gap-8 bg-surface-container-low/40 rounded-3xl p-8 overflow-hidden border border-outline-variant/10">
 <div class="space-y-6">
 <div class="inline-flex items-center gap-2 bg-secondary-container/20 px-4 py-2 rounded-full border border-secondary-container/30">
 <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">family_restroom</span>
@@ -275,48 +276,11 @@
 </div>
 </div>
 </section>
+</div>
+</section>
 </main>
-<!-- NavigationDrawer (Simulated as content container) -->
-<aside class="fixed left-0 top-16 h-full w-20 md:w-80 bg-[#131314] tonal-layering border-r border-outline-variant/10 hidden lg:flex flex-col py-8 z-40">
-<div class="px-6 mb-10 flex flex-col gap-1 items-start">
-<div class="w-12 h-12 rounded-full overflow-hidden mb-3 border-2 border-[#276ef1]">
-<img class="w-full h-full object-cover" data-alt="High-resolution professional headshot of a driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcq4ih8c9y72vcyHboF_UcowVMHBSGkR632TKcxGbldwAF5wtIAZQYSlp7peaK64h3kzdldcOlRlS5CmaWqzOwMMapyIh02g8TdIf2X53KS5ttO3Bo_mKM7CUIrOumDwk7J6BV9wqaLIG3gci1SzLMvm_cJ7DZnqhx9u6DbsGqYDb824j0s2Ebx4PL8n7hwuScOKcxOatVDfnUhUNUOtHKcaVFbwuM3VK3n4lYoYK6gu5VF3OVpGL0wSYPOVSjj5ixOd1bRW08UQ8"/>
-</div>
-<h4 class="font-headline text-lg font-bold text-[#b1c5ff]">Marcus V.</h4>
-<p class="text-xs text-gray-400 uppercase tracking-widest">Pro Driver  -  Black Level</p>
-<div class="mt-4 bg-[#276ef1]/10 px-3 py-1 rounded-full">
-<p class="text-[10px] font-bold text-[#276ef1] uppercase tracking-tighter">O'Hare Queue: 5-10 min</p>
-</div>
-</div>
-<nav class="flex-grow flex flex-col">
-<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
-<span class="material-symbols-outlined">local_shipping</span>
-<span>Fleet Preferences</span>
-</a>
-<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
-<span class="material-symbols-outlined">family_restroom</span>
-<span>Teen Pickup</span>
-</a>
-<a class="text-[#b1c5ff] bg-[#276ef1]/10 font-bold border-l-4 border-[#276ef1] px-6 py-4 flex items-center gap-4" href="#">
-<span class="material-symbols-outlined">schedule</span>
-<span>Hourly Bookings</span>
-</a>
-<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-<span>Tax Center</span>
-</a>
-<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
-<span class="material-symbols-outlined">description</span>
-<span>Documents</span>
-</a>
-<a class="text-gray-400 font-normal px-6 py-4 flex items-center gap-4 hover:bg-[#276ef1]/5 transition-all" href="#">
-<span class="material-symbols-outlined">contact_support</span>
-<span>Support</span>
-</a>
-</nav>
-</aside>
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/80 backdrop-blur-xl flex justify-around items-center h-20 pb-safe px-4 shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
+<nav class="absolute bottom-0 w-full z-50 rounded-t-2xl bg-[#131314]/80 backdrop-blur-xl flex justify-around items-center h-20 pb-safe px-4 shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
 <button class="flex flex-col items-center justify-center text-gray-500 opacity-60 active:scale-90 duration-300">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
@@ -339,12 +303,14 @@
 </button>
 </nav>
 <!-- FAB for New Reservation -->
-<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 w-16 h-16 rounded-2xl bg-primary-container text-white flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all z-40">
+<button class="absolute bottom-24 right-6 w-16 h-16 rounded-2xl bg-primary-container text-white flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all z-40">
 <span class="material-symbols-outlined text-3xl">add</span>
 </button>
+</div> <!-- End Mobile Container -->
 <script src="../apps/prd-manifest.js"></script>
 <script src="../apps/prd-runtime.js"></script>
 </body></html>
+
 
 
 
